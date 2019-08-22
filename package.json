@@ -1,0 +1,28 @@
+{
+  "name": "vuemontreal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "vuepress build blog",
+    "dev": "vuepress dev blog --no-clear-screen"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vuemontreal/vuemontreal.git"
+  },
+  "keywords": [
+    "vue",
+    "montreal",
+    "meetups"
+  ],
+  "author": "f3ltron",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/vuemontreal/vuemontreal/issues"
+  },
+  "homepage": "https://github.com/vuemontreal/vuemontreal#readme",
+  "devDependencies": {
+    "vuepress": "^1.0.0-rc.1"
+  }
+}
