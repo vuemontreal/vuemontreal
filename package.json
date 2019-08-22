@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/vuemontreal/vuemontreal#readme",
   "devDependencies": {
-    "vuepress": "^1.0.0-rc.1"
+    "@vuepress/plugin-register-components": "^1.0.0-rc.1",
+    "vuepress": "^1.0.0-rc.1",
+    "vuepress-theme-thindark": "^1.0.1"
   }
 }

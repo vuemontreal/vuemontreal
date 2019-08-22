@@ -1,2 +1,4 @@
 node_modules
 blog/.vuepress/dist
+.DS_STORE
+**/*.DS_STORE
