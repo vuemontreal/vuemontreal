@@ -90,7 +90,7 @@ module.exports = {
         rel: "icon",
         type: "image/png",
         sizes: "32x32",
-        href: "/favicons-vuemontreal/favicon-32.png"
+        href: "/favicons-vuemontreal/favicon32.png"
       }
     ],
     [
@@ -99,7 +99,7 @@ module.exports = {
         rel: "icon",
         type: "image/png",
         sizes: "96x96",
-        href: "/favicons-vuemontreal/favicon-96.png"
+        href: "/favicons-vuemontreal/favicon96.png"
       }
     ],
     [
@@ -108,7 +108,7 @@ module.exports = {
         rel: "icon",
         type: "image/png",
         sizes: "16x16",
-        href: "/favicons-vuemontreal/favicon-16.png"
+        href: "/favicons-vuemontreal/favicon16.png"
       }
     ]
   ],
