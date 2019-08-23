@@ -8,10 +8,7 @@ module.exports = {
     editLinkText: "Help us improve this page!",
     logo: "/vue-logo-website-trimmed-transparent.png",
     lastUpdated: "Last Updated",
-    algolia: {
-      apiKey: "<API_KEY>",
-      indexName: "<INDEX_NAME>"
-    }
+    nav: [{ text: "Contribute", link: "/contributing" }]
   },
   head: [
     [

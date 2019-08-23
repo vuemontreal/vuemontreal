@@ -14,8 +14,6 @@ module.exports = filesExtractedDatas => {
     }
   });
 
-  console.log("je suis la", sidebar);
-
   const navBarAddition = {
     text: "Archives",
     link: "/archives/" + sidebar[0][0]
@@ -41,11 +39,12 @@ module.exports = filesExtractedDatas => {
             const events = ${JSON.stringify(Events)}
             if (!siteData.themeConfig['sidebar']) siteData.themeConfig['sidebar'] = {}
             siteData.themeConfig.sidebar['/archives/'] = sidebar
-            siteData.themeConfig.nav = []
-            siteData.themeConfig.nav.push(events);
-            siteData.themeConfig.nav.push(navBarAddition);
-
-            console.log(siteData);
+            if (!siteData.themeConfig.nav) siteData.themeConfig.nav = []
+            siteData.themeConfig.nav = [
+              events,
+              navBarAddition,
+              ...siteData.themeConfig.nav
+            ];
           }
         `
   };

@@ -1,0 +1,21 @@
+{
+  "location": "Code & Cafe 4304 Rue Saint-Denis · Montreal, qc",
+  "gmapIframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.3883541630685!2d-73.57987!3d45.522389999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDMxJzIwLjYiTiA3M8KwMzQnNDcuNSJX!5e0!3m2!1sfr!2sca!4v1566585784205!5m2!1sfr!2sca",
+  "backgroundImg": "/vue-logo-website-big-city.png",
+  "hour": "18h30 - 21h",
+  "date": "October 25th 2018",
+  "title": "VueJS Introduction",
+  "eventLink": "https://www.meetup.com/fr-FR/Vue-js-Montreal/events/255101915/",
+  "datas": [
+    {
+      "title": "VueJS Introduction",
+      "author": "f3ltron",
+      "tags": ["vue", "javascript", "beginner"],
+      "description": "The purpose of this first evening is to discover the advantages of Vue.js. Whether to create an entire application, or to gradually integrate it into an existing application, we will see how Vue.js is a flexible, practical and easy-to-use framework.",
+      "slide": null,
+      "video": null,
+      "img": "https://avatars3.githubusercontent.com/u/1448836?s=460&v=4",
+      "profile": "https://github.com/tlebel"
+    }
+  ]
+}

@@ -26,6 +26,7 @@
     "@goy/vuepress-plugin-svg-icons": "^2.0.1",
     "@vuepress/plugin-google-analytics": "^1.0.0-rc.1",
     "@vuepress/plugin-register-components": "^1.0.0-rc.1",
+    "all-contributors-cli": "^6.8.1",
     "fs-extra": "^8.1.0",
     "glob": "^7.1.4",
     "path": "^0.12.7",
