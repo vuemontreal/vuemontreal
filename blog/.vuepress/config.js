@@ -2,9 +2,12 @@ module.exports = {
   description: "Vue Montreal Meetups actuality",
   theme: "thindark",
   themeConfig: {
+    repo: 'vuemontreal/vuemontreal',
+    docsDir: "blog",
+    editLinks: true,
+    editLinkText: 'Help us improve this page!',
     logo: "/vue-logo-website-trimmed-transparent.png",
     lastUpdated: "Last Updated",
-    editLinks: true,
     nav: [
       { text: "Events", link: "/events/" },
       { text: "Archives", link: "/archives/" },
