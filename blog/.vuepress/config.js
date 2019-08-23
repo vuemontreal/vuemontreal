@@ -10,8 +10,7 @@ module.exports = {
     lastUpdated: "Last Updated",
     nav: [
       { text: "Events", link: "/events/" },
-      { text: "Archives", link: "/archives/" },
-      { text: "Github", link: "https://github.com/vuemontreal/vuemontreal" }
+      { text: "Archives", link: "/archives/" }
     ]
   },
   head: [
@@ -116,13 +115,14 @@ module.exports = {
     ]
   ],
   plugins: [
-    ['@goy/svg-icons'],
     ["@vuepress/register-components"],
+    ['@goy/svg-icons'],
     [
       "@vuepress/google-analytics",
       {
         ga: "UA-146295749-1"
       }
-    ]
+    ],
+    [require('./plugins')]
   ]
 };
