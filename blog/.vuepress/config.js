@@ -113,6 +113,7 @@ module.exports = {
     ]
   ],
   plugins: [
+    ['@goy/svg-icons'],
     ["@vuepress/register-components"],
     [
       "@vuepress/google-analytics",

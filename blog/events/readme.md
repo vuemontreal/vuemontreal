@@ -1,3 +1,12 @@
-# INCOMING
+---
+tags:
+  - vue
+  - f3ltron
+  - lebel
+  - framework
+---
 
-<meetup />
+<meetup :text="
+    'asdasdsad' +
+    'adsadadasd'
+    "/>
