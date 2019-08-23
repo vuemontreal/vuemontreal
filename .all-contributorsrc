@@ -1,6 +1,6 @@
 {
-  "projectName": "VueMontreal",
-  "projectOwner": "f3ltron",
+  "projectName": "vuemontreal",
+  "projectOwner": "vuemontreal",
   "repoType": "github",
   "repoHost": "https://github.com",
   "files": [
@@ -15,6 +15,16 @@
       "name": "Giraud Florent",
       "avatar_url": "https://avatars1.githubusercontent.com/u/11556276?v=4",
       "profile": "https://github.com/f3ltron",
+      "contributions": [
+        "code",
+        "doc"
+      ]
+    },
+    {
+      "login": "tlebel",
+      "name": "Tommy Lebel",
+      "avatar_url": "https://avatars1.githubusercontent.com/u/1448836?v=4",
+      "profile": "http://tlebel.com",
       "contributions": [
         "code",
         "doc"
