@@ -5,7 +5,7 @@
 
 # How to contribute ?
 
-just go [HERE](https://vuemontreal.org/contributing.html)
+just go [HERE](https://vuemontreal.org/contributing.html).
 
 # Contributors
 
