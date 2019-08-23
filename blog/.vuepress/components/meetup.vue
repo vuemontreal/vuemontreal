@@ -2,8 +2,8 @@
   <div class="card-wrapper">
     <div class="card-meetup-left">
       <img :src="img" />
-      <!-- <person />
-      <person />-->
+      <person />
+      <person />
     </div>
     <div class="card-meetup-right">
       <dir class="card-meetup_body">
@@ -48,9 +48,6 @@ export default {
       type: String,
       required: true
     }
-  },
-  beforeMount() {
-    console.log(this.values);
   }
 };
 </script>

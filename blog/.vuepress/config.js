@@ -2,16 +2,16 @@ module.exports = {
   description: "Vue Montreal Meetups actuality",
   theme: "thindark",
   themeConfig: {
-    repo: 'vuemontreal/vuemontreal',
+    repo: "vuemontreal/vuemontreal",
     docsDir: "blog",
     editLinks: true,
-    editLinkText: 'Help us improve this page!',
+    editLinkText: "Help us improve this page!",
     logo: "/vue-logo-website-trimmed-transparent.png",
     lastUpdated: "Last Updated",
-    nav: [
-      { text: "Events", link: "/events/" },
-      { text: "Archives", link: "/archives/" }
-    ]
+    algolia: {
+      apiKey: "<API_KEY>",
+      indexName: "<INDEX_NAME>"
+    }
   },
   head: [
     [
@@ -116,13 +116,13 @@ module.exports = {
   ],
   plugins: [
     ["@vuepress/register-components"],
-    ['@goy/svg-icons'],
+    ["@goy/svg-icons"],
     [
       "@vuepress/google-analytics",
       {
         ga: "UA-146295749-1"
       }
     ],
-    [require('./plugins')]
+    [require("./plugins")]
   ]
 };
