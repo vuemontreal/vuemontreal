@@ -9,7 +9,7 @@
   "datas": [
     {
       "title": "VueJS Introduction",
-      "author": "f3ltron",
+      "author": "tlebel",
       "tags": ["vue", "javascript", "beginner"],
       "description": "The purpose of this first evening is to discover the advantages of Vue.js. Whether to create an entire application, or to gradually integrate it into an existing application, we will see how Vue.js is a flexible, practical and easy-to-use framework.",
       "slide": null,
