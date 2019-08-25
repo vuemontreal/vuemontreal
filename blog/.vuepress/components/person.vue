@@ -48,6 +48,7 @@ export default {
 .Person {
   display: flex;
   max-width: 800px;
+  margin-bottom: 30px;
 }
 .Person-img {
   width: 150px;

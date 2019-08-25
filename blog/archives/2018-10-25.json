@@ -4,8 +4,9 @@
   "backgroundImg": "/vue-logo-website-big-city.png",
   "hour": "18h30 - 21h",
   "date": "October 25th 2018",
-  "title": "VueJS Introduction",
+  "title": "001 - VueJS Introduction",
   "eventLink": "https://www.meetup.com/fr-FR/Vue-js-Montreal/events/255101915/",
+  "done": true,
   "datas": [
     {
       "title": "VueJS Introduction",

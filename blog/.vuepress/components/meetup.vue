@@ -20,6 +20,13 @@
         <iframe :src="endValues.gmapIframe" height="250" frameborder="0" class="Place-map"></iframe>
         <div class="Place-action">
           <a
+            v-if="endValues.done"
+            class="Btn Btn--3d white bg-green"
+            :href="endValues.eventLink"
+            target="_blank"
+          >Check more</a>
+          <a
+            v-else
             class="Btn Btn--3d white bg-green"
             :href="endValues.eventLink"
             target="_blank"
@@ -64,6 +71,7 @@ export default {
 
 .Left-img {
   width: 100%;
+  max-width: 800px !important;
 }
 
 .Mtl-right {
