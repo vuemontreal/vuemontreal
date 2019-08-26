@@ -1,4 +1,4 @@
-const { find, build, extract } = require("./pages");
+const { find, build, extract, tags } = require("./pages");
 const { create } = require("./sidebar");
 const path = require("path");
 
@@ -10,11 +10,13 @@ module.exports = (givenOpts = {}) => {
   const filesExtractedDatas = extract(files);
 
   const pages = build(filesExtractedDatas);
+
+  const tagsPages = tags(pages);
   const createdSidebar = create(filesExtractedDatas);
 
   return {
     name: "vuepress-plugin-montreal-blog",
-    additionalPages: pages,
+    additionalPages: [...pages, ...tagsPages],
     enhanceAppFiles: [createdSidebar]
   };
 };

@@ -55,11 +55,6 @@ export default {
 </script>
 
 <style>
-.theme-default-content:not(.custom) {
-  margin: 0;
-  min-width: 100%;
-}
-
 .Mtl {
   display: flex;
   flex-wrap: wrap;
@@ -150,16 +145,6 @@ export default {
 }
 
 @media (max-width: 1160px) {
-  .theme-default-content:not(.custom) {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-    width: 80% !important;
-    margin: auto !important;
-    min-width: inherit;
-  }
-
   .Mtl {
     flex-flow: column-reverse;
   }
