@@ -8,7 +8,14 @@ module.exports = {
     editLinkText: "Help us improve this page!",
     logo: "/vue-logo-website-trimmed-transparent.png",
     lastUpdated: "Last Updated",
-    nav: [{ text: "Contribute", link: "/contributing" }]
+    nav: [
+      { text: "Contribute", link: "/contributing" },
+      {
+        text: "Slack",
+        link:
+          "https://vuemontreal.slack.com/join/shared_invite/enQtNDk3NjY4NDU3NjIzLTUwZTNlMTcyYTM3MDkyOWM2YzQyMmNiY2VkNWIyMTE5ZWY2ZmZhMDhkM2QxZmViNGExZDFiZmQ0NTc0ODI0NDY"
+      }
+    ]
   },
   head: [
     [
