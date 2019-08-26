@@ -1,7 +1,6 @@
 # Features needed
-
-- tags search system
-- let more events incoming
+- We need to rework the home page
+- We need to think more like create depend on json data and not just au create right now and take the first item in date from json archives
 
 # How to contribute ?
 
