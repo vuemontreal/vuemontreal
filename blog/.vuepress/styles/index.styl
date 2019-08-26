@@ -1,3 +1,20 @@
+.theme-default-content:not(.custom) {
+  margin: 0;
+  min-width: 100%;
+}
+
+@media (max-width: 1160px) {
+  .theme-default-content:not(.custom) {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    width: 80% !important;
+    margin: auto !important;
+    min-width: inherit;
+  }
+}
+
 .links {
     display: flex;
     justify-content: flex-end !important;
@@ -17,3 +34,26 @@
 .bg-dark {
   background: #282c34;
 }
+
+.Tag {
+  background: rgba(0, 0, 0, 0.05);
+  background-image: initial;
+  background-position-x: initial;
+  background-position-y: initial;
+  background-size: initial;
+  background-attachment: initial;
+  background-origin: initial;
+  background-clip: initial;
+  background-color: rgba(0, 0, 0, 0.05);
+  padding: 8px;
+  margin-right: 6px;
+  cursor pointer;
+}
+.Tag:hover {
+  background-color: #34ab6f;
+  color: white !important;
+  }
+
+.activeTag {
+  background-color: #34ab6f;
+  color: white !important;}

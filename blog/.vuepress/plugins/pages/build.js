@@ -23,7 +23,10 @@ module.exports = filesExtractedDatas => {
     pages.push({
       path: "/" + name + ".html",
       content: toMD(elm.data),
-      datas: JSON.parse(elm.data)
+      datas: {
+        ...JSON.parse(elm.data),
+        name
+      }
     });
   });
 

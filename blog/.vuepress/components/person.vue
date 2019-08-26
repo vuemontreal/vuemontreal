@@ -24,7 +24,8 @@
         </div>
         <p v-html="person.description"></p>
         <div class="Infos-tags Tags">
-          <h4 v-for="(tag, i) in person.tags" :key="i" class="Tag">
+          <h4 v-for="(tag, i) in person.tags" :key="i" class="Tag" @click="goTo(tag)">
+            <vp-icon name="tag" />
             <span class="Infos-text">{{tag}}</span>
           </h4>
         </div>
@@ -39,6 +40,11 @@ export default {
     person: {
       type: Object,
       required: true
+    }
+  },
+  methods: {
+    goTo(tag) {
+      this.$router.push("/tags/index.html#filters=" + tag);
     }
   }
 };
@@ -72,19 +78,5 @@ export default {
 
 .Infos-tags {
   display: flex;
-}
-
-.Tag {
-  background: rgba(0, 0, 0, 0.05);
-  background-image: initial;
-  background-position-x: initial;
-  background-position-y: initial;
-  background-size: initial;
-  background-attachment: initial;
-  background-origin: initial;
-  background-clip: initial;
-  background-color: rgba(0, 0, 0, 0.05);
-  padding: 8px;
-  margin-right: 6px;
 }
 </style>

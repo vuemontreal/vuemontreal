@@ -1,13 +1,26 @@
 <template>
   <div v-if="jsonValues">
-    <ul>
-      <li v-for="tag in jsonValues.tags" :key="tag" @click="addFilter(tag)">{{tag}}</li>
+    <ul class="Tags">
+      <li
+        class="Tag"
+        v-for="tag in jsonValues.tags"
+        :key="tag"
+        @click="addFilter(tag)"
+        :class="{
+          activeTag: filters.includes(tag)
+      }"
+      >
+        <vp-icon name="tag" />
+        {{tag}}
+      </li>
     </ul>
-    <pre class="white">{{ filters}}</pre>
-
-    <ul>
-      <li v-for="(elem, i) in filteredDatas" :key="i">{{elem.old.title}}</li>
+    <hr class="Tags-hr" />
+    <ul v-if="filters.length">
+      <li v-for="(elem, i) in filteredDatas" :key="i" class="Preview-block">
+        <preview :meetup="elem" />
+      </li>
     </ul>
+    <div v-else class="noFilter">no filters Selected</div>
   </div>
 </template>
 
@@ -30,8 +43,10 @@ export default {
       let retDatas = {};
       for (let pagePath in this.jsonValues.elems) {
         const page = this.jsonValues.elems[pagePath];
-        if (this.isIncluded(page.tags)) retDatas[pagePath] = page;
+        if (this.isIncluded(page.tags) && page.old.done)
+          retDatas[pagePath] = page;
       }
+      this.setQuery();
       return retDatas;
     }
   },
@@ -46,17 +61,54 @@ export default {
         this.filters = tmp;
       }
     },
+    setQuery() {
+      window.location.hash = "filters=" + this.filters.toString();
+    },
     isIncluded(from) {
       let isFound = false;
 
       this.filters.forEach(f => {
         if (from.includes(f)) isFound = true;
       });
+
       return isFound;
     }
   },
   mounted() {
     this.jsonValues = JSON.parse(this.values);
+    if (window.location.hash.match("filters")) {
+      let filters = window.location.hash.split("=")[1];
+      filters = filters.split(",");
+      if (filters[0] && filters[0].length === 0) return;
+      this.filters = filters;
+    }
   }
 };
 </script>
+
+<style >
+.noFilter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.Tags {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Tags-hr {
+  margin-bottom: 60px;
+}
+
+.Tag {
+  list-style: none;
+}
+
+.Preview-block {
+  list-style: none;
+  box-shadow: 1px 6px 8px -2px rgba(0, 0, 0, 0.51);
+  border-radius: 4px;
+}
+</style>
