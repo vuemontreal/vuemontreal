@@ -30,7 +30,7 @@
             class="Btn Btn--3d white bg-green"
             :href="endValues.eventLink"
             target="_blank"
-          >Inscription</a>
+          >Register</a>
         </div>
       </div>
     </div>

@@ -2,21 +2,31 @@
   "location": "5455 Avenue de Gaspé #200, Montréal, QC H2T 3B3",
   "gmapIframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.1378394634535!2d-73.59829758408372!3d45.527431679101745!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cc91a5740d5d2ab%3A0x35e48bb19907f03!2sATECNA+Montr%C3%A9al+%7C+Service+conseil+et+agence+int%C3%A9gr%C3%A9e+num%C3%A9rique!5e0!3m2!1sfr!2sca!4v1566523634638!5m2!1sfr!2sca",
   "backgroundImg": "/vue-logo-website-big-city.png",
-  "hour": "18h00",
+  "hour": "17h30",
   "date": "September 25th 2019",
-  "title": "Create a framework is that so hard ?",
+  "title": "Inner workings of a JavaScript Framework",
   "eventLink": "https://www.meetup.com/fr-FR/Vue-js-Montreal/events/",
   "done": false,
   "datas": [
     {
-      "title": "Create a framework is that so hard ?",
+      "title": "Why do we need a front-end framework, and how does it work?",
       "author": "f3ltron",
       "tags": ["english", "beginner"],
-      "description": "The idea behind is to understand how basically a framework work and it can be easy to a do simple one <br /> The other idea is you should not do that",
+      "description": "This talk will explore how a basic JavaScript framework works and how easy it can be to create a simple one. We will also see why you should not do create your own framework.",
       "slide": null,
       "video": null,
       "img": "https://avatars1.githubusercontent.com/u/11556276?v=4",
       "profile": "https://github.com/f3ltron"
+    },
+    {
+      "title": "From Vuejs template tag to HTML, how does it work?",
+      "author": "tlebel",
+      "tags": ["english", "intermediate"],
+      "description": "This talk will explore how Vue.js transforms the template tag in a Vue single file component into HTML.",
+      "slide": null,
+      "video": null,
+      "img": "https://avatars3.githubusercontent.com/u/1448836?s=460&v=4",
+      "profile": "https://www.linkedin.com/in/tommylebel/"
     }
   ]
 }

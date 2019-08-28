@@ -42,7 +42,7 @@ you should fill this object
       "slide": null, // it could be null or external link
       "video": null, // it could be null or external link
       "img": "https://avatars3.githubusercontent.com/u/1448836?s=460&v=4", // imgs will have 100 X 100 format
-      "profile": "https://github.com/tlebel"
+      "profile": "https://www.linkedin.com/in/tommylebel/"
     }
   ]
 }
