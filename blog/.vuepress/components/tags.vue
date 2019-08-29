@@ -42,7 +42,7 @@ export default {
       let retDatas = {};
       for (let pagePath in this.values.elems) {
         const page = this.values.elems[pagePath];
-        if (this.isIncluded(page.tags) && page.old.done)
+        if (this.isIncluded(page.tags))
           retDatas[pagePath] = page;
       }
       this.setQuery();
@@ -95,6 +95,10 @@ export default {
 .Tags {
   display: flex;
   flex-wrap: wrap;
+}
+
+li.Tag {
+  margin: 4px 8px 4px 0;
 }
 
 .Tags-hr {

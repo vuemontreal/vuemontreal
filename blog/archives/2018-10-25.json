@@ -1,22 +1,32 @@
 {
   "location": "Code & Cafe, 4304 Rue Saint-Denis, Montreal, QC",
   "gmapIframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.3883541630685!2d-73.57987!3d45.522389999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDMxJzIwLjYiTiA3M8KwMzQnNDcuNSJX!5e0!3m2!1sfr!2sca!4v1566585784205!5m2!1sfr!2sca",
-  "backgroundImg": "/vue-logo-website-big-city.png",
-  "hour": "18h30 - 21h",
-  "date": "October 25th 2018",
-  "title": "001 - VueJS Introduction",
+  "backgroundImg": "https://secure.meetupstatic.com/photos/event/6/2/b/3/highres_475645267.jpeg",
+  "hour": "18h30 - 21h00",
+  "date": "October 25th, 2018",
+  "title": "001 - Vuejs Montréal - Première édition: Introduction à Vuejs",
   "eventLink": "https://www.meetup.com/fr-FR/Vue-js-Montreal/events/255101915/",
   "done": true,
   "datas": [
     {
-      "title": "VueJS Introduction",
+      "title": "JS, Vue.js, pas l'temps d'niaiser",
       "author": "Tommy Lebel",
       "tags": ["French", "Beginner"],
-      "description": "The purpose of this first evening is to discover the advantages of Vue.js. Whether to create an entire application, or to gradually integrate it into an existing application, we will see how Vue.js is a flexible, practical and easy-to-use framework.",
-      "slide": null,
+      "description": "Vous aimeriez débuter à utiliser Vue.js mais vous n'êtes pas sûr par où commencer? Cette première présentation offre 5 étapes essentielles pour démarrer du bon pied avec Vue.js!",
+      "slide": "https://github.com/vuemontreal/meetups/tree/master/001-Introduction-a-Vuejs",
       "video": null,
       "img": "https://avatars3.githubusercontent.com/u/1448836?s=460&v=4",
       "profile": "https://www.linkedin.com/in/tommylebel/"
+    },
+    {
+      "title": "Vue.js à l'action: Démo d'un site Vue.js",
+      "author": "Frédéric Chiasson",
+      "tags": ["French", "Beginner"],
+      "description": "Cette seconde présentation nous fera découvrir Vue.js à travers un l'exploration du code d'un site web construit avec Vue.js.",
+      "slide": null,
+      "video": null,
+      "img": "https://avatars3.githubusercontent.com/u/2434235?s=460&v=4",
+      "profile": "https://www.linkedin.com/in/frédéric-chiasson-5a253310/"
     }
   ]
 }
