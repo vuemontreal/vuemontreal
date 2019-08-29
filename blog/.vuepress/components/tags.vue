@@ -97,6 +97,10 @@ export default {
   flex-wrap: wrap;
 }
 
+li.Tag {
+  margin: 4px 8px 4px 0;
+}
+
 .Tags-hr {
   margin-bottom: 60px;
 }

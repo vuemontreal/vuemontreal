@@ -7,15 +7,12 @@
     <div class="Mtl-right Right">
       <div class="Right-content Content white--dark bg-dark">
         <div class="Place-info Info">
-          <vp-icon name="clock" />
-          <span class="Title">
-            {{values.date}}
-            {{values.hour}}
-          </span>
+          <div class="icon"><vp-icon name="clock" /></div>
+          <div class="Title">{{values.date}} {{values.hour}}</div>
         </div>
         <div class="Place-info Info">
-          <vp-icon name="map" />
-          <span class="Title">{{values.location}}</span>
+          <div class="icon"><vp-icon name="map" /></div>
+          <div class="Title">{{values.location}}</div>
         </div>
         <iframe :src="values.gmapIframe" height="250" frameborder="0" class="Place-map"></iframe>
         <div class="Place-action">
@@ -25,7 +22,7 @@
             :href="values.eventLink"
             target="_blank"
             rel="noopener noreferrer"
-          >See Meetup.com Event</a>
+          >Registration Page</a>
           <a
             v-else
             class="Btn Btn--3d white bg-green"
@@ -53,12 +50,12 @@ export default {
 <style>
 .Mtl {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
 }
 
 .Mtl-left {
   flex-grow: 1;
-  max-width: 70%;
+  /* max-width: 70%; */
 }
 
 .Left-img {
@@ -67,7 +64,9 @@ export default {
 }
 
 .Mtl-right {
-  max-width: 30%;
+  flex-grow: 1;
+  max-width: 350px;
+  min-width: 350px;
   padding-bottom: 20px;
 }
 
@@ -92,14 +91,20 @@ export default {
 .Place-info {
   margin-top: 12px;
   margin-bottom: 18px;
+  display: flex;
 }
 
-.Info {
+.Place-info .icon {
+  float:left;
+}
+
+.Place-info.Info {
   padding-left: 30px;
   padding-right: 12px;
 }
 
 .Title {
+  float: left;
   padding-left: 18px;
   font-weight: 600;
 }
