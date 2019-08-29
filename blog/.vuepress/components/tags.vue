@@ -42,7 +42,7 @@ export default {
       let retDatas = {};
       for (let pagePath in this.values.elems) {
         const page = this.values.elems[pagePath];
-        if (this.isIncluded(page.tags) && page.old.done)
+        if (this.isIncluded(page.tags))
           retDatas[pagePath] = page;
       }
       this.setQuery();
