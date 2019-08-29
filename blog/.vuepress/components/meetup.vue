@@ -1,36 +1,36 @@
 <template>
-  <div class="Mtl" v-if="endValues">
+  <div class="Mtl" v-if="values">
     <div class="Mtl-left">
-      <img :src="endValues.backgroundImg" class="Left-img" />
-      <person v-for="person in endValues.datas" :key="person.author" :person="person" />
+      <img :src="values.backgroundImg" class="Left-img" />
+      <person v-for="person in values.datas" :key="person.author" :person="person" />
     </div>
     <div class="Mtl-right Right">
       <div class="Right-content Content white--dark bg-dark">
         <div class="Place-info Info">
           <vp-icon name="clock" />
           <span class="Title">
-            {{endValues.date}}
-            {{endValues.hour}}
+            {{values.date}}
+            {{values.hour}}
           </span>
         </div>
         <div class="Place-info Info">
           <vp-icon name="map" />
-          <span class="Title">{{endValues.location}}</span>
+          <span class="Title">{{values.location}}</span>
         </div>
-        <iframe :src="endValues.gmapIframe" height="250" frameborder="0" class="Place-map"></iframe>
+        <iframe :src="values.gmapIframe" height="250" frameborder="0" class="Place-map"></iframe>
         <div class="Place-action">
           <a
-            v-if="endValues.done"
+            v-if="values.done"
             class="Btn Btn--3d white bg-green"
-            :href="endValues.eventLink"
+            :href="values.eventLink"
             target="_blank"
-          >Check more</a>
+          >See Meetup.com Event</a>
           <a
             v-else
             class="Btn Btn--3d white bg-green"
-            :href="endValues.eventLink"
+            :href="values.eventLink"
             target="_blank"
-          >Register</a>
+          >Register To Attend</a>
         </div>
       </div>
     </div>
@@ -41,16 +41,10 @@
 export default {
   props: {
     values: {
-      type: String,
+      type: Object,
       required: true
     }
   },
-  data: () => ({
-    endValues: null
-  }),
-  mounted() {
-    this.endValues = JSON.parse(this.values);
-  }
 };
 </script>
 
@@ -62,6 +56,7 @@ export default {
 
 .Mtl-left {
   flex-grow: 1;
+  max-width: 70%;
 }
 
 .Left-img {
@@ -70,13 +65,13 @@ export default {
 }
 
 .Mtl-right {
-  max-width: 350px;
+  max-width: 30%;
   padding-bottom: 20px;
 }
 
 .Right {
-  padding-left: 8px;
-  padding-right: 8px;
+  padding-left: 1em;
+  padding-right: 0;
 }
 
 .Right-content {
@@ -147,6 +142,11 @@ export default {
 @media (max-width: 1160px) {
   .Mtl {
     flex-flow: column-reverse;
+  }
+
+  .Mtl-left {
+    flex-grow: 1;
+    min-width: 100%;
   }
 
   .Mtl-right {

@@ -1,10 +1,11 @@
 const toMD = props => {
   const jsonData = JSON.parse(props);
-  const stringDatas = JSON.stringify(jsonData, null, " ").replace(/\n/g, "");
+  const stringDatas = JSON.stringify(jsonData, null, " ").replace(/\n/g, "").replace(/'/g, "\\&apos\\;");
+
   return `
   ## ${jsonData.title}
 
-  <meetup values='${stringDatas}' />
+  <meetup :values='${stringDatas}' />
   `;
 };
 module.exports = filesExtractedDatas => {

@@ -1,9 +1,9 @@
 <template>
-  <div v-if="jsonValues">
+  <div v-if="values">
     <ul class="Tags">
       <li
         class="Tag"
-        v-for="tag in jsonValues.tags"
+        v-for="tag in values.tags"
         :key="tag"
         @click="addFilter(tag)"
         :class="{
@@ -29,20 +29,19 @@
 export default {
   props: {
     values: {
-      type: String,
+      type: Object,
       required: true
     }
   },
   data: () => ({
-    jsonValues: null,
     filters: []
   }),
   computed: {
     filteredDatas() {
-      if (!this.jsonValues.elems) return;
+      if (!this.values.elems) return;
       let retDatas = {};
-      for (let pagePath in this.jsonValues.elems) {
-        const page = this.jsonValues.elems[pagePath];
+      for (let pagePath in this.values.elems) {
+        const page = this.values.elems[pagePath];
         if (this.isIncluded(page.tags) && page.old.done)
           retDatas[pagePath] = page;
       }
@@ -75,7 +74,7 @@ export default {
     }
   },
   mounted() {
-    this.jsonValues = JSON.parse(this.values);
+
     if (window.location.hash.match("filters")) {
       let filters = window.location.hash.split("=")[1];
       filters = filters.split(",");

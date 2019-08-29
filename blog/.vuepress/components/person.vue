@@ -4,8 +4,7 @@
     <div class="Person">
       <div class="Person-img Img">
         <a :href="person.profile" target="_blank">
-          <img :src="person.img" width="100" alt="Giraud Florent" />
-          <br />
+          <img :src="person.img" :alt="person.author" />
           <sub>
             <b>{{person.author}}</b>
           </sub>
@@ -64,6 +63,11 @@ export default {
   width: 100%;
   display: flex;
   flex-direction: column;
+  margin-left: 1rem;
+}
+
+.Person-description p {
+  margin-top: 0;
 }
 
 .Description-infos h4 {

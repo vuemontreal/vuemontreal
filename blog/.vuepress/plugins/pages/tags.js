@@ -1,11 +1,8 @@
 const toMD = extractedDatas => {
-  const stringDatas = JSON.stringify(extractedDatas, null, " ").replace(
-    /\n/g,
-    ""
-  );
+  const stringDatas = JSON.stringify(extractedDatas, null, " ").replace(/\n/g, "").replace(/'/g, "\\&apos\\;");
 
   return `
-<tags values='${stringDatas}' />
+<tags :values='${stringDatas}' />
 `;
 };
 
