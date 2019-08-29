@@ -18,7 +18,6 @@
         <div>{{meetup.old.location}}</div>
         <span v-for="(s, i) in speakers" :key="i" class="Preview-author">
           <a :href="s.profile" target="_blank" rel="noopener noreferrer">{{s.author}}</a>
-          <span v-if="i < speakers.length - 1" class="Author-separator">|</span>
         </span>
       </div>
     </div>
@@ -89,7 +88,8 @@ h4.Tag {
   margin-right: 10px;
 }
 
-.Author-separator {
+.Preview-author + .Preview-author:before {
+  content: "|";
   margin-right: 10px;
   margin-left: 10px;
 }
