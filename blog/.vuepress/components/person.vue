@@ -17,8 +17,7 @@
             <span class="Infos-text">Movie</span>
           </a>
           <a v-if="person.slide" :href="person.slide" target="_blank" rel="noopener noreferrer">
-            <vp-icon name="qianbao" />
-            <span class="Infos-text">Slide</span>
+            <vp-icon name="qianbao" /><span class="Infos-text">Slides</span>
           </a>
         </div>
         <p v-html="person.description"></p>

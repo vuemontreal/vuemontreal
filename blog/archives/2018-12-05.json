@@ -1,32 +1,32 @@
 {
   "location": "Code & Cafe, 4304 Rue Saint-Denis, Montreal, QC",
   "gmapIframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.3883541630685!2d-73.57987!3d45.522389999999994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDMxJzIwLjYiTiA3M8KwMzQnNDcuNSJX!5e0!3m2!1sfr!2sca!4v1566585784205!5m2!1sfr!2sca",
-  "backgroundImg": "/vue-logo-website-big-city.png",
-  "hour": "18h30 - 21h",
-  "date": "October 25th 2018",
+  "backgroundImg": "https://secure.meetupstatic.com/photos/event/4/9/8/highres_476341176.jpeg",
+  "hour": "18h30 - 21h00",
+  "date": "December 5th, 2018",
   "title": "002 - Implementing Vue.js In Legacy Code",
   "eventLink": "https://www.meetup.com/fr-FR/Vue-js-Montreal/events/256413040/",
   "done": true,
   "datas": [
     {
-      "title": "Vue.js in legacy app",
+      "title": "Vue in a legacy application - How we did it at Alayacare",
       "author": "Stéphane Reiss",
       "tags": ["English", "Intermediate"],
-      "description": "Vue.js in legacy app",
-      "slide": null,
+      "description": "Stéphane is a full-stack web developer, working at Alayacare, he contributed to the frontend transformation, from a legacy application to Vue components. He will show us how Vue.js was introduced and share the goods and the bads he learned along the way.",
+      "slide": "https://slides.com/sreiss/vuejs-in-legacy-app/",
       "video": null,
-      "img": "/placeholder.jpg",
-      "profile": "https://github.com/vuemontreal/vuemontreal"
+      "img": "https://media.licdn.com/dms/image/C4D03AQGzCjJ0a8EG4w/profile-displayphoto-shrink_800_800/0?e=1572480000&v=beta&t=prDx6wjqQWlmIS4TAdwsBYZylV6Jxt2SpM4PkqpSQT0",
+      "profile": "https://www.linkedin.com/in/st%C3%A9phane-reiss-aab3b718/"
     },
     {
-      "title": "How to integrate jQuery plugins with Vue",
+      "title": "How to integrate JQuery plugins with Vue",
       "author": "Luiz Brandao",
       "tags": ["English", "Beginner", "JQuery"],
-      "description": "How to integrate jQuery plugins with Vue",
-      "slide": null,
+      "description": "Luiz will explain how to integrate a JQuery plugin into a Vue.js app.",
+      "slide": "https://docs.google.com/presentation/d/1RKNwvG5_QCadIaTBeQEiSOQ6Pjd55Q6jOICTXet1BPg/edit?ts=5c085e51#slide=id.p",
       "video": null,
-      "img": "/placeholder.jpg",
-      "profile": "https://github.com/vuemontreal/vuemontreal"
+      "img": "https://avatars1.githubusercontent.com/u/704231?s=400&v=4",
+      "profile": "https://twitter.com/LuizBrandaoJr"
     }
   ]
 }
