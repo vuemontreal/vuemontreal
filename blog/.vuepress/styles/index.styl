@@ -1,10 +1,24 @@
-.theme-default-content:not(.custom) {
+// Available variales inherints from: 
+// https://github.com/vuejs/vuepress/blob/master/packages/%40vuepress/core/lib/client/style/config.styl
+
+* {
+  box-sizing: border-box;
+}
+
+.theme-default-content {
   margin: 0;
   min-width: 100%;
 }
 
-@media (max-width: 1160px) {
-  .theme-default-content:not(.custom) {
+
+// @media (max-width: $MQNarrow) {
+//   .page-edit.page-edit, .page-nav {
+//     padding: 1em 2.5em;
+//   }
+// }
+
+@media (min-width: $MQMobile) and (max-width: 1160px) {
+  .theme-default-content, .page-edit {
     margin-left: 0 !important;
     margin-right: 0 !important;
     padding-left: 0 !important;
@@ -12,6 +26,14 @@
     width: 80% !important;
     margin: auto !important;
     min-width: inherit;
+  }
+}
+
+@media (min-width: 1161px) {
+  .page-edit.page-edit {
+    width: 100%;
+    max-width: none;
+    margin: 0;
   }
 }
 

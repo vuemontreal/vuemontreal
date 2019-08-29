@@ -6,7 +6,7 @@
     <div class="Preview-right">
       <div class="Preview-intro">
         <a class="pointer" @click="sendToArchives">{{meetup.old.title}}</a>
-        <div class="Preview-tags">{{meetup.tags.join(',')}}</div>
+        <div class="Preview-tags">{{meetup.tags.join(', ')}}</div>
       </div>
       <div>
         <div>{{meetup.old.location}}</div>
