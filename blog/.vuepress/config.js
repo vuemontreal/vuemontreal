@@ -1,5 +1,5 @@
 module.exports = {
-  description: "Vue Montreal Meetups actuality",
+  description: "All about Vue Montreal meetups community",
   theme: "thindark",
   themeConfig: {
     repo: "vuemontreal/vuemontreal",

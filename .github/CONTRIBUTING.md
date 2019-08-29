@@ -37,7 +37,7 @@ you should fill this object
     {
       "title": "VueJS Introduction",
       "author": "f3ltron",
-      "tags": ["vue", "javascript", "beginner"], // necessary to use relevant tags because we will have a search with tags later if it's not already here
+      "tags": ["Vue", "JavaScript", "Beginner"], // necessary to use relevant tags because we will have a search with tags later if it's not already here
       "description": "The purpose of this first evening is to discover the advantages of Vue.js. Whether to create an entire application, or to gradually integrate it into an existing application, we will see how Vue.js is a flexible, practical and easy-to-use framework.",
       "slide": null, // it could be null or external link
       "video": null, // it could be null or external link
