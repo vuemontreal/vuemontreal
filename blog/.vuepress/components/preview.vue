@@ -12,7 +12,6 @@
         <div>{{meetup.old.location}}</div>
         <span v-for="(s, i) in speakers" :key="i" class="Preview-author">
           <a :href="s.profile" target="_blank">{{s.author}}</a>
-          <span class="Author-separator">|</span>
         </span>
       </div>
     </div>
@@ -72,7 +71,8 @@ export default {
   margin-right: 40px;
 }
 
-.Author-separator {
+.Preview-author + .Preview-author:before {
+  content: "|";
   margin-right: 10px;
   margin-left: 10px;
 }
