@@ -11,7 +11,7 @@
       <div>
         <div>{{meetup.old.location}}</div>
         <span v-for="(s, i) in speakers" :key="i" class="Preview-author">
-          <a :href="s.profile" target="_blank">{{s.author}}</a>
+          <a :href="s.profile" target="_blank" rel="noopener noreferrer">{{s.author}}</a>
           <span class="Author-separator">|</span>
         </span>
       </div>

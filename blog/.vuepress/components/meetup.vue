@@ -24,12 +24,14 @@
             class="Btn Btn--3d white bg-green"
             :href="values.eventLink"
             target="_blank"
+            rel="noopener noreferrer"
           >See Meetup.com Event</a>
           <a
             v-else
             class="Btn Btn--3d white bg-green"
             :href="values.eventLink"
             target="_blank"
+            rel="noopener noreferrer"
           >Register To Attend</a>
         </div>
       </div>

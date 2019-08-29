@@ -3,7 +3,7 @@
     <h2 :id="person.title" v-html="person.title"></h2>
     <div class="Person">
       <div class="Person-img Img">
-        <a :href="person.profile" target="_blank">
+        <a :href="person.profile" target="_blank" rel="noopener noreferrer">
           <img :src="person.img" :alt="person.author" />
           <sub>
             <b>{{person.author}}</b>
@@ -12,11 +12,11 @@
       </div>
       <div class="Person-description">
         <div class="Description-infos">
-          <a v-if="person.video" :href="person.video" target="_blank">
+          <a v-if="person.video" :href="person.video" target="_blank" rel="noopener noreferrer">
             <vp-icon name="eye" />
             <span class="Infos-text">Movie</span>
           </a>
-          <a v-if="person.slide" :href="person.slide" target="_blank">
+          <a v-if="person.slide" :href="person.slide" target="_blank" rel="noopener noreferrer">
             <vp-icon name="qianbao" />
             <span class="Infos-text">Slide</span>
           </a>
