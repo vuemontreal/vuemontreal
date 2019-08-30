@@ -14,6 +14,7 @@ just go [HERE](https://vuemontreal.org/contributing.html).
   <tr>
     <td align="center"><a href="https://github.com/f3ltron"><img src="https://avatars1.githubusercontent.com/u/11556276?v=4" width="100px;" alt="Giraud Florent"/><br /><sub><b>Giraud Florent</b></sub></a><br /><a href="https://github.com/vuemontreal/vuemontreal/commits?author=f3ltron" title="Code">💻</a> <a href="https://github.com/vuemontreal/vuemontreal/commits?author=f3ltron" title="Documentation">📖</a></td>
     <td align="center"><a href="http://tlebel.com"><img src="https://avatars1.githubusercontent.com/u/1448836?v=4" width="100px;" alt="Tommy Lebel"/><br /><sub><b>Tommy Lebel</b></sub></a><br /><a href="https://github.com/vuemontreal/vuemontreal/commits?author=tlebel" title="Code">💻</a> <a href="https://github.com/vuemontreal/vuemontreal/commits?author=tlebel" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/T0RAT0RA"><img src="https://avatars3.githubusercontent.com/u/5289520?v=4" width="100px;" alt="T0RAT0RA"/><br /><sub><b>T0RAT0RA</b></sub></a><br /><a href="https://github.com/vuemontreal/vuemontreal/commits?author=T0RAT0RA" title="Code">💻</a> <a href="https://github.com/vuemontreal/vuemontreal/commits?author=T0RAT0RA" title="Documentation">📖</a></td>
   </tr>
 </table>
 
