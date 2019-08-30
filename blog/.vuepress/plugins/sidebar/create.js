@@ -14,19 +14,27 @@ module.exports = filesExtractedDatas => {
     }
   });
 
-  const navBarAddition = {
-    text: "Archives",
-    link: "/archives/" + sidebar[0][0]
-  };
-
   const Events = {
     text: "Events",
-    link: "/events/index.html"
-  };
-
-  const Tags = {
-    text: "Tags",
-    link: "/tags/index.html"
+    items: [
+      {
+        text: "Group 1",
+        items: [
+          {
+            text: "Next Event",
+            link: "/events/index.html"
+          },
+          {
+            text: "Tags",
+            link: "/tags/index.html"
+          },
+          {
+            text: "Archives",
+            link: "/archives/" + sidebar[0][0]
+          }
+        ]
+      }
+    ]
   };
 
   return {
@@ -40,16 +48,12 @@ module.exports = filesExtractedDatas => {
           }) => {
             
             const sidebar = ${JSON.stringify(sidebar)};
-            const navBarAddition = ${JSON.stringify(navBarAddition)}
             const events = ${JSON.stringify(Events)}
-            const tags = ${JSON.stringify(Tags)}
             if (!siteData.themeConfig['sidebar']) siteData.themeConfig['sidebar'] = {}
             siteData.themeConfig.sidebar['/archives/'] = sidebar
             if (!siteData.themeConfig.nav) siteData.themeConfig.nav = []
             siteData.themeConfig.nav = [
               events,
-              tags,
-              navBarAddition,
               ...siteData.themeConfig.nav
             ];
           }
