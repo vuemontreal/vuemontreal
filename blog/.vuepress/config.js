@@ -9,6 +9,23 @@ module.exports = {
     logo: "/vue-logo-website-trimmed-transparent.png",
     lastUpdated: "Last Updated",
     nav: [
+      {
+        text: "Events",
+        items: [
+          {
+            text: "Next Event",
+            link: "/events/index.html"
+          },
+          {
+            text: "Tags",
+            link: "/tags/index.html"
+          },
+          {
+            text: "Archives",
+            link: ""
+          }
+        ]
+      },
       { text: "Contribute", link: "/contributing" },
       {
         text: "Slack",
