@@ -22,7 +22,7 @@ module.exports = {
           },
           {
             text: "Archives",
-            link: ""
+            link: "" // Defined at compile time in blog/.vuepress/plugins/sidebar/create.js
           }
         ]
       },
