@@ -14,19 +14,9 @@ module.exports = filesExtractedDatas => {
     }
   });
 
-  const navBarAddition = {
+  const Archives = {
     text: "Archives",
     link: "/archives/" + sidebar[0][0]
-  };
-
-  const Events = {
-    text: "Events",
-    link: "/events/index.html"
-  };
-
-  const Tags = {
-    text: "Tags",
-    link: "/tags/index.html"
   };
 
   return {
@@ -40,18 +30,11 @@ module.exports = filesExtractedDatas => {
           }) => {
             
             const sidebar = ${JSON.stringify(sidebar)};
-            const navBarAddition = ${JSON.stringify(navBarAddition)}
-            const events = ${JSON.stringify(Events)}
-            const tags = ${JSON.stringify(Tags)}
+            const archives = ${JSON.stringify(Archives)};
             if (!siteData.themeConfig['sidebar']) siteData.themeConfig['sidebar'] = {}
-            siteData.themeConfig.sidebar['/archives/'] = sidebar
+            siteData.themeConfig.sidebar['/archives/'] = sidebar;
             if (!siteData.themeConfig.nav) siteData.themeConfig.nav = []
-            siteData.themeConfig.nav = [
-              events,
-              tags,
-              navBarAddition,
-              ...siteData.themeConfig.nav
-            ];
+            siteData.themeConfig.nav[0].items[2] = archives
           }
         `
   };
