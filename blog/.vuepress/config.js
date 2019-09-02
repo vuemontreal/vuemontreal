@@ -13,8 +13,8 @@ module.exports = {
         text: "Events",
         items: [
           {
-            text: "Next Event",
-            link: "/events/index.html"
+            text: "Upcoming Event",
+            link: "" // Defined at compile time in blog/.vuepress/plugins/sidebar/create.js
           },
           {
             text: "Tags",
