@@ -8,11 +8,6 @@ const toMD = ({tags, events}) => {
 };
 
 module.exports = events => {
-  let extractedDatas = {
-    elems: {},
-    tags: []
-  };
-
   // Extract tags from events
   const tags = events.reduce((allTags, event) => {
 
@@ -21,21 +16,6 @@ module.exports = events => {
     });
 
     return allTags;
-    eventTags = datas.tags
-
-    let tmp = {
-      tags: [],
-      old: event.datas
-    };
-
-    datas.datas.map(({ tags }) => {
-      tags.map(t => {
-        if (!extractedDatas.tags.includes(t)) extractedDatas.tags.push(t);
-        if (!tmp.tags.includes(t)) tmp.tags.push(t);
-      });
-    });
-
-    extractedDatas.elems[event.path] = tmp;
   }, new Set());
 
   return [
