@@ -26,6 +26,8 @@
 
 
 <script>
+import moment from 'moment';
+
 export default {
   props: {
     meetup: {
@@ -46,7 +48,11 @@ export default {
   },
   methods: {
     sendToArchives() {
-      this.$router.push("/" + this.meetup.name + ".html");
+      // TODO:
+      const startAt = moment(this.meetup.startAt);
+      const path = startAt.isBefore(moment())? 'archives' : 'upcoming';
+      const eventName = startAt.format('YYYY-MM-DD');
+      this.$router.push(`/${path}/${eventName}.html`);
     },
     meetupTags(meetup) {
       if (!meetup.datas) {
