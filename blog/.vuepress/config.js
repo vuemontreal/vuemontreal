@@ -13,8 +13,8 @@ module.exports = {
         text: "Events",
         items: [
           {
-            text: "Upcoming Event",
-            link: "" // Defined at compile time in blog/.vuepress/plugins/sidebar/create.js
+            text: "Upcoming Events",
+            link: "" // Defined at compile time in blog/.vuepress/plugins/eventSidebars.js
           },
           {
             text: "Tags",
@@ -22,7 +22,7 @@ module.exports = {
           },
           {
             text: "Archives",
-            link: "" // Defined at compile time in blog/.vuepress/plugins/sidebar/create.js
+            link: "" // Defined at compile time in blog/.vuepress/plugins/eventSidebars.js
           }
         ]
       },
