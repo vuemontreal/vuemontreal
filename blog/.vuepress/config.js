@@ -30,7 +30,7 @@ module.exports = {
       {
         text: "Slack",
         link:
-          "https://vuemontreal.slack.com/join/shared_invite/enQtNDk3NjY4NDU3NjIzLTUwZTNlMTcyYTM3MDkyOWM2YzQyMmNiY2VkNWIyMTE5ZWY2ZmZhMDhkM2QxZmViNGExZDFiZmQ0NTc0ODI0NDY"
+          "http://bit.ly/vuemontreal-slack"
       }
     ]
   },
