@@ -31,6 +31,11 @@ module.exports = {
         text: "Slack",
         link:
           "http://bit.ly/vuemontreal-slack"
+      },
+      {
+        text: "LinkedIn",
+        link:
+          "https://www.linkedin.com/groups/12289604/"
       }
     ]
   },
