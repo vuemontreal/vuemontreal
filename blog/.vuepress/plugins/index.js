@@ -15,7 +15,7 @@ module.exports = () => {
     additionalPages: [
       {
         path: '/upcoming/no-event.html',
-        filePath: path.resolve(__dirname, '../templates/no-events.md')
+        filePath: path.resolve(__dirname, '../templates/no-event.md')
       },
       ...pages,
       ...tagsPages,
