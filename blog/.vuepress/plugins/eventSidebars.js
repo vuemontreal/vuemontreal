@@ -16,7 +16,10 @@ module.exports = events => {
 
             const meetupDates = ${JSON.stringify(meetupDates)};
             const previousMeetups = meetupDates.filter(page => moment(page).isBefore(moment()) )
-            const upcomingMeetups = meetupDates.filter(page => moment(page).isAfter(moment()) );
+            let upcomingMeetups = meetupDates.filter(page => moment(page).isAfter(moment()) );
+            if (upcomingMeetups.length === 0) {
+              upcomingMeetups.push('no-event.html')
+            }
             if (!siteData.themeConfig['sidebar']) siteData.themeConfig['sidebar'] = {}
             siteData.themeConfig.sidebar['/archives/'] = previousMeetups.map(m => [m,m]);
             siteData.themeConfig.sidebar['/upcoming/'] = upcomingMeetups.map(m => [m,m]);
