@@ -14,7 +14,7 @@
       "tags": ["English", "Beginner"],
       "description": "This talk will explore how a basic JavaScript framework works and how easy it can be to create a simple one. We will also see why you should not do create your own framework.",
       "slide": "https://slides.com/florentgiraud/deck-266841f3-9afd-4956-8e7b-6cbc25a3f97d",
-      "video": null,
+      "video": "https://www.youtube.com/watch?v=ayOhoNbOFtU&feature=youtu.be",
       "img": "https://avatars1.githubusercontent.com/u/11556276?v=4",
       "profile": "https://github.com/f3ltron"
     },
@@ -24,7 +24,7 @@
       "tags": ["English", "Intermediate"],
       "description": "This talk will explore how Vue.js transforms the template tag in a Vue single file component into HTML.",
       "slide": "https://docs.google.com/presentation/d/1pjrl5FfqZN5lH5FU96VGNXO8F7zZPmCB0EnFWYvuXuk/edit?usp=sharing",
-      "video": null,
+      "video": "https://www.youtube.com/watch?v=IBAR1MGhyaI&feature=youtu.be",
       "img": "https://avatars3.githubusercontent.com/u/1448836?s=460&v=4",
       "profile": "https://www.linkedin.com/in/tommylebel/"
     }
