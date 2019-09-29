@@ -1,0 +1,34 @@
+name: documentation deployment
+
+on:
+  push:
+    branches:
+    - master
+
+jobs:
+  docs-build:
+
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node_version: [10]
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v1
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: generate and publish doc
+      run: |
+        npm ci
+        npm run build
+        cd blog/.vuepress/dist
+        echo 'vuemontreal.org' > CNAME
+        git init
+        git add -A
+        git commit -m 'deploy vuepress montreal blog'
+        git push -f git@github.com:vuemontreal/vuemontreal.git master:gh-pages
+
+      env:
+        CI: true
