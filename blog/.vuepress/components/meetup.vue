@@ -8,7 +8,7 @@
       <div class="Right-content Content white--dark bg-dark">
         <div class="Place-info Info">
           <div class="icon"><vp-icon name="clock" /></div>
-          <div class="Title">{{values.date}} {{values.hour}}</div>
+          <div class="Title">{{ computedStartDate }} {{ computedStartHour }} - {{ computedEndHour }}</div>
         </div>
         <div class="Place-info Info">
           <div class="icon"><vp-icon name="map" /></div>
@@ -37,6 +37,8 @@
 </template>
 
 <script>
+import moment from 'moment';
+
 export default {
   props: {
     values: {
@@ -44,6 +46,17 @@ export default {
       required: true
     }
   },
+  computed: {
+    computedStartDate() {
+      return `${moment(this.values.startAt).format('MMMM Do, YYYY')}`;
+    },
+    computedStartHour() {
+      return `${moment(this.values.startAt).format('HH:mm')}`;
+    },
+    computedEndHour() {
+      return `${moment(this.values.endAt).format('HH:mm')}`;
+    }
+  }
 };
 </script>
 

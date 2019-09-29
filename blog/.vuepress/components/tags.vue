@@ -1,13 +1,13 @@
 <template>
-  <div v-if="values">
+  <div v-if="tags">
     <ul class="Tags">
       <li
         class="Tag"
-        v-for="tag in values.tags"
+        v-for="tag in tags"
         :key="tag"
         @click="addFilter(tag)"
         :class="{
-          activeTag: filters.includes(tag)
+          activeTag: activeFilters.includes(tag)
       }"
       >
         <vp-icon name="tag" />
@@ -15,12 +15,12 @@
       </li>
     </ul>
     <hr class="Tags-hr" />
-    <ul v-if="filters.length">
-      <li v-for="(elem, i) in filteredDatas" :key="i" class="Preview-block">
-        <preview :meetup="elem" />
+    <ul v-if="activeFilters.length">
+      <li v-for="(event, i) in filteredEvents" :key="i" class="Preview-block">
+        <preview :meetup="event" />
       </li>
     </ul>
-    <div v-else class="noFilter">no filters Selected</div>
+    <div v-else class="noFilter">No filters selected</div>
   </div>
 </template>
 
@@ -28,40 +28,41 @@
 <script>
 export default {
   props: {
-    values: {
-      type: Object,
+    tags: {
+      type: Array,
+      required: true
+    },
+    events: {
+      type: Array,
       required: true
     }
   },
   data: () => ({
-    filters: []
+    activeFilters: [],
   }),
   computed: {
-    filteredDatas() {
-      if (!this.values.elems) return;
-      let retDatas = {};
-      for (let pagePath in this.values.elems) {
-        const page = this.values.elems[pagePath];
-        if (this.isIncluded(page.tags))
-          retDatas[pagePath] = page;
-      }
-      this.setQuery();
-      return retDatas;
+    filteredEvents() {
+      // if (!this.events) return;
+
+      return this.events.filter(event => {
+        return event.datas.some(d => d.tags.some(tag => this.activeFilters.includes(tag)));
+      });
     }
   },
   methods: {
     addFilter(filter) {
-      if (!this.filters.includes(filter)) this.filters.push(filter);
-      else {
-        let tmp = [];
-        this.filters.forEach(e => {
-          if (e !== filter) tmp.push(e);
-        });
-        this.filters = tmp;
+      const filtersSet = new Set(this.activeFilters);
+      if (filtersSet.has(filter)) {
+        filtersSet.delete(filter);
+      } else {
+        filtersSet.add(filter);
       }
+      this.activeFilters = Array.from(filtersSet);
+
+      this.updateRoute();
     },
-    setQuery() {
-      window.location.hash = "filters=" + this.filters.toString();
+    updateRoute() {
+      window.location.hash = "filters=" + this.activeFilters.toString();
     },
     isIncluded(from) {
       let isFound = false;
@@ -74,12 +75,11 @@ export default {
     }
   },
   mounted() {
-
     if (window.location.hash.match("filters")) {
       let filters = window.location.hash.split("=")[1];
       filters = filters.split(",");
       if (filters[0] && filters[0].length === 0) return;
-      this.filters = filters;
+      this.activeFilters = filters;
     }
   }
 };

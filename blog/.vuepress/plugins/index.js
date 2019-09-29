@@ -1,22 +1,27 @@
-const { find, build, extract, tags } = require("./pages");
-const { create } = require("./sidebar");
-const path = require("path");
+const events = require("./getEventsData");
+const createEventPages = require("./eventPages");
+const createTagsPage = require("./tagsPage");
+const createEventSidebars = require("./eventSidebars");
+const path = require('path');
 
-module.exports = (givenOpts = {}) => {
-  const files = find(
-    givenOpts.archivesAbsolutePath || path.resolve(__dirname, "../../archives")
-  ).reverse();
+module.exports = () => {
+  const pages = createEventPages(events);
 
-  const filesExtractedDatas = extract(files);
-
-  const pages = build(filesExtractedDatas);
-
-  const tagsPages = tags(pages);
-  const createdSidebar = create(filesExtractedDatas);
+  const tagsPages = createTagsPage(events);
+  const createdSidebars = createEventSidebars(events);
 
   return {
     name: "vuepress-plugin-montreal-blog",
-    additionalPages: [...pages, ...tagsPages],
-    enhanceAppFiles: [createdSidebar]
+    additionalPages: [
+      {
+        path: '/upcoming/no-event.html',
+        filePath: path.resolve(__dirname, '../templates/no-event.md')
+      },
+      ...pages,
+      ...tagsPages,
+    ],
+    enhanceAppFiles: [
+      createdSidebars,
+    ]
   };
 };
