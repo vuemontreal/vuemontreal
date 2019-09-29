@@ -6,7 +6,7 @@ tagline: Find our last Meetups!
 actionText: Events →
 actionLink: /events/upcoming.html
 features:
-  - title: Conferences
+  - title: Conferences !
     details: Mark your calendar for conferences with dedicated tracks to your favorite framework and keep track of call for proposals!
   - title: Meetups
     details: Find local meetup groups and meet with fellow Vue.js enthusiasts!
