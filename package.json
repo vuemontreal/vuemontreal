@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/vuemontreal/vuemontreal#readme",
   "devDependencies": {
-    "@goy/vuepress-plugin-svg-icons": "^2.0.1",
+    "@goy/vuepress-plugin-svg-icons": "3.1.2",
     "@vuepress/plugin-google-analytics": "1.1.0",
     "@vuepress/plugin-register-components": "1.1.0",
     "all-contributors-cli": "^6.8.1",
