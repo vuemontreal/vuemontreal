@@ -26,7 +26,7 @@ jobs:
         git init
         git add -A
         git commit -m 'deploy vuepress montreal blog'
-        git push -f https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com/vuemontreal/vuemontreal.git master:gh-pages
+        git push -f https://${{ secrets.GH_PAGES_PAT }}:x-oauth-basic@github.com/vuemontreal/vuemontreal.git master:gh-pages
 
       env:
         CI: true
