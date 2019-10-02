@@ -17,7 +17,7 @@ jobs:
     - uses: actions/checkout@v1
     - name: generate and publish doc
       run: |
-        npm i
+        npm ci
         npm run build
         cd blog/.vuepress/dist
         echo 'vuemontreal.org' > CNAME

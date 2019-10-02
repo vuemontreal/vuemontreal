@@ -7,6 +7,7 @@
   "title": "002 - Implementing Vue.js In Legacy Code",
   "eventLink": "https://www.meetup.com/fr-FR/Vue-js-Montreal/events/256413040/",
   "done": true,
+  "sponsors": [],
   "datas": [
     {
       "title": "Vue in a legacy application - How we did it at Alayacare",

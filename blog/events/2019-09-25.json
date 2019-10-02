@@ -7,6 +7,11 @@
   "title": "004 - Inner workings of a JavaScript Framework",
   "eventLink": "https://www.meetup.com/Vue-js-Montreal/events/264317778/",
   "done": false,
+  "sponsors": [{
+    "name": "Atecna",
+    "link": "https://www.atecna.ca/",
+    "img": "/atecna-logo.png"
+  }],
   "datas": [
     {
       "title": "Why do we need a front-end framework, and how does it work?",

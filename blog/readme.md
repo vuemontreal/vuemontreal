@@ -2,7 +2,6 @@
 home: true
 heroImage: /vue-logo-website-big-city.png
 heroText: Vue.js Montreal
-tagline: Find our last Meetups!
 features:
   - title: Conferences !
     details: Mark your calendar for conferences with dedicated tracks to your favorite framework and keep track of call for proposals!

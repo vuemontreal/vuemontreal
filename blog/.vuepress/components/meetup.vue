@@ -2,6 +2,15 @@
   <div class="Mtl" v-if="values">
     <div class="Mtl-left">
       <img :src="values.backgroundImg" class="Left-img" />
+      <div v-if="values.sponsors.length">
+        <h2>Thanks to Our Sponsors:</h2>
+        <div style="padding-bottom: 100px;">
+          <a v-for="sponsor in values.sponsors" :key="sponsor.name" :href="sponsor.link">
+            <img :src="sponsor.img" :alt="sponsor.name" width="100px">
+          </a>
+        </div>
+      </div>
+
       <person v-for="person in values.datas" :key="person.author" :person="person" />
     </div>
     <div class="Mtl-right Right">
