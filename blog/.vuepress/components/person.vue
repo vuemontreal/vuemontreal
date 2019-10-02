@@ -12,10 +12,12 @@
       </div>
       <div class="Person-description">
         <div class="Description-infos">
-          <a v-if="person.video" :href="person.video" target="_blank" rel="noopener noreferrer">
+          <template v-if="person.video">
+          <a :href="person.video" target="_blank" rel="noopener noreferrer">
             <vp-icon name="eye" /><span class="Infos-text">Recording</span>
           </a>
           &nbsp;
+          </template>
           <a v-if="person.slide" :href="person.slide" target="_blank" rel="noopener noreferrer">
             <vp-icon name="qianbao" /><span class="Infos-text">Slides</span>
           </a>

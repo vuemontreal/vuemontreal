@@ -7,7 +7,11 @@
   "title": "001 - Vuejs Montréal - Première édition: Introduction à Vuejs",
   "eventLink": "https://www.meetup.com/fr-FR/Vue-js-Montreal/events/255101915/",
   "done": true,
-  "sponsors": [],
+  "sponsors": [{
+    "name": "Gsquad",
+    "link": "https://www.gsquad.com/",
+    "img": "/logo-gsquad.svg"
+  }],
   "datas": [
     {
       "title": "JS, Vue.js, pas l'temps d'niaiser",

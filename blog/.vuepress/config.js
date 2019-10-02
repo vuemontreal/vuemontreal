@@ -150,5 +150,12 @@ module.exports = {
       }
     ],
     [require("./plugins")]
-  ]
+  ],
+  markdown: {
+    externalLinks: {
+      target: '_blank', 
+      rel: 'noopener noreferrer',
+      class: 'external-link',
+    },
+  },
 };

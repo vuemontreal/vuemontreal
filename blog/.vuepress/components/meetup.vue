@@ -3,10 +3,10 @@
     <div class="Mtl-left">
       <img :src="values.backgroundImg" class="Left-img" />
       <div v-if="values.sponsors.length">
-        <h2>Thanks to Our Sponsors:</h2>
-        <div style="padding-bottom: 100px;">
-          <a v-for="sponsor in values.sponsors" :key="sponsor.name" :href="sponsor.link">
-            <img :src="sponsor.img" :alt="sponsor.name" width="100px">
+        <h2>Thanks to Our Event Sponsor{{ values.sponsors.length > 1 ? 's':'' }}</h2>
+        <div>
+          <a v-for="sponsor in values.sponsors" :key="sponsor.name" :href="sponsor.link" target="_blank" rel="noopener noreferrer">
+            <img :src="sponsor.img" :alt="sponsor.name" width="200px">
           </a>
         </div>
       </div>

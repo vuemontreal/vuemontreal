@@ -6,11 +6,11 @@
   "endAt": "2019-09-25T21:00:00-05:00",
   "title": "004 - Inner workings of a JavaScript Framework",
   "eventLink": "https://www.meetup.com/Vue-js-Montreal/events/264317778/",
-  "done": false,
+  "done": true,
   "sponsors": [{
     "name": "Atecna",
     "link": "https://www.atecna.ca/",
-    "img": "/atecna-logo.png"
+    "img": "/logo-atecna.svg"
   }],
   "datas": [
     {

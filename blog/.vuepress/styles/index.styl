@@ -109,6 +109,17 @@
 h1{
   text-align: center;
 }
-.theme-default-content.custom img{
-  padding:15px;
+
+.external-link {
+  position: relative;
+
+  img {
+    margin: 15px;
+    width: 200px;
+    max-height: 45px;
+  }
+
+  img + svg.icon.outbound { 
+    display: none;
+  }
 }
