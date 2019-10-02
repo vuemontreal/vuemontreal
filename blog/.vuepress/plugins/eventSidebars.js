@@ -21,6 +21,7 @@ module.exports = events => {
               upcomingMeetups.push('no-event.html')
             }
             if (!siteData.themeConfig['sidebar']) siteData.themeConfig['sidebar'] = {}
+            console.log(siteData.themeConfig)
             siteData.themeConfig.sidebar['/archives/'] = previousMeetups.map(m => [m,m]);
             siteData.themeConfig.sidebar['/upcoming/'] = upcomingMeetups.map(m => [m,m]);
             if (!siteData.themeConfig.nav) siteData.themeConfig.nav = []

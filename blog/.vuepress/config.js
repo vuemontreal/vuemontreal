@@ -1,6 +1,5 @@
 module.exports = {
   description: "All about Vue Montreal meetups community",
-  theme: "thindark",
   themeConfig: {
     repo: "vuemontreal/vuemontreal",
     docsDir: "blog",
@@ -39,7 +38,7 @@ module.exports = {
       }
     ]
   },
-  title: "Vue Montreal",
+  title: "",
   head: [
     [
       "link",
