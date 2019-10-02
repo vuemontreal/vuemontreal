@@ -26,7 +26,7 @@
     {
       "title": "From Vuejs template tag to HTML, how does it work?",
       "author": "Tommy Lebel",
-      "tags": ["English", "Intermediate"],
+      "tags": ["English", "Intermediate", "single-file-component"],
       "description": "This talk will explore how Vue.js transforms the template tag in a Vue single file component into HTML.",
       "slide": "https://docs.google.com/presentation/d/1pjrl5FfqZN5lH5FU96VGNXO8F7zZPmCB0EnFWYvuXuk/edit?usp=sharing",
       "video": "https://www.youtube.com/watch?v=IBAR1MGhyaI&feature=youtu.be",
