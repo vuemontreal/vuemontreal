@@ -38,7 +38,7 @@ module.exports = {
       }
     ]
   },
-  title: "",
+  title: "VueMtl",
   head: [
     [
       "link",
