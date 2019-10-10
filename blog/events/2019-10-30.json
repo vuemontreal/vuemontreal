@@ -17,7 +17,7 @@
         "title": "Atelier d'introduction à NuxtJS + workshop",
         "author": "Adrien Desola",
         "tags": ["French", "Beginner"],
-        "description": "This talk will explore how a basic JavaScript framework works and how easy it can be to create a simple one. We will also see why you should not do create your own framework.",
+        "description": "Pour le meetup Vue Montreal #005, nous aurons la chance d'avoir un atelier NuxtJS (https://nuxtjs.org/)! NuxtJS est un framework qui vous aide à bâtir des applications Vue.js plus rapidement. NuxtJS permet également le rendu côté serveur (SSR universel), qui est très utile pour les applications qui nécessitent un SEO de qualité. Cet atelier s'adresse à toute personne intéressée à découvrir NuxtJS tout en mettant la main à la pâte. Une présentation théorique sur NuxtJS sera suivie de l'atelier hands-on où vous pourrez bâtir votre première application NuxtJS.",
         "slide": null,
         "video": null,
         "img": "/adrien.jpeg",
