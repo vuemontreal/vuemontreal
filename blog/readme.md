@@ -3,6 +3,8 @@ home: true
 heroImage: /vue-logo-website-big-city.png
 heroText: Vue.js Montreal
 description: All about Vue Montreal Meetups and Community 
+actionText: Next Event →
+actionLink: /upcoming/2019-10-30.html
 features:
   - title: Conferences !
     details: Mark your calendar for conferences with dedicated tracks to your favorite framework and keep track of call for proposals!
