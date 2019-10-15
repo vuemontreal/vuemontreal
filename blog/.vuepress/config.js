@@ -1,5 +1,5 @@
 module.exports = {
-  description: "All about Vue Montreal meetups community",
+  description: "Vue.js Community in Montreal (Quebec, Canada) talking about Vue.js in Meetups, Slack channel, LinkedIn group, and more!",
   themeConfig: {
     repo: "vuemontreal/vuemontreal",
     docsDir: "blog",
@@ -38,7 +38,7 @@ module.exports = {
       }
     ]
   },
-  title: "",
+  title: 'Vue Montreal - Vue.js Community in Montreal, QC',
   head: [
     [
       "link",
