@@ -11,6 +11,3 @@ features:
     details: Wondering when the next in-person training session is going to happen? You can find all that information here too!
 footer: MIT Licensed @vue-montreal
 ---
-# Thanks to Our Sponsors
-[![atecna Logo](/logo-atecna.svg "Atecna Logo")](https://www.atecna.ca/)
-[![gsquad Logo](/logo-gsquad.svg "Gsquad Logo")](https://www.gsquad.com/)
