@@ -1,28 +1,29 @@
 {
-    "location": "AlayaCare 4200 Boul St-Laurent #800 · Montréal, QC",
-    "gmapIframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.6064711566214!2d-73.58438308444073!3d45.51799997910152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDMxJzA0LjgiTiA3M8KwMzQnNTUuOSJX!5e0!3m2!1sfr!2sca!4v1570709599196!5m2!1sfr!2sca",
-    "backgroundImg": "https://secure.meetupstatic.com/photos/event/5/6/7/d/highres_484402141.jpeg",
-    "startAt": "2019-10-30T17:30:00-05:00",
-    "endAt": "2019-10-30T21:00:00-05:00",
-    "title": "005 - Atelier d'introduction à NuxtJS",
-    "eventLink": "https://www.meetup.com/fr-FR/Vue-js-Montreal/events/265542307/",
-    "done": false,
-    "sponsors": [{
+  "location": "AlayaCare 4200 Boul St-Laurent #800 · Montréal, QC",
+  "gmapIframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.6064711566214!2d-73.58438308444073!3d45.51799997910152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDMxJzA0LjgiTiA3M8KwMzQnNTUuOSJX!5e0!3m2!1sfr!2sca!4v1570709599196!5m2!1sfr!2sca",
+  "backgroundImg": "https://secure.meetupstatic.com/photos/event/5/6/7/d/highres_484402141.jpeg",
+  "startAt": "2019-10-30T17:30:00-05:00",
+  "endAt": "2019-10-30T21:00:00-05:00",
+  "title": "005 - Atelier d'introduction à NuxtJS",
+  "eventLink": "https://www.meetup.com/fr-FR/Vue-js-Montreal/events/265542307/",
+  "done": true,
+  "sponsors": [
+    {
       "name": "AlayaCare",
       "link": "https://www.alayacare.com/",
       "img": "/alayacare.webp"
-    }],
-    "datas": [
-      {
-        "title": "Atelier d'introduction à NuxtJS + workshop",
-        "author": "Adrien Desola",
-        "tags": ["French", "Beginner"],
-        "description": "Pour le meetup Vue Montreal #005, nous aurons la chance d'avoir un atelier NuxtJS (https://nuxtjs.org/)! NuxtJS est un framework qui vous aide à bâtir des applications Vue.js plus rapidement. NuxtJS permet également le rendu côté serveur (SSR universel), qui est très utile pour les applications qui nécessitent un SEO de qualité. Cet atelier s'adresse à toute personne intéressée à découvrir NuxtJS tout en mettant la main à la pâte. Une présentation théorique sur NuxtJS sera suivie de l'atelier hands-on où vous pourrez bâtir votre première application NuxtJS.",
-        "slide": null,
-        "video": null,
-        "img": "/adrien.jpeg",
-        "profile": "https://www.linkedin.com/in/adrien-desola/"
-      }
-    ]
-  }
-  
+    }
+  ],
+  "datas": [
+    {
+      "title": "Atelier d'introduction à NuxtJS + workshop",
+      "author": "Adrien Desola",
+      "tags": ["French", "Beginner"],
+      "description": "Pour le meetup Vue Montreal #005, nous aurons la chance d'avoir un atelier NuxtJS (https://nuxtjs.org/)! NuxtJS est un framework qui vous aide à bâtir des applications Vue.js plus rapidement. NuxtJS permet également le rendu côté serveur (SSR universel), qui est très utile pour les applications qui nécessitent un SEO de qualité. Cet atelier s'adresse à toute personne intéressée à découvrir NuxtJS tout en mettant la main à la pâte. Une présentation théorique sur NuxtJS sera suivie de l'atelier hands-on où vous pourrez bâtir votre première application NuxtJS.",
+      "slide": "https://www.ohmydeck.com/check-this/5S73aB4iNPPUb9f4TzPxo1",
+      "video": null,
+      "img": "/adrien.jpeg",
+      "profile": "https://www.linkedin.com/in/adrien-desola/"
+    }
+  ]
+}
