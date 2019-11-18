@@ -1,0 +1,29 @@
+{
+  "location": "AlayaCare 4200 Boul St-Laurent #800 · Montréal, QC",
+  "gmapIframe": "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795.6064711566214!2d-73.58438308444073!3d45.51799997910152!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDXCsDMxJzA0LjgiTiA3M8KwMzQnNTUuOSJX!5e0!3m2!1sfr!2sca!4v1570709599196!5m2!1sfr!2sca",
+  "backgroundImg": "https://secure.meetupstatic.com/photos/event/5/e/e/7/highres_486744295.jpeg",
+  "startAt": "2019-12-04T18:00:00-05:00",
+  "endAt": "2019-12-04T21:00:00-05:00",
+  "title": "006 - VueConf Toronto 2019: The Best Of (Bilingual Special)",
+  "eventLink": "https://www.meetup.com/fr-FR/Vue-js-Montreal/events/266474889/",
+  "done": false,
+  "sponsors": [
+    {
+      "name": "AlayaCare",
+      "link": "https://www.alayacare.com/",
+      "img": "/alayacare.webp"
+    }
+  ],
+  "datas": [
+    {
+      "title": "Atelier d'introduction à NuxtJS + workshop",
+      "author": "Vue Montreal Team",
+      "tags": ["French", "English", "vuetoronto"],
+      "description": "This year's VueConf in Toronto had a lot to offer! It gathered many members of the Vue.js Core team and other Vue.js heavy users who shared many exciting nuggets of wisdom! <br /> A few members of the VueMontreal community had the chance to attend. We asked some of them to share one or two of the best learnings they took away from it. <br /> BILINGUAL EVENT <br />  As this event will be the last of 2019, we want to celebrate with as many people as possible! Some talks will be in English, others in French. We will also have a few prices 🎁 to win, and we would like to give a chance to all of you to participate!",
+      "slide": null,
+      "video": null,
+      "img": "https://secure.meetupstatic.com/photos/event/5/e/e/7/highres_486744295.jpeg",
+      "profile": "https://www.linkedin.com/groups/12289604/"
+    }
+  ]
+}
