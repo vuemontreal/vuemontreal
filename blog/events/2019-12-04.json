@@ -16,14 +16,44 @@
   ],
   "datas": [
     {
-      "title": "006 - VueConf Toronto 2019: The Best Of (Bilingual Special)",
-      "author": "Vue Montreal Team",
-      "tags": ["French", "English", "vuetoronto"],
-      "description": "This year's VueConf in Toronto had a lot to offer! It gathered many members of the Vue.js Core team and other Vue.js heavy users who shared many exciting nuggets of wisdom! <br /> A few members of the VueMontreal community had the chance to attend. We asked some of them to share one or two of the best learnings they took away from it. <br /> BILINGUAL EVENT <br />  As this event will be the last of 2019, we want to celebrate with as many people as possible! Some talks will be in English, others in French. We will also have a few prices 🎁 to win, and we would like to give a chance to all of you to participate!",
-      "slide": null,
+      "title": "Accessibilité des formulaires",
+      "author": "Emilie Touchette",
+      "tags": ["French", "a11y", "accessibility", "vuetoronto"],
+      "description": "Qu'est-ce que l'accessibité dans un contexte web? Pour qui est-ce important? Pourquoi, en tant que concepteurs de logiciels (ou entreprise), devons-nous nous y intéresser dès aujourd'hui? Comment s'y prendre?",
+      "slide": "https://slides.com/et1421/deck",
       "video": null,
-      "img": "https://secure.meetupstatic.com/photos/event/5/e/e/7/highres_486744295.jpeg",
-      "profile": "https://www.linkedin.com/groups/12289604/"
+      "img": "https://media.licdn.com/dms/image/C5603AQFMlL2RpdT_Ew/profile-displayphoto-shrink_800_800/0?e=1580947200&v=beta&t=u1Kpk3hGGtmRKk1k_MvYk4Fk7IhbzDSZEyW03exBjh4",
+      "profile": "https://www.linkedin.com/in/emilie-touchette/"
+    },
+    {
+      "title": "Make Your Next JAM(stack) With Gridsome",
+      "author": "Constant Vallée Schmitter",
+      "tags": ["English", "gridsome", "jamstack", "vuetoronto"],
+      "description": "What is Gridsome? What is a JAMstack? Learn how you can easily make static and performant websites with Gridsome and GraphQL.",
+      "slide": "https://cranky-colden-0fa0c8.netlify.com/",
+      "video": null,
+      "img": "https://media.licdn.com/dms/image/C4E03AQGjTObrYiFz4g/profile-displayphoto-shrink_800_800/0?e=1580947200&v=beta&t=cVgQWwch_g8Fcrkq68tC5t4OxvBsml_SE3iKQKi-Yh4",
+      "profile": "https://www.linkedin.com/in/constantvallee/"
+    },
+    {
+      "title": "Quelques bonnes pratiques à appliquer si vous utilisez NuxtJS",
+      "author": "Florent Giraud",
+      "tags": ["French", "nuxtjs", "vuetoronto"],
+      "description": "Florent explorera quelques bonnes pratiques à appliquer sur un projet Nuxt. La plupart de ces pratiques peuvent également être appliquées pour des projets non-Nuxt, mais nous verrons comment Nuxt facilite grandement leur mise en œuvre.",
+      "slide": "http://slides.com/florentgiraud/deck-a6b3bb",
+      "video": null,
+      "img": "https://avatars1.githubusercontent.com/u/11556276?v=4",
+      "profile": "https://github.com/f3ltron"
+    },
+    {
+      "title": "Intro to Vue 3.0 Composition API",
+      "author": "Tommy Lebel",
+      "tags": ["English", "composition API", "vue3", "vuetoronto"],
+      "description": "Tommy will explore the new Vue3 Composition API basics: Why should we care about it? What problem does it solves? In bonus, you will find other exciting Vue 3.0 new features at the end of the slides.",
+      "slide": "https://docs.google.com/presentation/d/1fnOyY0b7Ke255h_CsA_1ayhA84DE8uH_sNgkd5qvgyg/edit?usp=sharing",
+      "video": null,
+      "img": "https://avatars3.githubusercontent.com/u/1448836?s=460&v=4",
+      "profile": "https://www.linkedin.com/in/tommylebel/"
     }
   ]
 }
