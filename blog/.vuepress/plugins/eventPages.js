@@ -15,7 +15,9 @@ module.exports = events => {
     // We create pages for past events under `archives` otherwise it goes in `upcoming`.
     // /!\ this happens at compile time, so upcoming page might still exist after events start date.
     // Ideally this should be donne at runtime.
-    const path = event.startAt.isBefore(moment())? 'archives' : 'upcoming';
+    //  && !event.done
+    console.log(event.startAt.isBefore(moment()));
+    const path = event.startAt.isBefore(moment()) ? 'archives' : 'upcoming';
     const eventName = event.startAt.format('YYYY-MM-DD');
     return {
       path: `/${path}/${eventName}.html`,
