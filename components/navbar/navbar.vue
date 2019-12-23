@@ -22,6 +22,12 @@
       <li class="font-bold text-xl">
         <a href="">GET IN TOUCH</a>
       </li>
+      <li @click="$i18n.setLocale('en')" class="cursor-pointer">
+        English
+      </li>
+      <li @click="$i18n.setLocale('fr')" class="cursor-pointer">
+        French
+      </li>
     </ul>
   </nav>
 </template>

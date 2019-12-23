@@ -65,7 +65,7 @@ export default {
   name: 'HomePage',
   asyncData(context) {
     return context.app.$storyapi
-      .get('cdn/stories/home', {
+      .get(`cdn/stories/${context.app.store.state.i18n.locale}/home`, {
         version: 'draft'
       })
       .then((res) => {
