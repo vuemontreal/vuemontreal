@@ -5,6 +5,10 @@ export default {
   /*
    ** Headers of the page
    */
+  server: {
+    port: process.env.PORT || 3000, // par défaut: 3000
+    host: '0.0.0.0' // par défaut: localhost
+  },
   head: {
     title: process.env.npm_package_name || '',
     meta: [
