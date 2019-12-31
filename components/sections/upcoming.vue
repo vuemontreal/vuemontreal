@@ -1,5 +1,5 @@
 <template>
-  <section id="upcoming" class="px-40">
+  <section id="upcoming">
     <div class="flex bg-mtl-grey px-20 py-20 pb-40">
       <div class="flex-1">
         <h1 class="text-white text-5xl font-bold">

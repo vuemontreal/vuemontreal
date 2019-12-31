@@ -1,5 +1,5 @@
 <template>
-  <section id="community" class="px-64">
+  <section id="community">
     <div class="bg-mtl-grey-light px-48 mt-20 py-20">
       <div class="text-center px-48">
         <h1 class="font-bold text-5xl">{{ content.cmt_title }}</h1>

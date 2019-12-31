@@ -12,7 +12,8 @@ module.exports = {
         'mtl-grey-light': '#E5E5E5',
         'mtl-blue': '#3F7CDE',
         'mtl-pink': '#FF385F',
-        'mtl-black': '#4A4A4A'
+        'mtl-black': '#4A4A4A',
+        'mtl-green': '#38FFA3'
       }
     }
   }

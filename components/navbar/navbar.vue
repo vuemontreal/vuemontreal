@@ -1,6 +1,6 @@
 <template>
-  <nav class="px-40">
-    <div class="flex justify-around items-center text-white pt-12  bg-mtl-grey">
+  <nav class="hidden lg:block">
+    <div class="flex justify-around items-center text-white pt-12 bg-mtl-grey">
       <ul class="flex-1 flex justify-around">
         <li class="font-bold text-xl">
           <a href="">EVENTS</a>
@@ -9,13 +9,15 @@
           <a href="">COMMUNITY</a>
         </li>
       </ul>
-      <img
-        src="~/assets/vue-logo-transparent.png"
-        alt="vue montreal logo"
-        class="max-w-full"
-        width="280"
-        height="280"
-      />
+      <nuxt-link :to="'/'">
+        <img
+          src="~/assets/vue-logo-transparent.png"
+          alt="vue montreal logo"
+          class="max-w-full"
+          width="280"
+          height="280"
+        />
+      </nuxt-link>
       <ul class="flex-1 flex justify-around text-white">
         <li class="font-bold text-xl">
           <a href="">REPERTOIRE</a>

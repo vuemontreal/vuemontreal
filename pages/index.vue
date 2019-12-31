@@ -48,18 +48,14 @@ export default {
       .get(`cdn/stories/${context.app.store.state.i18n.locale}/home`, {
         version: 'draft'
       })
-      .then((res) => {
-        return res.data
-      })
+      .then((res) => res.data)
       .catch((res) => {
         if (!res.response) {
-          // console.error(res)
           context.error({
             statusCode: 404,
             message: 'Failed to receive content form api'
           })
         } else {
-          // console.error(res.response.data)
           context.error({
             statusCode: res.response.status,
             message: res.response.data

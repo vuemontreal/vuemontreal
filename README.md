@@ -1,22 +1,3 @@
 # vuemontreal-next
 
-> My dazzling Nuxt.js project
-
-## Build Setup
-
-``` bash
-# install dependencies
-$ npm run install
-
-# serve with hot reload at localhost:3000
-$ npm run dev
-
-# build for production and launch server
-$ npm run build
-$ npm run start
-
-# generate static project
-$ npm run generate
-```
-
-For detailed explanation on how things work, check out [Nuxt.js docs](https://nuxtjs.org).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e2424f31-4626-483e-8e1c-e558c921c6d5/deploy-status)](https://app.netlify.com/sites/agitated-gates-c6a836/deploys)

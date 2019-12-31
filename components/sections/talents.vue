@@ -1,5 +1,5 @@
 <template>
-  <section id="talents" class="px-64">
+  <section id="talents">
     <div class="bg-mtl-grey-light px-48 mt-20 py-20">
       <div class="text-center px-48">
         <h1 class="font-bold text-5xl">{{ content.talents_title }}</h1>
@@ -14,7 +14,7 @@
           class="flex-1 text-center"
         >
           <div
-            class="rounded-full w-64 h-64 bg-mtl-grey flex justify-center items-center m-auto"
+            class="rounded-full w-56 h-56 bg-mtl-grey flex justify-center items-center m-auto"
           >
             <div class="text-white text-2xl font-bold">{{ item.title }}</div>
           </div>
