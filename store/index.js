@@ -1,5 +1,9 @@
+import * as events from '~/events'
+
 export const state = () => ({})
 
 export const actions = {
-  nuxtServerInit() {}
+  nuxtServerInit() {
+    console.log(events)
+  }
 }
