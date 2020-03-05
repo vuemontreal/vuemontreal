@@ -8,12 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'mtl-grey': '#1D2A38',
-        'mtl-grey-light': '#E5E5E5',
-        'mtl-blue': '#3F7CDE',
-        'mtl-pink': '#FF385F',
-        'mtl-black': '#4A4A4A',
-        'mtl-green': '#38FFA3'
+        'mtl-primary': '#42B983',
+        'mtl-black': '#000000',
+        'mtl-accent': '#0A87BC',
+        'mtl-infos': '#8A8A8A',
+        'mtl-white': '#FFFFFF'
       }
     }
   }
