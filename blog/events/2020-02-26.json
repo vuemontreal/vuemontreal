@@ -10,7 +10,7 @@
     "sponsors": [{
       "name": "Lole",
       "link": "https://www.lolelife.com/",
-      "img": "https://cdn.shopify.com/s/files/1/2081/7241/t/47/assets/lole.png?21898"
+      "img": "/logo-lole.png"
     }],
     "datas": [
       {
@@ -25,4 +25,3 @@
       }
     ]
   }
-  
