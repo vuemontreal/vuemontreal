@@ -22,7 +22,7 @@
       "description": "Qu'est-ce que l'accessibité dans un contexte web? Pour qui est-ce important? Pourquoi, en tant que concepteurs de logiciels (ou entreprise), devons-nous nous y intéresser dès aujourd'hui? Comment s'y prendre?",
       "slide": "https://slides.com/et1421/deck",
       "video": null,
-      "img": "https://media.licdn.com/dms/image/C5603AQFMlL2RpdT_Ew/profile-displayphoto-shrink_800_800/0?e=1580947200&v=beta&t=u1Kpk3hGGtmRKk1k_MvYk4Fk7IhbzDSZEyW03exBjh4",
+      "img": "/emilie.jpeg",
       "profile": "https://www.linkedin.com/in/emilie-touchette/"
     },
     {
@@ -32,7 +32,7 @@
       "description": "What is Gridsome? What is a JAMstack? Learn how you can easily make static and performant websites with Gridsome and GraphQL.",
       "slide": "https://cranky-colden-0fa0c8.netlify.com/",
       "video": null,
-      "img": "https://media.licdn.com/dms/image/C4E03AQGjTObrYiFz4g/profile-displayphoto-shrink_800_800/0?e=1580947200&v=beta&t=cVgQWwch_g8Fcrkq68tC5t4OxvBsml_SE3iKQKi-Yh4",
+      "img": "/constant.jpeg",
       "profile": "https://www.linkedin.com/in/constantvallee/"
     },
     {
