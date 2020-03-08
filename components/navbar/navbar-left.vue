@@ -1,10 +1,11 @@
 <template>
-  <div>index</div>
+  <nav>
+    navbar left
+  </nav>
 </template>
 
 <script>
 export default {
-  name: 'HomePage',
-  computed: {}
+  name: 'NavBarLeft'
 }
 </script>
