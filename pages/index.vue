@@ -11,7 +11,7 @@ export default {
       .get('cdn/stories', {
         version: 'draft',
         starts_with: 'events/',
-        sort_by: 'content.date:asc'
+        sort_by: 'sort_by_date:asc'
       })
       .then((res) => {
         console.log(res)
