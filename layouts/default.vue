@@ -1,9 +1,34 @@
 <template>
-  <div>
-    <mtl-navbar />
-    <nuxt />
+  <div class="flex container mx-auto p-4 md:p-10">
+    <div class="hidden lg:block flex-initial p-5">
+      <mtl-navbar-left />
+    </div>
+    <div class="flex-1 p-0 lg:p-5">
+      <mtl-navbar-top />
+      <nuxt />
+    </div>
   </div>
 </template>
+
+<script>
+export default {
+  components: {
+    MtlNavbarTop: () => import('~/components/navbar/navbar-top'),
+    MtlNavbarLeft: () => import('~/components/navbar/navbar-left')
+  },
+  mounted() {
+    this.$storybridge.on(['input', 'published', 'change'], (event) => {
+      if (event.action === 'input') {
+        if (event.story.id === this.story.id) {
+          this.story.content = event.story.content
+        }
+      } else {
+        window.location.reload()
+      }
+    })
+  }
+}
+</script>
 
 <style>
 html {
@@ -26,22 +51,3 @@ html {
   outline: none;
 }
 </style>
-
-<script>
-export default {
-  components: {
-    MtlNavbar: () => import('~/components/navbar/navbar')
-  },
-  mounted() {
-    this.$storybridge.on(['input', 'published', 'change'], (event) => {
-      if (event.action === 'input') {
-        if (event.story.id === this.story.id) {
-          this.story.content = event.story.content
-        }
-      } else {
-        window.location.reload()
-      }
-    })
-  }
-}
-</script>
