@@ -29,6 +29,13 @@ export default {
           fallbackLocale: 'en'
         }
       }
+    ],
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: 'JOIX7SzMmWD0nQlQdOa8lAtt',
+        cacheProvider: 'memory'
+      }
     ]
   ]
 }
