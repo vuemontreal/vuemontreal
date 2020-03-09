@@ -1,5 +1,9 @@
-export const state = () => ({})
+export const state = () => ({
+  lang: 'en'
+})
 
-export const actions = {
-  nuxtServerInit() {}
+export const mutations = {
+  setLang(state, lang) {
+    state.lange = lang
+  }
 }

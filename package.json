@@ -18,7 +18,7 @@
     "@nuxtjs/pwa": "^3.0.0-0",
     "dotenv": "^8.2.0",
     "nuxt": "^2.0.0",
-    "nuxt-i18n": "^6.4.1"
+    "storyblok-nuxt": "^1.1.0"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^1.0.0",

@@ -1,20 +1,21 @@
 <template>
-  <div>index</div>
+  <div></div>
 </template>
 
 <script>
 export default {
-  name: 'HomePage',
-  computed: {},
+  name: 'EventPage',
   asyncData({ app, error }) {
     return app.$storyapi
-      .get('cdn/stories', {
-        version: 'draft',
-        starts_with: 'events/',
-        sort_by: 'sort_by_date:asc'
-      })
+      .get(
+        // 'cdn/stories/en/events/008-strategies-de-tdd-pour-tester-vos-applications-vuejs',
+        'cdn/stories/en/events/008-from-tdd-strategies-to-tdd-for-testing-you-vuejs-application',
+        {
+          version: 'draft'
+          // starts_with: 'events/007-strat'
+        }
+      )
       .then((res) => {
-        // console.log(res)
         return res.data
       })
       .catch((res) => {
