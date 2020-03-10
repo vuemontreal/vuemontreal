@@ -1,5 +1,5 @@
 <template>
-  <div class="flex container mx-auto p-4 md:p-10">
+  <div class="flex max-w-screen-md container mx-auto p-4 md:p-10">
     <div class="hidden lg:block flex-initial p-5">
       <mtl-navbar-left />
     </div>
