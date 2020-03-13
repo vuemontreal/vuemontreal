@@ -19,12 +19,14 @@ export default {
       })
       .catch((res) => {
         if (!res.response) {
+          // eslint-disable-next-line
           console.error(res)
           error({
             statusCode: 404,
             message: 'Failed to receive content form api'
           })
         } else {
+          // eslint-disable-next-line
           console.error(res.response.data)
           error({
             statusCode: res.response.status,
