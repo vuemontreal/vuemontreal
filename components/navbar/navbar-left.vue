@@ -1,5 +1,5 @@
 <template>
-  <nav class="flex flex-col">
+  <nav class="flex flex-col mt-16">
     <nuxt-link class="mb-2 p-1 font-semibold" to="/">
       <span class="pb-1">Home</span>
     </nuxt-link>

@@ -1,35 +1,51 @@
 <template>
-  <section class="events">
-    <article v-for="event in events" class="event">
+  <section class="flex flex-col">
+    <article
+      v-for="event in events"
+      :key="event.uuid"
+      class="px-8 py-2 mb-10 border-solid border-4 border-gray-200"
+    >
       <header>
-        <time>{{ event.sort_by_date }}</time>
-        <h1>{{ event.content.title }}</h1>
+        <time class="text-mtl-primary text-sm">{{ event.sort_by_date }}</time>
+        <h1 class="text-2xl font-bold leading-tight">
+          {{ event.content.title }}
+        </h1>
 
         <div
           v-if="event.content.sponsors && event.content.sponsors.length"
-          class="sponsor"
+          class="flex items-center"
         >
-          <p>Sponsors:</p>
+          <p class="text-mtl-infos">Sponsors:</p>
           <ul>
-            <li v-for="sponsor in event.content.sponsors">
+            <li
+              v-for="sponsor in event.content.sponsors"
+              :key="sponsor._uid"
+              class="py-2 px-4"
+            >
               <a :href="sponsor.link.url" target="_blank">
-                <img :src="sponsor.image" :alt="sponsor.name" />
+                <img
+                  :src="sponsor.image"
+                  :alt="sponsor.name"
+                  :href="event.content.inscription.url"
+                  class="w-10"
+                />
               </a>
             </li>
           </ul>
         </div>
       </header>
-      <main>
+      <main class="my-12">
         <p>{{ event.content.preview }}</p>
       </main>
-      <footer>
+      <footer class="border-t py-6 text-right">
         <a
           v-if="event.content.inscription.url"
-          :href="event.content.inscription.url"
+          href="#"
           target="_blank"
+          class="button button-green"
           >Register</a
         >
-        <nuxt-link :to="event.full_slug" class="button">
+        <nuxt-link :to="event.full_slug" class="button button-blue">
           <span class="pb-1">More</span>
         </nuxt-link>
       </footer>
@@ -72,14 +88,15 @@ export default {
 </script>
 
 <style scoped>
-.events {
-  display: flex;
-  flex-direction: column;
+.button {
+  @apply bg-mtl-primary px-6 py-2 ml-4 text-mtl-white rounded-full;
 }
 
-.event {
-  border: 1px solid black;
-  margin-bottom: 2rem;
-  padding: 2rem;
+.button-green {
+  @apply bg-mtl-primary;
+}
+
+.button-blue {
+  @apply bg-mtl-accent;
 }
 </style>
