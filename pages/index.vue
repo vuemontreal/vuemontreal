@@ -61,7 +61,7 @@ export default {
       .get('cdn/stories', {
         version: 'draft',
         starts_with: 'events/',
-        sort_by: 'sort_by_date:asc'
+        sort_by: 'sort_by_date:desc'
       })
       .then((res) => {
         return { events: res.data.stories }
