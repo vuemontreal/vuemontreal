@@ -1,12 +1,13 @@
 <template>
   <nav class="flex flex-col mt-16">
     <nuxt-link
-      v-for="n in getNav"
-      :to="localePath(n.real_path)"
+      v-for="nav in getNav"
+      :to="localePath(nav.real_path)"
+      :key="nav.name"
       class="mb-2 p-1 font-semibold"
       exact
     >
-      <span class="pb-1">{{ n.name }}</span>
+      <span class="pb-1">{{ nav.name }}</span>
     </nuxt-link>
     <div class="mt-16 p-1">
       <div class="mb-2 font-semibold">Lang</div>
@@ -36,7 +37,9 @@ export default {
   computed: {
     ...mapGetters(['getNav']),
     availableLocales() {
-      return this.$i18n.locales.filter((i) => i.code !== this.$i18n.locale)
+      return this.$i18n.locales.filter(
+        (locale) => locale.code !== this.$i18n.locale
+      )
     }
   }
 }
