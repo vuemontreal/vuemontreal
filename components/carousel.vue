@@ -15,7 +15,7 @@ import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
 import 'swiper/css/swiper.css'
 
 export default {
-  name: 'SwiperExampleNavigation',
+  name: 'Carousel',
   components: {
     Swiper,
     SwiperSlide
@@ -26,7 +26,6 @@ export default {
       required: true
     }
   },
-  title: 'Navigation',
   data() {
     return {
       swiperOption: {
