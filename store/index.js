@@ -4,10 +4,11 @@ export const state = () => ({
 
 export const getters = {
   getNav(state) {
-    /* eslint-disable */
+    /* eslint-disable-next-line */
     let ret = []
     Object.keys(state.nav).map((n) => {
-      if (state.nav[n].parent_id === 0 && !state.nav[n].is_folder) ret.push(state.nav[n])
+      if (state.nav[n].parent_id === 0 && !state.nav[n].is_folder)
+        ret.push(state.nav[n])
     })
     return ret
   }
@@ -27,7 +28,8 @@ export const actions = {
       })
       commit('setNav', data.links)
     } catch (e) {
-      console.log(e)
+      /* eslint-disable-next-line */
+      console.error(e)
     }
   }
 }
