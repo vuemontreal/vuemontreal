@@ -35,7 +35,7 @@
         </div>
       </header>
       <main class="my-12">
-        <p>{{ event.content.preview }}</p>
+        <EventDescription :text="event.content.description" />
       </main>
       <footer class="border-t py-6 text-right">
         <a
@@ -54,8 +54,13 @@
 </template>
 
 <script>
+import EventDescription from '@/pages/events/_eventDescription'
+
 export default {
   name: 'HomePage',
+  components: {
+    EventDescription
+  },
   asyncData({ app, error }) {
     return app.$storyapi
       .get('cdn/stories', {
