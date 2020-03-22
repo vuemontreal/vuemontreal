@@ -35,7 +35,7 @@
         </div>
       </header>
       <main class="my-12">
-        <EventDescription :text="event.content.description" />
+        <event-description :text="event.content.description" />
       </main>
       <footer class="border-t py-6 text-right">
         <a
@@ -54,8 +54,7 @@
 </template>
 
 <script>
-import EventDescription from '@/pages/events/_eventDescription'
-
+import EventDescription from '@/components/eventDescription'
 export default {
   name: 'HomePage',
   components: {
