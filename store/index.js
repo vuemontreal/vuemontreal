@@ -1,9 +1,33 @@
 export const state = () => ({
-  lang: 'en'
+  nav: []
 })
 
+export const getters = {
+  getNav(state) {
+    /* eslint-disable */
+    let ret = []
+    Object.keys(state.nav).map((n) => {
+      if (state.nav[n].parent_id === 0 && !state.nav[n].is_folder) ret.push(state.nav[n])
+    })
+    return ret
+  }
+}
+
 export const mutations = {
-  setLang(state, lang) {
-    state.lange = lang
+  setNav(state, nav) {
+    state.nav = nav
+  }
+}
+
+export const actions = {
+  async nuxtServerInit({ commit }, { app }) {
+    try {
+      const { data } = await app.$storyapi.get('cdn/links/', {
+        version: 'draft'
+      })
+      commit('setNav', data.links)
+    } catch (e) {
+      console.log(e)
+    }
   }
 }

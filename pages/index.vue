@@ -57,10 +57,11 @@
 export default {
   name: 'HomePage',
   asyncData({ app, error }) {
+    const lang = app.store.state.i18n.locale
     return app.$storyapi
-      .get('cdn/stories', {
+      .get('cdn/stories/', {
         version: 'draft',
-        starts_with: 'events/',
+        starts_with: lang + '/events/',
         sort_by: 'sort_by_date:desc'
       })
       .then((res) => {
