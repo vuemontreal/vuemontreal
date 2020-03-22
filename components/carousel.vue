@@ -1,32 +1,12 @@
 <template>
-  <swiper :options="swiperOption" class="swiper">
-    <swiper-slide>
-      <img
-        src="https://images.unsplash.com/photo-1470181942237-78ce33fec141?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-        alt=""
-      />
-    </swiper-slide>
-    <swiper-slide>
-      <img
-        src="https://images.unsplash.com/photo-1526669754135-c1babeb8c542?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80"
-        alt=""
-      />
-    </swiper-slide>
-    <swiper-slide>
-      <img
-        src="https://images.unsplash.com/photo-1470181942237-78ce33fec141?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80"
-        alt=""
-      />
-    </swiper-slide>
-    <swiper-slide>
-      <img
-        src="https://images.unsplash.com/photo-1526669754135-c1babeb8c542?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80"
-        alt=""
-      />
+  <swiper :options="swiperOption" class="swiper my-6">
+    <swiper-slide v-for="(image, index) in images" :key="index">
+      <img :src="image" alt="" />
     </swiper-slide>
 
     <div slot="button-prev" class="swiper-button-prev"></div>
     <div slot="button-next" class="swiper-button-next"></div>
+    <div slot="pagination" class="swiper-pagination"></div>
   </swiper>
 </template>
 
@@ -36,19 +16,35 @@ import 'swiper/css/swiper.css'
 
 export default {
   name: 'SwiperExampleNavigation',
-  title: 'Navigation',
   components: {
     Swiper,
     SwiperSlide
   },
+  props: {
+    images: {
+      type: Array,
+      required: true
+    }
+  },
+  title: 'Navigation',
   data() {
     return {
       swiperOption: {
         autoHeight: true,
+        effect: 'fade',
+        keyboard: {
+          enabled: true
+        },
+        loop: true,
         navigation: {
           nextEl: '.swiper-button-next',
           prevEl: '.swiper-button-prev'
-        }
+        },
+        pagination: {
+          el: '.swiper-pagination',
+          dynamicBullets: true
+        },
+        spaceBetween: 10
       }
     }
   }
@@ -57,7 +53,16 @@ export default {
 
 <style>
 .swiper {
-  height: 300px;
+  height: 400px;
   max-width: 100%;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  color: #42b983;
+}
+
+.swiper-pagination-bullet {
+  background: #42b983;
 }
 </style>
