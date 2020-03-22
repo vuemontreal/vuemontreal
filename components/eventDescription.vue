@@ -7,7 +7,7 @@ export default {
   name: 'EventDescription',
   props: {
     text: {
-      type: Object,
+      type: [Object, String],
       default: null
     }
   },

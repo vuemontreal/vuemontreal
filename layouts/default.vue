@@ -1,9 +1,9 @@
 <template>
   <div class="flex max-w-screen-md container mx-auto p-4 md:p-10">
-    <div class="hidden lg:block flex-initial p-5">
+    <div class="hidden lg:block w-1/5  p-5">
       <mtl-navbar-left />
     </div>
-    <div class="flex-1 p-0 lg:p-5">
+    <div class="w-full lg:w-4/5 p-0 lg:p-5">
       <mtl-navbar-top />
       <nuxt />
     </div>

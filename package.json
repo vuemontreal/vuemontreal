@@ -23,7 +23,9 @@
     "dotenv": "^8.2.0",
     "nuxt": "^2.0.0",
     "nuxt-fontawesome": "^0.4.0",
-    "storyblok-nuxt": "^1.1.0"
+    "storyblok-nuxt": "^1.1.0",
+    "swiper": "^5.3.6",
+    "vue-awesome-swiper": "^4.0.3"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^1.0.0",
