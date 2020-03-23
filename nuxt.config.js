@@ -8,8 +8,8 @@ export default {
   },
   buildModules: [
     '@nuxtjs/eslint-module',
-    '@nuxtjs/tailwindcss',
-    '@nuxtjs/dotenv'
+    '@nuxtjs/tailwindcss'
+    // '@nuxtjs/dotenv'
   ],
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
