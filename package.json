@@ -23,6 +23,7 @@
     "nuxt-fontawesome": "^0.4.0",
     "storyblok-nuxt": "^1.1.0",
     "swiper": "^5.3.6",
+    "dotenv": "^8.2.0",
     "vue-awesome-swiper": "^4.0.3"
   },
   "devDependencies": {
@@ -32,7 +33,6 @@
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
-    "dotenv": "^8.2.0",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-nuxt": ">=0.4.2",
