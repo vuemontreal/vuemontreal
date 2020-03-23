@@ -24,7 +24,8 @@
     "storyblok-nuxt": "^1.1.0",
     "swiper": "^5.3.6",
     "dotenv": "^8.2.0",
-    "vue-awesome-swiper": "^4.0.3"
+    "vue-awesome-swiper": "^4.0.3",
+    "nuxt-i18n": "^6.6.1"
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",
@@ -38,7 +39,6 @@
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.0.1",
     "jest": "^24.1.0",
-    "nuxt-i18n": "^6.6.1",
     "prettier": "^1.16.4",
     "vue-jest": "^4.0.0-0"
   }
