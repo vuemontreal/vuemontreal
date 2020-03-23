@@ -6,7 +6,11 @@ export default {
     port: process.env.PORT || 3000, // par défaut: 3000
     host: '0.0.0.0' // par défaut: localhost
   },
-  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/tailwindcss'],
+  buildModules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/tailwindcss',
+    '@nuxtjs/dotenv'
+  ],
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',

@@ -18,9 +18,7 @@
     "@fortawesome/free-solid-svg-icons": "^5.12.1",
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "@nuxtjs/axios": "^5.3.6",
-    "@nuxtjs/dotenv": "^1.4.0",
     "@nuxtjs/pwa": "^3.0.0-0",
-    "dotenv": "^8.2.0",
     "nuxt": "^2.0.0",
     "nuxt-fontawesome": "^0.4.0",
     "storyblok-nuxt": "^1.1.0",
@@ -28,6 +26,7 @@
     "vue-awesome-swiper": "^4.0.3"
   },
   "devDependencies": {
+    "@nuxtjs/dotenv": "^1.4.1",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/tailwindcss": "^1.0.0",
