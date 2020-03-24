@@ -35,3 +35,7 @@ npm run dev
 ```
 
 And that's it !
+
+## doc components
+
+- [vue-loading-skeleton](https://github.com/kitwon/vue-loading-skeleton)
