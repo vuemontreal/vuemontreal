@@ -96,7 +96,7 @@ export default {
   async fetch() {
     const lang = this.$store.state.i18n.locale
     const { data } = await this.$storyapi.get('cdn/stories/', {
-      version: process.env.STORYBLOK_TOKEN || 'draft',
+      version: 'draft',
       starts_with: lang + '/events/',
       sort_by: 'sort_by_date:desc'
     })
@@ -105,7 +105,7 @@ export default {
   activated() {
     // cache
     // Call fetch again if last fetch more than 30 sec ago
-    if (this.$fetchState.timestamp <= Date.now() - 30000) {
+    if (this.$fetchState.timestamp <= Date.now() - 5000) {
       this.$fetch()
     }
   }
