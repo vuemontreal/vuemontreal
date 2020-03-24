@@ -5,7 +5,8 @@
     </div>
     <div class="w-full lg:w-4/5 p-0 lg:p-5">
       <mtl-navbar-top />
-      <nuxt :keep-alive-props="{ max: 8 }" keep-alive />
+      <nuxt />
+      <!-- <nuxt :keep-alive-props="{ max: 8 }" keep-alive /> -->
     </div>
   </div>
 </template>

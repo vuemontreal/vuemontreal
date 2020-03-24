@@ -96,7 +96,7 @@ export default {
   async fetch() {
     const lang = this.$store.state.i18n.locale
     const { data } = await this.$storyapi.get('cdn/stories/', {
-      version: 'draft',
+      version: process.env.STORYBLOK_TOKEN || 'draft',
       starts_with: lang + '/events/',
       sort_by: 'sort_by_date:desc'
     })
