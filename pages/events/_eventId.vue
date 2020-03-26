@@ -1,40 +1,23 @@
 <template>
-  <div></div>
+  <!--  eslint-disable vue/valid-template-root  -->
+  <div v-if="$fetchState.pending">loading</div>
+  <div v-else>event page</div>
 </template>
 
 <script>
 export default {
-  name: 'EventPage',
-  asyncData({ app, error }) {
-    return app.$storyapi
-      .get(
-        // 'cdn/stories/en/events/008-strategies-de-tdd-pour-tester-vos-applications-vuejs',
-        'cdn/stories/en/events/008-from-tdd-strategies-to-tdd-for-testing-you-vuejs-application',
-        {
-          version: 'draft'
-          // starts_with: 'events/007-strat'
-        }
-      )
-      .then((res) => {
-        return res.data
-      })
-      .catch((res) => {
-        if (!res.response) {
-          // eslint-disable-next-line
-          console.error(res)
-          error({
-            statusCode: 404,
-            message: 'Failed to receive content form api'
-          })
-        } else {
-          // eslint-disable-next-line
-          console.error(res.response.data)
-          error({
-            statusCode: res.response.status,
-            message: res.response.data
-          })
-        }
-      })
+  data: () => ({
+    story: null
+  }),
+  async fetch() {
+    /* eslint-disable nuxt/no-this-in-fetch-data */
+    const { data } = await this.$storyapi.get(
+      `cdn/stories${this.$route.path}`,
+      {
+        version: process.env.STORYBLOK_TOKEN || 'draft'
+      }
+    )
+    this.story = data.story
   }
 }
 </script>
