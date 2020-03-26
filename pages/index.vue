@@ -71,7 +71,7 @@
           class="button button-green"
           >Register</a
         >
-        <nuxt-link :to="event.full_slug" class="button button-blue">
+        <nuxt-link :to="'/' + event.full_slug" class="button button-blue">
           <span class="pb-1">More</span>
         </nuxt-link>
       </footer>
@@ -90,22 +90,72 @@ export default {
     EventDescription,
     Skeleton
   },
+  head() {
+    const seo = this.seo
+    if (!seo) return {}
+    return {
+      title: seo.title || '',
+      meta: [
+        {
+          property: 'og:title',
+          content: seo.og_title || ''
+        },
+        {
+          hid: `description`,
+          name: 'description',
+          content: seo.description
+        },
+        {
+          property: 'og:title',
+          content: seo.og_title || ''
+        },
+        {
+          property: 'og:description',
+          content: seo.og_description || ''
+        },
+        {
+          property: 'og:image',
+          content: seo.og_image || ''
+        },
+        {
+          property: 'twitter:title',
+          content: seo.twitter_title || ''
+        },
+        {
+          property: 'twitter:description',
+          content: seo.twitter_description || ''
+        },
+        {
+          property: 'twitter:image',
+          content: seo.twitter_image || ''
+        }
+      ]
+    }
+  },
   data: () => ({
-    events: []
+    events: [],
+    seo: null
   }),
   async fetch() {
     const lang = this.$store.state.i18n.locale
-    const { data } = await this.$storyapi.get('cdn/stories/', {
-      version: 'draft',
+    const events = await this.$storyapi.get('cdn/stories/', {
+      version: process.env.STORYBLOK_VERSION || 'draft',
       starts_with: lang + '/events/',
       sort_by: 'sort_by_date:desc'
     })
-    this.events = data.stories
+    const home = await this.$storyapi.get(
+      `cdn/stories/${this.$i18n.locale}/home`,
+      {
+        version: 'draft'
+      }
+    )
+    this.seo = home.data.story.content.seo
+    this.events = events.data.stories
   },
   activated() {
     // cache
     // Call fetch again if last fetch more than 30 sec ago
-    if (this.$fetchState.timestamp <= Date.now() - 5000) {
+    if (this.$fetchState.timestamp <= Date.now() - 2000) {
       this.$fetch()
     }
   }
