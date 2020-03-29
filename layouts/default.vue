@@ -1,9 +1,9 @@
 <template>
   <div class="flex max-w-screen-md container mx-auto p-4 md:p-10">
-    <div class="hidden lg:block w-1/5  p-5">
+    <div class="hidden lg:block w-3/12 p-5">
       <mtl-navbar-left />
     </div>
-    <div class="w-full lg:w-4/5 p-0 lg:p-5">
+    <div class="w-full lg:w-9/12 p-0 lg:p-5">
       <mtl-navbar-top />
       <nuxt />
       <!-- <nuxt :keep-alive-props="{ max: 8 }" keep-alive /> -->
