@@ -1,5 +1,11 @@
 <template>
-  <nav class="flex flex-col mt-16">
+  <nav class="flex flex-col mt-16 rlative">
+    <button @click="openNav" class="lg:hidden p-6 top-0 left-0 absolute icon">
+      <font-awesome-icon
+        :icon="['fas', 'times']"
+        class="fill-current text-mtl-primary"
+      />
+    </button>
     <nuxt-link
       v-for="nav in getNav"
       :to="localePath(nav.real_path)"
@@ -41,6 +47,11 @@ export default {
         (locale) => locale.code !== this.$i18n.locale
       )
     }
+  },
+  methods: {
+    openNav() {
+      this.$store.commit('openNavMobile')
+    }
   }
 }
 </script>
@@ -52,5 +63,10 @@ export default {
 
 img {
   max-width: 2.5rem;
+}
+
+.icon svg {
+  height: 1.5rem !important;
+  width: 1.5rem !important;
 }
 </style>
