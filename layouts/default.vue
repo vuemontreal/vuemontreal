@@ -2,7 +2,7 @@
   <div class="flex max-w-screen-lg container mx-auto p-4 md:p-10">
     <div
       :class="{ open: openNav }"
-      class="nav-left hidden fixed left-0 inset-y-0 z-10 w-3/4 md:w-1/2 lg:w-3/12 p-5 bg-white border-solid border-r-2 border-gray-200"
+      class="nav-left fixed left-0 inset-y-0 z-10 w-full lg:w-3/12 p-5 bg-white"
     >
       <mtl-navbar-left />
     </div>
@@ -60,14 +60,19 @@ html {
   outline: none;
 }
 
+.nav-left {
+  left: -100%;
+  transition: 0.3s ease-out;
+}
+
 .nav-left.open {
   display: inherit;
+  left: 0;
+  transition: 0.3s ease-out;
 }
 
 @media (min-width: 1024px) {
   .nav-left {
-    border-right: none;
-    display: inherit;
     position: inherit;
   }
 }

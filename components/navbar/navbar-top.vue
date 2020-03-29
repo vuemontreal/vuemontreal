@@ -1,6 +1,6 @@
 <template>
   <nav class="mb-5 flex justify-between">
-    <div class="flex items-center">
+    <div class="flex items-center icons">
       <button @click="openNav" class="lg:hidden p-2 icon">
         <font-awesome-icon
           :icon="['fas', 'bars']"
@@ -8,7 +8,7 @@
         />
       </button>
       <a
-        class="p-2 icon"
+        class="p-2 icon hidden lg:block"
         href="https://app.slack.com/client/TDJE5CKHP/CDJV3SA11"
         target="_blank"
         rel="noopener noreferrer"
@@ -19,7 +19,7 @@
         />
       </a>
       <a
-        class="p-2 icon"
+        class="p-2 icon hidden lg:block"
         href="https://www.linkedin.com/groups/12289604/"
         target="_blank"
         rel="noopener noreferrer"
@@ -30,7 +30,7 @@
         />
       </a>
       <a
-        class="p-2 icon"
+        class="p-2 icon hidden lg:block"
         href="https://github.com/vuemontreal/vuemontreal"
         target="_blank"
         rel="noopener noreferrer"
@@ -104,7 +104,7 @@ export default {
 </script>
 
 <style scoped>
-.icon {
+.icons {
   left: -10px;
   position: relative;
 }
