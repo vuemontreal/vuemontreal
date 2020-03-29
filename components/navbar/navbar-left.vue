@@ -1,6 +1,44 @@
 <template>
-  <nav class="flex flex-col mt-16 rlative">
-    <button @click="openNav" class="lg:hidden p-6 top-0 right-0 absolute icon">
+  <nav class="flex flex-col mt-16">
+    <div class="mb-4 p-1 icons lg:hidden">
+      <a
+        class="p-2 icon"
+        href="https://app.slack.com/client/TDJE5CKHP/CDJV3SA11"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <font-awesome-icon
+          :icon="['fab', 'slack']"
+          class="fill-current text-mtl-primary w-4 h-4"
+        />
+      </a>
+      <a
+        class="p-2 icon"
+        href="https://www.linkedin.com/groups/12289604/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <font-awesome-icon
+          :icon="['fab', 'linkedin']"
+          class="fill-current text-mtl-primary w-4 h-4"
+        />
+      </a>
+      <a
+        class="p-2 icon"
+        href="https://github.com/vuemontreal/vuemontreal"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <font-awesome-icon
+          :icon="['fab', 'github']"
+          class="fill-current text-mtl-primary w-4 h-4"
+        />
+      </a>
+    </div>
+    <button
+      @click="openNav"
+      class="lg:hidden p-6 mr-1 top-0 right-0 absolute icon"
+    >
       <font-awesome-icon
         :icon="['fas', 'times']"
         class="fill-current text-mtl-primary"
@@ -63,6 +101,11 @@ export default {
 
 img {
   max-width: 2.5rem;
+}
+
+.icons {
+  left: -10px;
+  position: relative;
 }
 
 .icon svg {
