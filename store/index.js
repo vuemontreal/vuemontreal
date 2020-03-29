@@ -1,5 +1,6 @@
 export const state = () => ({
-  nav: []
+  nav: [],
+  navMobile: false
 })
 
 export const getters = {
@@ -16,6 +17,9 @@ export const getters = {
 export const mutations = {
   setNav(state, nav) {
     state.nav = nav
+  },
+  openNavMobile(state) {
+    state.navMobile = !state.navMobile
   }
 }
 

@@ -1,6 +1,12 @@
 <template>
   <nav class="mb-5 flex justify-between">
     <div class="flex items-center">
+      <button @click="openNav" class="lg:hidden p-2 icon">
+        <font-awesome-icon
+          :icon="['fas', 'bars']"
+          class="fill-current text-mtl-primary w-4 h-4"
+        />
+      </button>
       <a
         class="p-2 icon"
         href="https://app.slack.com/client/TDJE5CKHP/CDJV3SA11"
@@ -89,12 +95,15 @@ export default {
         path: '/search',
         query
       })
+    },
+    openNav() {
+      this.$store.commit('openNavMobile')
     }
   }
 }
 </script>
 
-<style>
+<style scoped>
 .icon {
   left: -10px;
   position: relative;
