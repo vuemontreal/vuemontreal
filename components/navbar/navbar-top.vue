@@ -1,6 +1,6 @@
 <template>
   <nav class="mb-5 flex justify-between">
-    <div class="flex items-center">
+    <div class="flex items-center icons">
       <button @click="openNav" class="lg:hidden p-2 icon">
         <font-awesome-icon
           :icon="['fas', 'bars']"
@@ -104,7 +104,7 @@ export default {
 </script>
 
 <style scoped>
-.icon {
+.icons {
   left: -10px;
   position: relative;
 }
