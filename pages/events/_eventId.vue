@@ -2,46 +2,85 @@
   <!--  eslint-disable vue/valid-template-root  -->
   <div v-if="$fetchState.pending">loading</div>
   <article v-else>
-    <div>title event: {{ story.content.title }}</div>
-    <hr />
-    <div v-for="sponsor in story.content.sponsors" :key="sponsor._uid">
-      sponsor
-      <div>
-        image: {{ sponsor.image }}
-        <img :src="sponsor.image" alt="" />
-      </div>
-      <div>sponsor link : {{ sponsor.link.url }}</div>
-    </div>
-    <hr />
-    <div>
-      speakers
-      <div v-for="speaker in story.content.speakers" :key="speaker._uid">
-        <div>name: {{ speaker.name }}</div>
-        <div>description: {{ speaker.description }}</div>
-        <div>
-          image:
-          {{ speaker.image }}
-          <img :src="speaker.image" alt="" />
-        </div>
-        <div>
-          linkedin:
-          {{ speaker.linkedin.url }}
-        </div>
-        <div>
-          github:
-          {{ speaker.github.url }}
-        </div>
-        <div>
-          video:
-          {{ speaker.video.url }}
-        </div>
-        <div>
-          slides:
-          {{ speaker.slides.url }}
-        </div>
-        <hr />
-      </div>
+    <h1 class="text-2xl font-bold leading-tight uppercase mb-2">
+      #{{ story.content.title }}
+    </h1>
 
+    <div v-for="sponsor in story.content.sponsors" :key="sponsor._uid">
+      <div class="flex items-center mb-2">
+        <p class="text-mtl-infos">Sponsor:</p>
+        <ul>
+          <li class="py-2 px-4">
+            <a :href="sponsor.link.url" target="_blank">
+              <img :src="sponsor.image" :alt="sponsor.name" class="w-10" />
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div>
+      <h2 class="font-bold mb-4">Speakers:</h2>
+      <div v-for="speaker in story.content.speakers" :key="speaker._uid">
+        <article
+          class="w-full overflow-hidden shadow-md p-4 border-2 border-gray-200"
+        >
+          <div class="flex sm:flex-row flex-col ">
+            <div class="flex flex-col">
+              <img :src="speaker.image" :alt="speaker.name" class="mx-auto" />
+              <div class="text-center mt-4">
+                <a
+                  :href="speaker.github.url"
+                  class="icon p-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <font-awesome-icon
+                    :icon="['fab', 'github']"
+                    class="fill-current text-mtl-primary w-4 h-4"
+                  />
+                </a>
+                <a
+                  :href="speaker.linkedin.url"
+                  class="icon p-2"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <font-awesome-icon
+                    :icon="['fab', 'linkedin']"
+                    class="fill-current text-mtl-primary w-4 h-4"
+                  />
+                </a>
+              </div>
+            </div>
+            <div class="flex flex-col w-full ml-4">
+              <p>Description {{ speaker.description }}</p>
+            </div>
+          </div>
+
+          <div class="mt-4">
+            <h3 class="text-mtl-infos">Video:</h3>
+            <div class="embed-responsive aspect-ratio-16/9 relative mt-2">
+              <iframe
+                :src="speaker.video.url"
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+                class="absolute pin w-full h-full"
+              ></iframe>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <span class="text-mtl-infos"> Slides: </span>
+            <a
+              :href="speaker.slides.url"
+              class="text-mtl-primary font-bold underline "
+              >Cliquez ici</a
+            >
+          </div>
+        </article>
+      </div>
       <div>
         gallery carousel:
         <div>gallery photos urls: {{ story.content.gallery }}</div>
@@ -117,3 +156,10 @@ export default {
   }
 }
 </script>
+
+<style scoped>
+.icon svg {
+  height: 1.5rem !important;
+  width: 1.5rem !important;
+}
+</style>
