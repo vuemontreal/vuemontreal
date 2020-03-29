@@ -1,6 +1,6 @@
 <template>
   <nav class="flex flex-col mt-16 rlative">
-    <button @click="openNav" class="lg:hidden p-6 top-0 left-0 absolute icon">
+    <button @click="openNav" class="lg:hidden p-6 top-0 right-0 absolute icon">
       <font-awesome-icon
         :icon="['fas', 'times']"
         class="fill-current text-mtl-primary"
