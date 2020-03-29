@@ -1,7 +1,53 @@
 <template>
   <!--  eslint-disable vue/valid-template-root  -->
   <div v-if="$fetchState.pending">loading</div>
-  <div v-else>event page</div>
+  <article v-else>
+    <div>title event: {{ story.content.title }}</div>
+    <hr />
+    <div v-for="sponsor in story.content.sponsors" :key="sponsor._uid">
+      sponsor
+      <div>
+        image: {{ sponsor.image }}
+        <img :src="sponsor.image" alt="" />
+      </div>
+      <div>sponsor link : {{ sponsor.link.url }}</div>
+    </div>
+    <hr />
+    <div>
+      speakers
+      <div v-for="speaker in story.content.speakers" :key="speaker._uid">
+        <div>name: {{ speaker.name }}</div>
+        <div>description: {{ speaker.description }}</div>
+        <div>
+          image:
+          {{ speaker.image }}
+          <img :src="speaker.image" alt="" />
+        </div>
+        <div>
+          linkedin:
+          {{ speaker.linkedin.url }}
+        </div>
+        <div>
+          github:
+          {{ speaker.github.url }}
+        </div>
+        <div>
+          video:
+          {{ speaker.video.url }}
+        </div>
+        <div>
+          slides:
+          {{ speaker.slides.url }}
+        </div>
+        <hr />
+      </div>
+
+      <div>
+        gallery carousel:
+        <div>gallery photos urls: {{ story.content.gallery }}</div>
+      </div>
+    </div>
+  </article>
 </template>
 
 <script>
