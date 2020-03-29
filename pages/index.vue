@@ -33,9 +33,11 @@
     >
       <header>
         <time class="text-mtl-primary text-sm">{{ event.sort_by_date }}</time>
-        <h1 class="text-2xl font-bold leading-tight">
-          {{ event.content.title }}
-        </h1>
+        <nuxt-link :to="'/' + event.full_slug">
+          <h1 class="text-2xl font-bold leading-tight">
+            {{ event.content.title }}
+          </h1>
+        </nuxt-link>
 
         <div
           v-if="event.content.sponsors && event.content.sponsors.length"
