@@ -1,9 +1,12 @@
 <template>
   <div class="flex max-w-screen-md container mx-auto p-4 md:p-10">
-    <div class="hidden lg:block w-1/5  p-5">
+    <div
+      :class="{ open: openNav }"
+      class="nav-left hidden fixed left-0 inset-y-0 z-10 w-3/4 md:w-1/2 lg:w-3/12 p-5 bg-white border-solid border-r-2 border-gray-200"
+    >
       <mtl-navbar-left />
     </div>
-    <div class="w-full lg:w-4/5 p-0 lg:p-5">
+    <div class="w-full lg:w-9/12 p-0 lg:p-5">
       <mtl-navbar-top />
       <nuxt />
       <!-- <nuxt :keep-alive-props="{ max: 8 }" keep-alive /> -->
@@ -16,6 +19,11 @@ export default {
   components: {
     MtlNavbarTop: () => import('~/components/navbar/navbar-top'),
     MtlNavbarLeft: () => import('~/components/navbar/navbar-left')
+  },
+  computed: {
+    openNav() {
+      return this.$store.state.navMobile
+    }
   },
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], (event) => {
@@ -50,5 +58,17 @@ html {
   box-sizing: border-box;
   margin: 0;
   outline: none;
+}
+
+.nav-left.open {
+  display: inherit;
+}
+
+@media (min-width: 1024px) {
+  .nav-left {
+    border-right: none;
+    display: inherit;
+    position: inherit;
+  }
 }
 </style>
