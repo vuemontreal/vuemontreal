@@ -1,5 +1,5 @@
 <template>
-  <div class="flex max-w-screen-md container mx-auto p-4 md:p-10">
+  <div class="flex max-w-screen-lg container mx-auto p-4 md:p-10">
     <div
       :class="{ open: openNav }"
       class="nav-left hidden fixed left-0 inset-y-0 z-10 w-3/4 md:w-1/2 lg:w-3/12 p-5 bg-white border-solid border-r-2 border-gray-200"
