@@ -41,18 +41,37 @@
         />
       </a>
     </div>
-    <div class="flex items-center">
+    <form @submit.prevent="submitSearch" class="flex items-center relative">
       <input
         v-model="search"
         type="text"
-        class="border border-black border-solid rounded-full pl-4"
+        class="border border-black border-solid pl-8"
         placeholder="search"
       />
-    </div>
+      <button
+        v-if="search.length"
+        @click="search = ''"
+        type="button"
+        class="close-icon"
+      >
+        <font-awesome-icon
+          :icon="['fa', 'window-close']"
+          class="fill-current text-mtl-primary w-4 h-4 cursor-pointer"
+        />
+      </button>
+      <button @click="submitSearch" type="button" class="plus-icon">
+        <font-awesome-icon
+          :icon="['fa', 'search']"
+          class="fill-current text-mtl-primary w-4 h-4 cursor-pointer"
+        />
+      </button>
+    </form>
   </nav>
 </template>
 
 <script>
+/* eslint-disable camelcase */
+
 export default {
   name: 'NavBarTop',
   data() {
@@ -61,6 +80,22 @@ export default {
     }
   },
   methods: {
+    submitSearch() {
+      const {
+        // types = ['events'],
+        with_tag
+      } = this.$route.query
+
+      const query = {
+        search_term: this.search
+      }
+      if (with_tag) query.with_tag = with_tag
+
+      this.$router.push({
+        path: '/search',
+        query
+      })
+    },
     openNav() {
       this.$store.commit('openNavMobile')
     }
@@ -77,5 +112,15 @@ export default {
 .icon svg {
   height: 1.5rem !important;
   width: 1.5rem !important;
+}
+
+.plus-icon {
+  @apply absolute;
+  right: 5px;
+}
+
+.close-icon {
+  @apply absolute;
+  left: 5px;
 }
 </style>
