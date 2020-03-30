@@ -53,6 +53,9 @@
     >
       <span class="pb-1">{{ nav.name }}</span>
     </nuxt-link>
+    <nuxt-link :to="localePath('/search')" class="mb-2 p-1 font-semibold" exact>
+      <span class="pb-1">Archives</span>
+    </nuxt-link>
     <div class="mt-16 p-1">
       <div class="mb-2 font-semibold">Lang</div>
       <div>

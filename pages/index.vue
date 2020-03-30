@@ -71,10 +71,10 @@
           href="#"
           target="_blank"
           class="button button-green"
-          >Register</a
+          >{{ $t('register') }}</a
         >
         <nuxt-link :to="'/' + event.full_slug" class="button button-blue">
-          <span class="pb-1">More</span>
+          <span class="pb-1">{{ $t('more') }}</span>
         </nuxt-link>
       </footer>
     </article>
