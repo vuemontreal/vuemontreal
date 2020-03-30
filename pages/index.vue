@@ -29,7 +29,11 @@
       v-else
       v-for="event in events"
       :key="event.uuid"
-      class="px-8 py-2 mb-10 border-solid border-4 border-gray-200"
+      :class="
+        isIncoming(event.sort_by_date) == true
+          ? 'px-8 py-2 mb-10 border-solid border-4 incoming'
+          : 'px-8 py-2 mb-10 border-solid border-4 grey-border-200'
+      "
     >
       <header>
         <time class="text-mtl-primary text-sm">{{ event.sort_by_date }}</time>
@@ -160,6 +164,12 @@ export default {
     if (this.$fetchState.timestamp <= Date.now() - 2000) {
       this.$fetch()
     }
+  },
+  methods: {
+    isIncoming(event) {
+      const eventDate = new Date(event).getTime()
+      if (eventDate >= Date.now()) return true
+    }
   }
 }
 </script>
@@ -175,5 +185,9 @@ export default {
 
 .button-blue {
   @apply bg-mtl-accent;
+}
+
+article.incoming {
+  border-image: linear-gradient(38deg, #42b983, #fcca46) 1;
 }
 </style>

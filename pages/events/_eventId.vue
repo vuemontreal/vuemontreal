@@ -139,7 +139,6 @@
 
       <div>
         <h3 class="font-bold mb-4">Gallery:</h3>
-        <div>gallery photos urls: {{ story.content.gallery }}</div>
         <Carousel
           :images="[
             'https://images.unsplash.com/photo-1555108004-a9183c23169e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
