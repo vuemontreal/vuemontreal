@@ -147,7 +147,7 @@
 </template>
 
 <script>
-import TextDescription from '@/components/TextDescription'
+import TextDescription from '@/components/textDescription'
 import Carousel from '@/components/carousel'
 import { Skeleton } from 'vue-loading-skeleton'
 

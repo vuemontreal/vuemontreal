@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import TextDescription from '@/components/TextDescription'
+import TextDescription from '@/components/textDescription'
 
 export default {
   components: {
