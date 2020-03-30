@@ -85,6 +85,7 @@ export default {
         // types = ['events'],
         with_tag
       } = this.$route.query
+      const lang = this.$store.state.i18n.locale
 
       const query = {
         search_term: this.search
@@ -92,7 +93,7 @@ export default {
       if (with_tag) query.with_tag = with_tag
 
       this.$router.push({
-        path: '/search',
+        path: '/' + lang + '/search',
         query
       })
     },

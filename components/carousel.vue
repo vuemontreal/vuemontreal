@@ -1,7 +1,8 @@
 <template>
   <swiper :options="swiperOption" class="swiper my-6">
     <swiper-slide v-for="(image, index) in images" :key="index">
-      <img :src="image" alt="" />
+      <img :data-src="image" alt="" class="swiper-lazy" />
+      <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
     </swiper-slide>
 
     <div slot="button-prev" class="swiper-button-prev"></div>
@@ -31,6 +32,10 @@ export default {
       swiperOption: {
         autoHeight: true,
         effect: 'fade',
+        lazy: {
+          loadPrevNext: true
+        },
+        preloadImages: false,
         keyboard: {
           enabled: true
         },
@@ -51,9 +56,12 @@ export default {
 </script>
 
 <style>
-.swiper {
-  height: 400px;
-  max-width: 100%;
+.swiper-slide {
+  background: white;
+}
+
+.swiper-slide img {
+  width: 100%;
 }
 
 .swiper-button-prev,
