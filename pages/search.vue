@@ -7,7 +7,7 @@
         class="p-4 container w-full md:w-1/3 lg:w-1/3 lg:mb-4"
       >
         <label class="text-base relative">
-          <span>
+          <span class="pl-2">
             {{ tag.name }}
           </span>
 
@@ -137,7 +137,6 @@ export default {
 .container label {
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .container input {
