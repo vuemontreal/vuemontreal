@@ -31,5 +31,4 @@ module.exports = [
   ],
   'nuxt-i18n',
   '@nuxtjs/sitemap',
-  '@bazzite/nuxt-netlify'
 ]

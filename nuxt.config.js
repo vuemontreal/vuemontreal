@@ -2,52 +2,26 @@
 
 require('dotenv').config()
 
+
 export default {
   mode: 'universal',
+  head: {
+    title: process.env.npm_package_name || '',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: process.env.npm_package_description || ''
+      }
+    ],
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+  },
   server: require('./configs/server'),
   buildModules: require('./configs/buildModules'),
   modules: require('./configs/modules'),
   generate: require('./configs/generate').generate,
   sitemap: require('./configs/generate').sitemap,
   i18n: require('./configs/i18n'),
-  netlify: {
-    redirects: [
-      {
-        from: '/',
-        to: '/en',
-        force: true
-      },
-      // {
-      //   from: '/my-redirect',
-      //   to: '/',
-      //   status: 302,
-      //   force: true
-      // },
-      {
-        from: '/en/*',
-        to: '/en/404.html',
-        status: 404
-      },
-      {
-        from: '/*',
-        to: '/404.html',
-        status: 200
-      },
-      // {
-      //   from: '/store',
-      //   to: '/blog/:id',
-      //   query: {
-      //     id: ':id'
-      //   }
-      // },
-      // {
-      //   from: '/',
-      //   to: '/china',
-      //   status: 302,
-      //   conditions: {
-      //     Country: 'cn,hk,tw'
-      //   }
-      // }
-    ]
-  }
 }

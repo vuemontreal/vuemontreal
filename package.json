@@ -1,7 +1,7 @@
 {
-  "name": "vuemontreal-next",
+  "name": "vuemontreal",
   "version": "1.0.0",
-  "description": "My dazzling Nuxt.js project",
+  "description": "Vue montreal community website",
   "author": "f3ltron",
   "private": true,
   "scripts": {
