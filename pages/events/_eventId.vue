@@ -1,16 +1,65 @@
 <template>
   <!--  eslint-disable vue/valid-template-root  -->
-  <div v-if="$fetchState.pending">loading</div>
+  <div v-if="$fetchState.pending">
+    <article>
+      <h1 class="text-2xl font-bold leading-tight mb-2">
+        <Skeleton />
+      </h1>
+
+      <div class="flex items-center mb-2">
+        <p class="text-mtl-infos">
+          <Skeleton width="140px" />
+        </p>
+      </div>
+
+      <div>
+        <h2 class="mb-4"><Skeleton width="140px" /></h2>
+        <div
+          v-for="Skel in 4"
+          :key="Skel"
+          class="w-full overflow-hidden shadow-md p-4 border-2 border-gray-200 mb-4"
+        >
+          <div class="flex sm:flex-row flex-col">
+            <div class="flex flex-col">
+              <Skeleton height="100px" width="120px" />
+              <div><Skeleton /></div>
+            </div>
+            <div class="flex flex-col w-full ml-4">
+              <p><Skeleton :count="4" /></p>
+            </div>
+          </div>
+
+          <div class="mt-8">
+            <span> <Skeleton width="80px" /> </span>
+            <Skeleton width="100px" />
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <h3 class="mb-4"><Skeleton width="80px" /></h3>
+        <div><Skeleton height="440px" /></div>
+      </div>
+    </article>
+  </div>
+
+  <p v-else-if="$fetchState.error">
+    Error while fetching posts: {{ $fetchState.error.message }}
+  </p>
   <article v-else>
-    <h1 class="text-2xl font-bold leading-tight uppercase mb-2">
-      #{{ story.content.title }}
+    <h1 class="text-2xl font-bold leading-tight mb-2">
+      # {{ story.content.title }}
     </h1>
 
-    <div v-for="sponsor in story.content.sponsors" :key="sponsor._uid">
+    <div>
       <div class="flex items-center mb-2">
         <p class="text-mtl-infos">Sponsor:</p>
         <ul>
-          <li class="py-2 px-4">
+          <li
+            v-for="sponsor in story.content.sponsors"
+            :key="sponsor._uid"
+            class="py-2 px-4"
+          >
             <a :href="sponsor.link.url" target="_blank">
               <img :src="sponsor.image" :alt="sponsor.name" class="w-10" />
             </a>
@@ -23,13 +72,18 @@
       <h2 class="font-bold mb-4">Speakers:</h2>
       <div v-for="speaker in story.content.speakers" :key="speaker._uid">
         <article
-          class="w-full overflow-hidden shadow-md p-4 border-2 border-gray-200"
+          class="w-full overflow-hidden shadow-md p-4 border-2 border-gray-200 mb-4"
         >
-          <div class="flex sm:flex-row flex-col ">
+          <div class="flex sm:flex-row flex-col">
             <div class="flex flex-col">
-              <img :src="speaker.image" :alt="speaker.name" class="mx-auto" />
+              <img
+                :src="filterImageQuality(speaker.image, '65')"
+                :alt="speaker.name"
+                class="mx-auto w-48"
+              />
               <div class="text-center mt-4">
                 <a
+                  v-if="speaker.github.url"
                   :href="speaker.github.url"
                   class="icon p-2"
                   target="_blank"
@@ -41,6 +95,7 @@
                   />
                 </a>
                 <a
+                  v-if="speaker.linkedin.url"
                   :href="speaker.linkedin.url"
                   class="icon p-2"
                   target="_blank"
@@ -53,12 +108,12 @@
                 </a>
               </div>
             </div>
-            <div class="flex flex-col w-full ml-4">
-              <p>Description {{ speaker.description }}</p>
+            <div v-if="speaker.description" class="flex flex-col w-full ml-4">
+              <text-description :text="speaker.description" />
             </div>
           </div>
 
-          <div class="mt-4">
+          <div v-if="speaker.video.url" class="mt-4">
             <h3 class="text-mtl-infos">Video:</h3>
             <div class="embed-responsive aspect-ratio-16/9 relative mt-2">
               <iframe
@@ -81,8 +136,9 @@
           </div>
         </article>
       </div>
+
       <div>
-        gallery carousel:
+        <h3 class="font-bold mb-4">Gallery:</h3>
         <div>gallery photos urls: {{ story.content.gallery }}</div>
       </div>
     </div>
@@ -90,13 +146,20 @@
 </template>
 
 <script>
+import TextDescription from '@/components/TextDescription'
+import { Skeleton } from 'vue-loading-skeleton'
 export default {
+  components: {
+    TextDescription,
+    Skeleton
+  },
   data: () => ({
     story: null
   }),
   head() {
     if (!this.story) return {}
     const seo = this.story.content.seo
+
     return {
       title: seo.title || '',
       meta: [
@@ -152,6 +215,17 @@ export default {
     // Call fetch again if last fetch more than 30 sec ago
     if (this.$fetchState.timestamp <= Date.now() - 30000) {
       this.$fetch()
+    }
+  },
+  methods: {
+    filterImageQuality(image, quality) {
+      if (!image) return ''
+      if (!quality) return ''
+
+      const imageService = '//img2.storyblok.com/'
+      const path = image.replace('//a.storyblok.com', '')
+      const option = `filters:quality(${quality})`
+      return imageService + option + path
     }
   }
 }
