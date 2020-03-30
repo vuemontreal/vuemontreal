@@ -1,5 +1,11 @@
 <template>
-  <article class="px-8 py-2 mb-10 border-solid border-4 border-gray-200">
+  <article
+    :class="
+      isIncoming(event.sort_by_date)
+        ? 'px-8 py-2 mb-10 border-solid border-8 incoming'
+        : 'px-8 py-2 mb-10 border-solid border-4 grey-border-200'
+    "
+  >
     <header>
       <time class="text-mtl-primary text-sm">{{ event.sort_by_date }}</time>
       <nuxt-link :to="'/' + event.full_slug">
@@ -36,7 +42,7 @@
     </main>
     <footer class="border-t py-6 text-right">
       <a
-        v-if="event.content.inscription.url"
+        v-if="event.content.inscription.url && isIncoming(event.sort_by_date)"
         href="#"
         target="_blank"
         class="button button-green"
@@ -61,6 +67,9 @@ export default {
       type: Object,
       required: true
     }
+  },
+  methods: {
+    isIncoming: (event) => new Date(event).getTime() > Date.now()
   }
 }
 </script>
@@ -68,6 +77,10 @@ export default {
 <style scoped>
 .button {
   @apply bg-mtl-primary px-6 py-2 ml-4 text-mtl-white rounded-full;
+}
+
+article.incoming {
+  border-image: linear-gradient(38deg, #42b983, #fcca46) 1;
 }
 
 .button-green {
