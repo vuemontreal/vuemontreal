@@ -5,7 +5,7 @@ require('dotenv').config()
 module.exports = {
   locales: ['en', 'fr'],
   defaultLocale: 'en',
-  strategy: 'prefix_and_default',
+  strategy: 'prefix',
   vueI18n: {
     fallbackLocale: 'en',
       fallbackLocale: 'en',
@@ -13,12 +13,16 @@ module.exports = {
         en: {
           click_here: 'Click here',
           more: 'More',
-          register: 'Register'
+          register: 'Register',
+          home: 'Home',
+          archives: 'Archives'
         },
         fr: {
           click_here: 'Cliquez-ici',
           more: 'Plus d\'infos',
-          register: 'S\'inscrire'
+          register: 'S\'inscrire',
+          home: 'Accueil',
+          archives: 'Archives'
         },
       }
   },

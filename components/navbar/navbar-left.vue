@@ -44,14 +44,11 @@
         class="fill-current text-mtl-primary"
       />
     </button>
-    <nuxt-link
-      v-for="nav in getNav"
-      :to="localePath(nav.real_path)"
-      :key="nav.name"
-      class="mb-2 p-1 font-semibold"
-      exact
-    >
-      <span class="pb-1">{{ nav.name }}</span>
+    <nuxt-link :to="localePath('/')" class="mb-2 p-1 font-semibold" exact>
+      <span class="pb-1">{{ $t('home') }}</span>
+    </nuxt-link>
+    <nuxt-link :to="localePath('/search')" class="mb-2 p-1 font-semibold" exact>
+      <span class="pb-1">{{ $t('archives') }}</span>
     </nuxt-link>
     <nuxt-link :to="localePath('/search')" class="mb-2 p-1 font-semibold" exact>
       <span class="pb-1">Archives</span>
@@ -77,12 +74,9 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
-
 export default {
   name: 'NavBarLeft',
   computed: {
-    ...mapGetters(['getNav']),
     availableLocales() {
       return this.$i18n.locales.filter(
         (locale) => locale.code !== this.$i18n.locale
