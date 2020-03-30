@@ -64,14 +64,13 @@ export default {
     const { with_tag = '', search_term = '' } = this.$route.query
     const lang = this.$store.state.i18n.locale
 
-    this.checkedTags = this.parseUrlTags(with_tag)
-
     try {
       const dataTags = await this.$storyapi.get('cdn/tags', {
         version: process.env.STORYBLOK_VERSION || 'draft',
         starts_with: 'events/'
       })
       this.possibleTags = [...dataTags.data.tags]
+      this.checkedTags = this.parseUrlTags(with_tag)
 
       const events = await this.$storyapi.get('cdn/stories/', {
         version: process.env.STORYBLOK_VERSION || 'draft',
@@ -97,7 +96,6 @@ export default {
       return tmp
     },
     checked(val, checked) {
-      const lang = this.$store.state.i18n.locale
       const { search_term = '', with_tag = '' } = this.$route.query
 
       let tags = this.parseUrlTags(with_tag)
@@ -113,7 +111,7 @@ export default {
 
       // push route will be catch by the watch and re fetch data
       this.$router.push({
-        path: '/' + lang + '/search',
+        path: this.switchLocalePath('/search'),
         query: {
           with_tag: tags.join(','),
           search_term
