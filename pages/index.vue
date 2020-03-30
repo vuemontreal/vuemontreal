@@ -63,7 +63,7 @@
         </div>
       </header>
       <main class="my-12">
-        <event-description :text="event.content.description" />
+        <text-description :text="event.content.description" />
       </main>
       <footer class="border-t py-6 text-right">
         <a
@@ -84,12 +84,12 @@
 <script>
 /* eslint-disable nuxt/no-this-in-fetch-data */
 
-import EventDescription from '@/components/eventDescription'
+import TextDescription from '@/components/TextDescription'
 import { Skeleton } from 'vue-loading-skeleton'
 export default {
   name: 'HomePage',
   components: {
-    EventDescription,
+    TextDescription,
     Skeleton
   },
   head() {
