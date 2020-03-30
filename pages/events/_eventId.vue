@@ -130,23 +130,17 @@
             <span class="text-mtl-infos"> Slides: </span>
             <a
               :href="speaker.slides.url"
+              target="_blank"
               class="text-mtl-primary font-bold underline "
-              >Cliquez ici</a
+              >{{ $t('click_here') }}</a
             >
           </div>
         </article>
       </div>
 
-      <div>
+      <div v-if="story.content.gallery.length">
         <h3 class="font-bold mb-4">Gallery:</h3>
-        <div>gallery photos urls: {{ story.content.gallery }}</div>
-        <Carousel
-          :images="[
-            'https://images.unsplash.com/photo-1555108004-a9183c23169e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
-            'https://images.unsplash.com/photo-1526669754135-c1babeb8c542?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1352&q=80',
-            'https://images.unsplash.com/photo-1519178614-68673b201f36?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1268&q=80'
-          ]"
-        />
+        <Carousel :images="getImages" />
       </div>
     </div>
   </article>
@@ -207,6 +201,15 @@ export default {
           content: seo.twitter_image || ''
         }
       ]
+    }
+  },
+  computed: {
+    getImages() {
+      const images = []
+      this.story.content.gallery.forEach((img) => {
+        images.push(this.filterImageQuality(img.src, 450))
+      })
+      return images
     }
   },
   async fetch() {
