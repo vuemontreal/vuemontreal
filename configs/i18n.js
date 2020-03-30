@@ -5,26 +5,25 @@ require('dotenv').config()
 module.exports = {
   locales: ['en', 'fr'],
   defaultLocale: 'en',
-  strategy: 'prefix',
+  strategy: 'prefix_and_default',
   vueI18n: {
     fallbackLocale: 'en',
-      fallbackLocale: 'en',
-      messages: {
-        en: {
-          click_here: 'Click here',
-          more: 'More',
-          register: 'Register',
-          home: 'Home',
-          archives: 'Archives'
-        },
-        fr: {
-          click_here: 'Cliquez-ici',
-          more: 'Plus d\'infos',
-          register: 'S\'inscrire',
-          home: 'Accueil',
-          archives: 'Archives'
-        },
-      }
+    messages: {
+      en: {
+        click_here: 'Click here',
+        more: 'More',
+        register: 'Register',
+        home: 'Home',
+        archives: 'Archives'
+      },
+      fr: {
+        click_here: 'Cliquez-ici',
+        more: 'Plus d\'infos',
+        register: 'S\'inscrire',
+        home: 'Accueil',
+        archives: 'Archives'
+      },
+    }
   },
   detectBrowserLanguage: {
     // If enabled, a cookie is set once a user has been redirected to his

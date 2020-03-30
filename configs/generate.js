@@ -11,20 +11,21 @@ const generateStoryblokEventRoutes = async () => {
 
   const langs = ['fr', 'en']
 
-  const storyblokCategoriesRoutes = []
+  const storyblokEventsRoutes = []
 
   langs.forEach((lang) => {
-    storyblokCategoriesRoutes.push(
+    storyblokEventsRoutes.push(
       axios.get(`${storyblokUrl}${endUrl}&starts_with=${lang}/events/`)
     )
   })
 
   try {
     const ret = []
-    const response = await Promise.all(storyblokCategoriesRoutes)
+    const response = await Promise.all(storyblokEventsRoutes)
     response.map((res) => {
       res.data.stories.map((story) => ret.push(story.full_slug))
     })
+
     return ret
   } catch (e) {
     console.log(e)

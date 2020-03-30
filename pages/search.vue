@@ -44,7 +44,6 @@
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
 
-import { mapState } from 'vuex'
 import eventPreviewSkeleton from '@/components/eventPreviewSkeleton'
 import eventPreview from '@/components/eventPreview'
 
@@ -55,13 +54,9 @@ export default {
   },
   data: () => ({
     events: [],
-    checkedTags: []
+    checkedTags: [],
+    possibleTags: []
   }),
-  computed: {
-    ...mapState({
-      possibleTags: (state) => state.search.possibleTags
-    })
-  },
   watch: {
     '$route.query': '$fetch'
   },
@@ -72,6 +67,12 @@ export default {
     this.checkedTags = this.parseUrlTags(with_tag)
 
     try {
+      const dataTags = await this.$storyapi.get('cdn/tags', {
+        version: process.env.STORYBLOK_VERSION || 'draft',
+        starts_with: 'events/'
+      })
+      this.possibleTags = [...dataTags.data.tags]
+
       const events = await this.$storyapi.get('cdn/stories/', {
         version: process.env.STORYBLOK_VERSION || 'draft',
         starts_with: lang + '/events/',
@@ -96,6 +97,7 @@ export default {
       return tmp
     },
     checked(val, checked) {
+      const lang = this.$store.state.i18n.locale
       const { search_term = '', with_tag = '' } = this.$route.query
 
       let tags = this.parseUrlTags(with_tag)
@@ -111,7 +113,7 @@ export default {
 
       // push route will be catch by the watch and re fetch data
       this.$router.push({
-        path: '/search',
+        path: '/' + lang + '/search',
         query: {
           with_tag: tags.join(','),
           search_term
