@@ -22,6 +22,6 @@ jobs:
             STORYBLOK_TOKEN: ${{ secrets.STORYBLOK_TOKEN }}
             STORYBLOK_VERSION: ${{ secrets.STORYBLOK_VERSION }}
             GOOGLE_ANALYTIC: ${{ secrets.GOOGLE_ANALYTIC }}
-      - run: ls ls ./dist
+      - run: ls -la ./dist
       # - run: surge ./ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
       - run: surge ./dist --token ${{ secrets.SURGE_TOKEN }}
