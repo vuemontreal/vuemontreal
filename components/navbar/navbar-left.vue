@@ -44,12 +44,20 @@
         class="fill-current text-mtl-primary"
       />
     </button>
-    <nuxt-link :to="localePath('/')" class="mb-2 p-1 font-semibold" exact>
+    <a
+      @click="$router.push(localePath('/'))"
+      :class="currentRoute == 'index' ? 'nuxt-link-active' : ''"
+      class="mb-2 p-1 font-semibold cursor-pointer"
+    >
       <span class="pb-1">{{ $t('home') }}</span>
-    </nuxt-link>
-    <nuxt-link :to="localePath('/search')" class="mb-2 p-1 font-semibold" exact>
+    </a>
+    <a
+      @click="$router.push(localePath('/search'))"
+      :class="currentRoute == 'search' ? 'nuxt-link-active' : ''"
+      class="mb-2 p-1 font-semibold cursor-pointer"
+    >
       <span class="pb-1">{{ $t('archives') }}</span>
-    </nuxt-link>
+    </a>
     <div class="mt-16 p-1">
       <div class="mb-2 font-semibold">Lang</div>
       <div>
@@ -58,7 +66,9 @@
           :key="locale"
           @click="$i18n.setLocale(locale)"
           :class="
-            $i18n.locale === locale ? 'border-green-500' : 'border-gray-500'
+            $i18n.locale === locale || !$i18n
+              ? 'border-green-500'
+              : 'border-gray-500'
           "
           class="mr-2 px-1 pt-2 border-2 "
         >
@@ -73,6 +83,9 @@
 <script>
 export default {
   name: 'NavBarLeft',
+  data: () => ({
+    currentRoute: ''
+  }),
   computed: {
     availableLocales() {
       return this.$i18n.locales.filter(
@@ -80,9 +93,20 @@ export default {
       )
     }
   },
+  watch: {
+    '$route.query': 'parseRoute'
+  },
+  mounted() {
+    this.parseRoute()
+  },
   methods: {
     openNav() {
       this.$store.commit('openNavMobile')
+    },
+    parseRoute() {
+      const { name } = this.$route
+      const finalName = name.split('__')[0]
+      this.currentRoute = finalName
     }
   }
 }

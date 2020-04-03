@@ -84,6 +84,9 @@ export default {
       console.error(e)
     }
   },
+  mounted() {
+    this.$fetch()
+  },
   methods: {
     isValid(tag) {
       return !!this.possibleTags.find((p) => p.name === tag)
