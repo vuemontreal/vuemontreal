@@ -1,0 +1,29 @@
+# name: Deploy To surge
+
+# on:
+#   push:
+#     branches:
+#       - vuemontreal-next
+
+# jobs:
+#   build:
+#     runs-on: ubuntu-latest
+#     name: Deploying to surge
+#     steps:
+
+#       - uses: actions/checkout@v1
+#       - uses: actions/setup-node@v1
+#         with:
+#           node-version: 12
+#       - run: npm ci && npm run generate
+#         env:
+#             STORYBLOK_TOKEN: ${{ secrets.STORYBLOK_TOKEN }}
+#             STORYBLOK_VERSION: ${{ secrets.STORYBLOK_VERSION }}
+#             GOOGLE_ANALYTIC: ${{ secrets.GOOGLE_ANALYTIC }}
+#       - name: Deploy
+#         uses: s0/git-publish-subdir-action@master
+#         env:
+#           REPO: self
+#           BRANCH: gh-pages
+#           FOLDER: dist
+#           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
