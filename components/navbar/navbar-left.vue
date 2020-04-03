@@ -1,6 +1,6 @@
 <template>
-  <nav class="flex flex-col mt-16">
-    <div class="mb-4 p-1 icons lg:hidden">
+  <nav class="flex flex-col mt-16 w-full">
+    <div class="mb-4 p-1 icons lg:hidden flex">
       <a
         class="p-2 icon"
         href="https://app.slack.com/client/TDJE5CKHP/CDJV3SA11"
@@ -112,7 +112,7 @@ export default {
 }
 </script>
 
-<style scoped>
+<style>
 .nuxt-link-active span {
   border-bottom: 0.2rem solid #42b983;
 }
