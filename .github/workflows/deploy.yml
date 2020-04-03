@@ -15,7 +15,6 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 12
-      - run: npm install -g surge
       - run: npm ci && npm run generate
         env:
             STORYBLOK_TOKEN: ${{ secrets.STORYBLOK_TOKEN }}
@@ -24,6 +23,8 @@ jobs:
       - name: Commit files
         run: |
           cd ./dist
+          git config --global user.email "fgiraud@protonmail.com"
+          git config --global user.name "Florent Giraud"
           git init
           git add -A
           git commit -m "Add changes" -a
