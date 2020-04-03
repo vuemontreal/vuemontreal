@@ -26,7 +26,10 @@ const generateStoryblokEventRoutes = function() {
           res.data.stories.map((story) => ret.push(story.full_slug))
         })
         resolve(ret);
-      }).catch(reject)
+      }).catch(err => {
+        console.log("ERROR", err);
+        reject(err)
+      })
   })
 }
 
