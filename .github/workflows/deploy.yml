@@ -1,0 +1,21 @@
+name: Deploy To surge
+
+on:
+  push:
+    branches:
+      - vuemontreal-next
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: Deploying to surge
+    steps:
+      - uses: actions/checkout@v1
+      - name: Install surge and fire deployment
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+      - run: npm install -g surge
+      - run: npm ci && npm run generate
+      # - run: surge ./ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
+      - run: surge ./dist --token ${{ secrets.SURGE_TOKEN }}
