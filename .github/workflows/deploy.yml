@@ -12,7 +12,6 @@ jobs:
     steps:
 
       - uses: actions/checkout@v1
-      - name: Install surge and fire deployment
         uses: actions/setup-node@v1
         with:
           node-version: 12
@@ -22,6 +21,16 @@ jobs:
             STORYBLOK_TOKEN: ${{ secrets.STORYBLOK_TOKEN }}
             STORYBLOK_VERSION: ${{ secrets.STORYBLOK_VERSION }}
             GOOGLE_ANALYTIC: ${{ secrets.GOOGLE_ANALYTIC }}
-      - run: ls -la ./dist
+      - name: Commit files
+        run: |
+          cd ./dist
+          git init
+          git add -A
+          git commit -m "Add changes" -a
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: 'gh-pages'
       # - run: surge ./ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
-      - run: surge ./dist --token ${{ secrets.SURGE_TOKEN }}
+      # - run: surge ./dist --token ${{ secrets.SURGE_TOKEN }}
