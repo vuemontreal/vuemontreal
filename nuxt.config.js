@@ -19,7 +19,7 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://unpkg.com/swiper/css/swiper.min.css' }
+      // { rel: 'stylesheet', href: 'https://unpkg.com/swiper/css/swiper.min.css' }
     ],
   },
   server: require('./configs/server'),
