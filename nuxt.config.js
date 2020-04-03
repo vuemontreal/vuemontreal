@@ -5,6 +5,7 @@ require('dotenv').config()
 
 export default {
   mode: 'universal',
+  fallback: false,
   head: {
     title: process.env.npm_package_name || '',
     meta: [
