@@ -28,10 +28,4 @@ jobs:
           git init
           git add -A
           git commit -m "Add changes" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          branch: 'gh-pages'
-      # - run: surge ./ ${{ secrets.SURGE_DOMAIN }} --token ${{ secrets.SURGE_TOKEN }}
-      # - run: surge ./dist --token ${{ secrets.SURGE_TOKEN }}
+          git push -f git@github.com:vuemontreal/vuemontreal.git master:gh-pages
