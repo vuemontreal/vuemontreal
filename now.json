@@ -1,0 +1,9 @@
+{
+  "build": {
+    "env": {
+      "STORYBLOK_TOKEN": "@secret-sb",
+      "GOOGLE_ANALYTIC": "@secret-ga",
+      "STORYBLOK_VERSION": "@secret-sv"
+    }
+  }
+}
