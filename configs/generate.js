@@ -26,6 +26,7 @@ const generateStoryblokEventRoutes = async () => {
       res.data.stories.map((story) => ret.push(story.full_slug))
     })
 
+    console.log(ret);
     return ret
   } catch (e) {
     console.log(e)
