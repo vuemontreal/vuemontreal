@@ -3,9 +3,6 @@
 require('dotenv').config()
 const axios = require('axios')
 
-const {STORYBLOK_TOKEN} = process.env;
-console.log(STORYBLOK_TOKEN)
-
 const generateStoryblokEventRoutes = async () => {
   const storyblokUrl = 'https://api.storyblok.com/v1/cdn/stories'
   const token = process.env.STORYBLOK_TOKEN
@@ -29,7 +26,6 @@ const generateStoryblokEventRoutes = async () => {
       res.data.stories.map((story) => ret.push(story.full_slug))
     })
 
-    console.log(ret);
     return ret
   } catch (e) {
     console.log(e)
