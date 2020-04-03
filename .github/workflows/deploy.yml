@@ -10,6 +10,10 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploying to surge
     steps:
+      env:
+        STORYBLOK_TOKEN: ${{ secrets.STORYBLOK_TOKEN }}
+        STORYBLOK_VERSION: ${{ secrets.STORYBLOK_VERSION }}
+        GOOGLE_ANALYTIC: ${{ secrets.GOOGLE_ANALYTIC }}
       - uses: actions/checkout@v1
       - name: Install surge and fire deployment
         uses: actions/setup-node@v1

@@ -3,6 +3,9 @@
 require('dotenv').config()
 const axios = require('axios')
 
+const { STORYBLOK_TOKEN, STORYBLOK_VERSION, GOOGLE_ANALYTIC } = process.env;
+console.log(STORYBLOK_TOKEN, STORYBLOK_VERSION, GOOGLE_ANALYTIC);
+
 const generateStoryblokEventRoutes = function() {
   return new Promise((resolve, reject) => {
     const storyblokUrl = 'https://api.storyblok.com/v1/cdn/stories'
