@@ -1,8 +1,8 @@
 <template>
   <article
     :class="
-      isIncoming(event.sort_by_date)
-        ? 'px-8 py-2 mb-10 border-solid border-8 incoming'
+      isIncomming
+        ? 'px-8 py-2 mb-10 border-solid border-8 border-green-500'
         : 'px-8 py-2 mb-10 border-solid border-4 grey-border-200'
     "
   >
@@ -42,7 +42,7 @@
     </main>
     <footer class="border-t py-6 text-right">
       <a
-        v-if="event.content.inscription.url && isIncoming(event.sort_by_date)"
+        v-if="event.content.inscription.url && isIncomming"
         href="#"
         target="_blank"
         class="button button-green"
@@ -66,10 +66,10 @@ export default {
     event: {
       type: Object,
       required: true
+    },
+    isIncomming: {
+      type: Boolean
     }
-  },
-  methods: {
-    isIncoming: (event) => new Date(event).getTime() > Date.now()
   }
 }
 </script>
@@ -77,10 +77,6 @@ export default {
 <style scoped>
 .button {
   @apply bg-mtl-primary px-6 py-2 ml-4 text-mtl-white rounded-full;
-}
-
-article.incoming {
-  border-image: linear-gradient(38deg, #42b983, #fcca46) 1;
 }
 
 .button-green {

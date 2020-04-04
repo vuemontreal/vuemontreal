@@ -6,12 +6,26 @@
     <p v-else-if="$fetchState.error">
       Error while fetching event
     </p>
-    <event-preview
-      v-else
-      v-for="event in events"
-      :key="event.uuid"
-      :event="event"
-    />
+    <div v-else>
+      <h2 class="mb-4 font-bold uppercase border-b border-black pb-2">
+        New events
+      </h2>
+      <event-preview
+        v-for="event in nextEvents(events)"
+        :key="event.uuid"
+        :event="event"
+        is-incomming
+      />
+
+      <h2 class="mb-4 font-bold uppercase border-b border-black pb-2">
+        Past events
+      </h2>
+      <event-preview
+        v-for="event in pastEvents(events)"
+        :key="event.uuid"
+        :event="event"
+      />
+    </div>
   </section>
 </template>
 
@@ -94,6 +108,16 @@ export default {
     if (this.$fetchState.timestamp <= Date.now() - 2000) {
       this.$fetch()
     }
+  },
+  methods: {
+    pastEvents: (events) =>
+      events.filter(
+        (event) => new Date(event.sort_by_date).getTime() < Date.now()
+      ),
+    nextEvents: (events) =>
+      events.filter(
+        (event) => new Date(event.sort_by_date).getTime() > Date.now()
+      )
   }
 }
 </script>
