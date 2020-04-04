@@ -6,12 +6,26 @@
     <p v-else-if="$fetchState.error">
       Error while fetching event
     </p>
-    <event-preview
-      v-else
-      v-for="event in events"
-      :key="event.uuid"
-      :event="event"
-    />
+    <div v-else>
+      <h2 class="mb-4 font-bold uppercase border-b border-black pb-2">
+        New events
+      </h2>
+      <event-preview
+        v-for="event in nextEvents(events)"
+        :key="event.uuid"
+        :event="event"
+        is-incoming
+      />
+
+      <h2 class="mb-4 font-bold uppercase border-b border-black pb-2">
+        Past events
+      </h2>
+      <event-preview
+        v-for="event in pastEvents(events)"
+        :key="event.uuid"
+        :event="event"
+      />
+    </div>
   </section>
 </template>
 
@@ -74,17 +88,15 @@ export default {
   }),
   async fetch() {
     const lang = this.$store.state.i18n.locale
-    const { version } = this.$nuxt.context.env
-
     const events = await this.$storyapi.get('cdn/stories/', {
-      version,
+      version: process.env.STORYBLOK_VERSION || 'draft',
       starts_with: lang + '/events/',
       sort_by: 'sort_by_date:desc'
     })
     const home = await this.$storyapi.get(
       `cdn/stories/${this.$i18n.locale}/home`,
       {
-        version
+        version: 'draft'
       }
     )
     this.seo = home.data.story.content.seo
@@ -96,6 +108,16 @@ export default {
     if (this.$fetchState.timestamp <= Date.now() - 2000) {
       this.$fetch()
     }
+  },
+  methods: {
+    pastEvents: (events) =>
+      events.filter(
+        (event) => new Date(event.sort_by_date).setHours(24) < Date.now()
+      ),
+    nextEvents: (events) =>
+      events.filter(
+        (event) => new Date(event.sort_by_date).setHours(24) > Date.now()
+      )
   }
 }
 </script>

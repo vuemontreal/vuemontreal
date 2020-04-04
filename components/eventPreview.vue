@@ -1,5 +1,11 @@
 <template>
-  <article class="px-8 py-2 mb-10 border-solid border-4 border-gray-200">
+  <article
+    :class="
+      isIncoming
+        ? 'px-8 py-2 mb-10 border-solid border-8 border-green-500'
+        : 'px-8 py-2 mb-10 border-solid border-4 grey-border-200'
+    "
+  >
     <header>
       <time class="text-mtl-primary text-sm">{{ event.sort_by_date }}</time>
       <nuxt-link :to="'/' + event.full_slug">
@@ -36,7 +42,7 @@
     </main>
     <footer class="border-t py-6 text-right">
       <a
-        v-if="event.content.inscription.url"
+        v-if="event.content.inscription.url && isIncoming"
         href="#"
         target="_blank"
         class="button button-green"
@@ -60,6 +66,9 @@ export default {
     event: {
       type: Object,
       required: true
+    },
+    isIncoming: {
+      type: Boolean
     }
   }
 }
