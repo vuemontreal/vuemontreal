@@ -30,5 +30,5 @@ module.exports = [
     }
   ],
   'nuxt-i18n',
-  '@nuxtjs/sitemap'
+  '@nuxtjs/sitemap',
 ]

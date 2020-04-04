@@ -12,8 +12,8 @@
 </template>
 
 <script>
+import 'swiper/css/swiper.min.css'
 import { Swiper, SwiperSlide } from 'vue-awesome-swiper'
-import 'swiper/css/swiper.css'
 
 export default {
   name: 'Carousel',
@@ -55,7 +55,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .swiper-slide {
   background: white;
 }
