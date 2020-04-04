@@ -218,9 +218,11 @@ export default {
     const eventId = this.$route.params.eventId
     const locale = this.$i18n.locale
 
+    const { version } = this.$nuxt.context.env
+
     const { data } = await this.$storyapi.get(`cdn/stories/events/${eventId}`, {
       language: locale,
-      version: process.env.STORYBLOK_VERSION || 'draft'
+      version
     })
     this.story = data.story
   },

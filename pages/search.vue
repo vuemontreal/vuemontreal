@@ -64,16 +64,18 @@ export default {
     const { with_tag = '', search_term = '' } = this.$route.query
     const lang = this.$store.state.i18n.locale
 
+    const { version } = this.$nuxt.context.env
+
     try {
       const dataTags = await this.$storyapi.get('cdn/tags', {
-        version: process.env.STORYBLOK_VERSION || 'draft',
+        version,
         starts_with: 'events/'
       })
       this.possibleTags = [...dataTags.data.tags]
       this.checkedTags = this.parseUrlTags(with_tag)
 
       const events = await this.$storyapi.get('cdn/stories/', {
-        version: process.env.STORYBLOK_VERSION || 'draft',
+        version,
         starts_with: lang + '/events/',
         sort_by: 'sort_by_date:desc',
         with_tag: this.checkedTags,
