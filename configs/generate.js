@@ -28,7 +28,7 @@ const generateStoryblokEventRoutes = async () => {
 
     return ret
   } catch (e) {
-    console.log(e)
+    console.error(e)
   }
 }
 
