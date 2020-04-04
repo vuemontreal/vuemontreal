@@ -93,7 +93,7 @@ export default {
       starts_with: lang + '/events/',
       sort_by: 'sort_by_date:desc'
     })
-    console.log(events)
+    console.log(events.data.stories)
     const home = await this.$storyapi.get(
       `cdn/stories/${this.$i18n.locale}/home`,
       {
@@ -113,11 +113,11 @@ export default {
   methods: {
     pastEvents: (events) =>
       events.filter(
-        (event) => new Date(event.sort_by_date).getTime() < Date.now()
+        (event) => new Date(event.sort_by_date).setHours(24) < Date.now()
       ),
     nextEvents: (events) =>
       events.filter(
-        (event) => new Date(event.sort_by_date).getTime() > Date.now()
+        (event) => new Date(event.sort_by_date).setHours(24) > Date.now()
       )
   }
 }
