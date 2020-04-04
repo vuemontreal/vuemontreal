@@ -1,7 +1,7 @@
 {
-  "name": "vuemontreal-next",
+  "name": "vuemontreal",
   "version": "1.0.0",
-  "description": "My dazzling Nuxt.js project",
+  "description": "Vue montreal community website",
   "author": "f3ltron",
   "private": true,
   "scripts": {
@@ -30,10 +30,11 @@
     "vue-loading-skeleton": "^1.1.8"
   },
   "devDependencies": {
+    "@bazzite/nuxt-netlify": "^0.1.1",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
-    "@nuxtjs/sitemap": "^2.0.1",
     "@nuxtjs/google-analytics": "^2.2.3",
+    "@nuxtjs/sitemap": "^2.0.1",
     "@nuxtjs/tailwindcss": "^1.0.0",
     "@vue/test-utils": "^1.0.0-beta.27",
     "axios": "^0.19.2",
