@@ -5,6 +5,9 @@ require('dotenv').config()
 
 export default {
   mode: 'universal',
+  env: {
+    version: process.env.STORYBLOK_VERSION || 'draft',
+  },
   fallback: false,
   head: {
     title: process.env.npm_package_name || '',
