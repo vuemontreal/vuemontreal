@@ -14,7 +14,7 @@
         v-for="event in nextEvents(events)"
         :key="event.uuid"
         :event="event"
-        is-incomming
+        is-incoming
       />
 
       <h2 class="mb-4 font-bold uppercase border-b border-black pb-2">
@@ -93,6 +93,7 @@ export default {
       starts_with: lang + '/events/',
       sort_by: 'sort_by_date:desc'
     })
+    console.log(events)
     const home = await this.$storyapi.get(
       `cdn/stories/${this.$i18n.locale}/home`,
       {

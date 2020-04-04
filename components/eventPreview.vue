@@ -1,7 +1,7 @@
 <template>
   <article
     :class="
-      isIncomming
+      isIncoming
         ? 'px-8 py-2 mb-10 border-solid border-8 border-green-500'
         : 'px-8 py-2 mb-10 border-solid border-4 grey-border-200'
     "
@@ -42,7 +42,7 @@
     </main>
     <footer class="border-t py-6 text-right">
       <a
-        v-if="event.content.inscription.url && isIncomming"
+        v-if="event.content.inscription.url && isIncoming"
         href="#"
         target="_blank"
         class="button button-green"
@@ -67,7 +67,7 @@ export default {
       type: Object,
       required: true
     },
-    isIncomming: {
+    isIncoming: {
       type: Boolean
     }
   }
