@@ -88,15 +88,17 @@ export default {
   }),
   async fetch() {
     const lang = this.$store.state.i18n.locale
+    const { version } = this.$nuxt.context.env
+
     const events = await this.$storyapi.get('cdn/stories/', {
-      version: process.env.STORYBLOK_VERSION || 'draft',
+      version,
       starts_with: lang + '/events/',
       sort_by: 'sort_by_date:desc'
     })
     const home = await this.$storyapi.get(
       `cdn/stories/${this.$i18n.locale}/home`,
       {
-        version: 'draft'
+        version
       }
     )
     this.seo = home.data.story.content.seo
