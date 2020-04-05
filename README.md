@@ -1,21 +1,19 @@
-# Features needed
-- We need to rework the home page
-- We need to think more like create depend on json data and not just au create right now and take the first item in date from json archives
+# Owners
 
-# How to contribute ?
+- [Tommy Lebel](https://www.linkedin.com/in/tommylebel/)
+- [Giraud Florent](https://www.linkedin.com/in/fgiraud42/)
 
-just go [HERE](https://vuemontreal.org/contributing.html).
 
-# Contributors
+# Thank's to our awesome contributors
 
-<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-<!-- prettier-ignore -->
-<table>
-  <tr>
-    <td align="center"><a href="https://github.com/f3ltron"><img src="https://avatars1.githubusercontent.com/u/11556276?v=4" width="100px;" alt="Giraud Florent"/><br /><sub><b>Giraud Florent</b></sub></a><br /><a href="https://github.com/vuemontreal/vuemontreal/commits?author=f3ltron" title="Code">💻</a> <a href="https://github.com/vuemontreal/vuemontreal/commits?author=f3ltron" title="Documentation">📖</a></td>
-    <td align="center"><a href="http://tlebel.com"><img src="https://avatars1.githubusercontent.com/u/1448836?v=4" width="100px;" alt="Tommy Lebel"/><br /><sub><b>Tommy Lebel</b></sub></a><br /><a href="https://github.com/vuemontreal/vuemontreal/commits?author=tlebel" title="Code">💻</a> <a href="https://github.com/vuemontreal/vuemontreal/commits?author=tlebel" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/T0RAT0RA"><img src="https://avatars3.githubusercontent.com/u/5289520?v=4" width="100px;" alt="T0RAT0RA"/><br /><sub><b>T0RAT0RA</b></sub></a><br /><a href="https://github.com/vuemontreal/vuemontreal/commits?author=T0RAT0RA" title="Code">💻</a> <a href="https://github.com/vuemontreal/vuemontreal/commits?author=T0RAT0RA" title="Documentation">📖</a></td>
-  </tr>
-</table>
+- [Loic Fuentes](https://github.com/fuentesloic)
+- [Aurelien Roux](https://github.com/aurelienroux)
+- [Stephane Reiss](https://github.com/T0RAT0RA)
+- [Jeremie Bardon](https://github.com/jeremiebardon)
 
-<!-- ALL-CONTRIBUTORS-LIST:END -->
+## Development
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e2424f31-4626-483e-8e1c-e558c921c6d5/deploy-status)](https://app.netlify.com/sites/vuemontreal/deploys)
+
+
+# Check our projects if you want to know more about what next for vue montreal
