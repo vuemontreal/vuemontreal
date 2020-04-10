@@ -31,6 +31,7 @@
                 :alt="sponsor.name"
                 :href="event.content.inscription.url"
                 class="w-10"
+                rel="noopener noreferrer"
               />
             </a>
           </li>
@@ -42,10 +43,11 @@
     </main>
     <footer class="border-t py-6 text-right">
       <a
-        v-if="event.content.inscription.url && isIncoming"
-        href="#"
+        v-if="event.content.inscription && isIncoming"
+        :href="event.content.inscription.url"
         target="_blank"
         class="button button-green"
+        rel="noopener noreferrer"
         >{{ $t('register') }}</a
       >
       <nuxt-link :to="'/' + event.full_slug" class="button button-blue">
