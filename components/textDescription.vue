@@ -1,5 +1,5 @@
 <template>
-  <div v-html="richtext" class="init"></div>
+  <div v-html="richtext"></div>
 </template>
 
 <script>
@@ -18,11 +18,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-article {
-  height: 6rem;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-</style>
