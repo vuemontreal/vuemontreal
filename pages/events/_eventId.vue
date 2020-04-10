@@ -2,7 +2,7 @@
   <!--  eslint-disable vue/valid-template-root  -->
   <div v-if="$fetchState.pending">
     <article>
-      <h1 class="text-2xl font-bold leading-tight mb-2">
+      <h1 class="mb-2 text-2xl font-bold leading-tight">
         <Skeleton />
       </h1>
 
@@ -17,9 +17,9 @@
         <div
           v-for="Skel in 4"
           :key="Skel"
-          class="w-full overflow-hidden shadow-md p-4 border-2 border-gray-200 mb-4"
+          class="w-full p-4 mb-4 overflow-hidden border-2 border-gray-200 shadow-md"
         >
-          <div class="flex sm:flex-row flex-col">
+          <div class="flex flex-col sm:flex-row">
             <div class="flex flex-col">
               <Skeleton height="100px" width="120px" />
               <div><Skeleton /></div>
@@ -47,7 +47,7 @@
     Error while fetching posts: {{ $fetchState.error.message }}
   </p>
   <article v-else>
-    <h1 class="text-2xl font-bold leading-tight mb-2">
+    <h1 class="mb-2 text-2xl font-bold leading-tight">
       # {{ story.content.title }}
     </h1>
 
@@ -58,7 +58,7 @@
           <li
             v-for="sponsor in story.content.sponsors"
             :key="sponsor._uid"
-            class="py-2 px-4"
+            class="px-4 py-2"
           >
             <a :href="sponsor.link.url" target="_blank">
               <img :src="sponsor.image" :alt="sponsor.name" class="w-10" />
@@ -69,41 +69,42 @@
     </div>
 
     <div>
-      <h2 class="font-bold mb-4">Speakers:</h2>
+      <text-description :text="story.content.description" class="mb-10" />
+      <h2 class="mb-4 font-bold">Speakers:</h2>
       <div v-for="speaker in story.content.speakers" :key="speaker._uid">
         <article
-          class="w-full overflow-hidden shadow-md p-4 border-2 border-gray-200 mb-4"
+          class="w-full p-4 mb-4 overflow-hidden border-2 border-gray-200 shadow-md"
         >
-          <div class="flex sm:flex-row flex-col">
+          <div class="flex flex-col sm:flex-row">
             <div class="flex flex-col">
               <img
                 :src="filterImageQuality(speaker.image, '65')"
                 :alt="speaker.name"
-                class="mx-auto w-48"
+                class="w-48 mx-auto"
               />
-              <div class="text-center mt-4">
+              <div class="mt-4 text-center">
                 <a
                   v-if="speaker.github.url"
                   :href="speaker.github.url"
-                  class="icon p-2"
+                  class="p-2 icon"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <font-awesome-icon
                     :icon="['fab', 'github']"
-                    class="fill-current text-mtl-primary w-4 h-4"
+                    class="w-4 h-4 fill-current text-mtl-primary"
                   />
                 </a>
                 <a
                   v-if="speaker.linkedin.url"
                   :href="speaker.linkedin.url"
-                  class="icon p-2"
+                  class="p-2 icon"
                   target="_blank"
                   rel="noopener noreferrer"
                 >
                   <font-awesome-icon
                     :icon="['fab', 'linkedin']"
-                    class="fill-current text-mtl-primary w-4 h-4"
+                    class="w-4 h-4 fill-current text-mtl-primary"
                   />
                 </a>
               </div>
@@ -115,13 +116,13 @@
 
           <div v-if="speaker.video.url" class="mt-4">
             <h3 class="text-mtl-infos">Video:</h3>
-            <div class="embed-responsive aspect-ratio-16/9 relative mt-2">
+            <div class="relative mt-2 embed-responsive aspect-ratio-16/9">
               <iframe
                 :src="speaker.video.url"
                 frameborder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                 allowfullscreen
-                class="absolute pin w-full h-full"
+                class="absolute w-full h-full pin"
               ></iframe>
             </div>
           </div>
@@ -131,7 +132,7 @@
             <a
               :href="speaker.slides.url"
               target="_blank"
-              class="text-mtl-primary font-bold underline "
+              class="font-bold underline text-mtl-primary "
               >{{ $t('click_here') }}</a
             >
           </div>
@@ -140,7 +141,7 @@
 
       <!-- TODO: on generate not working well with the carousel -->
       <!-- <div v-if="story.content.gallery.length">
-        <h3 class="font-bold mb-4">Gallery:</h3>
+        <h3 class="mb-4 font-bold">Gallery:</h3>
         <Carousel :images="getImages" />
       </div> -->
     </div>
