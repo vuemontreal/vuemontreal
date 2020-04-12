@@ -112,7 +112,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .nuxt-link-active span {
   border-bottom: 0.2rem solid #42b983;
 }
