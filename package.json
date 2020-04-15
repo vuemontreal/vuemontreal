@@ -26,7 +26,6 @@
     "storyblok-nuxt": "^1.1.0",
     "swiper": "^5.3.6",
     "tailwindcss-aspect-ratio": "^3.0.0",
-    "vue-awesome-swiper": "^4.0.3",
     "vue-loading-skeleton": "^1.1.8"
   },
   "devDependencies": {

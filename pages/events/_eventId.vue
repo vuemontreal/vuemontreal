@@ -138,24 +138,25 @@
           </div>
         </article>
       </div>
-
-      <!-- TODO: on generate not working well with the carousel -->
-      <!-- <div v-if="story.content.gallery.length">
-        <h3 class="mb-4 font-bold">Gallery:</h3>
-        <Carousel :images="getImages" />
-      </div> -->
+      <carousel v-if="getImages.length > 0">
+        <carousel-slide v-for="(image, index) in getImages" :key="index">
+          <img :src="image" alt="" />
+        </carousel-slide>
+      </carousel>
     </div>
   </article>
 </template>
 
 <script>
 import TextDescription from '@/components/textDescription'
-// import Carousel from '@/components/carousel'
+import Carousel from '@/components/carousel/carousel'
+import CarouselSlide from '@/components/carousel/carousel-slide'
 import { Skeleton } from 'vue-loading-skeleton'
 
 export default {
   components: {
-    // Carousel,
+    Carousel,
+    CarouselSlide,
     TextDescription,
     Skeleton
   },
