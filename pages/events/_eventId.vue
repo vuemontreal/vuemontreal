@@ -1,51 +1,13 @@
 <template>
   <!--  eslint-disable vue/valid-template-root  -->
   <div v-if="$fetchState.pending">
-    <article>
-      <h1 class="mb-2 text-2xl font-bold leading-tight">
-        <Skeleton />
-      </h1>
-
-      <div class="flex items-center mb-2">
-        <p class="text-mtl-infos">
-          <Skeleton width="140px" />
-        </p>
-      </div>
-
-      <div>
-        <h2 class="mb-4"><Skeleton width="140px" /></h2>
-        <div
-          v-for="Skel in 4"
-          :key="Skel"
-          class="w-full p-4 mb-4 overflow-hidden border-2 border-gray-200 shadow-md"
-        >
-          <div class="flex flex-col sm:flex-row">
-            <div class="flex flex-col">
-              <Skeleton height="100px" width="120px" />
-              <div><Skeleton /></div>
-            </div>
-            <div class="flex flex-col w-full ml-4">
-              <p><Skeleton :count="4" /></p>
-            </div>
-          </div>
-
-          <div class="mt-8">
-            <span> <Skeleton width="80px" /> </span>
-            <Skeleton width="100px" />
-          </div>
-        </div>
-      </div>
-
-      <div>
-        <h3 class="mb-4"><Skeleton width="80px" /></h3>
-        <div><Skeleton height="440px" /></div>
-      </div>
-    </article>
+    <eventSkeleton />
   </div>
 
   <p v-else-if="$fetchState.error">
     Error while fetching posts: {{ $fetchState.error.message }}
   </p>
+
   <article v-else>
     <h1 class="mb-2 text-2xl font-bold leading-tight">
       # {{ story.content.title }}
@@ -127,7 +89,7 @@
             </div>
           </div>
 
-          <div class="mt-8">
+          <div v-if="speaker.slides.url" class="mt-8">
             <span class="text-mtl-infos"> Slides: </span>
             <a
               :href="speaker.slides.url"
@@ -148,17 +110,17 @@
 </template>
 
 <script>
-import TextDescription from '@/components/textDescription'
 import Carousel from '@/components/carousel/carousel'
 import CarouselSlide from '@/components/carousel/carousel-slide'
-import { Skeleton } from 'vue-loading-skeleton'
+import EventSkeleton from '@/components/event/eventSkeleton'
+import TextDescription from '@/components/eventPreview/textDescription'
 
 export default {
   components: {
     Carousel,
     CarouselSlide,
-    TextDescription,
-    Skeleton
+    EventSkeleton,
+    TextDescription
   },
   data: () => ({
     story: null
