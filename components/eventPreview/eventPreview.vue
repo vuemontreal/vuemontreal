@@ -58,7 +58,7 @@
 </template>
 
 <script>
-import TextDescription from '@/components/textDescription'
+import TextDescription from '@/components/eventPreview/textDescription'
 
 export default {
   components: {

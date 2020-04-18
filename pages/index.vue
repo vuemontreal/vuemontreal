@@ -32,8 +32,8 @@
 <script>
 /* eslint-disable nuxt/no-this-in-fetch-data */
 
-import eventPreview from '@/components/eventPreview'
-import eventPreviewSkeleton from '@/components/eventPreviewSkeleton'
+import eventPreview from '@/components/eventPreview/eventPreview'
+import eventPreviewSkeleton from '@/components/eventPreview/eventPreviewSkeleton'
 export default {
   name: 'HomePage',
   components: {

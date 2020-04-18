@@ -44,8 +44,8 @@
 /* eslint-disable no-console */
 /* eslint-disable camelcase */
 
-import eventPreviewSkeleton from '@/components/eventPreviewSkeleton'
-import eventPreview from '@/components/eventPreview'
+import eventPreviewSkeleton from '@/components/eventPreview/eventPreviewSkeleton'
+import eventPreview from '@/components/eventPreview/eventPreview'
 
 export default {
   components: {
