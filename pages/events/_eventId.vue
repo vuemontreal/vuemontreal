@@ -12,20 +12,9 @@
     <h1 class="mb-2 text-2xl font-bold leading-tight">
       # {{ story.content.title }}
     </h1>
-    <div class="flex items-center mb-2">
-      <p class="text-mtl-infos">Sponsor:</p>
-      <ul>
-        <li
-          v-for="sponsor in story.content.sponsors"
-          :key="sponsor._uid"
-          class="px-4 py-2"
-        >
-          <a :href="sponsor.link.url" target="_blank">
-            <img :src="sponsor.image" :alt="sponsor.name" class="w-10" />
-          </a>
-        </li>
-      </ul>
-    </div>
+    <template v-if="story.content.sponsors.length > 0">
+      <sponsors :sponsors="story.content.sponsors" />
+    </template>
     <div>
       <text-description :text="story.content.description" class="mb-10" />
       <h2 class="mb-4 font-bold">Speakers:</h2>
@@ -46,13 +35,15 @@ import Carousel from '@/components/carousel/carousel'
 import CarouselSlide from '@/components/carousel/carousel-slide'
 import EventSkeleton from '@/components/event/eventSkeleton'
 import SpeakerCard from '@/components/event/speakerCard'
+import Sponsors from '@/components/event/sponsors'
 
 export default {
   components: {
     Carousel,
     CarouselSlide,
     EventSkeleton,
-    SpeakerCard
+    SpeakerCard,
+    Sponsors
   },
   data: () => ({
     story: null
