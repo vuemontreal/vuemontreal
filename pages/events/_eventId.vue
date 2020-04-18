@@ -44,7 +44,7 @@
                 :alt="speaker.name"
                 class="w-48 mx-auto"
               />
-              <div class="mt-4 text-center">
+              <div class="mt-4 text-center flex justify-center">
                 <a
                   v-if="speaker.github.url"
                   :href="speaker.github.url"
