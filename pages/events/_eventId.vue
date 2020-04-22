@@ -23,7 +23,7 @@
       </div>
       <carousel v-if="getImages.length > 0">
         <carousel-slide v-for="(image, index) in getImages" :key="index">
-          <img :src="image" alt="" />
+          <img :src="image" alt="" class="w-full" />
         </carousel-slide>
       </carousel>
     </div>
