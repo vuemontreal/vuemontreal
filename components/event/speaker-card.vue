@@ -55,12 +55,11 @@
     </div>
 
     <div v-if="speaker.slides.url" class="mt-8">
-      <span class="text-mtl-infos"> Slides: </span>
       <a
         :href="speaker.slides.url"
         target="_blank"
         class="font-bold underline text-mtl-primary "
-        >{{ $t('click_here') }}</a
+        >{{ $t('slides') }}</a
       >
     </div>
   </article>
