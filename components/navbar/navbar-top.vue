@@ -79,13 +79,13 @@ export default {
   },
   methods: {
     submitSearch() {
-      const { with_tag } = this.$route.query
+      const { withTag } = this.$route.query
       const lang = this.$store.state.i18n.locale
 
       const query = {
-        search_term: this.search
+        searchTerm: this.search
       }
-      if (with_tag) query.with_tag = with_tag
+      if (withTag) query.withTag = withTag
 
       this.$router.push({
         path: '/' + lang + '/search',

@@ -58,7 +58,7 @@ export default {
     '$route.query': '$fetch'
   },
   async fetch() {
-    const { with_tag = '', search_term = '' } = this.$route.query
+    const { withTag = '', searchTerm = '' } = this.$route.query
     const lang = this.$store.state.i18n.locale
 
     const { version } = this.$nuxt.context.env
@@ -69,14 +69,14 @@ export default {
         starts_with: 'events/'
       })
       this.possibleTags = [...dataTags.data.tags]
-      this.checkedTags = this.parseUrlTags(with_tag)
+      this.checkedTags = this.parseUrlTags(withTag)
 
       const events = await this.$storyapi.get('cdn/stories/', {
         version,
         starts_with: lang + '/events/',
         sort_by: 'sort_by_date:desc',
-        with_tag: this.checkedTags,
-        search_term
+        withTag: this.checkedTags,
+        searchTerm
       })
       this.events = events.data.stories
     } catch (e) {
@@ -92,16 +92,16 @@ export default {
       return !!this.possibleTags.find((p) => p.name === tag)
     },
     // get tags from url and parse it without adding bad tags
-    parseUrlTags(with_tag) {
+    parseUrlTags(withTag) {
       const tmp = []
-      const splitTags = with_tag.split(',')
+      const splitTags = withTag.split(',')
       splitTags.forEach((tag) => (this.isValid(tag) ? tmp.push(tag) : ''))
       return tmp
     },
     checked(val, checked) {
-      const { search_term = '', with_tag = '' } = this.$route.query
+      const { searchTerm = '', withTag = '' } = this.$route.query
 
-      let tags = this.parseUrlTags(with_tag)
+      let tags = this.parseUrlTags(withTag)
 
       if (checked && this.isValid(val)) {
         tags.push(val)
@@ -116,8 +116,8 @@ export default {
       this.$router.push({
         path: this.switchLocalePath('/search'),
         query: {
-          with_tag: tags.join(','),
-          search_term
+          withTag: tags.join(','),
+          searchTerm
         }
       })
     }
