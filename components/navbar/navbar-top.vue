@@ -70,8 +70,6 @@
 </template>
 
 <script>
-/* eslint-disable camelcase */
-
 export default {
   name: 'NavBarTop',
   data() {
@@ -81,10 +79,7 @@ export default {
   },
   methods: {
     submitSearch() {
-      const {
-        // types = ['events'],
-        with_tag
-      } = this.$route.query
+      const { with_tag } = this.$route.query
       const lang = this.$store.state.i18n.locale
 
       const query = {
