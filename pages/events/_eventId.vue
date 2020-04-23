@@ -101,7 +101,6 @@ export default {
     }
   },
   async fetch() {
-    /* eslint-disable nuxt/no-this-in-fetch-data */
     const eventId = this.$route.params.eventId
     const locale = this.$i18n.locale
 

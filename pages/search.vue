@@ -41,9 +41,6 @@
 </template>
 
 <script>
-/* eslint-disable no-console */
-/* eslint-disable camelcase */
-
 import eventPreviewSkeleton from '@/components/event-preview/event-preview-skeleton'
 import eventPreview from '@/components/event-preview/event-preview'
 
@@ -83,6 +80,7 @@ export default {
       })
       this.events = events.data.stories
     } catch (e) {
+      // eslint-disable-next-line no-console
       console.error(e)
     }
   },
