@@ -10,19 +10,19 @@ module.exports = {
     fallbackLocale: 'en',
     messages: {
       en: {
-        click_here: 'Click here',
+        archives: 'Archives',
+        home: 'Home',
         more: 'More',
         register: 'Register',
-        home: 'Home',
-        archives: 'Archives'
+        slides: 'View slides'
       },
       fr: {
-        click_here: 'Cliquez-ici',
-        more: 'Plus d\'infos',
-        register: 'S\'inscrire',
+        archives: 'Archives',
         home: 'Accueil',
-        archives: 'Archives'
-      },
+        more: "Plus d'infos",
+        register: "S'inscrire",
+        slides: 'Voir les diapositives'
+      }
     }
   },
   detectBrowserLanguage: {
