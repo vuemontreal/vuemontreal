@@ -14,8 +14,10 @@
 <script>
 export default {
   props: {
-    /* eslint-disable vue/require-default-prop */
-    sponsors: Array
+    sponsors: {
+      type: Array,
+      required: true
+    }
   }
 }
 </script>

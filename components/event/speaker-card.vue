@@ -73,8 +73,10 @@ export default {
     TextDescription
   },
   props: {
-    /* eslint-disable vue/require-default-prop */
-    speaker: Object
+    speaker: {
+      type: Object,
+      required: true
+    }
   },
   methods: {
     filterImageQuality(image, quality) {

@@ -30,8 +30,6 @@
 </template>
 
 <script>
-/* eslint-disable nuxt/no-this-in-fetch-data */
-
 import eventPreview from '@/components/event-preview/event-preview'
 import eventPreviewSkeleton from '@/components/event-preview/event-preview-skeleton'
 export default {
