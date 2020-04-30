@@ -9,7 +9,7 @@
       </button>
       <a
         class="p-2 icon hidden lg:block"
-        href="https://app.slack.com/client/TDJE5CKHP/CDJV3SA11"
+        href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
         target="_blank"
         rel="noopener noreferrer"
       >

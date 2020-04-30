@@ -3,7 +3,7 @@
     <div class="mb-4 p-1 icons lg:hidden flex">
       <a
         class="p-2 icon"
-        href="https://app.slack.com/client/TDJE5CKHP/CDJV3SA11"
+        href="hhttps://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
         target="_blank"
         rel="noopener noreferrer"
       >
