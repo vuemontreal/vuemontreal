@@ -10,5 +10,6 @@ module.exports = [
     {
       id: process.env.GOOGLE_ANALYTIC
     }
-  ]
+  ],
+  [ 'nuxt-stories', { forceBuild: false } ]
 ];

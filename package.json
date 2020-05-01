@@ -1,6 +1,6 @@
 {
   "name": "vuemontreal",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Vue montreal community website",
   "author": "f3ltron",
   "private": true,
@@ -44,6 +44,7 @@
     "eslint-plugin-nuxt": "^0.5.2",
     "eslint-plugin-prettier": "^3.0.1",
     "jest": "^24.1.0",
+    "nuxt-stories": "^1.0.6",
     "prettier": "^1.16.4",
     "vue-jest": "^4.0.0-0"
   }
