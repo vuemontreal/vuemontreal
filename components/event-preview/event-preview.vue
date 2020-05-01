@@ -2,8 +2,8 @@
   <article
     :class="
       isIncoming
-        ? 'px-8 py-2 mb-10 border-solid border-8 border-green-500'
-        : 'px-8 py-2 mb-10 border-solid border-4 grey-border-200'
+        ? 'px-8 py-2 mb-10 border-solid border border-green-500'
+        : 'px-8 py-2 mb-10 border-solid border grey-border-200'
     "
   >
     <header>

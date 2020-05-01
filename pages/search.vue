@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section id="tags" class="flex flex-wrap border-mtl-primary border px-6">
+    <section id="tags" class="flex flex-wrap border-mtl-grey-300 border px-6">
       <div
         v-for="tag in possibleTags"
         :key="tag.name"
@@ -163,7 +163,7 @@ span.checkmark {
 
 /* When the checkbox is checked, add a blue background */
 .container input:checked ~ .checkmark {
-  @apply bg-mtl-primary;
+  @apply bg-mtl-grey-300;
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */

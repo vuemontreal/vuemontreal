@@ -7,7 +7,7 @@
       Error while fetching event
     </p>
     <div v-else>
-      <h2 class="mb-4 font-bold uppercase border-b border-black pb-2">
+      <h2 class="mb-4 font-bold uppercase border-b border-mtl-black-200 pb-2">
         New events
       </h2>
       <event-preview
@@ -17,7 +17,7 @@
         is-incoming
       />
 
-      <h2 class="mb-4 font-bold uppercase border-b border-black pb-2">
+      <h2 class="mb-4 font-bold uppercase border-b border-mtl-black-200 pb-2">
         Past events
       </h2>
       <event-preview
