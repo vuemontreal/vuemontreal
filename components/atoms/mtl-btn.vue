@@ -5,6 +5,7 @@
       primary,
       secondary
     }"
+    class="mtl-btn"
   >
     <slot />
   </button>
@@ -30,12 +31,19 @@ export default {
 </script>
 
 <style lang="postcss" scoped>
+.mtl-btn {
+  @apply px-3 py-2 rounded-md font-bold uppercase;
+}
+
 .tertiary {
+  @apply bg-mtl-grey-200 text-mtl-grey-500;
 }
 
 .primary {
+  @apply bg-mtl-green-500 text-mtl-white;
 }
 
 .secondary {
+  @apply bg-mtl-grey-500 text-mtl-white;
 }
 </style>
