@@ -50,7 +50,7 @@
       />
       <button
         v-if="search.length"
-        @click="search = ''"
+        @click="clearSearch"
         type="button"
         class="close-icon"
       >
@@ -89,6 +89,14 @@ export default {
   },
 
   methods: {
+    clearSearch() {
+      this.search = ''
+      const query = Object.assign({}, this.$route.query)
+      delete query.searchTerm
+      console.log(query)
+      this.$router.replace({ query })
+    },
+
     submitSearch() {
       const { withTag } = this.$route.query
       const lang = this.$store.state.i18n.locale
@@ -103,6 +111,7 @@ export default {
         query
       })
     },
+
     openNav() {
       this.$store.commit('openNavMobile')
     }
