@@ -33,10 +33,9 @@ module.exports = {
             for: process.env.NODE_ENV === 'production' ? 'build' : 'dev'
         })
 
-        const recomposeWebpackConfig = {
+        const recomposedWebpackConfig = {
             mode: nuxtWebpack.mode,
             devtool: nuxtWebpack.devtool,
-            // optimization: nuxt.webpack.optimization,
             entry: sbWebpack.entry,
             output: sbWebpack.output,
             bail: sbWebpack.bail,
@@ -68,6 +67,6 @@ module.exports = {
             }
         }
 
-        return recomposeWebpackConfig;
+        return recomposedWebpackConfig;
     },
 };
