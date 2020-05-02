@@ -93,7 +93,6 @@ export default {
       this.search = ''
       const query = Object.assign({}, this.$route.query)
       delete query.searchTerm
-      console.log(query)
       this.$router.replace({ query })
     },
 
