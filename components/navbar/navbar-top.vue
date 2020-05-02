@@ -77,6 +77,17 @@ export default {
       search: ''
     }
   },
+
+  watch: {
+    '$route.query': {
+      handler() {
+        const { searchTerm = '' } = this.$route.query
+        this.search = searchTerm
+      },
+      immediate: true
+    }
+  },
+
   methods: {
     submitSearch() {
       const { withTag } = this.$route.query
