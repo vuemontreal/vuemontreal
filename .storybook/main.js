@@ -20,16 +20,20 @@ module.exports = {
                 rules: [
                     ...nuxtWebpack.module.rules.map(el => {
                         const reg = RegExp(el.test);
-                        if (reg.test(".postcss")) {
-                            el.oneOf[1].use.push({
-                                loader: 'postcss-loader',
-                                options: {
-                                    ident: 'postcss',
-                                    plugins: [
-                                    require('tailwindcss')('./tailwind.config.js'),
-                                    require('autoprefixer'),
-                                    ],
-                                },
+                        if (reg.test(".postcss") || reg.test(".css")) {
+                            console.log(el.oneOf);
+                            el.oneOf = el.oneOf.map(e => {
+                                e.use.push({
+                                    loader: 'postcss-loader',
+                                    options: {
+                                        ident: 'postcss',
+                                        plugins: [
+                                        require('tailwindcss')('./tailwind.config.js'),
+                                        require('autoprefixer'),
+                                        ],
+                                    },
+                                })
+                                return e;
                             })
                         }
                         return el;
