@@ -75,8 +75,8 @@ export default {
         version,
         starts_with: lang + '/events/',
         sort_by: 'sort_by_date:desc',
-        withTag: this.checkedTags,
-        searchTerm
+        with_tag: this.checkedTags,
+        search_term: searchTerm
       })
       this.events = events.data.stories
     } catch (e) {
