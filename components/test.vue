@@ -1,5 +1,5 @@
 <template>
-  <div id="test">
+  <div id="test" class="bg-mtl-accent">
     bonjour
   </div>
 </template>
@@ -8,8 +8,8 @@
 export default {}
 </script>
 
-<style lang="postcss" scoped>
+<style lang="postcss">
 #test {
-  @apply bg-mtl-primary;
+  @apply bg-mtl-accent;
 }
 </style>

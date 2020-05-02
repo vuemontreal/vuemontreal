@@ -18,19 +18,29 @@ module.exports = {
             bail: sbWebpack.bail,
             module: {
                 rules: [
-                    ...nuxtWebpack.module.rules,
-                    // ...sbWebpack.module.rules
+                    ...nuxtWebpack.module.rules.map(el => {
+                        const reg = RegExp(el.test);
+                        if (reg.test(".postcss")) {
+                            el.oneOf[1].use.push({
+                                loader: 'postcss-loader',
+                                options: {
+                                    ident: 'postcss',
+                                    plugins: [
+                                    require('tailwindcss')('./tailwind.config.js'),
+                                    require('autoprefixer'),
+                                    ],
+                                },
+                            })
+                        }
+                        return el;
+                    })
                 ]
             },
             plugins: [
-                // ...nuxtWebpack.plugins,
                 ...sbWebpack.plugins,
             ],
             resolve: {
-                extensions: [
-                    ...nuxtWebpack.resolve.extensions,
-                    ...sbWebpack.resolve.extensions,
-                ],
+                extensions: nuxtWebpack.resolve.extensions,
                 modules: nuxtWebpack.resolve.modules,
                 alias: {
                     ...nuxtWebpack.resolve.alias,

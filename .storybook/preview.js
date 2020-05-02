@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import { configure } from '@storybook/vue'
+import '@/assets/css/tailwind.css'
 
 Vue.component('nuxt-link', {
   props:   ['to'],

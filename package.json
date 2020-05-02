@@ -52,9 +52,10 @@
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/google-analytics": "^2.2.3",
     "@nuxtjs/sitemap": "^2.0.1",
-    "@nuxtjs/tailwindcss": "^1.0.0",
+    "@nuxtjs/tailwindcss": "^2.0.0",
     "@storybook/vue": "^5.3.18",
     "@vue/test-utils": "^1.0.0-beta.27",
+    "autoprefixer": "^9.7.6",
     "axios": "^0.19.2",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
@@ -66,6 +67,7 @@
     "eslint-plugin-nuxt": "^0.5.2",
     "eslint-plugin-prettier": "^3.0.1",
     "jest": "^24.1.0",
-    "prettier": "^1.16.4"
+    "prettier": "^1.16.4",
+    "tailwindcss": "^1.4.4"
   }
 }
