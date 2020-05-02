@@ -11,7 +11,7 @@
 - [Stephane Reiss](https://github.com/T0RAT0RA)
 - [Jeremie Bardon](https://github.com/jeremiebardon)
 
-## Satus
+## Status
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/e2424f31-4626-483e-8e1c-e558c921c6d5/deploy-status)](https://app.netlify.com/sites/vuemontreal/deploys)
 
@@ -21,6 +21,6 @@
 
 `npm ci && npm run dev`
 
-go to [localhost](http://localhost:3000)
+Go to [localhost](http://localhost:3000)
 
-you can have access to our [stories](http://localhost:3000/.stories)
+You can have access to our [stories](http://localhost:3000/.stories)
