@@ -49,7 +49,7 @@
         placeholder="search"
       />
       <button
-        v-if="search.length"
+        v-if="search"
         @click="clearSearch"
         type="button"
         class="close-icon"
@@ -92,8 +92,10 @@ export default {
     clearSearch() {
       this.search = ''
       const query = Object.assign({}, this.$route.query)
+      if (!query.searchTerm) return
+
       delete query.searchTerm
-      this.$router.replace({ query })
+      this.$router.push({ query })
     },
 
     submitSearch() {
