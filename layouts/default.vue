@@ -1,16 +1,21 @@
 <template>
-  <div class="flex max-w-screen-lg container mx-auto p-4 md:p-10">
-    <div
-      :class="{ open: openNav }"
-      class="nav-left fixed left-0 inset-y-0 z-10 w-full lg:w-3/12 p-5 bg-white"
-    >
-      <mtl-navbar-left />
+  <div
+    class="flex max-w-screen-lg container mx-auto p-4 md:p-10 justify-between flex-col"
+  >
+    <div class="flex">
+      <div
+        :class="{ open: openNav }"
+        class="nav-left fixed left-0 inset-y-0 z-10 w-full lg:w-3/12 p-5 bg-white"
+      >
+        <mtl-navbar-left />
+      </div>
+      <div class="w-full lg:w-9/12 p-0 lg:p-5">
+        <mtl-navbar-top />
+        <nuxt />
+      </div>
     </div>
-    <div class="w-full lg:w-9/12 p-0 lg:p-5">
-      <mtl-navbar-top />
-      <nuxt />
-      <!-- <nuxt :keep-alive-props="{ max: 8 }" keep-alive /> -->
-    </div>
+
+    <mtl-footer />
   </div>
 </template>
 
@@ -18,7 +23,8 @@
 export default {
   components: {
     MtlNavbarTop: () => import('~/components/navbar/navbar-top'),
-    MtlNavbarLeft: () => import('~/components/navbar/navbar-left')
+    MtlNavbarLeft: () => import('~/components/navbar/navbar-left'),
+    MtlFooter: () => import('~/components/footer')
   },
   computed: {
     openNav() {
