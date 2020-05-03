@@ -1,6 +1,6 @@
 <template>
   <div id="test">
-    bonjour
+    should be deleted with setup
   </div>
 </template>
 
@@ -10,6 +10,6 @@ export default {}
 
 <style lang="css">
 #test {
-  @apply bg-mtl-accent;
+  @apply bg-mtl-primary;
 }
 </style>

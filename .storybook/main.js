@@ -21,7 +21,6 @@ module.exports = {
                     ...nuxtWebpack.module.rules.map(el => {
                         const reg = RegExp(el.test);
                         if (reg.test(".postcss") || reg.test(".css")) {
-                            console.log(el.oneOf);
                             el.oneOf = el.oneOf.map(e => {
                                 e.use.push({
                                     loader: 'postcss-loader',
@@ -40,9 +39,7 @@ module.exports = {
                     })
                 ]
             },
-            plugins: [
-                ...sbWebpack.plugins,
-            ],
+            plugins: sbWebpack.plugins,
             resolve: {
                 extensions: nuxtWebpack.resolve.extensions,
                 modules: nuxtWebpack.resolve.modules,
