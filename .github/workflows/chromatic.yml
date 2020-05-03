@@ -31,6 +31,3 @@ jobs:
       with:
         projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
         token: ${{ secrets.GITHUB_TOKEN }}$
-    - run: echo ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
-      env:
-        projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
