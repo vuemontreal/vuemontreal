@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 require('dotenv').config()
 const axios = require('axios')
 
@@ -32,14 +30,12 @@ const generateStoryblokEventRoutes = async () => {
   }
 }
 
-
 module.exports = {
   generate: {
     routes: generateStoryblokEventRoutes
   },
-  sitemap:{
+  sitemap: {
     hostname: 'https://vuemontreal.org',
     routes: generateStoryblokEventRoutes
   }
 }
-

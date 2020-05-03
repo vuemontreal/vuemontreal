@@ -49,8 +49,8 @@
         placeholder="search"
       />
       <button
-        v-if="search.length"
-        @click="search = ''"
+        v-show="search"
+        @click="clearSearch"
         type="button"
         class="close-icon"
       >
@@ -70,8 +70,6 @@
 </template>
 
 <script>
-/* eslint-disable camelcase */
-
 export default {
   name: 'NavBarTop',
   data() {
@@ -79,24 +77,36 @@ export default {
       search: ''
     }
   },
+
+  created() {
+    this.search = this.$route.query.searchTerm
+  },
+
   methods: {
+    clearSearch() {
+      this.search = ''
+      const query = Object.assign({}, this.$route.query)
+      if (!query.searchTerm) return
+
+      delete query.searchTerm
+      this.$router.push({ query })
+    },
+
     submitSearch() {
-      const {
-        // types = ['events'],
-        with_tag
-      } = this.$route.query
+      const { withTag } = this.$route.query
       const lang = this.$store.state.i18n.locale
 
       const query = {
-        search_term: this.search
+        searchTerm: this.search
       }
-      if (with_tag) query.with_tag = with_tag
+      if (withTag) query.withTag = withTag
 
       this.$router.push({
         path: '/' + lang + '/search',
         query
       })
     },
+
     openNav() {
       this.$store.commit('openNavMobile')
     }
