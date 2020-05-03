@@ -49,7 +49,7 @@
         placeholder="search"
       />
       <button
-        v-if="search"
+        v-show="search"
         @click="clearSearch"
         type="button"
         class="close-icon"
@@ -78,14 +78,8 @@ export default {
     }
   },
 
-  watch: {
-    '$route.query': {
-      handler() {
-        const { searchTerm = '' } = this.$route.query
-        this.search = searchTerm
-      },
-      immediate: true
-    }
+  created() {
+    this.search = this.$route.query.searchTerm
   },
 
   methods: {
