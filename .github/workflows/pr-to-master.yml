@@ -34,6 +34,11 @@ jobs:
       env:
         CYPRESS_INSTALL_BINARY: 0
     - run: npx eslint --ext .js,.vue --ignore-path .gitignore .
-#     - run: npm test
+    # - run: npm test
 #       env:
 #         CI: true
+    - name: upload and run ui review
+      uses: chromaui/action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}$
+          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}$
