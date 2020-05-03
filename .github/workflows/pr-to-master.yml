@@ -39,6 +39,6 @@ jobs:
 #         CI: true
     - name: upload and run ui review
       uses: chromaui/action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}$
-          projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}$
+      with:
+        token: ${{ secrets.GITHUB_TOKEN }}$
+        projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}$
