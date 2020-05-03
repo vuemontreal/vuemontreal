@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 require('dotenv').config()
 
 module.exports = [
@@ -11,4 +9,4 @@ module.exports = [
       id: process.env.GOOGLE_ANALYTIC
     }
   ]
-];
+]

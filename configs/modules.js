@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 require('dotenv').config()
 
 module.exports = [
@@ -30,5 +28,5 @@ module.exports = [
     }
   ],
   'nuxt-i18n',
-  '@nuxtjs/sitemap',
+  '@nuxtjs/sitemap'
 ]
