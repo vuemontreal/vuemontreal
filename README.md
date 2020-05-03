@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/e2424f31-4626-483e-8e1c-e558c921c6d5/deploy-status)](https://app.netlify.com/sites/vuemontreal/deploys)
+
 # Owners
 
 - [Tommy Lebel](https://www.linkedin.com/in/tommylebel/)
@@ -12,8 +14,6 @@
 - [Jeremie Bardon](https://github.com/jeremiebardon)
 
 ## Development
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e2424f31-4626-483e-8e1c-e558c921c6d5/deploy-status)](https://app.netlify.com/sites/vuemontreal/deploys)
 
 
 # Check our projects if you want to know more about what next for vue montreal
