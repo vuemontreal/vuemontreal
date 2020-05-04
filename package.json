@@ -3,6 +3,20 @@
   "version": "2.0.0",
   "description": "Vue montreal community website",
   "author": "f3ltron",
+  "contributors": [
+    {
+      "name": "Florent Giraud"
+    },
+    {
+      "name": "Tommy Lebel"
+    },
+    {
+      "name": "Aurélien Roux"
+    },
+    {
+      "name": "Jérémie Bardon"
+    }
+  ],
   "private": true,
   "scripts": {
     "dev": "nuxt",
@@ -10,7 +24,10 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "test": "jest"
+    "test": "jest",
+    "chromatic": "chromatic",
+    "storybook": "start-storybook -p 6060",
+    "build-storybook": "build-storybook -c .storybook"
   },
   "husky": {
     "hooks": {
@@ -40,16 +57,20 @@
     "vue-loading-skeleton": "^1.1.8"
   },
   "devDependencies": {
-    "@bazzite/nuxt-netlify": "^0.1.1",
+    "@babel/core": "^7.9.6",
     "@nuxtjs/eslint-config": "^1.0.1",
     "@nuxtjs/eslint-module": "^1.0.0",
     "@nuxtjs/google-analytics": "^2.2.3",
     "@nuxtjs/sitemap": "^2.0.1",
-    "@nuxtjs/tailwindcss": "^1.0.0",
+    "@nuxtjs/tailwindcss": "^2.0.0",
+    "@storybook/vue": "^5.3.18",
     "@vue/test-utils": "^1.0.0-beta.27",
     "axios": "^0.19.2",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
+    "babel-loader": "^8.1.0",
+    "babel-preset-vue": "^2.0.2",
+    "chromatic": "^4.0.2",
     "eslint": "^6.1.0",
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-nuxt": "^0.5.2",

@@ -15,5 +15,4 @@
 
 ## Development
 
-
 # Check our projects if you want to know more about what next for vue montreal
