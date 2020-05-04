@@ -29,6 +29,17 @@
     "storybook": "start-storybook -p 6060",
     "build-storybook": "build-storybook -c .storybook"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,md,vue}": [
+      "npm run lint -- --fix",
+      "git add"
+    ]
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.27",
     "@fortawesome/free-brands-svg-icons": "^5.12.1",
@@ -64,7 +75,10 @@
     "eslint-config-prettier": "^4.1.0",
     "eslint-plugin-nuxt": "^0.5.2",
     "eslint-plugin-prettier": "^3.0.1",
+    "husky": "3.1.0",
     "jest": "^24.1.0",
-    "prettier": "^1.16.4"
+    "lint-staged": "9.5.0",
+    "prettier": "^1.16.4",
+    "vue-jest": "^4.0.0-0"
   }
 }
