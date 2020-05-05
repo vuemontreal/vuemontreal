@@ -29,7 +29,7 @@
   "lint-staged": {
     "*.{js,css,md,vue}": [
       "npm run stylelint",
-      "npm run lint -- --fix --ignore-pattern '*.css'",
+      "npm run lint -- --fix",
       "git add"
     ]
   },
