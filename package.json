@@ -18,7 +18,8 @@
     "test": "jest",
     "chromatic": "chromatic",
     "storybook": "start-storybook -p 6060",
-    "build-storybook": "build-storybook -c .storybook"
+    "build-storybook": "build-storybook -c .storybook",
+    "stylelint": "stylelint 'components/**/*'"
   },
   "husky": {
     "hooks": {
@@ -27,6 +28,7 @@
   },
   "lint-staged": {
     "*.{js,css,md,vue}": [
+      "npm run stylelint",
       "npm run lint -- --fix --ignore-pattern '*.css'",
       "git add"
     ]
