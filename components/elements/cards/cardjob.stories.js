@@ -2,10 +2,10 @@ import { withA11y } from '@storybook/addon-a11y'
 import { withKnobs } from '@storybook/addon-knobs'
 
 import {
-  MtlCardjob,
+  MtlCardJob,
   MtlButton,
-  Mtlparagraph,
-  MtlTextinfo,
+  MtlParagraph,
+  MtlTextInfo,
   IconCalendarSharp,
   IconTimeOutline,
   MtlH4,
@@ -14,10 +14,10 @@ import {
 
 export const CardJob = () => ({
   components: {
-    MtlCardjob,
-    Mtlparagraph,
+    MtlCardJob,
+    MtlParagraph,
     MtlButton,
-    MtlTextinfo,
+    MtlTextInfo,
     IconCalendarSharp,
     IconTimeOutline,
     MtlH4,
@@ -25,28 +25,28 @@ export const CardJob = () => ({
   },
   template: `
     <div class="m-auto container mt-8 w-1/2">
-        <mtl-cardjob>
+        <mtl-card-job>
           <template #card-header>
-            <MtlH4 class="mb-2 text-mtl-green-500 pt-4">New</MtlH4>
-            <MtlTextinfo class="bg-mtl-grey-200 absolute top-0 right-0 text-mtl-grey-500 rounded-bl-lg px-4 py-2">Full-time</MtlTextinfo>
+            <mtl-h4 class="mb-2 text-mtl-green-500 pt-4">New</mtl-h4>
+            <mtl-text-info class="bg-mtl-grey-200 absolute top-0 right-0 text-mtl-grey-500 rounded-bl-lg px-4 py-2">Full-time</mtl-text-info>
           </template>
           <template #card-hero>
             <div class="w-10 h-10 bg-mtl-grey-400 rounded-lg mr-6 mt-1">
             </div>
             <div class="flex-grow">
-                <MtlH3 class="text-mtl-grey-500">Senior Front-End Developer</MtlH3>
-                <MtlTextinfo class="text-mtl-grey-200">At <span class="text-mtl-black-500">Sigma</span> San Francisco, CA, USA</MtlTextinfo>
+                <mtl-h3 class="text-mtl-grey-500">Senior Front-End Developer</mtl-h3>
+                <mtl-text-info class="text-mtl-grey-200">At <span class="text-mtl-black-500">Sigma</span> San Francisco, CA, USA</mtl-text-info>
             </div>
           </template>
           <template #card-body>
-            <Mtlparagraph class="text-mtl-grey-500">
+            <mtl-paragraph class="text-mtl-grey-500">
             The "orga" type meetings deal with topics about the organization of the Vue.js Montreal community. The goal of this meeting is to present the new vuemontreal.org website ...
-            </Mtlparagraph>
+            </mtl-paragraph>
           </template>
           <template #card-actions>
-            <MtlButton>apply</MtlButton>
+            <mtl-button>apply</mtl-button>
           </template>
-        </mtl-cardjob>
+        </mtl-card-job>
     </div>
   `
 })

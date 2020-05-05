@@ -6,15 +6,6 @@
   "contributors": [
     {
       "name": "Florent Giraud"
-    },
-    {
-      "name": "Tommy Lebel"
-    },
-    {
-      "name": "Aurélien Roux"
-    },
-    {
-      "name": "Jérémie Bardon"
     }
   ],
   "private": true,
@@ -48,6 +39,8 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0",
     "dotenv": "^8.2.0",
+    "highlight.js": "^10.0.2",
+    "markdown-it": "^10.0.0",
     "nuxt": "^2.12.0",
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-i18n": "^6.6.1",
@@ -80,6 +73,8 @@
     "jest": "^24.1.0",
     "lint-staged": "9.5.0",
     "prettier": "^1.16.4",
+    "stylelint": "^13.3.3",
+    "stylelint-config-standard": "^20.0.0",
     "vue-jest": "^4.0.0-0"
   }
 }

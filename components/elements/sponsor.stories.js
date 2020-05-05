@@ -13,10 +13,10 @@ export const Sponsor = () => ({
     }
   },
   template: `
-    <div class="m-auto container mt-8 flex justify-around">
-        <mtl-sponsor :name="name" />
-        <mtl-sponsor :name="name" />
-        <mtl-sponsor :name="name" />
+    <div class="m-auto container mt-8 flex justify-around" >
+      <mtl-sponsor :name="name" />
+      <mtl-sponsor :name="name" />
+      <mtl-sponsor :name="name" />
     </div>
   `
 })

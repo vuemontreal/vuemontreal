@@ -17,12 +17,12 @@ export const Button = () => ({
   },
   template: `
     <div class="m-auto container mt-8">
-        <MtlButton class="mb-6">Primary Button</MtlButton>
-        <MtlButton secondary class="mb-6">Secondary Button</MtlButton>
-        <MtlButton tertiary class="mb-6">Tertiary Button</MtlButton>
+        <mtl-button class="mb-6">Primary Button</mtl-button>
+        <mtl-button secondary class="mb-6">Secondary Button</mtl-button>
+        <mtl-button tertiary class="mb-6">Tertiary Button</mtl-button>
 
         <h1 class="mt-10 mb-4">Example Button</h1>
-        <MtlButton :tertiary="tertiary" :secondary="secondary"> Playground button</MtlButton>
+        <mtl-button :tertiary="tertiary" :secondary="secondary"> Playground button</mtl-button>
     </div>
   `
 })
