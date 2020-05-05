@@ -36,7 +36,7 @@
   },
   "lint-staged": {
     "*.{js,css,md,vue}": [
-      "npm run lint -- --fix",
+      "npm run lint -- --fix --ignore-pattern '*.css'",
       "git add"
     ]
   },
@@ -63,12 +63,13 @@
     "@nuxtjs/google-analytics": "^2.2.3",
     "@nuxtjs/sitemap": "^2.0.1",
     "@nuxtjs/tailwindcss": "^2.0.0",
+    "@storybook/addon-a11y": "^5.3.18",
+    "@storybook/addon-knobs": "^5.3.18",
     "@storybook/vue": "^5.3.18",
     "@vue/test-utils": "^1.0.0-beta.27",
     "axios": "^0.19.2",
     "babel-eslint": "^10.0.1",
     "babel-jest": "^24.1.0",
-    "babel-loader": "^8.1.0",
     "babel-preset-vue": "^2.0.2",
     "chromatic": "^4.0.2",
     "eslint": "^6.1.0",
