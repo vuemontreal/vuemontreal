@@ -34,4 +34,3 @@ jobs:
       env:
         CYPRESS_INSTALL_BINARY: 0
     - run: npx eslint --ext .js,.vue --ignore-pattern '*.css'
-    - run: npx stylelint 'components/**/*'
