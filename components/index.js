@@ -1,15 +1,16 @@
-export { default as MtlH1 } from '@/components/tokens/texts/mtl-h1.vue'
-export { default as MtlH2 } from '@/components/tokens/texts/mtl-h2.vue'
-export { default as MtlH3 } from '@/components/tokens/texts/mtl-h3.vue'
-export { default as MtlH4 } from '@/components/tokens/texts/mtl-h4.vue'
-export { default as MtlTextinfo } from '@/components/tokens/texts/mtl-textinfo.vue'
-export { default as MtlTextbutton } from '@/components/tokens/texts/mtl-textbutton.vue'
-export { default as MtlTextsmall } from '@/components/tokens/texts/mtl-textsmall.vue'
-export { default as Mtlparagraph } from '@/components/tokens/texts/mtl-paragraph.vue'
+export { default as MtlH1 } from '@/components/tokens/texts/h1.vue'
+export { default as MtlH2 } from '@/components/tokens/texts/h2.vue'
+export { default as MtlH3 } from '@/components/tokens/texts/h3.vue'
+export { default as MtlH4 } from '@/components/tokens/texts/h4.vue'
+export { default as MtlTextinfo } from '@/components/tokens/texts/textinfo.vue'
+export { default as MtlTextbutton } from '@/components/tokens/texts/textbutton.vue'
+export { default as MtlTextsmall } from '@/components/tokens/texts/textsmall.vue'
+export { default as Mtlparagraph } from '@/components/tokens/texts/paragraph.vue'
 
-export { default as MtlButton } from '@/components/elements/mtl-button.vue'
+export { default as MtlButton } from '@/components/elements/button.vue'
 
-export { default as MtlCardevent } from '@/components/elements/cards/mtl-cardevent.vue'
+export { default as MtlCardevent } from '@/components/elements/cards/cardevent.vue'
+export { default as MtlCardjob } from '@/components/elements/cards/cardjob.vue'
 
 export { default as IconCalendarSharp } from '@/components/tokens/icons/calendar-sharp.vue'
 export { default as IconChevronBack } from '@/components/tokens/icons/chevron-back.vue'
@@ -21,3 +22,7 @@ export { default as IconLogoYoutube } from '@/components/tokens/icons/logo-youtu
 export { default as IconMenuOutline } from '@/components/tokens/icons/menu-outline.vue'
 export { default as IconNotifications } from '@/components/tokens/icons/notifications.vue'
 export { default as IconTimeOutline } from '@/components/tokens/icons/time-outline.vue'
+
+export { default as MtlTextInput } from '@/components/elements/inputs/text-input.vue'
+
+export { default as MtlSponsor } from '@/components/elements/sponsor.vue'

@@ -8,6 +8,6 @@ export default {}
 
 <style lang="postcss" scoped>
 p {
-  @apply text-sm font-semibold text-mtl-grey-200;
+  @apply text-sm font-semibold;
 }
 </style>
