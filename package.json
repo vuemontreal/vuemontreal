@@ -28,7 +28,7 @@
   },
   "lint-staged": {
     "*.{js,css,md,vue}": [
-      "npm run stylelint",
+      "npx stylelint",
       "npm run lint -- --fix",
       "git add"
     ]
