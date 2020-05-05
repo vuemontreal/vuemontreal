@@ -18,8 +18,7 @@
     "test": "jest",
     "chromatic": "chromatic",
     "storybook": "start-storybook -p 6060",
-    "build-storybook": "build-storybook -c .storybook",
-    "stylelint": "stylelint 'components/**/*'"
+    "build-storybook": "build-storybook -c .storybook"
   },
   "husky": {
     "hooks": {
@@ -28,8 +27,7 @@
   },
   "lint-staged": {
     "*.{js,css,md,vue}": [
-      "npx stylelint",
-      "npm run lint -- --fix",
+      "npm run lint -- --fix --ignore-pattern '*.css'",
       "git add"
     ]
   },
@@ -75,8 +73,6 @@
     "jest": "^24.1.0",
     "lint-staged": "9.5.0",
     "prettier": "^1.16.4",
-    "stylelint": "^13.3.3",
-    "stylelint-config-standard": "^20.0.0",
     "vue-jest": "^4.0.0-0"
   }
 }
