@@ -10,7 +10,12 @@ module.exports = {
     }
   ],
   link: [
-    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-    // { rel: 'stylesheet', href: 'https://unpkg.com/swiper/css/swiper.min.css' }
-  ]
+    { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+    {
+      href:
+        'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap',
+      rel: 'stylesheet'
+    }
+  ],
+  css: ['~/assets/css/global.css']
 }

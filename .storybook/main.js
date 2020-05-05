@@ -1,6 +1,11 @@
 const { getWebpackConfig } = require('nuxt')
 
 module.exports = {
+    stories: ['../components/**/*.stories.js'],
+    addons: [
+        '@storybook/addon-a11y/register',
+        '@storybook/addon-knobs/register',
+    ],
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
     // 'PRODUCTION' is used when building the static version of storybook.

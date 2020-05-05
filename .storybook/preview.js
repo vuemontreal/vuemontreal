@@ -1,6 +1,6 @@
 import Vue from 'vue'
-import { configure } from '@storybook/vue'
 import '@/assets/css/tailwind.css'
+import '@/assets/css/global.css'
 
 Vue.component('nuxt-link', {
   props:   ['to'],
@@ -13,4 +13,3 @@ Vue.component('nuxt-link', {
 })
 
 
-configure(require.context('../components', true, /\.stories\.js$/), module);

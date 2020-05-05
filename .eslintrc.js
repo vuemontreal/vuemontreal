@@ -14,6 +14,12 @@ module.exports = {
     'plugin:prettier/recommended',
     'plugin:nuxt/recommended'
   ],
+  "overrides": [
+    {
+      "files": ["bin/*.js", "lib/*.js"],
+      "excludedFiles": "*.css",
+    }
+  ],
   plugins: [
     'prettier'
   ],
