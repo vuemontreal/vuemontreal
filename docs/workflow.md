@@ -16,7 +16,7 @@ We are working with github projects. Our next branch will always the next releas
 When you create your merge request, your branch will have to match the following conditions:
 
 - Respect the [ISSUE_TEMPLATE](../.github/ISSUE_TEMPLATE/bug_report.md) or [FEATURE_TEMPLATE](../.github/ISSUE_TEMPLATE/feature_request.md)
-- Have a coherent branch name
+- Have a coherent branch name (See [Branch naming](#branch-naming))
 - Validate eslint
 - Validate our chromatic visual non regression
 - Should explain as much as possible what your work is doing
