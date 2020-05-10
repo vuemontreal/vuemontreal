@@ -2,9 +2,17 @@
 
 # Owners
 
-- [Tommy Lebel](https://www.linkedin.com/in/tommylebel/)
 - [Giraud Florent](https://www.linkedin.com/in/fgiraud42/)
+- [Tommy Lebel](https://www.linkedin.com/in/tommylebel/)
 
+## Development
+
+If you want to know how to contribute you will want to check our docs:
+
+- [Architecture](./docs/architecture.md)
+- [Workflow](./docs/workflow.md)
+- [Environment](./docs/environment.md)
+- [Styleguide](./docs/styleguide.md)
 
 # Thank's to our awesome contributors
 
@@ -12,7 +20,3 @@
 - [Aurelien Roux](https://github.com/aurelienroux)
 - [Stephane Reiss](https://github.com/T0RAT0RA)
 - [Jeremie Bardon](https://github.com/jeremiebardon)
-
-## Development
-
-# Check our projects if you want to know more about what next for vue montreal

@@ -26,8 +26,8 @@
     }
   },
   "lint-staged": {
-    "*.{js,css,md,vue}": [
-      "npm run lint -- --fix --ignore-pattern '*.css'",
+    "*.{js,vue}": [
+      "npm run lint -- --fix",
       "git add"
     ]
   },
