@@ -1,6 +1,6 @@
 <template>
   <div class="flex flex-col">
-    <label for="" class="text-mtl-grey-500">{{ label }}</label>
+    <label for class="text-mtl-black-400">{{ label }}</label>
     <input v-bind="$attrs" />
   </div>
 </template>
@@ -19,10 +19,10 @@ export default {
 
 <style lang="postcss" scoped>
 input {
-  @apply border border-mtl-green-500 rounded-lg h-12 px-8 text-mtl-grey-500;
+  @apply border border-mtl-green-500 rounded-lg h-10 px-8 text-mtl-black-400;
 }
 
 input:disabled {
-  @apply cursor-not-allowed bg-mtl-grey-200;
+  @apply cursor-not-allowed bg-mtl-black-200;
 }
 </style>

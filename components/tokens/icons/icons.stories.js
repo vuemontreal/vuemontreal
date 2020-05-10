@@ -33,7 +33,7 @@ export const Icons = () => ({
             <icon-calendar-sharp class="w-12 h-12 mr-4"/>
             <icon-calendar-sharp class="w-6 h-6 mr-4"/>
         </div>
-        <div class="flex mb-10 mr-10 items-center text-mtl-grey-300">
+        <div class="flex mb-10 mr-10 items-center text-mtl-black-300">
             <icon-chevron-back class="w-24 h-24 mr-4"/>
             <icon-chevron-back class="w-12 h-12 mr-4"/>
             <icon-chevron-back class="w-6 h-6 mr-4"/>
