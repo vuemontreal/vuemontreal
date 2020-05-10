@@ -1,4 +1,5 @@
-[![Netlify Status](https://api.netlify.com/api/v1/badges/e2424f31-4626-483e-8e1c-e558c921c6d5/deploy-status)](https://app.netlify.com/sites/vuemontreal/deploys)
+[![Production](https://api.netlify.com/api/v1/badges/e2424f31-4626-483e-8e1c-e558c921c6d5/deploy-status)](https://app.netlify.com/sites/vuemontreal/deploys)
+[![Design system](https://api.netlify.com/api/v1/badges/486d6f4f-78c7-4c26-be54-31a9d9b10891/deploy-status)](https://app.netlify.com/sites/vuemontreal-designsystem/deploys)
 
 # Owners
 
@@ -6,6 +7,8 @@
 - [Tommy Lebel](https://www.linkedin.com/in/tommylebel/)
 
 ## Development
+
+Link to our [Design system](https://vuemontreal-designsystem.netlify.app/)
 
 If you want to know how to contribute you will want to check our docs:
 
