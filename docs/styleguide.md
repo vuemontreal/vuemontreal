@@ -1,6 +1,6 @@
 As said before we are using as most as possible [VUE STYLEGUIDE](https://vuejs.org/v2/style-guide/).
 
-For our design you can check in our tailwind.config.js. Those are our basics:
+For our design you can check in our [tailwind.config.js](../tailwind.config.js). Those are our basics:
 
 ## Base
 
