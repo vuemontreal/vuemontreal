@@ -18,7 +18,7 @@ Creating a new Element:
 
 To create a new element, you will first want to navigate to /components/elements/ and create a new .vue file. Element names don’t have a prefix, but it’s recommended to make sure that they are compatible with existing and future HTML elements (to learn more, see [Naming of Things](https://github.com/viljamis/vue-design-system/wiki/naming-of-Things)).
 
-At the they should be inside your '/components/index.js' and exported with Ex Prefix.
+At the end they should be inside your `/components/index.js` and exported with Ex Prefix.
 
 ## Patterns
 
