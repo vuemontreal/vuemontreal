@@ -2,14 +2,15 @@
 
 ## Branch naming
 
-Please follow this naming pattern:
+Please follow this pattern for branch names:
 
-- feature => f/#issuenumer-small-description
-- issue => b/#issuenumber-small-description
+- feature => `f/#issuenumer-small-description`
+- issue => `b/#issuenumber-small-description`
 
 ## Release
 
-We are working with github projects. Our `next` branch will always be the upcoming release.
+We are working with github projects.  
+Our `next` branch will always be the upcoming release.
 
 ## Process
 
@@ -25,6 +26,5 @@ When you create your merge request, your branch will have to match the following
 ## Next
 
 - [Architecture](./architecture.md)
-- [Workflow](./workflow.md)
 - [Environment](./environment.md)
 - [Styleguide](./styleguide.md)
