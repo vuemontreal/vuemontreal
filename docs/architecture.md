@@ -4,7 +4,7 @@ We have a classic nuxt architecture. What you should know here is our components
 
 ## Tokens
 
-We are following as mush as possible [Vue design system](https://github.com/viljamis/vue-design-system/wiki/working-with-the-system).
+We are following as much as possible [Vue design system](https://github.com/viljamis/vue-design-system/wiki/working-with-the-system).
 
 `Design tokens are the atoms of the system as Salesforce describes them. In Vue Design System they are used instead of hard coded values to ensure a better consistency across any platform.`
 
