@@ -1,7 +1,9 @@
 <template>
   <div class="flex flex-col">
-    <label for class="text-mtl-black-400">{{ label }}</label>
-    <input v-bind="$attrs" />
+    <label class="text-mtl-black-400">
+      {{ label }}
+      <input v-bind="$attrs" />
+    </label>
   </div>
 </template>
 
