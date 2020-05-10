@@ -13,7 +13,7 @@ We are working with github projects. Our next branch will always the next releas
 
 ## Process
 
-When you will create your merge request. Your branch will have to validate these conditions:
+When you create your merge request, your branch will have to match the following conditions:
 
 - Respect the [ISSUE_TEMPLATE](../.github/ISSUE_TEMPLATE/bug_report.md) or [FEATURE_TEMPLATE](../.github/ISSUE_TEMPLATE/feature_request.md)
 - Have a coherent branch name
