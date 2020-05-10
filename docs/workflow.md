@@ -9,7 +9,7 @@ Please follow this naming pattern:
 
 ## Release
 
-We are working with github projects. Our next branch will always the next release incoming.
+We are working with github projects. Our `next` branch will always be the upcoming release.
 
 ## Process
 
