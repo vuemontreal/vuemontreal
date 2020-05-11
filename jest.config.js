@@ -6,6 +6,8 @@ module.exports = {
   },
   moduleFileExtensions: ['js', 'vue', 'json'],
   transform: {
+    '^.+\\.[tj]sx?$': 'babel-jest',
+    '^.+\\.mdx$': '@storybook/addon-docs/jest-transform-mdx',
     '^.+\\.js$': 'babel-jest',
     '.*\\.(vue)$': 'vue-jest'
   },

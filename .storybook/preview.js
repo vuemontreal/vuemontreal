@@ -1,6 +1,9 @@
+// import { addParameters } from '@storybook/vue';
+// import { DocsPage, DocsContainer } from '@storybook/addon-docs/blocks';
 import Vue from 'vue'
 import '@/assets/css/tailwind.css'
 import '@/assets/css/global.css'
+
 
 Vue.component('nuxt-link', {
   props:   ['to'],
@@ -13,3 +16,9 @@ Vue.component('nuxt-link', {
 })
 
 
+// addParameters({
+//   docs: {
+//     container: DocsContainer,
+//     page: DocsPage,
+//   },
+// });

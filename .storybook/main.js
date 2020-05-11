@@ -1,10 +1,12 @@
 const { getWebpackConfig } = require('nuxt')
+const createCompiler = require('@storybook/addon-docs/mdx-compiler-plugin');
 
 module.exports = {
-    stories: ['../components/**/*.stories.js'],
+    stories: ['../components/**/*.stories.(js|mdx)'],
     addons: [
         '@storybook/addon-a11y/register',
         '@storybook/addon-knobs/register',
+        '@storybook/addon-docs/preset'
     ],
     // `configType` has a value of 'DEVELOPMENT' or 'PRODUCTION'
     // You can change the configuration based on that.
@@ -41,7 +43,13 @@ module.exports = {
                             })
                         }
                         return el;
-                    })
+                    }),
+                    {
+                        test: /\.mdx$/,
+                       use: ['babel-loader', '@mdx-js/loader'],
+                    },
+
+
                 ]
             },
             plugins: sbWebpack.plugins,
