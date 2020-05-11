@@ -9,8 +9,8 @@ export { default as MtlParagraph } from '@/components/tokens/texts/paragraph.vue
 
 export { default as MtlButton } from '@/components/elements/button.vue'
 
-export { default as MtlCardEvent } from '@/components/elements/cards/cardevent.vue'
-export { default as MtlCardJob } from '@/components/elements/cards/cardjob.vue'
+export { default as MtlCardEvent } from '~/components/containers/cards/cardevent.vue'
+export { default as MtlCardJob } from '~/components/containers/cards/cardjob.vue'
 
 export { default as IconCalendarSharp } from '@/components/tokens/icons/calendar-sharp.vue'
 export { default as IconChevronBack } from '@/components/tokens/icons/chevron-back.vue'

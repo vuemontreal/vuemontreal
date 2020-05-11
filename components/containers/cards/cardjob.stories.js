@@ -10,7 +10,7 @@ import {
   IconTimeOutline,
   MtlH4,
   MtlH3
-} from '@/components/index'
+} from '@/components'
 
 export const CardJob = () => ({
   components: {
