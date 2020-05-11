@@ -19,7 +19,7 @@
     "chromatic": "chromatic",
     "storybook": "start-storybook -p 6060",
     "build-storybook": "build-storybook -c .storybook",
-    "stylelint": "stylelint '**/*.vue'"
+    "stylelint": "stylelint '**/*.(css|vue)'"
   },
   "husky": {
     "hooks": {
