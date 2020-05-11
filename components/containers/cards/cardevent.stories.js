@@ -52,6 +52,6 @@ export const CardEvent = () => ({
 })
 
 export default {
-  title: 'Elements',
+  title: 'Containers',
   decorators: [withA11y, withKnobs]
 }
