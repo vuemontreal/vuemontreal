@@ -18,7 +18,8 @@
     "test": "jest",
     "chromatic": "chromatic",
     "storybook": "start-storybook -p 6060",
-    "build-storybook": "build-storybook -c .storybook"
+    "build-storybook": "build-storybook -c .storybook",
+    "stylelint": "stylelint '**/*.vue'"
   },
   "husky": {
     "hooks": {
@@ -26,8 +27,12 @@
     }
   },
   "lint-staged": {
-    "*.{js,css,md,vue}": [
-      "npm run lint -- --fix --ignore-pattern '*.css'",
+    "*.{js,vue}": [
+      "npm run lint -- --fix",
+      "git add"
+    ],
+    "*.{css,vue}": [
+      "npm run stylelint -- --fix",
       "git add"
     ]
   },
@@ -38,6 +43,7 @@
     "@fortawesome/vue-fontawesome": "^0.1.9",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0",
+    "@nuxtjs/stylelint-module": "^3.2.2",
     "dotenv": "^8.2.0",
     "highlight.js": "^10.0.2",
     "markdown-it": "^10.0.0",
@@ -45,6 +51,7 @@
     "nuxt-fontawesome": "^0.4.0",
     "nuxt-i18n": "^6.6.1",
     "storyblok-nuxt": "^1.1.0",
+    "stylelint": "^13.3.3",
     "swiper": "^5.3.6",
     "tailwindcss-aspect-ratio": "^3.0.0",
     "vue-loading-skeleton": "^1.1.8"
@@ -73,6 +80,7 @@
     "jest": "^24.1.0",
     "lint-staged": "9.5.0",
     "prettier": "^1.16.4",
+    "stylelint-config-standard": "^20.0.0",
     "vue-jest": "^4.0.0-0"
   }
 }

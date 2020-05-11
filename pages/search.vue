@@ -165,19 +165,13 @@ span.checkmark {
 }
 
 /* Create the checkmark/indicator (hidden when not checked) */
-.checkmark:after {
+.checkmark::after {
   content: '';
   position: absolute;
   display: none;
 }
 
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark:after {
-  display: block;
-}
-
-/* Style the checkmark/indicator */
-.container .checkmark:after {
+.container .checkmark::after {
   left: 8px;
   top: 4px;
   width: 5px;
@@ -187,5 +181,10 @@ span.checkmark {
   -webkit-transform: rotate(45deg);
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark::after {
+  display: block;
 }
 </style>
