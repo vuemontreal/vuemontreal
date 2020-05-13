@@ -19,7 +19,7 @@ export default {}
 <style lang="postcss" scoped>
 .card-block {
   box-shadow: 0px 8px 42px rgba(0, 0, 0, 0.08);
-  @apply px-4 py-2 border border-mtl-grey-200 rounded-lg;
+  @apply px-4 py-2 border border-mtl-black-200 rounded-lg;
 }
 
 .card-header {
