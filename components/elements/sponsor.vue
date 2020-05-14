@@ -15,6 +15,6 @@ export default {
 
 <style lang="postcss" scoped>
 .sponsor {
-  @apply bg-mtl-grey-200 text-mtl-grey-500 text-sm font-semibold px-8 py-4;
+  @apply bg-mtl-black-200 text-mtl-black-400 text-sm font-semibold px-8 py-4;
 }
 </style>

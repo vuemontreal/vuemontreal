@@ -40,6 +40,6 @@ button {
   @apply bg-mtl-black-500 text-mtl-white;
 }
 .tertiary {
-  @apply bg-mtl-grey-200 text-mtl-grey-500;
+  @apply bg-mtl-black-200 text-mtl-black-400;
 }
 </style>
