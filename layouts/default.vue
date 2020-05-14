@@ -75,6 +75,7 @@ html {
   display: inherit;
   left: 0;
   transition: 0.3s ease-out;
+  @apply left-0 bg-mtl-white;
 }
 
 @media (min-width: 1024px) {
