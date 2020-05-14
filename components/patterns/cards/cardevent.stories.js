@@ -9,7 +9,7 @@ import {
   IconCalendarSharp,
   IconTimeOutline,
   MtlH4
-} from '@/components/index'
+} from '@/components'
 
 export const CardEvent = () => ({
   components: {
@@ -25,8 +25,8 @@ export const CardEvent = () => ({
     <div class="m-auto container mt-8 w-1/2">
         <mtl-card-event>
           <template #card-header>
-            <mtl-h4 class="mb-2 text-mtl-grey-500">009 - ORGA - Presentation of the new website vuemontreal.org</mtl-h4>
-            <div class="flex text-mtl-grey-200">
+            <mtl-h4 class="mb-2 text-mtl-black-400">009 - ORGA - Presentation of the new website vuemontreal.org</mtl-h4>
+            <div class="flex text-mtl-black-200">
               <div class="flex  items-center">
               <IconCalendarSharp class="mr-4 w-6 h-6"/><mtl-text-info class="mr-6">April 10, 2020</mtl-text-info>
               </div>
@@ -36,7 +36,7 @@ export const CardEvent = () => ({
             </div>
           </template>
           <template #card-body>
-            <mtl-paragraph class="text-mtl-grey-500">
+            <mtl-paragraph class="text-mtl-black-400">
               The "orga" type meetings deal with topics about the organization of the
               Vue.js Montreal community. The goal of this meeting is to present the
               new vuemontreal.org website ...
@@ -52,6 +52,6 @@ export const CardEvent = () => ({
 })
 
 export default {
-  title: 'Elements',
+  title: 'Containers',
   decorators: [withA11y, withKnobs]
 }

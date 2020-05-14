@@ -1,6 +1,12 @@
 require('dotenv').config()
 
 module.exports = [
+  [
+    '@nuxtjs/stylelint-module',
+    {
+      /* module options */
+    }
+  ],
   '@nuxtjs/eslint-module',
   '@nuxtjs/tailwindcss',
   [

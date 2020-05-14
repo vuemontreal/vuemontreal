@@ -5,6 +5,7 @@
  ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
  */
 module.exports = {
+  purge: false,
   theme: {
     aspectRatio: {
       '16/9': [16, 9],
@@ -17,24 +18,13 @@ module.exports = {
       'mtl-infos': '#8A8A8A', // TODO: deprecated
       'mtl-white': '#FFFFFF',
       'mtl-black': {
-        '100': '#CED0D0',
-        '200': '#9DA0A1',
-        '300': '#6D7173',
+        '200': '#CED0D0',
+        '300': '#9CA1A9',
         '400': '#3C4144',
         '500': '#0B1215'
       },
-      'mtl-grey': {
-        '100': '#DEE0E2',
-        '200': '#BDC0C6',
-        '300': '#9CA1A9',
-        '400': '#7B818D',
-        '500': '#5A6270'
-      },
       'mtl-green': {
-        '100': '#D4EBDE',
-        '200': '#A8D7BD',
-        '300': '#7DC29C',
-        '400': '#51AE7B',
+        '400': '#7DC29C',
         '500': '#269A5A'
       }
     }

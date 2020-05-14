@@ -10,7 +10,7 @@ import {
   IconTimeOutline,
   MtlH4,
   MtlH3
-} from '@/components/index'
+} from '@/components'
 
 export const CardJob = () => ({
   components: {
@@ -28,18 +28,18 @@ export const CardJob = () => ({
         <mtl-card-job>
           <template #card-header>
             <mtl-h4 class="mb-2 text-mtl-green-500 pt-4">New</mtl-h4>
-            <mtl-text-info class="bg-mtl-grey-200 absolute top-0 right-0 text-mtl-grey-500 rounded-bl-lg px-4 py-2">Full-time</mtl-text-info>
+            <mtl-text-info class="bg-mtl-black-200 absolute top-0 right-0 text-mtl-black-400 rounded-bl-lg px-4 py-2">Full-time</mtl-text-info>
           </template>
           <template #card-hero>
-            <div class="w-10 h-10 bg-mtl-grey-400 rounded-lg mr-6 mt-1">
+            <div class="w-10 h-10 bg-mtl-black-400 rounded-lg mr-6 mt-1">
             </div>
             <div class="flex-grow">
-                <mtl-h3 class="text-mtl-grey-500">Senior Front-End Developer</mtl-h3>
-                <mtl-text-info class="text-mtl-grey-200">At <span class="text-mtl-black-500">Sigma</span> San Francisco, CA, USA</mtl-text-info>
+                <mtl-h3 class="text-mtl-black-400">Senior Front-End Developer</mtl-h3>
+                <mtl-text-info class="text-mtl-black-200">At <span class="text-mtl-black-500">Sigma</span> San Francisco, CA, USA</mtl-text-info>
             </div>
           </template>
           <template #card-body>
-            <mtl-paragraph class="text-mtl-grey-500">
+            <mtl-paragraph class="text-mtl-black-400">
             The "orga" type meetings deal with topics about the organization of the Vue.js Montreal community. The goal of this meeting is to present the new vuemontreal.org website ...
             </mtl-paragraph>
           </template>
@@ -52,6 +52,6 @@ export const CardJob = () => ({
 })
 
 export default {
-  title: 'Elements',
+  title: 'Containers',
   decorators: [withA11y, withKnobs]
 }

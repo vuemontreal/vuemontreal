@@ -127,11 +127,13 @@ export default {
 
 .plus-icon {
   @apply absolute;
+
   right: 5px;
 }
 
 .close-icon {
   @apply absolute;
+
   left: 5px;
 }
 </style>
