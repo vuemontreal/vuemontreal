@@ -9,8 +9,9 @@ export { default as MtlParagraph } from '@/components/tokens/texts/paragraph.vue
 
 export { default as MtlButton } from '@/components/elements/button.vue'
 
-export { default as MtlCardEvent } from '~/components/patterns/cards/cardevent.vue'
-export { default as MtlCardJob } from '~/components/patterns/cards/cardjob.vue'
+export { default as MtlCardEvent } from '~/components/patterns/cards/card-event.vue'
+export { default as MtlCardJob } from '~/components/patterns/cards/card-job.vue'
+export { default as MtlCardSpeaker } from '~/components/patterns/cards/card-speaker.vue'
 
 export { default as IconCalendarSharp } from '@/components/tokens/icons/calendar-sharp.vue'
 export { default as IconChevronBack } from '@/components/tokens/icons/chevron-back.vue'
@@ -22,6 +23,7 @@ export { default as IconLogoYoutube } from '@/components/tokens/icons/logo-youtu
 export { default as IconMenuOutline } from '@/components/tokens/icons/menu-outline.vue'
 export { default as IconNotifications } from '@/components/tokens/icons/notifications.vue'
 export { default as IconTimeOutline } from '@/components/tokens/icons/time-outline.vue'
+export { default as IconDocumentOutline } from '@/components/tokens/icons/document-outline.vue'
 
 export { default as MtlTextInput } from '@/components/elements/inputs/text-input.vue'
 
