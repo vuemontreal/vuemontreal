@@ -9,7 +9,7 @@ import {
   IconCalendarSharp,
   IconTimeOutline,
   MtlH4
-} from '@/components/index'
+} from '@/components'
 
 export const CardEvent = () => ({
   components: {
@@ -52,6 +52,6 @@ export const CardEvent = () => ({
 })
 
 export default {
-  title: 'Elements',
+  title: 'Containers',
   decorators: [withA11y, withKnobs]
 }

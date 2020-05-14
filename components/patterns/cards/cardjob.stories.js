@@ -10,7 +10,7 @@ import {
   IconTimeOutline,
   MtlH4,
   MtlH3
-} from '@/components/index'
+} from '@/components'
 
 export const CardJob = () => ({
   components: {
@@ -52,6 +52,6 @@ export const CardJob = () => ({
 })
 
 export default {
-  title: 'Elements',
+  title: 'Containers',
   decorators: [withA11y, withKnobs]
 }
