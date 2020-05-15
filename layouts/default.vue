@@ -46,7 +46,6 @@ export default {
     }
   },
   mounted() {
-    this.parseRoute()
     this.$storybridge.on(['input', 'published', 'change'], (event) => {
       if (event.action === 'input') {
         if (event.story.id === this.story.id) {
