@@ -3,7 +3,7 @@
     class="bg-mtl-black-500 fixed top-0 left-0 w-full h-12 flex justify-between items-center px-2"
   >
     <IconMenuOutline
-      @click.native="$store.commit('openNavMobile')"
+      @click.native="$emit('openNav')"
       size="1x"
       class="text-mtl-white w-6 h-6"
     />

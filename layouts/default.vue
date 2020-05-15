@@ -2,7 +2,7 @@
   <div
     class="flex max-w-screen-lg container mx-auto p-4 md:p-10 justify-between flex-col"
   >
-    <mtl-nav-mobile />
+    <mtl-nav-mobile @openNav="$store.commit('openNavMobile')" />
     <mtl-side-bar-mobile :open="openNav" :currentRoute="currentRoute" />
     <!-- <div class="flex">
       <div
