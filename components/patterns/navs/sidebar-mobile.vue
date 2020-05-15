@@ -5,7 +5,7 @@
   >
     <div class="flex flex-col justify-start items-start mt-16 w-full">
       <IconCloseSharp
-        @click.native="$store.commit('openNavMobile')"
+        @click.native="$emit('openNav')"
         class="mr-2 mt-2 top-0 right-0 absolute w-8 h-8 text-mtl-black-400"
       />
       <mtl-h4 class="mb-4 text-mtl-green-400">
