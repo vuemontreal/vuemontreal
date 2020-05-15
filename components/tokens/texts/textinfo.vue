@@ -7,7 +7,7 @@ export default {}
 </script>
 
 <style lang="postcss" scoped>
-div {
+p {
   @apply text-sm font-semibold;
 }
 </style>
