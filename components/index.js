@@ -19,6 +19,7 @@ export { default as IconMenuOutline } from '@/components/tokens/icons/menu-outli
 export { default as IconNotifications } from '@/components/tokens/icons/notifications.vue'
 export { default as IconNotificationsActive } from '@/components/tokens/icons/notifications-active.vue'
 export { default as IconTimeOutline } from '@/components/tokens/icons/time-outline.vue'
+export { default as IconDocumentOutline } from '@/components/tokens/icons/document-outline.vue'
 
 // Elements
 
@@ -28,7 +29,9 @@ export { default as MtlButton } from '@/components/elements/button.vue'
 
 // Patterns
 
-export { default as MtlCardEvent } from '~/components/patterns/cards/cardevent.vue'
-export { default as MtlCardJob } from '~/components/patterns/cards/cardjob.vue'
+export { default as MtlCardEvent } from '~/components/patterns/cards/card-event.vue'
+export { default as MtlCardJob } from '~/components/patterns/cards/card-job.vue'
+export { default as MtlCardSpeaker } from '~/components/patterns/cards/card-speaker.vue'
+
 export { default as MtlNavMobile } from '@/components/patterns/navs/nav-mobile.vue'
 export { default as MtlSideBarMobile } from '@/components/patterns/navs/sidebar-mobile.vue'

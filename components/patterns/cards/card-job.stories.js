@@ -52,6 +52,6 @@ export const CardJob = () => ({
 })
 
 export default {
-  title: 'Containers',
+  title: 'Patterns',
   decorators: [withA11y, withKnobs]
 }
