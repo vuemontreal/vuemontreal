@@ -1,5 +1,5 @@
 <template>
-  <p><slot /></p>
+  <p class="inline-block"><slot /></p>
 </template>
 
 <script>

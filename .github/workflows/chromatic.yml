@@ -5,9 +5,9 @@ name: CHROMATIC - upload and run ui review
 
 on:
   push:
-    branches: [ master ]
+    branches: [ next ]
   pull_request:
-    branches: [ master ]
+    branches: [ next ]
 
 jobs:
   build:
