@@ -8,18 +8,26 @@ module.exports = {
     fallbackLocale: 'en',
     messages: {
       en: {
-        archives: 'Archives',
+        events: 'Events',
         home: 'Home',
         more: 'More',
         register: 'Register',
-        slides: 'View slides'
+        slides: 'View slides',
+        lang: 'Language',
+        other: 'Others',
+        joinslack: 'Join us on slack',
+        conduct: 'Code of conduct'
       },
       fr: {
-        archives: 'Archives',
+        events: 'Events',
         home: 'Accueil',
         more: "Plus d'infos",
         register: "S'inscrire",
-        slides: 'Voir les diapositives'
+        slides: 'Voir les diapositives',
+        lang: 'Langage',
+        other: 'Autres',
+        joinslack: 'Nous rejoindre sur slack',
+        conduct: 'Code de conduite'
       }
     }
   },

@@ -1,5 +1,5 @@
 <template>
-  <p><slot /></p>
+  <div><slot /></div>
 </template>
 
 <script>
@@ -7,7 +7,7 @@ export default {}
 </script>
 
 <style lang="postcss" scoped>
-p {
+div {
   @apply text-sm font-semibold;
 }
 </style>
