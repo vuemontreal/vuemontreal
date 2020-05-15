@@ -40,7 +40,10 @@ export default {
     }
   },
   watch: {
-    '$route.query': 'parseRoute'
+    '$route.query': {
+      handler: 'parseRoute',
+      immediate: true
+    }
   },
   mounted() {
     this.parseRoute()
@@ -65,5 +68,5 @@ export default {
 </script>
 
 <style lang="postcss">
-@import '../assets/css/global.css';
+@import '~/assets/css/global.css';
 </style>

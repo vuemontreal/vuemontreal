@@ -40,7 +40,7 @@
           rel="noopener noreferrer"
           href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
         >
-          {{ $t('joinslack') }}
+          {{ $t('join_slack') }}
         </a>
       </mtl-text-info>
       <mtl-text-info class="mb-4 pl-4">

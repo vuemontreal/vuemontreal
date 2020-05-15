@@ -1,4 +1,4 @@
-// tokens
+// Tokens
 
 export { default as MtlH1 } from '@/components/tokens/texts/h1.vue'
 export { default as MtlH2 } from '@/components/tokens/texts/h2.vue'

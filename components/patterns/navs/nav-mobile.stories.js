@@ -21,7 +21,7 @@ export const NavMobile = () => ({
   methods: {
     toggleNav() {
       // eslint-disable-next-line no-console
-      console.log('toggle nav')
+      console.info('toggle nav')
       this.open = !this.open
     }
   },

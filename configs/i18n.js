@@ -15,7 +15,7 @@ module.exports = {
         slides: 'View slides',
         lang: 'Language',
         other: 'Others',
-        joinslack: 'Join us on slack',
+        join_slack: 'Join us on slack',
         conduct: 'Code of conduct'
       },
       fr: {
@@ -26,7 +26,7 @@ module.exports = {
         slides: 'Voir les diapositives',
         lang: 'Langage',
         other: 'Autres',
-        joinslack: 'Nous rejoindre sur slack',
+        join_slack: 'Nous rejoindre sur slack',
         conduct: 'Code de conduite'
       }
     }
