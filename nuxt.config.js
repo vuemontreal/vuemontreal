@@ -11,5 +11,14 @@ export default {
   modules: require('./configs/modules'),
   generate: require('./configs/generate').generate,
   sitemap: require('./configs/generate').sitemap,
-  i18n: require('./configs/i18n')
+  i18n: require('./configs/i18n'),
+  router: {
+    extendRoutes(routes, resolve) {
+      routes.push({
+        name: 'custom',
+        path: '/en*',
+        component: resolve(__dirname, 'pages/404.vue')
+      })
+    }
+  }
 }

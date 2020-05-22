@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex max-w-screen-lg container mx-auto p-4 md:p-10 justify-between flex-col"
+    class="flex max-w-screen-lg container mx-auto md:p-10 justify-between flex-col"
   >
     <mtl-nav-mobile @openNav="$store.commit('openNavMobile')" />
     <mtl-side-bar-mobile
@@ -8,6 +8,7 @@
       @openNav="$store.commit('openNavMobile')"
       :currentRoute="currentRoute"
     />
+    <nuxt />
     <!-- <div class="flex">
       <div
         :class="{ open: openNav }"
@@ -17,7 +18,6 @@
       </div>
       <div class="w-full lg:w-9/12 p-0 lg:p-5">
         <mtl-navbar-top />
-        <nuxt />
       </div>
     </div>-->
     <!-- <mtl-footer /> -->
@@ -59,6 +59,7 @@ export default {
   methods: {
     parseRoute() {
       const { name } = this.$route
+      if (!name) return
       const finalName = name.split('__')[0]
       this.currentRoute = finalName
     }

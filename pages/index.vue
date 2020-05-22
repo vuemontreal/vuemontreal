@@ -1,6 +1,19 @@
 <template>
-  <section class="flex flex-col">
-    <div v-if="$fetchState.pending">
+  <div>
+    <header class="relative mt-6">
+      <img src="~assets/bg.svg" alt="" class="header-filter" />
+      <div class="top-0 left-0 z-10 flex flex-col absolute pt-8">
+        <img src="~assets/logo.svg" alt="" class="mb-2 h-32" />
+        <p class="text-mtl-white text-xs px-1 text-center mb-4">
+          Vue Montreal is a community focused on the Vue.js Framework and
+          provide multiples events around technology and good practice.
+        </p>
+        <div class="flex justify-center">
+          <mtl-button>JOIN US ON SLACK</mtl-button>
+        </div>
+      </div>
+    </header>
+    <!-- <div v-if="$fetchState.pending">
       <eventPreviewSkeleton v-for="Skel in 4" :key="Skel" />
     </div>
     <p v-else-if="$fetchState.error">
@@ -25,18 +38,16 @@
         :key="event.uuid"
         :event="event"
       />
-    </div>
-  </section>
+    </div> -->
+  </div>
 </template>
 
 <script>
-import eventPreview from '@/components/event-preview/event-preview'
-import eventPreviewSkeleton from '@/components/event-preview/event-preview-skeleton'
+import { MtlButton } from '@/components/index'
 export default {
   name: 'HomePage',
   components: {
-    eventPreview,
-    eventPreviewSkeleton
+    MtlButton
   },
   head() {
     const seo = this.seo
@@ -121,3 +132,16 @@ export default {
   }
 }
 </script>
+
+<style lang="postcss" scoped>
+.header-filter {
+  filter: brightness(0.3);
+  height: 360px;
+
+  @apply absolute;
+}
+
+header {
+  height: 360px;
+}
+</style>

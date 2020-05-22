@@ -20,6 +20,7 @@ export { default as IconNotifications } from '@/components/tokens/icons/notifica
 export { default as IconNotificationsActive } from '@/components/tokens/icons/notifications-active.vue'
 export { default as IconTimeOutline } from '@/components/tokens/icons/time-outline.vue'
 export { default as IconDocumentOutline } from '@/components/tokens/icons/document-outline.vue'
+export { default as IconLogoNotFound } from '@/components/tokens/icons/logo-not-found.vue'
 
 // Elements
 
