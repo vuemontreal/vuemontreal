@@ -1,9 +1,9 @@
 <template>
   <article
     :class="
-      isIncoming ? ' border-mtl-green-500' : 'border-4 border-mtl-black-200'
+      isIncoming ? 'border-mtl-green-500' : 'border-4 border-mtl-black-200'
     "
-    class="border-4 px-8 py-2 mb-10 border-solid "
+    class="border-4 px-8 py-2 mb-10 border-solid"
   >
     <header>
       <time class="text-mtl-primary text-sm">{{ event.sort_by_date }}</time>
