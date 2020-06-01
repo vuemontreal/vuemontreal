@@ -1,5 +1,5 @@
 <template>
-  <article class="px-8 py-2 mb-10 border-solid border-4 border-gray-200">
+  <article class="px-8 py-2 mb-10 border-solid border-4 border-mtl-black-200">
     <header>
       <time class="text-mtl-primary text-sm">
         <Skeleton />
