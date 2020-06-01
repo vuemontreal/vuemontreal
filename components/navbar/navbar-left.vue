@@ -69,7 +69,7 @@
               ? 'border-mtl-green-500 focus:border-mtl-green-500 focus:outline-mtl-green-500'
               : 'border-mtl-black-500 focus:border-mtl-black-500'
           "
-          class="mr-2 px-2 py-2 border-2 uppercase"
+          class="mr-2 px-2 py-2 border-2 uppercase btn-lang"
         >
           {{ locale }}
         </button>
@@ -117,6 +117,10 @@ export default {
 
 img {
   max-width: 2.5rem;
+}
+
+.btn-lang {
+  outline: #42b983;
 }
 
 .icons {
