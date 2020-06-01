@@ -59,7 +59,6 @@
       <span class="pb-1">{{ $t('archives') }}</span>
     </a>
     <div class="mt-16 p-1">
-      <div class="mb-2 font-semibold">Lang</div>
       <div>
         <button
           v-for="locale in availableLocales"
@@ -67,12 +66,11 @@
           @click="$i18n.setLocale(locale)"
           :class="
             $i18n.locale === locale || !$i18n
-              ? 'border-green-500'
-              : 'border-gray-500'
+              ? 'border-mtl-green-500 focus:border-mtl-green-500 focus:outline-mtl-green-500'
+              : 'border-mtl-black-500 focus:border-mtl-black-500'
           "
-          class="mr-2 px-1 pt-2 border-2 "
+          class="mr-2 px-2 py-2 border-2 uppercase"
         >
-          <img :src="require(`~/assets/${locale}.png`)" alt="" />
           {{ locale }}
         </button>
       </div>
