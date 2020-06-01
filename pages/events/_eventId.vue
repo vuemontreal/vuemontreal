@@ -36,6 +36,7 @@ import CarouselSlide from '@/components/carousel/carousel-slide'
 import EventSkeleton from '@/components/event/event-skeleton'
 import SpeakerCard from '@/components/event/speaker-card'
 import Sponsors from '@/components/event/sponsors'
+import TextDescription from '@/components/event-preview/text-description'
 
 export default {
   components: {
@@ -43,6 +44,7 @@ export default {
     CarouselSlide,
     EventSkeleton,
     SpeakerCard,
+    TextDescription,
     Sponsors
   },
   data: () => ({
