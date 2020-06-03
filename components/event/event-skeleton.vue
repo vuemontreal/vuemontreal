@@ -15,7 +15,7 @@
       <div
         v-for="Skel in 4"
         :key="Skel"
-        class="w-full p-4 mb-4 overflow-hidden border-2 border-gray-200 shadow-md"
+        class="w-full p-4 mb-4 overflow-hidden border-2 border-mtl-black-200 shadow-md"
       >
         <div class="flex flex-col sm:flex-row">
           <div class="flex flex-col">
