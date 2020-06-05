@@ -9,7 +9,7 @@
     <div v-else>
       <template v-if="upcomingEvents.length">
         <h2 class="mb-4 font-bold uppercase border-b border-black pb-2">
-          Upcoming Events
+          {{ $t('upcomingEvents') }}
         </h2>
         <event-preview
           v-for="event in upcomingEvents"
@@ -20,7 +20,7 @@
       </template>
 
       <h2 class="mb-4 font-bold uppercase border-b border-black pb-2">
-        Past events
+        {{ $t('pastEvents') }}
       </h2>
       <event-preview
         v-for="event in pastEvents"
