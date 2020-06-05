@@ -83,4 +83,8 @@ html {
     position: inherit;
   }
 }
+
+p {
+  padding: 0 0 1em 0;
+}
 </style>
