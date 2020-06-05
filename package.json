@@ -52,7 +52,7 @@
   "devDependencies": {
     "@babel/core": "^7.9.6",
     "@nuxtjs/eslint-config": "^1.0.1",
-    "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/google-analytics": "^2.2.3",
     "@nuxtjs/sitemap": "^2.0.1",
     "@nuxtjs/tailwindcss": "^2.0.0",
