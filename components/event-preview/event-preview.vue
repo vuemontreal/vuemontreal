@@ -37,7 +37,7 @@
         </ul>
       </div>
     </header>
-    <main class="my-12">
+    <main class="my-4">
       <text-description :text="event.content.description" />
     </main>
     <footer class="border-t py-6 text-right">

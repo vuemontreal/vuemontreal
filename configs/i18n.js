@@ -9,6 +9,8 @@ module.exports = {
     messages: {
       en: {
         archives: 'Archives',
+        upcomingEvents: 'Upcoming Events',
+        pastEvents: 'Past Events',
         home: 'Home',
         more: 'More',
         register: 'Register',
@@ -16,6 +18,8 @@ module.exports = {
       },
       fr: {
         archives: 'Archives',
+        upcomingEvents: 'Événements à venir',
+        pastEvents: 'Événements passés',
         home: 'Accueil',
         more: "Plus d'infos",
         register: "S'inscrire",

@@ -7,21 +7,23 @@
       Error while fetching event
     </p>
     <div v-else>
-      <h2 class="mb-4 font-bold uppercase border-b border-black pb-2">
-        New events
-      </h2>
-      <event-preview
-        v-for="event in nextEvents(events)"
-        :key="event.uuid"
-        :event="event"
-        is-incoming
-      />
+      <template v-if="upcomingEvents.length">
+        <h2 class="mb-4 font-bold uppercase border-b border-black pb-2">
+          {{ $t('upcomingEvents') }}
+        </h2>
+        <event-preview
+          v-for="event in upcomingEvents"
+          :key="event.uuid"
+          :event="event"
+          is-incoming
+        />
+      </template>
 
       <h2 class="mb-4 font-bold uppercase border-b border-black pb-2">
-        Past events
+        {{ $t('pastEvents') }}
       </h2>
       <event-preview
-        v-for="event in pastEvents(events)"
+        v-for="event in pastEvents"
         :key="event.uuid"
         :event="event"
       />
@@ -84,6 +86,18 @@ export default {
     events: [],
     seo: null
   }),
+
+  computed: {
+    upcomingEvents: (vm) =>
+      vm.events.filter(
+        (event) => new Date(event.sort_by_date).setHours(24) > Date.now()
+      ),
+    pastEvents: (vm) =>
+      vm.events.filter(
+        (event) => new Date(event.sort_by_date).setHours(24) < Date.now()
+      )
+  },
+
   async fetch() {
     const lang = this.$store.state.i18n.locale
     const { version } = this.$nuxt.context.env
@@ -108,16 +122,6 @@ export default {
     if (this.$fetchState.timestamp <= Date.now() - 2000) {
       this.$fetch()
     }
-  },
-  methods: {
-    pastEvents: (events) =>
-      events.filter(
-        (event) => new Date(event.sort_by_date).setHours(24) < Date.now()
-      ),
-    nextEvents: (events) =>
-      events.filter(
-        (event) => new Date(event.sort_by_date).setHours(24) > Date.now()
-      )
   }
 }
 </script>
