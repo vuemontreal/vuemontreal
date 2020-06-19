@@ -13,10 +13,9 @@
       </mtl-text-small>
 
       <form @submit.prevent="" class="px-10 mb-8">
-        <mtl-text-input :placeholder="navigation.subscribe_name" label="name" />
+        <mtl-text-input :placeholder="navigation.subscribe_name" class="mb-4" />
         <mtl-text-input
           :placeholder="navigation.subscribe_email"
-          label="email"
           class="mb-4"
         />
         <div class="flex justify-end">
