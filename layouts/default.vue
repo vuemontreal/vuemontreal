@@ -4,41 +4,39 @@
   >
     <mtl-nav-mobile @openNav="$store.commit('openNavMobile', true)" />
     <mtl-sidebar-mobile
-      :open="openNav"
+      :navigation="datas"
+      :open="$store.state.navMobile"
       @openNav="$store.commit('openNavMobile')"
       :currentRoute="currentRoute"
     />
     <nuxt />
-    <!-- <div class="flex">
-      <div
-        :class="{ open: openNav }"
-        class="nav-left fixed left-0 inset-y-0 z-10 w-full lg:w-3/12 p-5 bg-white"
-      >
-        <mtl-navbar-left />
-      </div>
-      <div class="w-full lg:w-9/12 p-0 lg:p-5">
-        <mtl-navbar-top />
-      </div>
-    </div>-->
-    <mtl-footer />
+    <mtl-footer :navigation="datas" />
   </div>
 </template>
 
 <script>
 export default {
   data: () => ({
-    currentRoute: ''
+    currentRoute: '',
+    datas: {}
   }),
-  computed: {
-    openNav() {
-      return this.$store.state.navMobile
-    }
-  },
   watch: {
     '$route.query': {
       handler: 'parseRoute',
       immediate: true
     }
+  },
+  async fetch() {
+    const { version } = this.$nuxt.context.env
+    const settings = await this.$storyapi.get(
+      `cdn/stories/${
+        this.$i18n.locale === 'fr' ? '' : this.$i18n.locale
+      }/settings`,
+      {
+        version
+      }
+    )
+    this.datas = settings.data.story.content
   },
   mounted() {
     this.$storybridge.on(['input', 'published', 'change'], (event) => {

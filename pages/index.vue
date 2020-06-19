@@ -18,12 +18,13 @@
         <mtl-h-2>Next Events</mtl-h-2>
         <mtl-text-info class=" text-mtl-green-500">See all</mtl-text-info>
       </div>
-      <template v-if="nextEvents(events).length">
+      <!-- <template v-if="nextEvents(events).length">
         <div v-for="event in nextEvents(events)" :key="event._uid">
           <nuxt-link :to="event.full_slug">{{ event.name }}</nuxt-link>
         </div>
-      </template>
-      <div v-else>
+      </template> -->
+      <!-- <div v-else> -->
+      <div>
         <mtl-card-event>
           <template #card-header>
             <mtl-h-4 class="mb-2 text-mtl-black-400">
@@ -118,77 +119,79 @@ export default {
     seo: null
   }),
   async fetch() {
-    const lang = this.$store.state.i18n.locale
-    const { version } = this.$nuxt.context.env
-
-    const events = await this.$storyapi.get('cdn/stories/', {
-      version,
-      starts_with: lang + '/events/',
-      sort_by: 'sort_by_date:desc'
-    })
-    const home = await this.$storyapi.get(
-      `cdn/stories/${this.$i18n.locale}/home`,
-      {
-        version
-      }
-    )
-    this.seo = home.data.story.content.seo
-    this.events = events.data.stories
+    // eslint-disable-next-line no-console
+    // const lang = this.$store.state.i18n.locale
+    // const { version } = this.$nuxt.context.env
+    // const events = await this.$storyapi.get('cdn/stories/', {
+    //   version,
+    //   starts_with: lang + '/events/',
+    //   sort_by: 'sort_by_date:desc'
+    // })
+    // const settings = await this.$storyapi.get(
+    //   `cdn/stories/${this.$i18n.locale}/settings`,
+    //   {
+    //     version
+    //   }
+    // )
+    // this.seo = home.data.story.content.seo
+    // this.events = settings.data.stories
+    // eslint-disable-next-line no-console
+    // console.log(settings.data.story.content)
   },
   beforeMount() {
     this.$store.commit('openNavMobile', false)
   },
-  head() {
-    const seo = this.seo
-    if (!seo) return {}
-    return {
-      title: seo.title || '',
-      meta: [
-        {
-          property: 'og:title',
-          content: seo.og_title || ''
-        },
-        {
-          hid: `description`,
-          name: 'description',
-          content: seo.description
-        },
-        {
-          property: 'og:title',
-          content: seo.og_title || ''
-        },
-        {
-          property: 'og:description',
-          content: seo.og_description || ''
-        },
-        {
-          property: 'og:image',
-          content: seo.og_image || ''
-        },
-        {
-          property: 'twitter:title',
-          content: seo.twitter_title || ''
-        },
-        {
-          property: 'twitter:description',
-          content: seo.twitter_description || ''
-        },
-        {
-          property: 'twitter:image',
-          content: seo.twitter_image || ''
-        }
-      ]
-    }
-  },
+  // head() {
+  //   const seo = this.seo
+  //   if (!seo) return {}
+  //   return {
+  //     title: seo.title || '',
+  //     meta: [
+  //       {
+  //         property: 'og:title',
+  //         content: seo.og_title || ''
+  //       },
+  //       {
+  //         hid: `description`,
+  //         name: 'description',
+  //         content: seo.description
+  //       },
+  //       {
+  //         property: 'og:title',
+  //         content: seo.og_title || ''
+  //       },
+  //       {
+  //         property: 'og:description',
+  //         content: seo.og_description || ''
+  //       },
+  //       {
+  //         property: 'og:image',
+  //         content: seo.og_image || ''
+  //       },
+  //       {
+  //         property: 'twitter:title',
+  //         content: seo.twitter_title || ''
+  //       },
+  //       {
+  //         property: 'twitter:description',
+  //         content: seo.twitter_description || ''
+  //       },
+  //       {
+  //         property: 'twitter:image',
+  //         content: seo.twitter_image || ''
+  //       }
+  //     ]
+  //   }
+  // },
   methods: {
-    pastEvents: (events) =>
-      events.filter(
-        (event) => new Date(event.sort_by_date).setHours(24) < Date.now()
-      ),
-    nextEvents: (events) =>
-      events.filter(
-        (event) => new Date(event.sort_by_date).setHours(24) > Date.now()
-      )
+    // pastEvents: (events) =>
+    //   events.filter(
+    //     (event) => new Date(event.sort_by_date).setHours(24) < Date.now()
+    //   ),
+    // nextEvents: (events) =>
+    //   events.filter(
+    //     (event) => new Date(event.sort_by_date).setHours(24) > Date.now()
+    //   )
   }
 }
 </script>

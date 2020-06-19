@@ -103,39 +103,15 @@ export default {
   },
   i18n: {
     locales: ['en', 'fr'],
-    defaultLocale: 'en',
+    defaultLocale: 'fr',
     vueI18n: {
-      fallbackLocale: 'en',
-      messages: {
-        en: {
-          events: 'Events',
-          home: 'Home',
-          more: 'More',
-          register: 'Register',
-          slides: 'View slides',
-          lang: 'Language',
-          other: 'Others',
-          join_slack: 'Join us on slack',
-          conduct: 'Code of conduct'
-        },
-        fr: {
-          events: 'Events',
-          home: 'Accueil',
-          more: "Plus d'infos",
-          register: "S'inscrire",
-          slides: 'Voir les diapositives',
-          lang: 'Langage',
-          other: 'Autres',
-          join_slack: 'Nous rejoindre sur slack',
-          conduct: 'Code de conduite'
-        }
+      fallbackLocale: 'fr',
+      detectBrowserLanguage: {
+        useCookie: true,
+        cookieKey: 'i18n_redirected',
+        alwaysRedirect: false,
+        fallbackLocale: null
       }
-    },
-    detectBrowserLanguage: {
-      useCookie: true,
-      cookieKey: 'i18n_redirected',
-      alwaysRedirect: false,
-      fallbackLocale: null
     }
   },
   components: [

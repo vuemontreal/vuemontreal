@@ -9,52 +9,44 @@
         class="mr-2 mt-2 top-0 right-0 absolute w-10 h-10 text-mtl-black-400"
       />
       <mtl-h-3 class="mb-3 text-mtl-green-400">
-        Navigation
+        {{ navigation.navigation_title }}
       </mtl-h-3>
       <mtl-paragraph class="mb-4 pl-4">
-        <a
-          @click.prevent="$router.push(localePath('/'))"
-          :class="currentRoute == 'index' ? 'nuxt-link-active' : ''"
-          href=""
-        >
-          <span class="pb-1">{{ $t('home') }}</span>
-        </a>
+        <nuxt-link :to="localePath(navigation.navigation_home_link)">
+          {{ navigation.navigation_home }}
+        </nuxt-link>
       </mtl-paragraph>
       <mtl-paragraph class="mb-4 pl-4">
-        <a
-          @click.prevent="$router.push(localePath('/search'))"
-          :class="currentRoute == 'search' ? 'nuxt-link-active' : ''"
-          href=""
-        >
-          <span class="pb-1">{{ $t('events') }}</span>
-        </a>
+        <nuxt-link :to="localePath(navigation.navigation_events_link)">
+          {{ navigation.navigation_events }}
+        </nuxt-link>
       </mtl-paragraph>
 
       <hr class="my-4" />
       <mtl-h-3 class="mb-4 text-mtl-green-400">
-        {{ $t('other') }}
+        {{ navigation.other_title }}
       </mtl-h-3>
       <mtl-paragraph class="mb-4 pl-4">
         <a
+          :href="navigation.other_slack_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
         >
-          {{ $t('join_slack') }}
+          {{ navigation.other_slack_text }}
         </a>
       </mtl-paragraph>
       <mtl-paragraph class="mb-4 pl-4">
         <a
+          :href="navigation.code_of_conduct_link"
           target="_blank"
           rel="noopener noreferrer"
-          href="https://github.com/vuemontreal/vuemontreal/blob/master/.github/CODE_OF_CONDUCT.md"
         >
-          {{ $t('conduct') }}
+          {{ navigation.code_of_conduct }}
         </a>
       </mtl-paragraph>
       <hr class="my-4" />
       <mtl-h-3 class="mb-4 text-mtl-green-400">
-        {{ $t('lang') }}
+        {{ navigation.lang_title }}
       </mtl-h-3>
       <mtl-paragraph class="mb-4 pl-4">
         <a
@@ -99,6 +91,10 @@
 <script>
 export default {
   props: {
+    navigation: {
+      type: Object,
+      required: true
+    },
     open: {
       type: Boolean,
       default: false
