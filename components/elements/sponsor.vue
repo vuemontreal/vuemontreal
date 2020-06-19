@@ -1,11 +1,13 @@
 <template>
-  <div class="sponsor">{{ name }}</div>
+  <a :href="link" target="_blank" class="sponsor">
+    <img :src="img" alt="" width="80" />
+  </a>
 </template>
 
 <script>
 export default {
   props: {
-    name: {
+    link: {
       type: String,
       default: ''
     },

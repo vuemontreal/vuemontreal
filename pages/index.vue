@@ -5,18 +5,23 @@
       <div class="top-0 left-0 z-10 flex flex-col absolute behind pt-8">
         <img src="~assets/logo.svg" alt="" class="mb-2 h-32 " />
         <p class="text-mtl-white text-xs px-1 text-center mb-4">
-          Vue Montreal is a community focused on the Vue.js Framework and
-          provide multiples events around technology and good practice.
+          {{ datas.header_description }}
         </p>
         <div class="flex justify-center">
-          <mtl-button>JOIN US ON SLACK</mtl-button>
+          <a :href="datas.header_button_link" target="_blank">
+            <mtl-button>{{ datas.header_button }}</mtl-button>
+          </a>
         </div>
       </div>
     </header>
     <section id="next-events" class="px-2 mb-8">
       <div class="flex justify-between items-center mb-8">
-        <mtl-h-2>Next Events</mtl-h-2>
-        <mtl-text-info class=" text-mtl-green-500">See all</mtl-text-info>
+        <mtl-h-2>{{ datas.next_title }}</mtl-h-2>
+        <nuxt-link :to="localePath(datas.next_see_link)">
+          <mtl-text-info class=" text-mtl-green-500">
+            {{ datas.next_see_text }}
+          </mtl-text-info>
+        </nuxt-link>
       </div>
       <!-- <template v-if="nextEvents(events).length">
         <div v-for="event in nextEvents(events)" :key="event._uid">
@@ -61,8 +66,12 @@
     </section>
     <section id="new-jobs" class="px-2 mb-2">
       <div class="flex justify-between items-center mb-8">
-        <mtl-h-2>Last view job</mtl-h-2>
-        <mtl-text-info class=" text-mtl-green-500">See all</mtl-text-info>
+        <mtl-h-2>{{ datas.job_title }}</mtl-h-2>
+        <nuxt-link :to="localePath(datas.job_next_link)">
+          <mtl-text-info class=" text-mtl-green-500">
+            {{ datas.job_next_text }}
+          </mtl-text-info>
+        </nuxt-link>
       </div>
       <mtl-card-job>
         <template #card-header>
@@ -98,14 +107,15 @@
       </mtl-card-job>
     </section>
     <section id="sponsors" class="bg-mtl-black-200 py-6">
-      <mtl-h-2 class="text-center mb-8">Our sponsors</mtl-h-2>
+      <mtl-h-2 class="text-center mb-8">{{ datas.sponsor_title }}</mtl-h-2>
       <ul class="flex flex-wrap m-auto w-full">
-        <li class="w-1/3"><mtl-sponsor name="Netlify" /></li>
-        <li class="w-1/3"><mtl-sponsor name="Netlify" /></li>
-        <li class="w-1/3"><mtl-sponsor name="Netlify" /></li>
-        <li class="w-1/3"><mtl-sponsor name="Netlify" /></li>
-        <li class="w-1/3"><mtl-sponsor name="Netlify" /></li>
-        <li class="w-1/3"><mtl-sponsor name="Netlify" /></li>
+        <li
+          v-for="sponsor in datas.sponsors"
+          :key="sponsor._uid"
+          class="w-1/3 flex justify-center items-center"
+        >
+          <mtl-sponsor :link="sponsor.link.url" :img="sponsor.image" />
+        </li>
       </ul>
     </section>
   </main>
@@ -116,12 +126,21 @@ export default {
   name: 'HomePage',
   data: () => ({
     events: [],
-    seo: null
+    seo: null,
+    datas: null
   }),
   async fetch() {
-    // eslint-disable-next-line no-console
-    // const lang = this.$store.state.i18n.locale
-    // const { version } = this.$nuxt.context.env
+    const lang = this.$i18n.locale === 'fr' ? '' : this.$i18n.locale
+    const { version } = this.$nuxt.context.env
+    try {
+      const home = await this.$storyapi.get(`cdn/stories/${lang}/home`, {
+        version
+      })
+      this.datas = home.data.story.content
+    } catch (e) {
+      console.error(e)
+    }
+
     // const events = await this.$storyapi.get('cdn/stories/', {
     //   version,
     //   starts_with: lang + '/events/',
