@@ -21,7 +21,7 @@ export default {
 
 <style lang="postcss" scoped>
 input {
-  @apply border border-mtl-green-500 rounded-lg h-10 px-8 text-mtl-black-400;
+  @apply border border-mtl-green-500 rounded-lg h-10 px-6 text-mtl-black-400;
 }
 
 input:disabled {

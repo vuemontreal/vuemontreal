@@ -1,7 +1,7 @@
 <template>
   <aside
     :class="{ open }"
-    class="nav-left fixed left-0 inset-y-0 z-20 w-full p-5 bg-white"
+    class="nav-left fixed left-0 inset-y-0 z-20 w-full lg:w-1/3 p-5 bg-white"
   >
     <div class="flex flex-col justify-start items-start mt-16 w-full">
       <icon-close-sharp

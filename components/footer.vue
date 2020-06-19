@@ -1,29 +1,32 @@
 <template>
   <footer>
     <div id="subscribe" class=" bg-mtl-black-400 py-6">
-      <mtl-h-2 class="mb-2 text-mtl-white pl-10">
+      <mtl-h-2 class="mb-2 text-mtl-white pl-10 lg:pl-0 text-center">
         {{ navigation.subscribe_title }}
       </mtl-h-2>
-      <mtl-paragraph class="text-mtl-white pl-10 mb-10">
+      <mtl-paragraph class="text-mtl-white pl-10 mb-10 lg:pl-0 text-center">
         {{ navigation.subscribe_text }}
       </mtl-paragraph>
 
-      <mtl-text-small class="text-mtl-white text-center mb-4">
-        {{ navigation.subscribe_promise }}
-      </mtl-text-small>
-
-      <form @submit.prevent="" class="px-10 mb-8">
-        <mtl-text-input :placeholder="navigation.subscribe_name" class="mb-4" />
-        <mtl-text-input
-          :placeholder="navigation.subscribe_email"
-          class="mb-4"
-        />
-        <div class="flex justify-end">
-          <mtl-button>
-            {{ navigation.subscribe_button }}
-          </mtl-button>
-        </div>
-      </form>
+      <div class="container">
+        <form
+          @submit.prevent=""
+          class="px-10 mb-8 m-auto flex items-center justify-center"
+        >
+          <mtl-text-input
+            :placeholder="navigation.subscribe_email"
+            class="w-1/4 mr-4"
+          />
+          <div class="flex justify-end">
+            <mtl-button>
+              {{ navigation.subscribe_button }}
+            </mtl-button>
+          </div>
+        </form>
+        <mtl-text-small class="text-mtl-white text-center mb-4">
+          {{ navigation.subscribe_promise }}
+        </mtl-text-small>
+      </div>
     </div>
     <div id="social" class="text-center py-8 text-mtl-black-400">
       <ul class="flex m-auto justify-center mb-4">

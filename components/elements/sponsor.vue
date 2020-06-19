@@ -1,7 +1,11 @@
 <template>
-  <a :href="link" target="_blank" class="sponsor">
-    <img :src="img" alt="" width="80" />
-  </a>
+  <div
+    class=" bg-mtl-white px-4 py-8 rounded-full flex justify-center items-center"
+  >
+    <a :href="link" target="_blank" class="sponsor">
+      <img :src="img" alt="" width="80" height="80" />
+    </a>
+  </div>
 </template>
 
 <script>
@@ -21,6 +25,6 @@ export default {
 
 <style lang="postcss" scoped>
 .sponsor {
-  @apply bg-mtl-black-200 text-mtl-black-400 text-sm font-semibold px-8 py-4;
+  @apply text-sm font-semibold  max-w-full;
 }
 </style>

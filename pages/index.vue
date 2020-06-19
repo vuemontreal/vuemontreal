@@ -1,11 +1,13 @@
 <template>
   <main>
-    <header v-if="datas" class="mt-12 mb-8 bg-mtl-black-500">
-      <div class="flex flex-col justify-center items-center pt-8">
+    <header v-if="datas" class="mb-8 bg-mtl-black-500">
+      <div class="flex flex-col justify-center items-center py-8">
         <img src="~assets/logo.svg" alt="" class="mb-2 h-32 " />
-        <p class="text-mtl-white text-xs px-1 text-center mb-4">
+        <mtl-h-2
+          class="text-mtl-white text-xs px-1 text-center lg:m-auto lg:w-1/2 mb-4 lg:mb-8"
+        >
           {{ datas.header_description }}
-        </p>
+        </mtl-h-2>
         <div class="flex justify-center">
           <a :href="datas.header_button_link" target="_blank">
             <mtl-button>{{ datas.header_button }}</mtl-button>
@@ -13,7 +15,7 @@
         </div>
       </div>
     </header>
-    <section id="next-events" v-if="datas" class="px-2 mb-8">
+    <section id="next-events" v-if="datas" class="px-2 lg:px-0 mb-8">
       <div class="flex justify-between items-center mb-8">
         <mtl-h-2>{{ datas.next_title }}</mtl-h-2>
         <nuxt-link :to="localePath(datas.next_see_link)">
@@ -28,42 +30,55 @@
         </div>
       </template> -->
       <!-- <div v-else> -->
-      <div>
-        <mtl-card-event>
-          <template #card-header>
-            <mtl-h-4 class="mb-2 text-mtl-black-400">
-              009 - ORGA - Presentation of the new website vuemontreal.org
-            </mtl-h-4>
-            <div class="flex text-mtl-black-200">
-              <div class="flex  items-center">
-                <IconCalendarSharp class="mr-4 w-6 h-6" />
-                <mtl-text-info class="mr-6">
-                  April 10, 2020
-                </mtl-text-info>
+      <div class="flex flex-wrap -mx-4">
+        <div class="w-full px-4 lg:w-1/2 mb-4">
+          <mtl-card-event>
+            <template #card-header>
+              <mtl-h-4 class="mb-2 text-mtl-black-400">
+                009 - ORGA - Presentation of the new website vuemontreal.org
+              </mtl-h-4>
+              <div class="flex text-mtl-black-200">
+                <div class="flex  items-center">
+                  <IconCalendarSharp class="mr-4 w-6 h-6" />
+                  <mtl-text-info class="mr-6">
+                    April 10, 2020
+                  </mtl-text-info>
+                </div>
+                <div class="flex  items-center">
+                  <icon-time-outline class="mr-4 w-6 h-6" />
+                  <mtl-text-info>
+                    20:00
+                  </mtl-text-info>
+                </div>
               </div>
-              <div class="flex  items-center">
-                <icon-time-outline class="mr-4 w-6 h-6" />
-                <mtl-text-info>
-                  20:00
-                </mtl-text-info>
-              </div>
-            </div>
-          </template>
-          <template #card-body>
-            <mtl-paragraph class="text-mtl-black-400">
-              The "orga" type meetings deal with topics about the organization
-              of the Vue.js Montreal community. The goal of this meeting is to
-              present the new vuemontreal.org website ...
-            </mtl-paragraph>
-          </template>
-          <template #card-actions>
-            <mtl-button class="mr-2" tertiary>More Infos</mtl-button>
-            <mtl-button>Join</mtl-button>
-          </template>
-        </mtl-card-event>
+            </template>
+            <template #card-body>
+              <mtl-paragraph class="text-mtl-black-400">
+                The "orga" type meetings deal with topics about the organization
+                of the Vue.js Montreal community. The goal of this meeting is to
+                present the new vuemontreal.org website ...
+              </mtl-paragraph>
+            </template>
+            <template #card-actions>
+              <mtl-button class="mr-2" tertiary>More Infos</mtl-button>
+              <mtl-button>Join</mtl-button>
+            </template>
+          </mtl-card-event>
+        </div>
+        <div class="w-full px-4 lg:w-1/2 mb-4">
+          <mtl-card-job
+            class="bg-mtl-black-200 flex justify-center items-center h-64 lg:h-full"
+          >
+            <template #card-body>
+              <mtl-paragraph class="text-center w-full"
+                >Post a event</mtl-paragraph
+              >
+            </template>
+          </mtl-card-job>
+        </div>
       </div>
     </section>
-    <section id="new-jobs" v-if="datas" class="px-2 mb-2">
+    <section id="new-jobs" v-if="datas" class="px-2 lg:px-0 mb-8">
       <div class="flex justify-between items-center mb-8">
         <mtl-h-2>{{ datas.job_title }}</mtl-h-2>
         <nuxt-link :to="localePath(datas.job_next_link)">
@@ -72,42 +87,57 @@
           </mtl-text-info>
         </nuxt-link>
       </div>
-      <mtl-card-job>
-        <template #card-header>
-          <mtl-h-4 class="mb-2 text-mtl-green-500 pt-4">New</mtl-h-4>
-          <mtl-text-info
-            class="bg-mtl-black-200 absolute top-0 right-0 text-mtl-black-400 rounded-bl-lg px-4 py-2"
+      <div class="flex flex-wrap -mx-4">
+        <div class="w-full px-4 lg:w-1/2 mb-4">
+          <mtl-card-job>
+            <template #card-header>
+              <mtl-h-4 class="mb-2 text-mtl-green-500 pt-4">New</mtl-h-4>
+              <mtl-text-info
+                class="bg-mtl-black-200 absolute top-0 right-0 text-mtl-black-400 rounded-bl-lg px-4 py-2"
+              >
+                Full-time
+              </mtl-text-info>
+            </template>
+            <template #card-hero>
+              <div
+                class="w-10 h-10 bg-mtl-black-400 rounded-lg mr-6 mt-1"
+              ></div>
+              <div class="flex-grow">
+                <mtl-h-3 class="text-mtl-black-400">
+                  Senior Front-End Developer
+                </mtl-h-3>
+                <mtl-text-info class="text-mtl-black-200">
+                  At <span class="text-mtl-black-500">Sigma</span> San
+                  Francisco, CA, USA
+                </mtl-text-info>
+              </div>
+            </template>
+            <template #card-body>
+              <mtl-paragraph class="text-mtl-black-400">
+                The "orga" type meetings deal with topics about the organization
+                of the Vue.js Montreal community. The goal of this meeting is to
+                present the new vuemontreal.org website ...
+              </mtl-paragraph>
+            </template>
+            <template #card-actions>
+              <mtl-button>apply</mtl-button>
+            </template>
+          </mtl-card-job>
+        </div>
+        <div class="w-full px-4 lg:w-1/2 mb-4">
+          <mtl-card-job
+            class="bg-mtl-black-200 flex justify-center items-center h-64 lg:h-full"
           >
-            Full-time
-          </mtl-text-info>
-        </template>
-        <template #card-hero>
-          <div class="w-10 h-10 bg-mtl-black-400 rounded-lg mr-6 mt-1"></div>
-          <div class="flex-grow">
-            <mtl-h-3 class="text-mtl-black-400">
-              Senior Front-End Developer
-            </mtl-h-3>
-            <mtl-text-info class="text-mtl-black-200">
-              At <span class="text-mtl-black-500">Sigma</span> San Francisco,
-              CA, USA
-            </mtl-text-info>
-          </div>
-        </template>
-        <template #card-body>
-          <mtl-paragraph class="text-mtl-black-400">
-            The "orga" type meetings deal with topics about the organization of
-            the Vue.js Montreal community. The goal of this meeting is to
-            present the new vuemontreal.org website ...
-          </mtl-paragraph>
-        </template>
-        <template #card-actions>
-          <mtl-button>apply</mtl-button>
-        </template>
-      </mtl-card-job>
+            <template #card-body>
+              <mtl-paragraph>Post a job</mtl-paragraph>
+            </template>
+          </mtl-card-job>
+        </div>
+      </div>
     </section>
     <section id="sponsors" v-if="datas" class="bg-mtl-black-200 py-6">
       <mtl-h-2 class="text-center mb-8">{{ datas.sponsor_title }}</mtl-h-2>
-      <ul class="flex flex-wrap m-auto w-full">
+      <ul class="flex flex-wrap m-auto w-full mb-8">
         <li
           v-for="sponsor in datas.sponsors"
           :key="sponsor._uid"
@@ -116,6 +146,9 @@
           <mtl-sponsor :link="sponsor.link.url" :img="sponsor.image" />
         </li>
       </ul>
+      <div class="flex justify-center">
+        <mtl-button>{{ datas.sponsor_become }}</mtl-button>
+      </div>
     </section>
   </main>
 </template>
@@ -224,9 +257,5 @@ export default {
 
 .behind {
   z-index: -1;
-}
-
-header {
-  height: 360px;
 }
 </style>

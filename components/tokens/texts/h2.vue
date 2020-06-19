@@ -1,9 +1,9 @@
 <template>
-  <h2><slot /></h2>
+  <h2 class="text-xl lg:text-2xl"><slot /></h2>
 </template>
 
 <style lang="postcss" scoped>
 h2 {
-  @apply text-2xl font-bold;
+  @apply font-bold;
 }
 </style>

@@ -1,8 +1,9 @@
 <template>
   <div
-    class="flex max-w-screen-lg container mx-auto md:p-10 justify-between flex-col"
+    class="max-w-screen-xl container mx-auto pt-12 lg:pt-24 md:pt-6 h-screen"
   >
     <mtl-nav-mobile @openNav="$store.commit('openNavMobile', true)" />
+    <mtl-layout v-if="$store.state.navMobile" />
     <mtl-sidebar-mobile
       :navigation="datas"
       :open="$store.state.navMobile"

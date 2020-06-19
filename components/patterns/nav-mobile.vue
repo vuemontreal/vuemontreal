@@ -6,8 +6,8 @@
       @click.native="$emit('openNav')"
       class="text-mtl-white w-8 h-8"
     />
-    <icon-notifications v-if="true" class="text-mtl-white w-8 h-8" />
-    <icon-notifications-active v-else class="text-mtl-white w-8 h-8" />
+    <!-- <icon-notifications v-if="true" class="text-mtl-white w-8 h-8" /> -->
+    <!-- <icon-notifications-active v-else class="text-mtl-white w-8 h-8" /> -->
   </nav>
 </template>
 
