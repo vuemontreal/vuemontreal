@@ -136,16 +136,21 @@
       </div>
     </section>
     <section id="sponsors" v-if="datas" class="bg-mtl-black-200 py-6">
-      <mtl-h-2 class="text-center mb-8">{{ datas.sponsor_title }}</mtl-h-2>
-      <ul class="flex flex-wrap m-auto w-full mb-8">
-        <li
-          v-for="sponsor in datas.sponsors"
-          :key="sponsor._uid"
-          class="w-1/3 flex justify-center items-center"
-        >
-          <mtl-sponsor :link="sponsor.link.url" :img="sponsor.image" />
-        </li>
-      </ul>
+      <mtl-h-2 class="text-center mb-8">{{
+        datas.sponsor_title || ''
+      }}</mtl-h-2>
+      <template v-if="datas.sponsors.length">
+        <ul class="flex flex-wrap m-auto w-full mb-8">
+          <li
+            v-for="sponsor in datas.sponsors"
+            :key="sponsor._uid"
+            class="w-1/3 flex justify-center items-center"
+          >
+            <mtl-sponsor :link="sponsor.link.url" :img="sponsor.image" />
+          </li>
+        </ul>
+      </template>
+
       <div class="flex justify-center">
         <mtl-button>{{ datas.sponsor_become }}</mtl-button>
       </div>
