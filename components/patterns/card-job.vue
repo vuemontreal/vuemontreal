@@ -22,6 +22,7 @@ export default {}
 <style lang="postcss" scoped>
 .card-block {
   box-shadow: 0 8px 42px rgba(0, 0, 0, 0.08);
+  z-index: -1;
 
   @apply px-4 pb-2 border border-mtl-black-200 rounded-lg relative;
 }

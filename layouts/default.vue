@@ -2,8 +2,8 @@
   <div
     class="flex max-w-screen-lg container mx-auto md:p-10 justify-between flex-col"
   >
-    <mtl-nav-mobile @openNav="$store.commit('openNavMobile')" />
-    <mtl-side-bar-mobile
+    <mtl-nav-mobile @openNav="$store.commit('openNavMobile', true)" />
+    <mtl-sidebar-mobile
       :open="openNav"
       @openNav="$store.commit('openNavMobile')"
       :currentRoute="currentRoute"
@@ -20,17 +20,12 @@
         <mtl-navbar-top />
       </div>
     </div>-->
-    <!-- <mtl-footer /> -->
+    <mtl-footer />
   </div>
 </template>
 
 <script>
-import { MtlNavMobile, MtlSideBarMobile } from '@/components/index'
 export default {
-  components: {
-    MtlSideBarMobile,
-    MtlNavMobile
-  },
   data: () => ({
     currentRoute: ''
   }),

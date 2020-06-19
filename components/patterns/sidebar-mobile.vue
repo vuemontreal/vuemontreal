@@ -4,14 +4,14 @@
     class="nav-left fixed left-0 inset-y-0 z-20 w-full p-5 bg-white"
   >
     <div class="flex flex-col justify-start items-start mt-16 w-full">
-      <IconCloseSharp
+      <icon-close-sharp
         @click.native="$emit('openNav')"
-        class="mr-2 mt-2 top-0 right-0 absolute w-8 h-8 text-mtl-black-400"
+        class="mr-2 mt-2 top-0 right-0 absolute w-10 h-10 text-mtl-black-400"
       />
-      <mtl-h4 class="mb-4 text-mtl-green-400">
+      <mtl-h-3 class="mb-3 text-mtl-green-400">
         Navigation
-      </mtl-h4>
-      <mtl-text-info class="mb-4 pl-4">
+      </mtl-h-3>
+      <mtl-paragraph class="mb-4 pl-4">
         <a
           @click.prevent="$router.push(localePath('/'))"
           :class="currentRoute == 'index' ? 'nuxt-link-active' : ''"
@@ -19,8 +19,8 @@
         >
           <span class="pb-1">{{ $t('home') }}</span>
         </a>
-      </mtl-text-info>
-      <mtl-text-info class="mb-4 pl-4">
+      </mtl-paragraph>
+      <mtl-paragraph class="mb-4 pl-4">
         <a
           @click.prevent="$router.push(localePath('/search'))"
           :class="currentRoute == 'search' ? 'nuxt-link-active' : ''"
@@ -28,13 +28,13 @@
         >
           <span class="pb-1">{{ $t('events') }}</span>
         </a>
-      </mtl-text-info>
+      </mtl-paragraph>
 
       <hr class="my-4" />
-      <mtl-h4 class="mb-4 text-mtl-green-400">
+      <mtl-h-3 class="mb-4 text-mtl-green-400">
         {{ $t('other') }}
-      </mtl-h4>
-      <mtl-text-info class="mb-4 pl-4">
+      </mtl-h-3>
+      <mtl-paragraph class="mb-4 pl-4">
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -42,8 +42,8 @@
         >
           {{ $t('join_slack') }}
         </a>
-      </mtl-text-info>
-      <mtl-text-info class="mb-4 pl-4">
+      </mtl-paragraph>
+      <mtl-paragraph class="mb-4 pl-4">
         <a
           target="_blank"
           rel="noopener noreferrer"
@@ -51,19 +51,19 @@
         >
           {{ $t('conduct') }}
         </a>
-      </mtl-text-info>
+      </mtl-paragraph>
       <hr class="my-4" />
-      <mtl-h4 class="mb-4 text-mtl-green-400">
+      <mtl-h-3 class="mb-4 text-mtl-green-400">
         {{ $t('lang') }}
-      </mtl-h4>
-      <mtl-text-info class="mb-4 pl-4">
+      </mtl-h-3>
+      <mtl-paragraph class="mb-4 pl-4">
         <a
           @click.prevent="$i18n.setLocale($i18n.locale == 'en' ? 'fr' : 'en')"
           href=""
         >
           {{ $i18n.locale == 'en' ? 'fr' : 'en' }}
         </a>
-      </mtl-text-info>
+      </mtl-paragraph>
       <div
         class="mb-4 p-1 bg-mtl-black-400 text-mtl-white flex absolute bottom-0 left-0 w-full justify-center"
       >
@@ -73,7 +73,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <icon-logo-github class="w-8 h-8" />
+          <icon-logo-github class="w-10 h-10" />
         </a>
         <a
           class="p-2"
@@ -81,7 +81,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <icon-logo-youtube class="w-8 h-8" />
+          <icon-logo-youtube class="w-10 h-10" />
         </a>
         <a
           class="p-2"
@@ -89,7 +89,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <icon-logo-linkedin class="w-8 h-8" />
+          <icon-logo-linkedin class="w-10 h-10" />
         </a>
       </div>
     </div>
@@ -97,24 +97,7 @@
 </template>
 
 <script>
-import {
-  IconLogoGithub,
-  IconLogoYoutube,
-  IconLogoLinkedin,
-  IconCloseSharp,
-  MtlH4,
-  MtlTextInfo
-} from '@/components/index.js'
-
 export default {
-  components: {
-    IconLogoGithub,
-    IconLogoYoutube,
-    IconLogoLinkedin,
-    IconCloseSharp,
-    MtlH4,
-    MtlTextInfo
-  },
   props: {
     open: {
       type: Boolean,

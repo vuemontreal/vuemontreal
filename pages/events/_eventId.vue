@@ -31,20 +31,7 @@
 </template>
 
 <script>
-import Carousel from '@/components/carousel/carousel'
-import CarouselSlide from '@/components/carousel/carousel-slide'
-import EventSkeleton from '@/components/event/event-skeleton'
-import SpeakerCard from '@/components/event/speaker-card'
-import Sponsors from '@/components/event/sponsors'
-
 export default {
-  components: {
-    Carousel,
-    CarouselSlide,
-    EventSkeleton,
-    SpeakerCard,
-    Sponsors
-  },
   data: () => ({
     story: null
   }),

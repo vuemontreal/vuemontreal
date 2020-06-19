@@ -2,7 +2,7 @@
   <div class="flex flex-col">
     <label class="text-mtl-black-400">
       {{ label }}
-      <input v-bind="$attrs" />
+      <input v-bind="$attrs" class=" w-full" />
     </label>
   </div>
 </template>

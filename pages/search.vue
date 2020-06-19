@@ -41,14 +41,7 @@
 </template>
 
 <script>
-import eventPreviewSkeleton from '@/components/event-preview/event-preview-skeleton'
-import eventPreview from '@/components/event-preview/event-preview'
-
 export default {
-  components: {
-    eventPreview,
-    eventPreviewSkeleton
-  },
   data: () => ({
     events: [],
     checkedTags: [],

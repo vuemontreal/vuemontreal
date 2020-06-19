@@ -8,6 +8,10 @@ export default {
     name: {
       type: String,
       default: ''
+    },
+    img: {
+      type: String,
+      default: ''
     }
   }
 }

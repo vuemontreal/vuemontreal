@@ -1,54 +1,47 @@
 <template>
-  <footer
-    class="h-40 bg-black text-white flex justify-center items-center flex-col"
-  >
-    <p class="flex">
-      <a
-        class="p-2 icon hidden lg:block"
-        href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <font-awesome-icon
-          :icon="['fab', 'slack']"
-          class="fill-current text-mtl-primary w-4 h-4"
-        />
-      </a>
-      <a
-        class="p-2 icon hidden lg:block"
-        href="https://www.linkedin.com/groups/12289604/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <font-awesome-icon
-          :icon="['fab', 'linkedin']"
-          class="fill-current text-mtl-primary w-4 h-4"
-        />
-      </a>
-      <a
-        class="p-2 icon hidden lg:block"
-        href="https://github.com/vuemontreal/vuemontreal"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <font-awesome-icon
-          :icon="['fab', 'github']"
-          class="fill-current text-mtl-primary w-4 h-4"
-        />
-      </a>
-    </p>
+  <footer>
+    <div id="subscribe" class=" bg-mtl-black-400 py-6">
+      <mtl-h-2 class="mb-2 text-mtl-white pl-10">
+        Subscribe to our newsletter
+      </mtl-h-2>
+      <mtl-paragraph class="text-mtl-white pl-10 mb-10">
+        Get the best of our listings into your inbox. Issued weekly.
+      </mtl-paragraph>
 
-    <p class="text-sm font-light text-center">
-      Thank's to
-      <a
-        href="https://www.netlify.com/open-source/"
-        target="_blank"
-        class="cursor-pointer underline"
-        >Netlify Open Source program</a
-      >
-      for hosting us and give us full access<br />
-      Copyright © 2020 Vue Montreal
-    </p>
+      <mtl-text-small class="text-mtl-white text-center mb-4">
+        ✋️ We promise to respect your inbox. Subscribe!
+      </mtl-text-small>
+
+      <form @submit.prevent="" class="px-10 mb-8">
+        <mtl-text-input label="name" placeholder="name" />
+        <mtl-text-input label="email" placeholder="email" class="mb-4" />
+        <div class="flex justify-end">
+          <mtl-button>
+            SUBSCRIBE
+          </mtl-button>
+        </div>
+      </form>
+
+      <mtl-paragraph class="text-mtl-white px-10">
+        Thank's to Netlify Open Source program for hosting us!
+      </mtl-paragraph>
+    </div>
+    <div id="social" class="text-center py-8 text-mtl-black-400">
+      <ul class="flex m-auto justify-center mb-4">
+        <li class="mr-4">
+          <icon-logo-linkedin class="w-10 h-10" />
+        </li>
+        <li class="mr-4">
+          <icon-logo-github class="w-10 h-10" />
+        </li>
+        <li>
+          <icon-logo-youtube class="w-10 h-10" />
+        </li>
+      </ul>
+      <mtl-text-small>
+        ©Vue Montreal - All rights reserved
+      </mtl-text-small>
+    </div>
   </footer>
 </template>
 

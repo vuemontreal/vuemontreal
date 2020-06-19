@@ -3,7 +3,7 @@ export const state = () => ({
 })
 
 export const mutations = {
-  openNavMobile(state) {
-    state.navMobile = !state.navMobile
+  openNavMobile(state, val) {
+    state.navMobile = val
   }
 }
