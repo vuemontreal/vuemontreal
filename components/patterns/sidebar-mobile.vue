@@ -12,12 +12,18 @@
         {{ navigation.navigation_title }}
       </mtl-h-3>
       <mtl-paragraph class="mb-4 pl-4">
-        <nuxt-link :to="localePath(navigation.navigation_home_link)">
+        <nuxt-link
+          v-if="navigation.navigation_home_link"
+          :to="localePath(navigation.navigation_home_link)"
+        >
           {{ navigation.navigation_home }}
         </nuxt-link>
       </mtl-paragraph>
       <mtl-paragraph class="mb-4 pl-4">
-        <nuxt-link :to="localePath(navigation.navigation_events_link)">
+        <nuxt-link
+          v-if="navigation.navigation_events_link"
+          :to="localePath(navigation.navigation_events_link)"
+        >
           {{ navigation.navigation_events }}
         </nuxt-link>
       </mtl-paragraph>

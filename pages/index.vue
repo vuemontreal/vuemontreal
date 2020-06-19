@@ -1,8 +1,7 @@
 <template>
   <main>
-    <header class="relative mt-12  mb-8">
-      <img src="~assets/bg.svg" alt="" class="header-filter behind" />
-      <div class="top-0 left-0 z-10 flex flex-col absolute behind pt-8">
+    <header v-if="datas" class="mt-12 mb-8 bg-mtl-black-500">
+      <div class="flex flex-col justify-center items-center pt-8">
         <img src="~assets/logo.svg" alt="" class="mb-2 h-32 " />
         <p class="text-mtl-white text-xs px-1 text-center mb-4">
           {{ datas.header_description }}
@@ -14,7 +13,7 @@
         </div>
       </div>
     </header>
-    <section id="next-events" class="px-2 mb-8">
+    <section id="next-events" v-if="datas" class="px-2 mb-8">
       <div class="flex justify-between items-center mb-8">
         <mtl-h-2>{{ datas.next_title }}</mtl-h-2>
         <nuxt-link :to="localePath(datas.next_see_link)">
@@ -64,7 +63,7 @@
         </mtl-card-event>
       </div>
     </section>
-    <section id="new-jobs" class="px-2 mb-2">
+    <section id="new-jobs" v-if="datas" class="px-2 mb-2">
       <div class="flex justify-between items-center mb-8">
         <mtl-h-2>{{ datas.job_title }}</mtl-h-2>
         <nuxt-link :to="localePath(datas.job_next_link)">
@@ -106,7 +105,7 @@
         </template>
       </mtl-card-job>
     </section>
-    <section id="sponsors" class="bg-mtl-black-200 py-6">
+    <section id="sponsors" v-if="datas" class="bg-mtl-black-200 py-6">
       <mtl-h-2 class="text-center mb-8">{{ datas.sponsor_title }}</mtl-h-2>
       <ul class="flex flex-wrap m-auto w-full">
         <li
