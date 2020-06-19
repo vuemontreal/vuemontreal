@@ -30,7 +30,7 @@
         </div>
       </template> -->
       <!-- <div v-else> -->
-      <div class="flex flex-wrap -mx-4">
+      <div class="flex flex-wrap">
         <div class="w-full px-4 lg:w-1/2 mb-4">
           <mtl-card-event>
             <template #card-header>
@@ -87,7 +87,7 @@
           </mtl-text-info>
         </nuxt-link>
       </div>
-      <div class="flex flex-wrap -mx-4">
+      <div class="flex flex-wrap">
         <div class="w-full px-4 lg:w-1/2 mb-4">
           <mtl-card-job>
             <template #card-header>
