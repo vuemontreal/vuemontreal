@@ -47,6 +47,7 @@
     "stylelint": "^13.3.3",
     "swiper": "^5.3.6",
     "tailwindcss-aspect-ratio": "^3.0.0",
+    "vue-clamp": "^0.3.0",
     "vue-loading-skeleton": "^1.1.8"
   },
   "devDependencies": {
