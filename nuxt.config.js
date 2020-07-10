@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 export default {
+  target: 'static',
   mode: 'universal',
   env: {
     version: process.env.STORYBLOK_VERSION || 'draft'
