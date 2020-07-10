@@ -31,9 +31,6 @@ const generateStoryblokEventRoutes = async () => {
 }
 
 module.exports = {
-  generate: {
-    routes: generateStoryblokEventRoutes
-  },
   sitemap: {
     hostname: 'https://vuemontreal.org',
     routes: generateStoryblokEventRoutes
