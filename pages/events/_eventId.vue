@@ -19,7 +19,7 @@
       <text-description :text="story.content.description" class="mb-10" />
       <template v-if="story.content.speakers.length">
         <h2 class="mb-4 font-bold">
-          {{ $tc('speaker', story.content.speakers.length) }}
+          {{ $tc(genderedSpeaker, story.content.speakers.length) }}
         </h2>
         <div v-for="speaker in story.content.speakers" :key="speaker._uid">
           <speakerCard :speaker="speaker" />
@@ -98,6 +98,12 @@ export default {
     }
   },
   computed: {
+    genderedSpeaker() {
+      console.warn(this.story.content.speakers)
+      return this.story.content.speakers.every((s) => s.gender === 'f')
+        ? 'speaker-f'
+        : 'speaker-m'
+    },
     getImages() {
       const images = []
       this.story.content.gallery.forEach((img) => {
