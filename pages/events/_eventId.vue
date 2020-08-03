@@ -17,7 +17,9 @@
     </template>
     <div>
       <text-description :text="story.content.description" class="mb-10" />
-      <h2 class="mb-4 font-bold">Speakers:</h2>
+      <h2 class="mb-4 font-bold">
+        {{ $tc('speaker', story.content.speakers.length) }}
+      </h2>
       <div v-for="speaker in story.content.speakers" :key="speaker._uid">
         <speakerCard :speaker="speaker" />
       </div>
