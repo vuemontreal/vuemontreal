@@ -1,39 +1,7 @@
 <template>
   <nav class="flex flex-col mt-16 w-full">
     <div class="mb-4 p-1 icons lg:hidden flex">
-      <a
-        class="p-2 icon"
-        href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <font-awesome-icon
-          :icon="['fab', 'slack']"
-          class="fill-current text-mtl-primary w-4 h-4"
-        />
-      </a>
-      <a
-        class="p-2 icon"
-        href="https://www.linkedin.com/groups/12289604/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <font-awesome-icon
-          :icon="['fab', 'linkedin']"
-          class="fill-current text-mtl-primary w-4 h-4"
-        />
-      </a>
-      <a
-        class="p-2 icon"
-        href="https://github.com/vuemontreal/vuemontreal"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <font-awesome-icon
-          :icon="['fab', 'github']"
-          class="fill-current text-mtl-primary w-4 h-4"
-        />
-      </a>
+      <social-links />
     </div>
     <button
       @click="openNav"
@@ -79,8 +47,11 @@
 </template>
 
 <script>
+import SocialLinks from '~/components/social-links'
+
 export default {
   name: 'NavBarLeft',
+  components: { SocialLinks },
   data: () => ({
     currentRoute: ''
   }),
@@ -126,10 +97,5 @@ img {
 .icons {
   left: -10px;
   position: relative;
-}
-
-.icon svg {
-  height: 1.5rem !important;
-  width: 1.5rem !important;
 }
 </style>
