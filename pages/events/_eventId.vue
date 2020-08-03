@@ -17,10 +17,14 @@
     </template>
     <div>
       <text-description :text="story.content.description" class="mb-10" />
-      <h2 class="mb-4 font-bold">Speakers:</h2>
-      <div v-for="speaker in story.content.speakers" :key="speaker._uid">
-        <speakerCard :speaker="speaker" />
-      </div>
+      <template v-if="story.content.speakers.length">
+        <h2 class="mb-4 font-bold">
+          {{ $tc(genderedSpeaker, story.content.speakers.length) }}
+        </h2>
+        <div v-for="speaker in story.content.speakers" :key="speaker._uid">
+          <speakerCard :speaker="speaker" />
+        </div>
+      </template>
       <carousel v-if="getImages.length > 0">
         <carousel-slide v-for="(image, index) in getImages" :key="index">
           <img :src="image" alt="" class="w-full" />
@@ -94,6 +98,11 @@ export default {
     }
   },
   computed: {
+    genderedSpeaker() {
+      return this.story.content.speakers.every((s) => s.gender === 'f')
+        ? 'speaker-f'
+        : 'speaker-m'
+    },
     getImages() {
       const images = []
       this.story.content.gallery.forEach((img) => {
