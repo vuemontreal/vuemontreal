@@ -99,7 +99,6 @@ export default {
   },
   computed: {
     genderedSpeaker() {
-      console.warn(this.story.content.speakers)
       return this.story.content.speakers.every((s) => s.gender === 'f')
         ? 'speaker-f'
         : 'speaker-m'
