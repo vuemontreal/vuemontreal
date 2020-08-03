@@ -14,7 +14,9 @@ module.exports = {
         home: 'Home',
         more: 'More',
         register: 'Register',
-        slides: 'View slides'
+        slides: 'View slides',
+        'speaker-m': 'Speaker | Speakers',
+        'speaker-f': 'Speaker | Speakers'
       },
       fr: {
         archives: 'Archives',
@@ -23,7 +25,9 @@ module.exports = {
         home: 'Accueil',
         more: "Plus d'infos",
         register: "S'inscrire",
-        slides: 'Voir les diapositives'
+        slides: 'Voir les diapositives',
+        'speaker-m': 'Conférencier | Conférenciers',
+        'speaker-f': 'Conférencière | Conférencières'
       }
     }
   },
