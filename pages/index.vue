@@ -90,11 +90,13 @@ export default {
   computed: {
     upcomingEvents: (vm) =>
       vm.events.filter(
-        (event) => new Date(event.sort_by_date).setHours(24) > Date.now()
+        (event) =>
+          new Date(event.sort_by_date + ' 00:00:00').setHours(24) > Date.now()
       ),
     pastEvents: (vm) =>
       vm.events.filter(
-        (event) => new Date(event.sort_by_date).setHours(24) < Date.now()
+        (event) =>
+          new Date(event.sort_by_date + ' 00:00:00').setHours(24) < Date.now()
       )
   },
 
