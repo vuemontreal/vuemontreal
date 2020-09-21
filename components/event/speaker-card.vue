@@ -58,7 +58,7 @@
       <a
         :href="speaker.slides.url"
         target="_blank"
-        class="font-bold underline text-mtl-primary "
+        class="font-bold underline text-mtl-primary"
         >{{ $t('slides') }}</a
       >
     </div>
@@ -70,13 +70,13 @@ import TextDescription from '@/components/event-preview/text-description'
 
 export default {
   components: {
-    TextDescription
+    TextDescription,
   },
   props: {
     speaker: {
       type: Object,
-      required: true
-    }
+      required: true,
+    },
   },
   methods: {
     filterImageQuality(image, quality) {
@@ -87,8 +87,8 @@ export default {
       const path = image.replace('//a.storyblok.com', '')
       const option = `filters:quality(${quality})`
       return imageService + option + path
-    }
-  }
+    },
+  },
 }
 </script>
 

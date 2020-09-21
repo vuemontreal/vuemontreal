@@ -62,17 +62,17 @@ import TextDescription from '@/components/event-preview/text-description'
 
 export default {
   components: {
-    TextDescription
+    TextDescription,
   },
   props: {
     event: {
       type: Object,
-      required: true
+      required: true,
     },
     isIncoming: {
-      type: Boolean
-    }
-  }
+      type: Boolean,
+    },
+  },
 }
 </script>
 

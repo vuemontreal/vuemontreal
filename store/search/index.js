@@ -9,13 +9,13 @@ export const state = () => ({
   types: [],
   tags: [],
   possibleTags: [],
-  possibleTypes: ['articles', 'events']
+  possibleTypes: ['articles', 'events'],
 })
 
 export const mutations = {
   setTags(state, tags) {
     state.possibleTags = tags
-  }
+  },
 }
 
 export const actions = {
@@ -25,5 +25,5 @@ export const actions = {
     // console.log(search)
     // const tps = types.split(',')
     // const tgs = tags.split(',')
-  }
+  },
 }

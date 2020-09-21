@@ -1,7 +1,7 @@
 <template>
   <nav class="mb-5 flex justify-between">
     <div class="flex items-center icons">
-      <button @click="openNav" class="lg:hidden p-2 icon">
+      <button class="lg:hidden p-2 icon" @click="openNav">
         <font-awesome-icon
           :icon="['fas', 'bars']"
           class="fill-current text-mtl-primary w-4 h-4"
@@ -41,7 +41,7 @@
         />
       </a>
     </div>
-    <form @submit.prevent="submitSearch" class="flex items-center relative">
+    <form class="flex items-center relative" @submit.prevent="submitSearch">
       <input
         v-model="search"
         type="text"
@@ -50,16 +50,16 @@
       />
       <button
         v-show="search"
-        @click="clearSearch"
         type="button"
         class="close-icon"
+        @click="clearSearch"
       >
         <font-awesome-icon
           :icon="['fa', 'window-close']"
           class="fill-current text-mtl-primary w-4 h-4 cursor-pointer"
         />
       </button>
-      <button @click="submitSearch" type="button" class="plus-icon">
+      <button type="button" class="plus-icon" @click="submitSearch">
         <font-awesome-icon
           :icon="['fa', 'search']"
           class="fill-current text-mtl-primary w-4 h-4 cursor-pointer"
@@ -74,7 +74,7 @@ export default {
   name: 'NavBarTop',
   data() {
     return {
-      search: ''
+      search: '',
     }
   },
 
@@ -97,20 +97,20 @@ export default {
       const lang = this.$store.state.i18n.locale
 
       const query = {
-        searchTerm: this.search
+        searchTerm: this.search,
       }
       if (withTag) query.withTag = withTag
 
       this.$router.push({
         path: '/' + lang + '/search',
-        query
+        query,
       })
     },
 
     openNav() {
       this.$store.commit('openNavMobile')
-    }
-  }
+    },
+  },
 }
 </script>
 

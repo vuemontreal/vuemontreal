@@ -16,7 +16,7 @@ module.exports = {
         lang: 'Language',
         other: 'Others',
         join_slack: 'Join us on slack',
-        conduct: 'Code of conduct'
+        conduct: 'Code of conduct',
       },
       fr: {
         events: 'Events',
@@ -27,9 +27,9 @@ module.exports = {
         lang: 'Langage',
         other: 'Autres',
         join_slack: 'Nous rejoindre sur slack',
-        conduct: 'Code de conduite'
-      }
-    }
+        conduct: 'Code de conduite',
+      },
+    },
   },
   detectBrowserLanguage: {
     // If enabled, a cookie is set once a user has been redirected to his
@@ -43,7 +43,7 @@ module.exports = {
     // Set to always redirect to value stored in the cookie, not just once
     alwaysRedirect: false,
     // If no locale for the browsers locale is a match, use this one as a fallback
-    fallbackLocale: null
+    fallbackLocale: null,
   },
   vuex: {
     // Module namespace
@@ -51,6 +51,6 @@ module.exports = {
     // If enabled, current app's locale is synced with nuxt-i18n store module
     syncLocale: true,
     // Mutation to commit to set route parameters translations
-    syncRouteParams: true
-  }
+    syncRouteParams: true,
+  },
 }

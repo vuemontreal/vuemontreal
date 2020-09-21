@@ -46,7 +46,7 @@ import { Skeleton } from 'vue-loading-skeleton'
 
 export default {
   components: {
-    Skeleton
-  }
+    Skeleton,
+  },
 }
 </script>

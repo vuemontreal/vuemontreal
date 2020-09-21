@@ -28,7 +28,11 @@ export default {}
 }
 
 .card-body {
+  min-height: 100px;
+
   @apply mb-6;
+
+  overflow-y: hidden;
 }
 
 .card-actions {

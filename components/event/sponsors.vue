@@ -16,8 +16,8 @@ export default {
   props: {
     sponsors: {
       type: Array,
-      required: true
-    }
-  }
+      required: true,
+    },
+  },
 }
 </script>

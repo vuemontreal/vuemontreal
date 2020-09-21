@@ -12,7 +12,7 @@ import Vue from 'vue'
 export default Vue.extend({
   data() {
     return {
-      index: 0
+      index: 0,
     }
   },
   computed: {
@@ -22,8 +22,8 @@ export default Vue.extend({
     },
     visible() {
       return this.index === this.$parent.index
-    }
-  }
+    },
+  },
 })
 </script>
 

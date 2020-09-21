@@ -5,24 +5,24 @@ import { MtlTextInput } from '@/components/index'
 
 export const TextInput = () => ({
   components: {
-    MtlTextInput
+    MtlTextInput,
   },
   props: {
     label: {
-      default: text('Label', 'Label of the input')
+      default: text('Label', 'Label of the input'),
     },
     disabled: {
-      default: boolean('Disabled', false)
-    }
+      default: boolean('Disabled', false),
+    },
   },
   template: `
     <div class="m-auto container mt-8">
         <mtl-text-input :label="label" placeholder="placeholder..." :disabled="disabled" />
     </div>
-  `
+  `,
 })
 
 export default {
   title: 'Elements',
-  decorators: [withA11y, withKnobs]
+  decorators: [withA11y, withKnobs],
 }

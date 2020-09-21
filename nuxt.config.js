@@ -1,9 +1,11 @@
-require('dotenv').config()
-
 export default {
   mode: 'universal',
+  components: [
+    { path: '~/components/', prefix: 'mtl-' },
+    { path: '~/components/tokens/icons', prefix: 'icon-' },
+  ],
   env: {
-    version: process.env.STORYBLOK_VERSION || 'draft'
+    version: process.env.STORYBLOK_VERSION || 'draft',
   },
   head: require('./configs/head'),
   server: require('./configs/server'),
@@ -11,5 +13,5 @@ export default {
   modules: require('./configs/modules'),
   generate: require('./configs/generate').generate,
   sitemap: require('./configs/generate').sitemap,
-  i18n: require('./configs/i18n')
+  i18n: require('./configs/i18n'),
 }

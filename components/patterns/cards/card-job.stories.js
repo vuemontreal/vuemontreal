@@ -9,7 +9,7 @@ import {
   IconCalendarSharp,
   IconTimeOutline,
   MtlH4,
-  MtlH3
+  MtlH3,
 } from '@/components'
 
 export const CardJob = () => ({
@@ -21,7 +21,7 @@ export const CardJob = () => ({
     IconCalendarSharp,
     IconTimeOutline,
     MtlH4,
-    MtlH3
+    MtlH3,
   },
   template: `
     <div class="m-auto container mt-8 w-1/2">
@@ -48,10 +48,10 @@ export const CardJob = () => ({
           </template>
         </mtl-card-job>
     </div>
-  `
+  `,
 })
 
 export default {
   title: 'Patterns',
-  decorators: [withA11y, withKnobs]
+  decorators: [withA11y, withKnobs],
 }

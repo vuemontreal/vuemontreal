@@ -8,13 +8,13 @@ export default {
   props: {
     text: {
       type: [Object, String],
-      default: null
-    }
+      default: null,
+    },
   },
   computed: {
     richtext() {
       return this.text ? this.$storyapi.richTextResolver.render(this.text) : ''
-    }
-  }
+    },
+  },
 }
 </script>

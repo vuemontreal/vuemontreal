@@ -13,10 +13,10 @@
 
           <input
             :checked="checkedTags.includes(tag.name)"
-            @click="checked(tag.name, $event.target.checked)"
             :name="tag.name"
             type="checkbox"
             class="checkbox"
+            @click="checked(tag.name, $event.target.checked)"
           />
           <span class="checkmark"></span>
         </label>
@@ -27,12 +27,10 @@
       <div v-if="$fetchState.pending">
         <eventPreviewSkeleton v-for="Skel in 4" :key="Skel" />
       </div>
-      <p v-else-if="$fetchState.error">
-        Error while fetching event
-      </p>
+      <p v-else-if="$fetchState.error">Error while fetching event</p>
       <event-preview
-        v-else
         v-for="event in events"
+        v-else
         :key="event.uuid"
         :event="event"
       />
@@ -47,15 +45,7 @@ import eventPreview from '@/components/event-preview/event-preview'
 export default {
   components: {
     eventPreview,
-    eventPreviewSkeleton
-  },
-  data: () => ({
-    events: [],
-    checkedTags: [],
-    possibleTags: []
-  }),
-  watch: {
-    '$route.query': '$fetch'
+    eventPreviewSkeleton,
   },
   async fetch() {
     const { withTag = '', searchTerm = '' } = this.$route.query
@@ -66,7 +56,7 @@ export default {
     try {
       const dataTags = await this.$storyapi.get('cdn/tags', {
         version,
-        starts_with: 'events/'
+        starts_with: 'events/',
       })
       this.possibleTags = [...dataTags.data.tags]
       this.checkedTags = this.parseUrlTags(withTag)
@@ -76,13 +66,21 @@ export default {
         starts_with: lang + '/events/',
         sort_by: 'sort_by_date:desc',
         with_tag: this.checkedTags,
-        search_term: searchTerm
+        search_term: searchTerm,
       })
       this.events = events.data.stories
     } catch (e) {
       // eslint-disable-next-line no-console
       console.error(e)
     }
+  },
+  data: () => ({
+    events: [],
+    checkedTags: [],
+    possibleTags: [],
+  }),
+  watch: {
+    '$route.query': '$fetch',
   },
   mounted() {
     this.$fetch()
@@ -117,11 +115,11 @@ export default {
         path: this.switchLocalePath('/search'),
         query: {
           withTag: tags.join(','),
-          searchTerm
-        }
+          searchTerm,
+        },
       })
-    }
-  }
+    },
+  },
 }
 </script>
 

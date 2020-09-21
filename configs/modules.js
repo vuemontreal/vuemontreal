@@ -9,8 +9,8 @@ module.exports = [
     'storyblok-nuxt',
     {
       accessToken: process.env.STORYBLOK_TOKEN,
-      cacheProvider: 'memory'
-    }
+      cacheProvider: 'memory',
+    },
   ],
   [
     'nuxt-fontawesome',
@@ -18,15 +18,15 @@ module.exports = [
       imports: [
         {
           set: '@fortawesome/free-solid-svg-icons',
-          icons: ['fas']
+          icons: ['fas'],
         },
         {
           set: '@fortawesome/free-brands-svg-icons',
-          icons: ['fab']
-        }
-      ]
-    }
+          icons: ['fab'],
+        },
+      ],
+    },
   ],
   'nuxt-i18n',
-  '@nuxtjs/sitemap'
+  '@nuxtjs/sitemap',
 ]

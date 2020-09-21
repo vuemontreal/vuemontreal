@@ -1,19 +1,19 @@
 <template>
   <div class="carousel">
     <slot></slot>
-    <button @click.prevent="prev" class="arrow arrow__left">
+    <button class="arrow arrow__left" @click.prevent="prev">
       <font-awesome-icon :icon="['fas', 'chevron-left']" />
     </button>
-    <button @click.prevent="next" class="arrow arrow__right">
+    <button class="arrow arrow__right" @click.prevent="next">
       <font-awesome-icon :icon="['fas', 'chevron-right']" />
     </button>
     <div class="navigation">
       <button
         v-for="number in slidesCount"
-        :class="{ active: number - 1 === index }"
         :key="number"
-        @click="goToSlide(number - 1)"
+        :class="{ active: number - 1 === index }"
         class="nav-dot"
+        @click="goToSlide(number - 1)"
       ></button>
     </div>
   </div>
@@ -27,13 +27,13 @@ export default Vue.extend({
     return {
       index: 0,
       slides: [],
-      direction: null
+      direction: null,
     }
   },
   computed: {
     slidesCount() {
       return this.slides.length
-    }
+    },
   },
   mounted() {
     this.slides = this.$children
@@ -59,8 +59,8 @@ export default Vue.extend({
     goToSlide(index) {
       this.direction = index > this.index ? 'right' : 'left'
       this.index = index
-    }
-  }
+    },
+  },
 })
 </script>
 

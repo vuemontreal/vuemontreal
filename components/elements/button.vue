@@ -3,7 +3,7 @@
     :class="{
       primary,
       secondary,
-      tertiary
+      tertiary,
     }"
   >
     <slot />
@@ -15,17 +15,17 @@ export default {
   props: {
     primary: {
       type: Boolean,
-      default: true
+      default: true,
     },
     secondary: {
       type: Boolean,
-      default: false
+      default: false,
     },
     tertiary: {
       type: Boolean,
-      default: false
-    }
-  }
+      default: false,
+    },
+  },
 }
 </script>
 

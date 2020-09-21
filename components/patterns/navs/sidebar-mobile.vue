@@ -5,35 +5,33 @@
   >
     <div class="flex flex-col justify-start items-start mt-16 w-full">
       <IconCloseSharp
-        @click.native="$emit('openNav')"
         class="mr-2 mt-2 top-0 right-0 absolute w-8 h-8 text-mtl-black-400"
+        @click.native="$emit('openNav')"
       />
-      <mtl-h4 class="mb-4 text-mtl-green-400">
-        Navigation
-      </mtl-h4>
+      <mtl-h-4 class="mb-4 text-mtl-green-400"> Navigation </mtl-h-4>
       <mtl-text-info class="mb-4 pl-4">
         <a
-          @click.prevent="$router.push(localePath('/'))"
           :class="currentRoute == 'index' ? 'nuxt-link-active' : ''"
           href=""
+          @click.prevent="$router.push(localePath('/'))"
         >
           <span class="pb-1">{{ $t('home') }}</span>
         </a>
       </mtl-text-info>
       <mtl-text-info class="mb-4 pl-4">
         <a
-          @click.prevent="$router.push(localePath('/search'))"
           :class="currentRoute == 'search' ? 'nuxt-link-active' : ''"
           href=""
+          @click.prevent="$router.push(localePath('/search'))"
         >
           <span class="pb-1">{{ $t('events') }}</span>
         </a>
       </mtl-text-info>
 
       <hr class="my-4" />
-      <mtl-h4 class="mb-4 text-mtl-green-400">
+      <mtl-h-4 class="mb-4 text-mtl-green-400">
         {{ $t('other') }}
-      </mtl-h4>
+      </mtl-h-4>
       <mtl-text-info class="mb-4 pl-4">
         <a
           target="_blank"
@@ -53,13 +51,13 @@
         </a>
       </mtl-text-info>
       <hr class="my-4" />
-      <mtl-h4 class="mb-4 text-mtl-green-400">
+      <mtl-h-4 class="mb-4 text-mtl-green-400">
         {{ $t('lang') }}
-      </mtl-h4>
+      </mtl-h-4>
       <mtl-text-info class="mb-4 pl-4">
         <a
-          @click.prevent="$i18n.setLocale($i18n.locale == 'en' ? 'fr' : 'en')"
           href=""
+          @click.prevent="$i18n.setLocale($i18n.locale == 'en' ? 'fr' : 'en')"
         >
           {{ $i18n.locale == 'en' ? 'fr' : 'en' }}
         </a>
@@ -97,34 +95,17 @@
 </template>
 
 <script>
-import {
-  IconLogoGithub,
-  IconLogoYoutube,
-  IconLogoLinkedin,
-  IconCloseSharp,
-  MtlH4,
-  MtlTextInfo
-} from '@/components/index.js'
-
 export default {
-  components: {
-    IconLogoGithub,
-    IconLogoYoutube,
-    IconLogoLinkedin,
-    IconCloseSharp,
-    MtlH4,
-    MtlTextInfo
-  },
   props: {
     open: {
       type: Boolean,
-      default: false
+      default: false,
     },
     currentRoute: {
       type: String,
-      default: ''
-    }
-  }
+      default: '',
+    },
+  },
 }
 </script>
 
