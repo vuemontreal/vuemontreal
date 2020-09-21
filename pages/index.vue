@@ -6,7 +6,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <img class="w-full" src="~/assets/svgs/heading.svg" />
+        <img class="w-full" src="~/assets/heading.png" />
       </a>
     </section>
     <section id="next-events" class="px-4 mt-16">
