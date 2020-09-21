@@ -12,7 +12,7 @@
     <section id="next-events" class="px-4 mt-16">
       <div class="flex justify-between mt-12 items-center">
         <mtl-h-2> Next Events </mtl-h-2>
-        <nuxt-link :to="localePath('/events')">
+        <nuxt-link :to="localePath('/search')">
           <mtl-text-info class="text-mtl-green-500">see all</mtl-text-info>
         </nuxt-link>
       </div>
@@ -54,7 +54,7 @@
             </mtl-card-event>
           </div>
         </template>
-        <nuxt-link v-else :to="localePath('/events')" class="w-full">
+        <nuxt-link v-else :to="localePath('/search')" class="w-full">
           <mtl-card-event class="mt-4 relative">
             <template #card-body>
               <div class="absolute centered flex justify-center flex-wrap">

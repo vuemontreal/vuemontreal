@@ -1,5 +1,6 @@
 export default {
-  mode: 'universal',
+  // mode: 'universal',
+  target: 'static',
   components: [
     { path: '~/components/', prefix: 'mtl-' },
     { path: '~/components/tokens/icons', prefix: 'icon-' },

@@ -8,7 +8,7 @@ import {
   MtlTextInfo,
   IconCalendarSharp,
   IconTimeOutline,
-  MtlH4
+  MtlH4,
 } from '@/components'
 
 export const CardEvent = () => ({
@@ -19,7 +19,7 @@ export const CardEvent = () => ({
     MtlTextInfo,
     IconCalendarSharp,
     IconTimeOutline,
-    MtlH4
+    MtlH4,
   },
   template: `
     <div class="m-auto container mt-8 w-1/2">
@@ -48,10 +48,10 @@ export const CardEvent = () => ({
           </template>
         </mtl-card-event>
     </div>
-  `
+  `,
 })
 
 export default {
   title: 'Patterns',
-  decorators: [withA11y, withKnobs]
+  decorators: [withA11y, withKnobs],
 }

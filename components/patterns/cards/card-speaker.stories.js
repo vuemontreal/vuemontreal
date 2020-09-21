@@ -11,7 +11,7 @@ import {
   MtlH4,
   MtlH3,
   IconLogoYoutube,
-  IconDocumentOutline
+  IconDocumentOutline,
 } from '@/components'
 
 export const CardSpeaker = () => ({
@@ -25,7 +25,7 @@ export const CardSpeaker = () => ({
     MtlH4,
     MtlH3,
     IconLogoYoutube,
-    IconDocumentOutline
+    IconDocumentOutline,
   },
   template: `
     <div class="m-auto container mt-8 w-1/2">
@@ -50,10 +50,10 @@ export const CardSpeaker = () => ({
           </template>
         </mtl-card-speaker>
     </div>
-  `
+  `,
 })
 
 export default {
   title: 'Patterns',
-  decorators: [withA11y, withKnobs]
+  decorators: [withA11y, withKnobs],
 }
