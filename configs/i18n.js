@@ -39,7 +39,7 @@ module.exports = {
     // Set to override the default domain of the cookie. Defaults to host of the site.
     cookieDomain: null,
     // Cookie name
-    cookieKey: 'i18n_redirected',
+    cookieKey: 'i18n_vuemtl',
     // Set to always redirect to value stored in the cookie, not just once
     alwaysRedirect: false,
     // If no locale for the browsers locale is a match, use this one as a fallback

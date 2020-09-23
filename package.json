@@ -47,8 +47,7 @@
     "nuxt-i18n": "^6.6.1",
     "storyblok-nuxt": "^1.1.0",
     "stylelint": "^13.3.3",
-    "tailwindcss-aspect-ratio": "^3.0.0",
-    "vue-loading-skeleton": "^1.1.8"
+    "tailwindcss-aspect-ratio": "^3.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",

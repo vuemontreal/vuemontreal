@@ -8,6 +8,7 @@ export default {
   env: {
     version: process.env.STORYBLOK_VERSION || 'draft',
   },
+  loading: false,
   head: require('./configs/head'),
   server: require('./configs/server'),
   buildModules: require('./configs/buildModules'),

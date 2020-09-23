@@ -92,7 +92,7 @@
                 class="w-10 h-10 bg-mtl-black-400 rounded-lg mr-6 mt-1"
               ></div> -->
               <div class="flex flex-row flex-wrap">
-                <mtl-h3 class="text-mtl-black-400">{{ job.title }}</mtl-h3>
+                <mtl-h-3 class="text-mtl-black-400">{{ job.title }}</mtl-h-3>
                 <mtl-text-info class="text-mtl-black-200 mt-2"
                   >At <span class="text-mtl-black-500">{{ job.company }}</span>
                   {{ job.location }}

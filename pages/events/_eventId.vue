@@ -1,6 +1,7 @@
 <template>
+  <div></div>
   <!--  eslint-disable vue/valid-template-root  -->
-  <div v-if="$fetchState.pending">
+  <!-- <div v-if="$fetchState.pending">
     <eventSkeleton />
   </div>
 
@@ -27,24 +28,11 @@
         </carousel-slide>
       </carousel>
     </div>
-  </article>
+  </article> -->
 </template>
 
 <script>
-import Carousel from '@/components/carousel/carousel'
-import CarouselSlide from '@/components/carousel/carousel-slide'
-import EventSkeleton from '@/components/event/event-skeleton'
-import SpeakerCard from '@/components/event/speaker-card'
-import Sponsors from '@/components/event/sponsors'
-
 export default {
-  components: {
-    Carousel,
-    CarouselSlide,
-    EventSkeleton,
-    SpeakerCard,
-    Sponsors,
-  },
   async fetch() {
     const eventId = this.$route.params.eventId
     const locale = this.$i18n.locale

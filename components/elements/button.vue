@@ -4,6 +4,7 @@
       primary,
       secondary,
       tertiary,
+      active,
     }"
   >
     <slot />
@@ -25,13 +26,17 @@ export default {
       type: Boolean,
       default: false,
     },
+    active: {
+      type: Boolean,
+      default: false,
+    },
   },
 }
 </script>
 
 <style lang="postcss" scoped>
 button {
-  @apply rounded flex items-center px-6 py-3 text-sm font-semibold text-mtl-black-500 uppercase;
+  @apply rounded px-6 py-3 text-sm font-semibold text-mtl-black-500 uppercase;
 }
 
 .primary {
@@ -39,7 +44,11 @@ button {
 }
 
 .secondary {
-  @apply bg-mtl-black-500 text-mtl-white;
+  @apply border-2 border-mtl-black-500 text-mtl-black-500 bg-mtl-white;
+}
+
+.secondary.active {
+  @apply border-2 border-mtl-green-500 !important;
 }
 
 .tertiary {

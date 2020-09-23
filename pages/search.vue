@@ -1,6 +1,16 @@
 <template>
   <div class="mt-16 px-4">
-    <mtl-button>Filters</mtl-button>
+    <mtl-button
+      v-for="tag in possibleTags"
+      :key="tag.name"
+      secondary
+      :active="isInsideCheckedTags(tag)"
+      class="inline-block"
+      @click.native="checked(tag)"
+    >
+      {{ tag.name }}
+    </mtl-button>
+
     <mtl-h-2 class="mt-3"> Events </mtl-h-2>
     <div class="flex flex-wrap -mx-1 mt-1">
       <div v-for="event in events" :key="event.id" class="w-full md:w-1/2 px-1">
@@ -40,10 +50,12 @@
 
 <script>
 import head from '~/utils/head'
+/* eslint-disable no-console */
 
 export default {
   name: 'SearchPage',
   async fetch() {
+    // eslint-disable-next-line no-unused-vars
     const { withTag = '', searchTerm = '' } = this.$route.query
     const lang = this.$i18n.locale
     const { version } = this.$nuxt.context.env
@@ -53,15 +65,25 @@ export default {
         starts_with: 'events/',
       })
       this.possibleTags = [...dataTags.data.tags]
-      this.checkedTags = this.parseUrlTags(withTag)
+
+      const urlTags = this.parseUrlTags(withTag)
+
+      const tmp = []
+      this.possibleTags.forEach((t) => {
+        if (urlTags.includes(t.name)) {
+          tmp.push(t)
+        }
+      })
+      this.checkedTags = [...tmp]
+
       const events = await this.$storyapi.get('cdn/stories/', {
         version,
         starts_with: lang + '/events/',
         sort_by: 'sort_by_date:desc',
-        with_tag: this.checkedTags,
+        with_tag: withTag,
         search_term: searchTerm,
       })
-      this.events = events.data.stories
+      this.events = [...events.data.stories]
     } catch (e) {
       // eslint-disable-next-line no-console
       console.error(e)
@@ -75,41 +97,50 @@ export default {
   watch: {
     '$route.query': '$fetch',
   },
+  mounted() {
+    this.$nextTick(async () => {
+      await this.$fetch()
+    }, 0)
+  },
   methods: {
-    isValid(tag) {
-      return !!this.possibleTags.find((p) => p.name === tag)
+    isInsideCheckedTags(tag) {
+      if (this.checkedTags.find((t) => tag.name === t.name)) return true
+      return false
     },
-    // get tags from url and parse it without adding bad tags
     parseUrlTags(withTag) {
       const tmp = []
-      const splitTags = withTag.split(',')
-      splitTags.forEach((tag) => (this.isValid(tag) ? tmp.push(tag) : ''))
+      const splitTags = withTag.split(',').filter((e) => e.length)
+
+      splitTags.forEach((tag) => {
+        if (!tmp.includes(tag)) tmp.push(tag)
+      })
       return tmp
     },
-    //   checked(val, checked) {
-    //     const { searchTerm = '', withTag = '' } = this.$route.query
+    checked(val) {
+      const { searchTerm = '', withTag = '' } = this.$route.query
+      let urlTags = this.parseUrlTags(withTag)
 
-    //     let tags = this.parseUrlTags(withTag)
+      if (!urlTags.includes(val.name)) urlTags = [...urlTags, val.name]
+      else urlTags = urlTags.filter((t) => t !== val.name)
 
-    //     if (checked && this.isValid(val)) {
-    //       tags.push(val)
-    //     } else if (!checked) {
-    //       tags = tags.filter((tag) => tag !== val)
-    //     }
+      const tmp = []
+      this.possibleTags.forEach((t) => {
+        if (urlTags.includes(t.name)) {
+          tmp.push(t)
+        }
+      })
+      this.checkedTags = [...tmp]
 
-    //     // spread operator important to tell vue no more the same ref
-    //     this.checkedTags = [...tags]
-
-    //     // push route will be catch by the watch and re fetch data
-    //     this.$router.push({
-    //       path: this.switchLocalePath('/search'),
-    //       query: {
-    //         withTag: tags.join(','),
-    //         searchTerm,
-    //       },
-    //     })
+      // push route will be catch by the watch and re fetch data
+      this.$router.push({
+        path: this.switchLocalePath('/search'),
+        query: {
+          withTag: urlTags.join(','),
+          searchTerm,
+        },
+      })
+    },
   },
-  // },
   head,
 }
 </script>
