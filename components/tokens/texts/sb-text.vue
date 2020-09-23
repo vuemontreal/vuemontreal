@@ -8,8 +8,8 @@
 export default {
   props: {
     text: {
-      type: String,
-      default: '',
+      type: Object,
+      required: true,
     },
   },
   computed: {

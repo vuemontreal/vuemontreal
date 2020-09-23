@@ -1,7 +1,7 @@
 <template>
   <aside
     :class="{ open }"
-    class="nav-left fixed left-0 inset-y-0 z-10 w-full p-5 bg-white"
+    class="nav-left fixed left-0 inset-y-0 z-40 w-full p-5 bg-white"
   >
     <div class="flex flex-col justify-start items-start mt-16 w-full">
       <IconCloseSharp
@@ -27,7 +27,6 @@
           <span class="pb-1">{{ $t('events') }}</span>
         </a>
       </mtl-text-info>
-
       <hr class="my-4" />
       <mtl-h-4 class="mb-4 text-mtl-green-400">
         {{ $t('other') }}

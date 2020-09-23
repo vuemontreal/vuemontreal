@@ -1,58 +1,52 @@
 <template>
-  <div>
-    <section id="tags" class="flex flex-wrap border-mtl-primary border px-6">
-      <div
-        v-for="tag in possibleTags"
-        :key="tag.name"
-        class="p-4 container w-full md:w-1/3 lg:w-1/3 lg:mb-4"
-      >
-        <label class="text-base relative">
-          <span class="pl-2">
-            {{ tag.name }}
-          </span>
-
-          <input
-            :checked="checkedTags.includes(tag.name)"
-            :name="tag.name"
-            type="checkbox"
-            class="checkbox"
-            @click="checked(tag.name, $event.target.checked)"
-          />
-          <span class="checkmark"></span>
-        </label>
+  <div class="mt-16 px-4">
+    <mtl-button>Filters</mtl-button>
+    <mtl-h-2 class="mt-3"> Events </mtl-h-2>
+    <div class="flex flex-wrap -mx-1 mt-1">
+      <div v-for="event in events" :key="event.id" class="w-full md:w-1/2 px-1">
+        <mtl-card-event class="mt-4">
+          <template #card-header>
+            <mtl-h-4 class="mb-2 text-mtl-black-400">{{
+              event.content.title
+            }}</mtl-h-4>
+            <div class="flex text-mtl-black-200">
+              <div class="flex items-center">
+                <icon-calendar-sharp class="mr-4 w-6 h-6" /><mtl-text-info
+                  class="mr-6"
+                  >{{ event.sort_by_date }}</mtl-text-info
+                >
+              </div>
+              <div class="flex items-center">
+                <icon-time-outline class="mr-4 w-6 h-6" /><mtl-text-info
+                  >20:00</mtl-text-info
+                >
+              </div>
+            </div>
+          </template>
+          <template #card-body>
+            <mtl-paragraph class="text-mtl-black-400">
+              <mtl-sb-text :text="event.content.short_description" />
+            </mtl-paragraph>
+          </template>
+          <template #card-actions>
+            <mtl-button class="mr-2" tertiary>More Infos</mtl-button>
+            <mtl-button>Join</mtl-button>
+          </template>
+        </mtl-card-event>
       </div>
-    </section>
-
-    <section id="events" class="mt-5">
-      <div v-if="$fetchState.pending">
-        <eventPreviewSkeleton v-for="Skel in 4" :key="Skel" />
-      </div>
-      <p v-else-if="$fetchState.error">Error while fetching event</p>
-      <event-preview
-        v-for="event in events"
-        v-else
-        :key="event.uuid"
-        :event="event"
-      />
-    </section>
+    </div>
   </div>
 </template>
 
 <script>
-import eventPreviewSkeleton from '@/components/event-preview/event-preview-skeleton'
-import eventPreview from '@/components/event-preview/event-preview'
+import head from '~/utils/head'
 
 export default {
-  components: {
-    eventPreview,
-    eventPreviewSkeleton,
-  },
+  name: 'SearchPage',
   async fetch() {
     const { withTag = '', searchTerm = '' } = this.$route.query
-    const lang = this.$store.state.i18n.locale
-
+    const lang = this.$i18n.locale
     const { version } = this.$nuxt.context.env
-
     try {
       const dataTags = await this.$storyapi.get('cdn/tags', {
         version,
@@ -60,7 +54,6 @@ export default {
       })
       this.possibleTags = [...dataTags.data.tags]
       this.checkedTags = this.parseUrlTags(withTag)
-
       const events = await this.$storyapi.get('cdn/stories/', {
         version,
         starts_with: lang + '/events/',
@@ -82,9 +75,6 @@ export default {
   watch: {
     '$route.query': '$fetch',
   },
-  mounted() {
-    this.$fetch()
-  },
   methods: {
     isValid(tag) {
       return !!this.possibleTags.find((p) => p.name === tag)
@@ -96,93 +86,30 @@ export default {
       splitTags.forEach((tag) => (this.isValid(tag) ? tmp.push(tag) : ''))
       return tmp
     },
-    checked(val, checked) {
-      const { searchTerm = '', withTag = '' } = this.$route.query
+    //   checked(val, checked) {
+    //     const { searchTerm = '', withTag = '' } = this.$route.query
 
-      let tags = this.parseUrlTags(withTag)
+    //     let tags = this.parseUrlTags(withTag)
 
-      if (checked && this.isValid(val)) {
-        tags.push(val)
-      } else if (!checked) {
-        tags = tags.filter((tag) => tag !== val)
-      }
+    //     if (checked && this.isValid(val)) {
+    //       tags.push(val)
+    //     } else if (!checked) {
+    //       tags = tags.filter((tag) => tag !== val)
+    //     }
 
-      // spread operator important to tell vue no more the same ref
-      this.checkedTags = [...tags]
+    //     // spread operator important to tell vue no more the same ref
+    //     this.checkedTags = [...tags]
 
-      // push route will be catch by the watch and re fetch data
-      this.$router.push({
-        path: this.switchLocalePath('/search'),
-        query: {
-          withTag: tags.join(','),
-          searchTerm,
-        },
-      })
-    },
+    //     // push route will be catch by the watch and re fetch data
+    //     this.$router.push({
+    //       path: this.switchLocalePath('/search'),
+    //       query: {
+    //         withTag: tags.join(','),
+    //         searchTerm,
+    //       },
+    //     })
   },
+  // },
+  head,
 }
 </script>
-
-<style scoped>
-.container {
-  display: block;
-  position: relative;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-
-.container label {
-  display: flex;
-  justify-content: space-between;
-}
-
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-span.checkmark {
-  position: relative;
-  display: inline-block;
-  height: 20px;
-  width: 20px;
-  background-color: #eee;
-  cursor: pointer;
-}
-
-/* When the checkbox is checked, add a blue background */
-.container input:checked ~ .checkmark {
-  @apply bg-mtl-primary;
-}
-
-/* Create the checkmark/indicator (hidden when not checked) */
-.checkmark::after {
-  content: '';
-  position: absolute;
-  display: none;
-}
-
-.container .checkmark::after {
-  left: 8px;
-  top: 4px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-/* Show the checkmark when checked */
-.container input:checked ~ .checkmark::after {
-  display: block;
-}
-</style>

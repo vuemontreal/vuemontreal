@@ -1,5 +1,5 @@
 <template>
-  <nav class="mb-5 flex justify-between">
+  <nav class="mb-5 flex justify-between z-30">
     <div class="flex items-center icons">
       <button class="lg:hidden p-2 icon" @click="openNav">
         <font-awesome-icon
