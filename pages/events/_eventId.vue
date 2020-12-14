@@ -64,6 +64,9 @@ export default {
       this.$fetch()
     }
   },
+  mounted() {
+    this.$store.commit('closeNavMobile')
+  },
   methods: {
     filterImageQuality(image, quality) {
       if (!image) return ''
@@ -84,7 +87,7 @@ export default {
       meta: [
         {
           property: 'og:title',
-          content: seo.og_title || '',
+          content: seo.title || '',
         },
         {
           hid: `description`,
@@ -93,27 +96,27 @@ export default {
         },
         {
           property: 'og:title',
-          content: seo.og_title || '',
+          content: seo.title || '',
         },
         {
           property: 'og:description',
-          content: seo.og_description || '',
+          content: seo.description || '',
         },
         {
           property: 'og:image',
-          content: seo.og_image || '',
+          content: seo.image || '',
         },
         {
           property: 'twitter:title',
-          content: seo.twitter_title || '',
+          content: seo.title || '',
         },
         {
           property: 'twitter:description',
-          content: seo.twitter_description || '',
+          content: seo.description || '',
         },
         {
           property: 'twitter:image',
-          content: seo.twitter_image || '',
+          content: seo.image || '',
         },
       ],
     }

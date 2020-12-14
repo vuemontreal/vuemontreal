@@ -6,7 +6,7 @@ export default function () {
     meta: [
       {
         property: 'og:title',
-        content: seo.og_title || '',
+        content: seo.title || '',
       },
       {
         hid: `description`,
@@ -15,11 +15,11 @@ export default function () {
       },
       {
         property: 'og:title',
-        content: seo.og_title || '',
+        content: seo.title || '',
       },
       {
         property: 'og:description',
-        content: seo.og_description || '',
+        content: seo.description || '',
       },
       {
         property: 'og:image',
@@ -27,15 +27,15 @@ export default function () {
       },
       {
         property: 'twitter:title',
-        content: seo.twitter_title || '',
+        content: seo.titlte || '',
       },
       {
         property: 'twitter:description',
-        content: seo.twitter_description || '',
+        content: seo.description || '',
       },
       {
         property: 'twitter:image',
-        content: seo.twitter_image || '',
+        content: seo.og_image || '',
       },
     ],
   }

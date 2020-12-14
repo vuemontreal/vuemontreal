@@ -3,10 +3,10 @@
     :class="{ open }"
     class="nav-left fixed left-0 inset-y-0 z-40 w-full p-5 bg-white"
   >
-    <div class="flex flex-col justify-start items-start mt-16 w-full">
+    <div class="flex flex-col justify-start items-start w-full">
       <IconCloseSharp
-        class="mr-2 mt-2 top-0 right-0 absolute w-8 h-8 text-mtl-black-400"
-        @click.native="$emit('openNav')"
+        class="mr-2 mt-2 top-0 right-0 absolute w-10 h-10 text-mtl-black-400"
+        @click.native="$store.commit('closeNavMobile')"
       />
       <mtl-h-4 class="mb-4 text-mtl-green-400"> Navigation </mtl-h-4>
       <mtl-text-info class="mb-4 pl-4">
@@ -22,7 +22,7 @@
         <a
           :class="currentRoute == 'search' ? 'nuxt-link-active' : ''"
           href=""
-          @click.prevent="$router.push(localePath('/search'))"
+          @click.prevent="$router.push(localePath('/events'))"
         >
           <span class="pb-1">{{ $t('events') }}</span>
         </a>
@@ -31,15 +31,6 @@
       <mtl-h-4 class="mb-4 text-mtl-green-400">
         {{ $t('other') }}
       </mtl-h-4>
-      <mtl-text-info class="mb-4 pl-4">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
-        >
-          {{ $t('join_slack') }}
-        </a>
-      </mtl-text-info>
       <mtl-text-info class="mb-4 pl-4">
         <a
           target="_blank"
@@ -54,23 +45,28 @@
         {{ $t('lang') }}
       </mtl-h-4>
       <mtl-text-info class="mb-4 pl-4">
-        <a
-          href=""
-          @click.prevent="$i18n.setLocale($i18n.locale == 'en' ? 'fr' : 'en')"
-        >
+        <nuxt-link :to="switchLocalePath($i18n.locale == 'en' ? 'fr' : 'en')">
           {{ $i18n.locale == 'en' ? 'fr' : 'en' }}
-        </a>
+        </nuxt-link>
       </mtl-text-info>
       <div
         class="mb-4 p-1 bg-mtl-black-400 text-mtl-white flex absolute bottom-0 left-0 w-full justify-center"
       >
         <a
           class="p-2"
+          href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <icon-logo-slack class="w-6 h-6" />
+        </a>
+        <a
+          class="p-2"
           href="https://github.com/vuemontreal/vuemontreal"
           target="_blank"
           rel="noopener noreferrer"
         >
-          <icon-logo-github class="w-8 h-8" />
+          <icon-logo-github class="w-6 h-6" />
         </a>
         <a
           class="p-2"
@@ -78,7 +74,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <icon-logo-youtube class="w-8 h-8" />
+          <icon-logo-youtube class="w-6 h-6" />
         </a>
         <a
           class="p-2"
@@ -86,7 +82,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <icon-logo-linkedin class="w-8 h-8" />
+          <icon-logo-linkedin class="w-6 h-6" />
         </a>
       </div>
     </div>

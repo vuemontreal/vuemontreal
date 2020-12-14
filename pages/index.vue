@@ -1,19 +1,24 @@
 <template>
   <div class="w-full max-w-screen-xl m-auto">
-    <section id="heading" class="mt-12">
-      <a
-        href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        <img class="w-full" src="~/assets/heading.png" />
-      </a>
+    <section id="heading" class="bg-mtl-black-500 min-h-12 flex-wrap py-8 flex">
+      <div class="w-full flex items-center justify-center mb-4 px-8">
+        <img class="w-1/2 md:w-1/3" src="~/assets/vue-logo-transparent.png" />
+      </div>
+      <div class="w-full flex justify-center">
+        <div
+          class="text-mtl-white text-lg md:text-2xl w-2/3 uppercase text-center"
+        >
+          {{ content.seo.description }}
+        </div>
+      </div>
     </section>
     <section id="next-events" class="px-4 mt-16">
       <div class="flex justify-between mt-12 items-center">
-        <mtl-h-2> Next Events </mtl-h-2>
-        <nuxt-link :to="localePath('/search')">
-          <mtl-text-info class="text-mtl-green-500">see all</mtl-text-info>
+        <mtl-h-2 class="uppercase"> {{ content.next_title }} </mtl-h-2>
+        <nuxt-link :to="localePath('/events')">
+          <mtl-text-info class="text-mtl-green-500">
+            {{ content.see_all }}
+          </mtl-text-info>
         </nuxt-link>
       </div>
       <div class="flex flex-wrap -mx-1 mt-1">
@@ -54,63 +59,18 @@
             </mtl-card-event>
           </div>
         </template>
-        <nuxt-link v-else :to="localePath('/search')" class="w-full">
+        <nuxt-link v-else :to="localePath('/events')" class="w-full">
           <mtl-card-event class="mt-4 relative">
             <template #card-body>
-              <div class="absolute centered flex justify-center flex-wrap">
-                <mtl-text-button>No Events Schedule</mtl-text-button>
-                <mtl-button class="mt-4"> Show old events </mtl-button>
+              <div class="flex justify-center items-center flex-wrap flex-col">
+                <mtl-text-button>{{ content.no_events }}</mtl-text-button>
+                <mtl-button class="mt-4">
+                  {{ content.show_old_events }}
+                </mtl-button>
               </div>
             </template>
           </mtl-card-event>
         </nuxt-link>
-      </div>
-    </section>
-    <section id="vue-jobs" class="px-4">
-      <div class="flex justify-between mt-12 items-center">
-        <mtl-h-2> Latest vue job </mtl-h-2>
-        <a href="https://vuejobs.com/" rel="sponsored" target="_blank">
-          <mtl-text-info class="text-mtl-green-500">see all</mtl-text-info>
-        </a>
-      </div>
-      <div class="flex flex-wrap -mx-1 mt-1">
-        <div
-          v-for="job in jobs"
-          :key="job.key"
-          class="m-auto container mt-8 w-full"
-        >
-          <mtl-card-job>
-            <template #card-header>
-              <mtl-h4 class="mb-2 text-mtl-green-500 pt-4">New</mtl-h4>
-              <mtl-text-info
-                class="bg-mtl-black-200 absolute top-0 right-0 text-mtl-black-400 rounded-bl-lg px-4 py-2"
-                >Full-time</mtl-text-info
-              >
-            </template>
-            <template #card-hero>
-              <!-- <div
-                class="w-10 h-10 bg-mtl-black-400 rounded-lg mr-6 mt-1"
-              ></div> -->
-              <div class="flex flex-row flex-wrap">
-                <mtl-h-3 class="text-mtl-black-400">{{ job.title }}</mtl-h-3>
-                <mtl-text-info class="text-mtl-black-200 mt-2"
-                  >At <span class="text-mtl-black-500">{{ job.company }}</span>
-                  {{ job.location }}
-                </mtl-text-info>
-              </div>
-            </template>
-            <template #card-body>
-              <mtl-paragraph
-                class="text-mtl-black-400"
-                v-html="job.description"
-              >
-              </mtl-paragraph>
-            </template>
-            <template #card-actions>
-              <mtl-button>apply</mtl-button>
-            </template>
-          </mtl-card-job>
-        </div>
       </div>
     </section>
   </div>
@@ -121,28 +81,30 @@ import head from '~/utils/head'
 
 export default {
   name: 'HomePage',
-  async fetch() {
-    const lang = this.$store.state.i18n.locale
-    const { version } = this.$nuxt.context.env
+  async asyncData({ app, store, env }) {
+    const lang = app.i18n.locale === 'fr' ? '' : 'en/'
+    const { version } = env
 
-    const events = await this.$storyapi.get('cdn/stories/', {
+    const events = await app.$storyapi.get('cdn/stories/', {
       version,
-      starts_with: lang + '/events/',
+      starts_with: lang + 'events/',
       sort_by: 'sort_by_date:desc',
     })
-    const home = await this.$storyapi.get(
-      `cdn/stories/${this.$i18n.locale}/home`,
-      {
-        version,
-      }
-    )
-    this.seo = home.data.story.content.seo
-    this.events = events.data.stories
+
+    // eslint-disable-next-line no-console
+    console.log(events)
+    const content = await app.$storyapi.get(`cdn/stories/${lang}home`, {
+      version,
+    })
+
+    return {
+      content: content.data.story.content,
+      events: events.data.stories,
+    }
   },
   data: () => ({
     events: [],
-    seo: null,
-    jobs: [],
+    content: {},
   }),
   computed: {
     nextEvents() {
@@ -153,15 +115,8 @@ export default {
         .slice(0, 2)
     },
   },
-  async mounted() {
-    try {
-      const { data } = await this.$axios.get(
-        'https://vuejobs.com/api/positions/search?search=&location=canada&jobs_per_page=2'
-      )
-      this.jobs = data.data
-    } catch (e) {
-      console.error(e)
-    }
+  mounted() {
+    this.$store.commit('closeNavMobile')
   },
   head,
 }

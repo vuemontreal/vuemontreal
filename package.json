@@ -15,8 +15,7 @@
     "start": "nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
-    "test": "jest",
-    "stylelint": "stylelint '**/*.(css|vue)'"
+    "test": "jest"
   },
   "husky": {
     "hooks": {
@@ -27,27 +26,14 @@
     "*.{js,vue}": [
       "npm run lint -- --fix",
       "git add"
-    ],
-    "*.{css,vue}": [
-      "npm run stylelint -- --fix",
-      "git add"
     ]
   },
   "dependencies": {
-    "@fortawesome/fontawesome-svg-core": "^1.2.27",
-    "@fortawesome/free-brands-svg-icons": "^5.12.1",
-    "@fortawesome/free-solid-svg-icons": "^5.12.1",
-    "@fortawesome/vue-fontawesome": "^2.0.0",
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0",
-    "@nuxtjs/stylelint-module": "^4.0.0",
-    "dotenv": "^8.2.0",
     "nuxt": "^2.14.5",
-    "nuxt-fontawesome": "^0.4.0",
-    "nuxt-i18n": "^6.6.1",
-    "storyblok-nuxt": "^1.1.0",
-    "stylelint": "^13.3.3",
-    "tailwindcss-aspect-ratio": "^3.0.0"
+    "nuxt-i18n": "^6.16.0",
+    "storyblok-nuxt": "^1.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.6",
@@ -55,7 +41,7 @@
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/google-analytics": "^2.2.3",
     "@nuxtjs/sitemap": "^2.0.1",
-    "@nuxtjs/tailwindcss": "^3.0.2",
+    "@nuxtjs/tailwindcss": "^3.3.4",
     "@vue/test-utils": "^1.0.0-beta.27",
     "axios": "^0.20.0",
     "babel-eslint": "^10.0.1",

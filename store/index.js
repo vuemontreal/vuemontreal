@@ -4,11 +4,11 @@ export const state = () => ({
 
 export const mutations = {
   openNavMobile(state) {
-    state.navMobile = !state.navMobile
-    if (state.navMobile === true) {
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.style.overflow = ''
-    }
+    state.navMobile = true
+    document.body.style.overflow = 'hidden'
+  },
+  closeNavMobile(state) {
+    state.navMobile = false
+    document.body.style.overflow = ''
   },
 }

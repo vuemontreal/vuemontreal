@@ -1,9 +1,3 @@
-/*
- ** TailwindCSS Configuration File
- **
- ** Docs: https://tailwindcss.com/docs/configuration
- ** Default: https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js
- */
 module.exports = {
   purge: false,
   theme: {
@@ -13,9 +7,6 @@ module.exports = {
       '21/9': [21, 9],
     },
     colors: {
-      'mtl-primary': '#42B983', // TODO: deprecated
-      'mtl-accent': '#0A87BC', // TODO: deprecated
-      'mtl-infos': '#8A8A8A', // TODO: deprecated
       'mtl-white': '#FFFFFF',
       'mtl-black': {
         200: '#CED0D0',
@@ -28,9 +19,12 @@ module.exports = {
         500: '#269A5A',
       },
     },
+    extend: {
+      minHeight: {
+        4: '4rem',
+        8: '8rem',
+        12: '12rem',
+      },
+    },
   },
-  variants: {
-    aspectRatio: ['responsive'], // defaults to ['responsive']
-  },
-  plugins: [require('tailwindcss-aspect-ratio')],
 }

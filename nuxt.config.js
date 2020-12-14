@@ -1,5 +1,35 @@
+import axios from 'axios'
+
+const generateStoryblokEventRoutes = async () => {
+  const storyblokUrl = 'https://api.storyblok.com/v1/cdn/stories'
+  const token = process.env.STORYBLOK_TOKEN
+  const version = process.env.STORYBLOK_VERSION || 'draft'
+  const endUrl = `?token=${token}&version=${version}&cv=${new Date().getTime()}`
+
+  const langs = ['fr', 'en']
+
+  const storyblokEventsRoutes = []
+
+  langs.forEach((lang) => {
+    storyblokEventsRoutes.push(
+      axios.get(`${storyblokUrl}${endUrl}&starts_with=${lang}/events/`)
+    )
+  })
+
+  try {
+    const ret = []
+    const response = await Promise.all(storyblokEventsRoutes)
+    response.map((res) => {
+      res.data.stories.map((story) => ret.push(story.full_slug))
+    })
+
+    return ret
+  } catch (e) {
+    console.error(e)
+  }
+}
+
 export default {
-  // mode: 'universal',
   target: 'static',
   components: [
     { path: '~/components/', prefix: 'mtl-' },
@@ -9,11 +39,84 @@ export default {
     version: process.env.STORYBLOK_VERSION || 'draft',
   },
   loading: false,
-  head: require('./configs/head'),
-  server: require('./configs/server'),
-  buildModules: require('./configs/buildModules'),
-  modules: require('./configs/modules'),
-  generate: require('./configs/generate').generate,
-  sitemap: require('./configs/generate').sitemap,
-  i18n: require('./configs/i18n'),
+  head: {
+    title: 'Vue montreal',
+    meta: [
+      { charset: 'utf-8' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      {
+        hid: 'description',
+        name: 'description',
+        content: 'Vue montreal website',
+      },
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        href:
+          'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap',
+        rel: 'stylesheet',
+      },
+    ],
+  },
+  buildModules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/tailwindcss',
+    [
+      '@nuxtjs/google-analytics',
+      {
+        id: process.env.GOOGLE_ANALYTIC,
+      },
+    ],
+  ],
+  modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa',
+    [
+      'storyblok-nuxt',
+      {
+        accessToken: process.env.STORYBLOK_TOKEN,
+        cacheProvider: 'memory',
+      },
+    ],
+    'nuxt-i18n',
+    '@nuxtjs/sitemap',
+  ],
+  generate: {
+    fallback: true,
+  },
+  sitemap: {
+    hostname: 'https://vuemontreal.org',
+    routes: generateStoryblokEventRoutes,
+  },
+  i18n: {
+    locales: ['en', 'fr'],
+    defaultLocale: 'fr',
+    strategy: 'prefix_and_default',
+    vueI18n: {
+      fallbackLocale: 'en',
+      messages: {
+        en: {
+          events: 'Events',
+          home: 'Home',
+          more: 'More',
+          register: 'Register',
+          slides: 'View slides',
+          lang: 'Language',
+          other: 'Others',
+          conduct: 'Code of conduct',
+        },
+        fr: {
+          events: 'Events',
+          home: 'Accueil',
+          more: "Plus d'infos",
+          register: "S'inscrire",
+          slides: 'Voir les diapositives',
+          lang: 'Langage',
+          other: 'Autres',
+          conduct: 'Code de conduite',
+        },
+      },
+    },
+  },
 }

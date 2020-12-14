@@ -102,7 +102,7 @@ export default {
       if (withTag) query.withTag = withTag
 
       this.$router.push({
-        path: '/' + lang + '/search',
+        path: '/' + lang + '/events',
         query,
       })
     },
