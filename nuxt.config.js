@@ -105,6 +105,7 @@ export default {
           lang: 'Language',
           other: 'Others',
           conduct: 'Code of conduct',
+          contribute: 'Contribute',
         },
         fr: {
           events: 'Events',
@@ -115,6 +116,7 @@ export default {
           lang: 'Langage',
           other: 'Autres',
           conduct: 'Code de conduite',
+          contribute: 'Contribuez',
         },
       },
     },

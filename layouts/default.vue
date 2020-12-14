@@ -1,10 +1,10 @@
 <template>
-  <div class="flex md:px-10 py-4 justify-between flex-wrap">
+  <div class="flex pb-4 justify-between flex-wrap">
     <mtl-nav-mobile
       class="md:hidden"
       @openNav="$store.commit('openNavMobile')"
     />
-    <mtl-nav-desktop class="hidden md:flex" />
+    <mtl-nav-desktop class="hidden md:flex w-full" />
     <mtl-sidebar-mobile
       :open="openNav"
       class="md:hidden"
