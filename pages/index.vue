@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full max-w-screen-xl m-auto">
+  <div class="w-full max-w-screen-xl m-auto md:px-6">
     <section id="heading" class="bg-mtl-black-500 min-h-12 flex-wrap py-8 flex">
       <div class="w-full flex items-center justify-center mb-4 px-8">
         <img class="w-1/2 md:w-1/3" src="~/assets/vue-logo-transparent.png" />
@@ -12,7 +12,7 @@
         </div>
       </div>
     </section>
-    <section id="next-events" class="px-4 mt-16">
+    <section id="next-events" class="px-4 md:px-0 mt-16">
       <div class="flex justify-between mt-12 items-center">
         <mtl-h-2 class="uppercase"> {{ content.next_title }} </mtl-h-2>
         <nuxt-link :to="localePath('/events')">
@@ -26,7 +26,7 @@
           <div
             v-for="event in nextEvents"
             :key="event.id"
-            class="w-full md:w-1/2 px-1"
+            class="w-full lg:w-1/2 px-1"
           >
             <mtl-card-event class="mt-4">
               <template #card-header>

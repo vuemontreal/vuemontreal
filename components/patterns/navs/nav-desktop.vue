@@ -13,7 +13,7 @@
         </nuxt-link>
       </div>
     </div>
-    <div class="flex items-end w-full lg:px-20 py-2">
+    <div class="flex items-end w-full md:px-6 xl:px-24 py-2">
       <div class="w-2/3 flex justify-start items-center">
         <mtl-text-info class="p-2">
           <a
