@@ -25,6 +25,11 @@ module.exports = {
         8: '8rem',
         12: '12rem',
       },
+      maxHeight: {
+        4: '4rem',
+        8: '8rem',
+        12: '12rem',
+      },
     },
   },
 }

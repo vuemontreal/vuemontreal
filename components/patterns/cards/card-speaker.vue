@@ -1,30 +1,32 @@
 <template>
   <div class="card-block">
-    <header class="card-header">
-      <slot name="card-header" />
-    </header>
-    <main class="card-body">
-      <slot name="card-body" />
-    </main>
+    <img
+      class="max-w-full rounded-full h-24 w-24"
+      :src="speaker.picture.filename"
+    />
+    <mtl-h4 class="mb-2 text-mtl-green-500 pt-4">{{ speaker.name }}</mtl-h4>
+    <div>{{ speaker.job }}</div>
+    <div>En savoir plus</div>
   </div>
 </template>
 
 <script>
-export default {}
+export default {
+  props: {
+    speaker: {
+      type: Object,
+      required: true,
+    },
+  },
+}
 </script>
 
 <style lang="postcss" scoped>
 .card-block {
-  box-shadow: 0 8px 42px rgba(0, 0, 0, 0.08);
-
-  @apply px-4 pb-2 border border-mtl-black-200 rounded-lg relative;
+  @apply w-48 p-4 border border-mtl-black-200 rounded-lg flex flex-col items-center shadow;
 }
 
 .card-header {
-  @apply flex justify-between mb-8 items-center;
-}
-
-.card-body {
-  @apply mb-6 flex;
+  @apply mb-8;
 }
 </style>

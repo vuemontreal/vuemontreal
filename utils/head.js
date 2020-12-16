@@ -1,41 +1,39 @@
 export default function () {
-  const seo = this.seo
-  if (!seo) return {}
   return {
-    title: seo.title || '',
+    title: this.title || '',
     meta: [
       {
         property: 'og:title',
-        content: seo.title || '',
+        content: this.title || '',
       },
       {
         hid: `description`,
         name: 'description',
-        content: seo.description,
+        content: this.description,
       },
       {
         property: 'og:title',
-        content: seo.title || '',
+        content: this.title || '',
       },
       {
         property: 'og:description',
-        content: seo.description || '',
+        content: this.description || '',
       },
       {
         property: 'og:image',
-        content: seo.og_image || '',
+        content: (this.image && this.image.filename) || '/vue-logo-transparent',
       },
       {
         property: 'twitter:title',
-        content: seo.titlte || '',
+        content: this.titlte || '',
       },
       {
         property: 'twitter:description',
-        content: seo.description || '',
+        content: this.description || '',
       },
       {
         property: 'twitter:image',
-        content: seo.og_image || '',
+        content: (this.image && this.image.filename) || '/vue-logo-transparent',
       },
     ],
   }

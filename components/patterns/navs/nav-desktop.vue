@@ -15,24 +15,16 @@
     </div>
     <div class="flex items-end w-full md:px-6 xl:px-24 py-2">
       <div class="w-2/3 flex justify-start items-center">
-        <mtl-text-info class="p-2">
-          <a
-            :class="currentRoute == 'index' ? 'nuxt-link-active' : ''"
-            href=""
-            @click.prevent="$router.push(localePath('/'))"
-          >
+        <mtl-text-button class="p-2">
+          <nuxt-link :to="localePath('/')">
             <span class="pb-1">{{ $t('home') }}</span>
-          </a>
-        </mtl-text-info>
-        <mtl-text-info class="p-2">
-          <a
-            :class="currentRoute == 'search' ? 'nuxt-link-active' : ''"
-            href=""
-            @click.prevent="$router.push(localePath('/events'))"
-          >
+          </nuxt-link>
+        </mtl-text-button>
+        <mtl-text-button class="p-2">
+          <nuxt-link :to="localePath('/events')">
             <span class="pb-1">{{ $t('events') }}</span>
-          </a>
-        </mtl-text-info>
+          </nuxt-link>
+        </mtl-text-button>
       </div>
       <div class="w-1/3 text-mtl-black flex items-center justify-end">
         <a
@@ -75,3 +67,9 @@
 <script>
 export default {}
 </script>
+
+<style lang="postcss">
+.nuxt-link-exact-active {
+  @apply text-mtl-green-500;
+}
+</style>

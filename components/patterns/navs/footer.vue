@@ -37,7 +37,6 @@
         />
       </a>
     </p>
-
     <p class="text-sm font-light text-center">
       Thank's to
       <a

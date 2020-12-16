@@ -10,7 +10,8 @@
       class="md:hidden"
       :current-route="currentRoute"
     />
-    <nuxt />
+    <nuxt class="mb-8" />
+    <mtl-newsletter class="w-full" />
     <mtl-footer class="w-full" />
   </div>
 </template>
