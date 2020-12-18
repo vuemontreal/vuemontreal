@@ -4,7 +4,7 @@
     class="nav-left fixed left-0 inset-y-0 z-40 w-full p-5 bg-white"
   >
     <div class="flex flex-col justify-start items-start w-full">
-      <IconCloseSharp
+      <mtl-close-sharp
         class="mr-2 mt-2 top-0 right-0 absolute w-10 h-10 text-mtl-black-400"
         @click.native="$store.commit('closeNavMobile')"
       />
@@ -28,7 +28,7 @@
         </a>
       </mtl-text-info>
       <hr class="my-4" />
-      <mtl-h-4 class="mb-4 text-mtl-green-400">
+      <!-- <mtl-h-4 class="mb-4 text-mtl-green-400">
         {{ $t('other') }}
       </mtl-h-4>
       <mtl-text-info class="mb-4 pl-4">
@@ -39,7 +39,7 @@
         >
           {{ $t('conduct') }}
         </a>
-      </mtl-text-info>
+      </mtl-text-info> -->
       <hr class="my-4" />
       <mtl-h-4 class="mb-4 text-mtl-green-400">
         {{ $t('lang') }}
@@ -58,7 +58,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <icon-logo-slack class="w-6 h-6" />
+          <mtl-logo-slack class="w-6 h-6" />
         </a>
         <a
           class="p-2"
@@ -66,15 +66,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <icon-logo-github class="w-6 h-6" />
-        </a>
-        <a
-          class="p-2"
-          href="https://www.youtube.com/channel/UC16FJzwOFy72EYpDP20Etqw"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <icon-logo-youtube class="w-6 h-6" />
+          <mtl-logo-github class="w-6 h-6" />
         </a>
         <a
           class="p-2"
@@ -82,7 +74,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <icon-logo-linkedin class="w-6 h-6" />
+          <mtl-logo-linkedin class="w-6 h-6" />
         </a>
       </div>
     </div>

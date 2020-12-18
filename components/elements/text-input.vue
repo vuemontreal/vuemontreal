@@ -1,9 +1,9 @@
 <template>
-  <div class="flex flex-col">
-    <label class="text-mtl-black-400">
+  <div class="flex flex-col relative">
+    <label class="text-mtl-black-400 hidden">
       {{ label }}
-      <input v-bind="$attrs" />
     </label>
+    <input v-bind="$attrs" class="w-full" :placeholder="label" />
   </div>
 </template>
 

@@ -33,7 +33,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <icon-logo-slack class="w-6 h-6" />
+          <mtl-logo-slack class="w-6 h-6" />
         </a>
         <a
           class="p-2"
@@ -41,15 +41,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <icon-logo-github class="w-6 h-6" />
-        </a>
-        <a
-          class="p-2"
-          href="https://www.youtube.com/channel/UC16FJzwOFy72EYpDP20Etqw"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <icon-logo-youtube class="w-6 h-6" />
+          <mtl-logo-github class="w-6 h-6" />
         </a>
         <a
           class="p-2"
@@ -57,7 +49,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <icon-logo-linkedin class="w-6 h-6" />
+          <mtl-logo-linkedin class="w-6 h-6" />
         </a>
       </div>
     </div>
@@ -67,9 +59,3 @@
 <script>
 export default {}
 </script>
-
-<style lang="postcss">
-.nuxt-link-exact-active {
-  @apply text-mtl-green-500;
-}
-</style>

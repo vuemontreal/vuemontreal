@@ -1,14 +1,13 @@
 <template>
   <div class="w-full max-w-screen-xl m-auto md:px-6">
     <a
-      class="p-2"
       href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
       target="_blank"
       rel="noopener noreferrer"
     >
       <section
         id="heading"
-        class="bg-mtl-black-500 flex-wrap py-8 flex cursor-pointer"
+        class="bg-mtl-black-500 flex-wrap flex cursor-pointer mb-4"
         :class="{
           imageEn: $i18n.locale === 'en',
           imageFr: $i18n.locale === 'fr',
@@ -16,8 +15,8 @@
       ></section>
     </a>
 
-    <section id="next-events" class="px-4 md:px-0 mt-16">
-      <div class="flex justify-between mt-12 items-center">
+    <section id="next-events" class="px-4 md:px-0">
+      <div class="flex justify-between items-center">
         <mtl-h-2 class="uppercase"> {{ next_title }} </mtl-h-2>
         <nuxt-link :to="localePath('/events')">
           <mtl-text-info class="text-mtl-green-500">
@@ -65,10 +64,8 @@ export default {
       version,
       starts_with: lang + 'events/',
       sort_by: 'sort_by_date:desc',
+      resolve_relations: 'speakers',
     })
-
-    // eslint-disable-next-line no-console
-    console.log(events)
     const content = await app.$storyapi.get(`cdn/stories/${lang}home`, {
       version,
     })
@@ -108,6 +105,7 @@ export default {
   height: 500px;
   background-size: cover;
   background-repeat: no-repeat;
+  background-position-x: center;
 }
 
 .imageEn {

@@ -1,6 +1,6 @@
 <template>
   <footer
-    class="h-40 bg-black text-white flex justify-center items-center flex-col"
+    class="py-4 bg-black text-white flex justify-center items-center flex-col"
   >
     <p class="flex">
       <a
@@ -9,10 +9,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <font-awesome-icon
-          :icon="['fab', 'slack']"
-          class="fill-current text-mtl-primary w-4 h-4"
-        />
+        <mtl-logo-slack class="w-4 h-4" />
       </a>
       <a
         class="p-2 icon hidden lg:block"
@@ -20,10 +17,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <font-awesome-icon
-          :icon="['fab', 'linkedin']"
-          class="fill-current text-mtl-primary w-4 h-4"
-        />
+        <mtl-logo-linkedin class="w-4 h-4" />
       </a>
       <a
         class="p-2 icon hidden lg:block"
@@ -31,23 +25,10 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <font-awesome-icon
-          :icon="['fab', 'github']"
-          class="fill-current text-mtl-primary w-4 h-4"
-        />
+        <mtl-logo-github class="w-4 h-4" />
       </a>
     </p>
-    <p class="text-sm font-light text-center">
-      Thank's to
-      <a
-        href="https://www.netlify.com/open-source/"
-        target="_blank"
-        class="cursor-pointer underline"
-        >Netlify Open Source program</a
-      >
-      for hosting us and give us full access<br />
-      Copyright © 2020 Vue Montreal
-    </p>
+    <p class="text-sm font-light text-center" v-html="$t('netlify')"></p>
   </footer>
 </template>
 

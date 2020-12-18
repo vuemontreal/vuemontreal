@@ -31,10 +31,7 @@ const generateStoryblokEventRoutes = async () => {
 
 export default {
   target: 'static',
-  components: [
-    { path: '~/components/', prefix: 'mtl-' },
-    { path: '~/components/tokens/icons', prefix: 'icon-' },
-  ],
+  components: [{ path: '~/components/', prefix: 'mtl-' }],
   env: {
     version: process.env.STORYBLOK_VERSION || 'draft',
   },
@@ -99,24 +96,38 @@ export default {
         en: {
           events: 'Events',
           home: 'Home',
-          more: 'More',
-          register: 'Register',
-          slides: 'View slides',
+          more: 'View More',
           lang: 'Language',
           other: 'Others',
           conduct: 'Code of conduct',
           contribute: 'Contribute',
+          newsletter: {
+            subscribe_text: 'Subscribe to our newsletter',
+            subscribe_subtext: 'Get the best of our listings into your inbox.',
+            subscribe: 'Subscribe',
+            subscribe_promise: '✋️ We promise to respect your inbox.',
+          },
+          netlify:
+            'Thank\'s to <a href="https://www.netlify.com/open-source/" target="_blank" class="cursor-pointer underline">Netlify Open Source program</a> <br/> Copyright © 2020 Vue Montreal',
         },
         fr: {
           events: 'Events',
           home: 'Accueil',
-          more: "Plus d'infos",
-          register: "S'inscrire",
-          slides: 'Voir les diapositives',
+          more: 'Voir Plus',
           lang: 'Langage',
           other: 'Autres',
           conduct: 'Code de conduite',
           contribute: 'Contribuez',
+          newsletter: {
+            subscribe_text: 'Souscrire à notre newsletter',
+            subscribe_subtext:
+              'Recevez le meilleur de notre listings dans votre boîte mail.',
+            subscribe: 'Souscrire',
+            subscribe_promise:
+              '✋️ On vous promet de respecter votre boîte mail.',
+          },
+          netlify:
+            'Merci <a href="https://www.netlify.com/open-source/" target="_blank" class="cursor-pointer underline">Netlify pour le programme open source</a> <br/> Copyright © 2020 Vue Montreal',
         },
       },
     },

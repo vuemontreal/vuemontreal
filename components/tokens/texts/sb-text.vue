@@ -8,13 +8,15 @@
 export default {
   props: {
     text: {
-      type: Object,
+      type: [Object, String],
       required: true,
     },
   },
   computed: {
     richtext() {
-      return this.$storyapi.richTextResolver.render(this.text)
+      return typeof this.text !== 'object'
+        ? this.text
+        : this.$storyapi.richTextResolver.render(this.text)
     },
   },
 }

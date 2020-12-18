@@ -2,10 +2,7 @@
   <nav class="mb-5 flex justify-between z-30">
     <div class="flex items-center icons">
       <button class="lg:hidden p-2 icon" @click="openNav">
-        <font-awesome-icon
-          :icon="['fas', 'bars']"
-          class="fill-current text-mtl-primary w-4 h-4"
-        />
+        <mtl-burger-menu class="w-4 h-4" />
       </button>
       <a
         class="p-2 icon hidden lg:block"
@@ -13,10 +10,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <font-awesome-icon
-          :icon="['fab', 'slack']"
-          class="fill-current text-mtl-primary w-4 h-4"
-        />
+        <mtl-logo-slack class="w-4 h-4" />
       </a>
       <a
         class="p-2 icon hidden lg:block"
@@ -24,10 +18,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <font-awesome-icon
-          :icon="['fab', 'linkedin']"
-          class="fill-current text-mtl-primary w-4 h-4"
-        />
+        <mtl-logo-linkedin class="w-4 h-4" />
       </a>
       <a
         class="p-2 icon hidden lg:block"
@@ -35,78 +26,16 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <font-awesome-icon
-          :icon="['fab', 'github']"
-          class="fill-current text-mtl-primary w-4 h-4"
-        />
+        <mtl-logo-github class="w-4 h-4" />
       </a>
     </div>
-    <form class="flex items-center relative" @submit.prevent="submitSearch">
-      <input
-        v-model="search"
-        type="text"
-        class="border border-black border-solid pl-8"
-        placeholder="search"
-      />
-      <button
-        v-show="search"
-        type="button"
-        class="close-icon"
-        @click="clearSearch"
-      >
-        <font-awesome-icon
-          :icon="['fa', 'window-close']"
-          class="fill-current text-mtl-primary w-4 h-4 cursor-pointer"
-        />
-      </button>
-      <button type="button" class="plus-icon" @click="submitSearch">
-        <font-awesome-icon
-          :icon="['fa', 'search']"
-          class="fill-current text-mtl-primary w-4 h-4 cursor-pointer"
-        />
-      </button>
-    </form>
   </nav>
 </template>
 
 <script>
 export default {
   name: 'NavBarTop',
-  data() {
-    return {
-      search: '',
-    }
-  },
-
-  created() {
-    this.search = this.$route.query.searchTerm
-  },
-
   methods: {
-    clearSearch() {
-      this.search = ''
-      const query = Object.assign({}, this.$route.query)
-      if (!query.searchTerm) return
-
-      delete query.searchTerm
-      this.$router.push({ query })
-    },
-
-    submitSearch() {
-      const { withTag } = this.$route.query
-      const lang = this.$store.state.i18n.locale
-
-      const query = {
-        searchTerm: this.search,
-      }
-      if (withTag) query.withTag = withTag
-
-      this.$router.push({
-        path: '/' + lang + '/events',
-        query,
-      })
-    },
-
     openNav() {
       this.$store.commit('openNavMobile')
     },

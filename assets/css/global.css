@@ -18,3 +18,8 @@ body {
 
   @apply text-mtl-black-500 poppins-regular;
 }
+
+
+.nuxt-link-exact-active {
+  @apply text-mtl-green-500;
+}
