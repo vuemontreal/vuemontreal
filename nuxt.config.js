@@ -59,13 +59,9 @@ export default {
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',
-    [
-      '@nuxtjs/google-analytics',
-      {
-        id: process.env.GOOGLE_ANALYTIC,
-      },
-    ],
+    '@nuxtjs/google-analytics',
   ],
+  plugins: ['~/plugins/popover.client.js'],
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
@@ -82,9 +78,20 @@ export default {
   generate: {
     fallback: true,
   },
+  // not delete because of netlify cli dev to resolve cors issue
+  server: {
+    port: 8888,
+  },
   sitemap: {
     hostname: 'https://vuemontreal.org',
     routes: generateStoryblokEventRoutes,
+  },
+  googleAnalytics: {
+    id: process.env.GOOGLE_ANALYTIC,
+    // dev: process.env.NODE_ENV !== 'production',
+    debug: {
+      enabled: process.env.NODE_ENV !== 'production',
+    },
   },
   i18n: {
     locales: ['en', 'fr'],
@@ -111,7 +118,7 @@ export default {
             'Thank\'s to <a href="https://www.netlify.com/open-source/" target="_blank" class="cursor-pointer underline">Netlify Open Source program</a> <br/> Copyright © 2020 Vue Montreal',
         },
         fr: {
-          events: 'Events',
+          events: 'Évènements',
           home: 'Accueil',
           more: 'Voir Plus',
           lang: 'Langage',

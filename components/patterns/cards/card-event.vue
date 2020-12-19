@@ -1,7 +1,6 @@
 <template>
   <div class="card-block">
     <header class="card-header">
-      <mtl-h-4 class="mb-2 text-mtl-black-400">{{ event.title }}</mtl-h-4>
       <div class="flex flex-wrap">
         <a
           v-for="speaker in event.content.speakers"
@@ -14,9 +13,21 @@
           "
           target="_blank"
           class="mr-2"
+          @click="
+            $ga.event({
+              eventCategory: 'speaker',
+              eventAction: 'click',
+              eventLabel: speaker.content.name,
+              eventValue: 1,
+            })
+          "
         >
+          <popover :name="speaker.id.toString()" event="hover">
+            {{ speaker.content.name }}
+          </popover>
           <img
             v-if="speaker.content"
+            v-popover.top="{ name: speaker.id.toString() }"
             class="w-12 h-12 xl:w-16 xl:h-16 rounded-full"
             :src="speaker.content.picture.filename"
           />
@@ -24,6 +35,7 @@
       </div>
     </header>
     <main class="card-body">
+      <mtl-h-4 class="text-mtl-black-400">{{ event.content.title }}</mtl-h-4>
       <mtl-paragraph class="text-mtl-black-400">
         <mtl-sb-text :text="event.content.description" />
       </mtl-paragraph>
@@ -71,7 +83,7 @@ export default {
 }
 
 .card-body {
-  max-height: 100px;
+  max-height: 120px;
   overflow-y: hidden;
 }
 

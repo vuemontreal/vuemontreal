@@ -6,9 +6,22 @@
     <div class="mb-4 text-center px-2 md:px-0">
       {{ $t('newsletter.subscribe_subtext') }}
     </div>
-    <form class="flex flex-col justify-center items-center" @submit.prevent="">
+    <form
+      name="newsletter"
+      method="post"
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      class="flex flex-col justify-center items-center"
+      @submit.prevent=""
+    >
+      <input type="hidden" name="form-name" value="ask-question" />
       <div class="flex mb-4 flex-wrap justify-center">
-        <mtl-text-input label="email" class="mr-4 mb-4 lg:mb-0" type="email" />
+        <mtl-text-input
+          required
+          label="email"
+          class="mr-4 mb-4 lg:mb-0"
+          type="email"
+        />
         <mtl-button>{{ $t('newsletter.subscribe') }}</mtl-button>
       </div>
       <div class="text-xs text-right">
@@ -21,5 +34,3 @@
 <script>
 export default {}
 </script>
-
-<style></style>

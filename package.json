@@ -39,7 +39,7 @@
     "@babel/core": "^7.9.6",
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
-    "@nuxtjs/google-analytics": "^2.2.3",
+    "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/sitemap": "^2.0.1",
     "@nuxtjs/tailwindcss": "^3.3.4",
     "@vue/test-utils": "^1.0.0-beta.27",
@@ -57,6 +57,7 @@
     "lint-staged": "^10.4.0",
     "prettier": "^2.1.2",
     "stylelint-config-standard": "^20.0.0",
-    "vue-jest": "^4.0.0-rc.0"
+    "vue-jest": "^4.0.0-rc.0",
+    "vue-js-popover": "^1.2.1"
   }
 }
