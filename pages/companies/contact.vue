@@ -1,55 +1,79 @@
 <template>
-  <form
-    name="company-project"
-    method="post"
-    data-netlify="true"
-    data-netlify-honeypot="bot-field"
-    class="flex flex-col justify-center items-center"
-    @submit.prevent="handleSubmit"
-  >
-    <p class="hidden">
-      <label>
-        Don’t fill this out if you’re human: <input name="bot-field" />
-      </label>
-    </p>
-    <div class="flex mb-4 flex-wrap justify-center">
-      <label>
-        <mtl-text-input
-          v-model="form.email"
-          required
-          label="email"
-          class="mr-4 mb-4 lg:mb-0"
-          type="email"
-        />
-      </label>
+  <div class="w-full max-w-screen-xl m-auto md:px-6 py-8">
+    <div class="flex items-start">
+      <div class="w-1/2">
+        <mtl-h-1 class="mb-4">Formulaire de contact</mtl-h-1>
+        <form
+          name="company-project"
+          method="post"
+          data-netlify="true"
+          data-netlify-honeypot="bot-field"
+          class="flex flex-col items-start"
+          @submit.prevent="handleSubmit"
+        >
+          <p class="hidden">
+            <label>
+              Don’t fill this out if you’re human: <input name="bot-field" />
+            </label>
+          </p>
+          <div class="flex mb-4 w-2/3">
+            <mtl-text-input
+              v-model="form.email"
+              required
+              label="email"
+              class="mr-4 mb-4 lg:mb-0"
+              type="email"
+            />
+          </div>
+          <div class="flex mb-4 w-2/3">
+            <mtl-text-input
+              v-model="form.name"
+              required
+              label="Company Name"
+              class="mr-4 mb-4 lg:mb-0"
+              type="email"
+            />
+          </div>
+          <div class="flex mb-4 w-2/3">
+            <textarea
+              v-model="form.description"
+              required
+              rows="6"
+              placeholder="Project description"
+              label="email"
+              class="mr-4 mb-4 lg:mb-0 w-full border border-mtl-green-500 rounded-lg p-4 text-mtl-black-400"
+            >
+            Description
+            </textarea>
+          </div>
+          <mtl-button type="submit">
+            {{ $t('newsletter.subscribe') }}
+          </mtl-button>
+        </form>
+      </div>
+      <div class="w-1/2">
+        <div class="side-right">asda</div>
+      </div>
     </div>
-    <div class="flex mb-4 flex-wrap justify-center">
-      <label>
-        <mtl-text-input
-          v-model="form.name"
-          required
-          label="email"
-          class="mr-4 mb-4 lg:mb-0"
-          type="email"
-        />
-      </label>
-    </div>
-    <div class="flex mb-4 flex-wrap justify-center">
-      <label>
-        <textarea
-          v-model="form.description"
-          required
-          label="email"
-          class="mr-4 mb-4 lg:mb-0"
-        ></textarea>
-      </label>
-    </div>
-    <mtl-button type="submit">{{ $t('newsletter.subscribe') }}</mtl-button>
-  </form>
+  </div>
 </template>
 
 <script>
 export default {
+  async asyncData({ app, store, env }) {
+    const lang = app.i18n.locale === 'fr' ? '' : 'en/'
+    const { version } = env
+    try {
+      const content = await app.$storyapi.get(`cdn/stories/${lang}home`, {
+        version,
+      })
+      return {
+        ...content.data.story.content,
+      }
+    } catch (e) {
+      console.error(e)
+    }
+  },
   data() {
     return {
       form: {
@@ -95,4 +119,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style lang="postcss">
+.side-right {
+  @apply rounded-lg p-4 shadow-lg;
+  min-height: 300px;
+}
+</style>

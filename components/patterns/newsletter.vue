@@ -16,12 +16,7 @@
     >
       <input type="hidden" name="form-name" value="ask-question" />
       <div class="flex mb-4 flex-wrap justify-center">
-        <mtl-text-input
-          required
-          label="email"
-          class="mr-4 mb-4 lg:mb-0"
-          type="email"
-        />
+        <mtl-text-input required label="email" class="mr-4 mb-4" type="email" />
         <mtl-button>{{ $t('newsletter.subscribe') }}</mtl-button>
       </div>
       <div class="text-xs text-right">

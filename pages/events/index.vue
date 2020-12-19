@@ -17,7 +17,7 @@
 import head from '~/utils/head'
 
 export default {
-  name: 'SearchPage',
+  name: 'EventsPage',
   async asyncData({ app, store, env }) {
     const lang = app.i18n.locale === 'fr' ? '' : 'en/'
     const { version } = env

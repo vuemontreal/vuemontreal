@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col relative">
+  <div class="flex flex-col relative w-full">
     <label class="text-mtl-black-400 hidden">
       {{ label }}
     </label>
@@ -21,7 +21,7 @@ export default {
 
 <style lang="postcss" scoped>
 input {
-  @apply border border-mtl-green-500 rounded-lg h-10 px-8 text-mtl-black-400;
+  @apply border border-mtl-green-500 rounded-lg h-10 px-4 text-mtl-black-400;
 }
 
 input:disabled {

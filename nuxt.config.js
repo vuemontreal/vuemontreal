@@ -114,6 +114,7 @@ export default {
             subscribe: 'Subscribe',
             subscribe_promise: '✋️ We promise to respect your inbox.',
           },
+          who: 'Quebec companies using VueJS',
           netlify:
             'Thank\'s to <a href="https://www.netlify.com/open-source/" target="_blank" class="cursor-pointer underline">Netlify Open Source program</a> <br/> Copyright © 2020 Vue Montreal',
         },
@@ -123,6 +124,7 @@ export default {
           more: 'Voir Plus',
           lang: 'Langage',
           other: 'Autres',
+          who: 'Les entreprises Québécoise qui utilisent VueJS',
           conduct: 'Code de conduite',
           contribute: 'Contribuez',
           newsletter: {
