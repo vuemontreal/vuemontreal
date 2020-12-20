@@ -59,6 +59,7 @@
 </template>
 
 <script>
+import head from '~/utils/head'
 export default {
   async asyncData({ app, store, env }) {
     const lang = app.i18n.locale === 'fr' ? '' : 'en/'
@@ -84,6 +85,9 @@ export default {
       error: '',
       success: '',
     }
+  },
+  mounted() {
+    this.$store.commit('closeNavMobile')
   },
   methods: {
     encode(data) {
@@ -116,6 +120,7 @@ export default {
         })
     },
   },
+  head,
 }
 </script>
 

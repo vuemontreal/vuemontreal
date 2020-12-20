@@ -9,37 +9,21 @@
         @click.native="$store.commit('closeNavMobile')"
       />
       <mtl-h-4 class="mb-4 text-mtl-green-400"> Navigation </mtl-h-4>
-      <mtl-text-info class="mb-4 pl-4">
-        <a
-          :class="currentRoute == 'index' ? 'nuxt-link-active' : ''"
-          href=""
-          @click.prevent="$router.push(localePath('/'))"
-        >
+      <mtl-text-button class="p-2">
+        <nuxt-link :to="localePath('/')">
           <span class="pb-1">{{ $t('home') }}</span>
-        </a>
-      </mtl-text-info>
-      <mtl-text-info class="mb-4 pl-4">
-        <a
-          :class="currentRoute == 'search' ? 'nuxt-link-active' : ''"
-          href=""
-          @click.prevent="$router.push(localePath('/events'))"
-        >
+        </nuxt-link>
+      </mtl-text-button>
+      <mtl-text-button class="p-2">
+        <nuxt-link :to="localePath('/events')">
           <span class="pb-1">{{ $t('events') }}</span>
-        </a>
-      </mtl-text-info>
-      <hr class="my-4" />
-      <!-- <mtl-h-4 class="mb-4 text-mtl-green-400">
-        {{ $t('other') }}
-      </mtl-h-4>
-      <mtl-text-info class="mb-4 pl-4">
-        <a
-          target="_blank"
-          rel="noopener noreferrer"
-          href="https://github.com/vuemontreal/vuemontreal/blob/master/.github/CODE_OF_CONDUCT.md"
-        >
-          {{ $t('conduct') }}
-        </a>
-      </mtl-text-info> -->
+        </nuxt-link>
+      </mtl-text-button>
+      <mtl-text-button class="p-2">
+        <nuxt-link :to="localePath('/companies/contact')">
+          <span class="pb-1">{{ $t('who') }}</span>
+        </nuxt-link>
+      </mtl-text-button>
       <hr class="my-4" />
       <mtl-h-4 class="mb-4 text-mtl-green-400">
         {{ $t('lang') }}
@@ -97,10 +81,6 @@ export default {
 </script>
 
 <style scoped>
-.nuxt-link-active span {
-  border-bottom: 0.2rem solid #42b983;
-}
-
 .nav-left {
   left: -100%;
   transition: 0.3s ease-out;
