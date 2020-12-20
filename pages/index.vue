@@ -8,10 +8,7 @@
       <section
         id="heading"
         class="bg-mtl-black-500 flex-wrap flex cursor-pointer mb-4"
-        :class="{
-          imageEn: $i18n.locale === 'en',
-          imageFr: $i18n.locale === 'fr',
-        }"
+        :style="`background-image: url('${image.filename}');`"
       ></section>
     </a>
 
@@ -106,13 +103,5 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position-x: center;
-}
-
-.imageEn {
-  background-image: url('~assets/svgs/heroen.svg');
-}
-
-.imageFr {
-  background-image: url('~assets/svgs/herofr.svg');
 }
 </style>
