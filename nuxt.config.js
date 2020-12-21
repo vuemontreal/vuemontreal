@@ -129,9 +129,9 @@ export default {
             subscribe_promise: '✋️ We promise to respect your inbox.',
           },
           back: 'Back',
-          who: 'Quebec companies using VueJS',
+          who: 'Who is using Vuejs in Quebec?',
           netlify:
-            'Thank\'s to <a href="https://www.netlify.com/open-source/" target="_blank" class="cursor-pointer underline">Netlify Open Source program</a> <br/> Copyright © 2020 Vue Montreal',
+            'Thanks to <a href="https://www.netlify.com/open-source/" target="_blank" class="cursor-pointer underline">Netlify Open Source program</a> <br/> Copyright © 2020 Vue Montreal',
         },
         fr: {
           events: 'Évènements',
@@ -140,9 +140,9 @@ export default {
           lang: 'Langage',
           other: 'Autres',
           back: 'Retour',
-          who: 'Les entreprises Québécoise qui utilisent VueJS',
+          who: 'Qui utilise Vuejs au Québec?',
           conduct: 'Code de conduite',
-          contribute: 'Contribuez',
+          contribute: 'Contribuer',
           steps: {
             one: 'You explain your project',
             second: 'We contact you and schedule a meeting',

@@ -2,7 +2,7 @@
   <div class="w-full max-w-screen-xl m-auto md:px-6 mt-10 md:mt-0">
     <section
       id="heading"
-      class="bg-mtl-black-500 flex-wrap flex cursor-pointer mb-4 items-end py-8 justify-center"
+      class="bg-mtl-black-500 flex-wrap flex mb-4 items-end py-8 justify-center"
       :style="`background-image: url('${image.filename}');`"
     >
       <div
@@ -16,7 +16,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <mtl-button>Join us on slack</mtl-button>
+          <mtl-button>{{ join_slack }}</mtl-button>
         </a>
       </div>
     </section>

@@ -4,7 +4,7 @@
   >
     <p class="flex">
       <a
-        class="p-2 icon hidden lg:block"
+        class="p-2 icon"
         href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
         target="_blank"
         rel="noopener noreferrer"
@@ -12,7 +12,7 @@
         <mtl-logo-slack class="w-4 h-4" />
       </a>
       <a
-        class="p-2 icon hidden lg:block"
+        class="p-2 icon"
         href="https://www.linkedin.com/groups/12289604/"
         target="_blank"
         rel="noopener noreferrer"
@@ -20,7 +20,7 @@
         <mtl-logo-linkedin class="w-4 h-4" />
       </a>
       <a
-        class="p-2 icon hidden lg:block"
+        class="p-2 icon"
         href="https://github.com/vuemontreal/vuemontreal"
         target="_blank"
         rel="noopener noreferrer"
