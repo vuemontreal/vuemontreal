@@ -1,6 +1,6 @@
 <template>
   <div class="card-block">
-    <header class="card-header">
+    <header class="mb-2">
       <div class="flex flex-wrap">
         <a
           v-for="speaker in event.content.speakers"
@@ -35,7 +35,7 @@
         </a>
       </div>
     </header>
-    <main class="card-body">
+    <main class="card-body flex-1 mb-2">
       <mtl-h-4 class="text-mtl-black-400">{{ event.content.title }}</mtl-h-4>
       <mtl-paragraph class="text-mtl-black-400">
         <mtl-sb-text :text="event.content.description" />
@@ -82,7 +82,6 @@ export default {
 }
 
 .card-body {
-  max-height: 120px;
   overflow-y: hidden;
 }
 
