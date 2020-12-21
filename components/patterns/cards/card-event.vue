@@ -30,6 +30,7 @@
             v-popover.top="{ name: speaker.id.toString() }"
             class="w-12 h-12 xl:w-16 xl:h-16 rounded-full"
             :src="speaker.content.picture.filename"
+            :alt="speaker.content.picture.alt"
           />
         </a>
       </div>

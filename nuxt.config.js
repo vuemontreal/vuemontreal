@@ -117,6 +117,11 @@ export default {
           other: 'Others',
           conduct: 'Code of conduct',
           contribute: 'Contribute',
+          steps: {
+            one: 'You explain your project',
+            second: 'We contact you and schedule a meeting',
+            third: 'Your project on the website',
+          },
           newsletter: {
             subscribe_text: 'Subscribe to our newsletter',
             subscribe_subtext: 'Get the best of our listings into your inbox.',
@@ -138,6 +143,11 @@ export default {
           who: 'Les entreprises Québécoise qui utilisent VueJS',
           conduct: 'Code de conduite',
           contribute: 'Contribuez',
+          steps: {
+            one: 'You explain your project',
+            second: 'We contact you and schedule a meeting',
+            third: 'Your project on the website',
+          },
           newsletter: {
             subscribe_text: 'Souscrire à notre newsletter',
             subscribe_subtext:
