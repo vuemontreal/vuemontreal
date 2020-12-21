@@ -1,7 +1,7 @@
 <template>
-  <div class="w-full max-w-screen-xl m-auto md:px-6 py-8">
-    <div class="flex items-start">
-      <div class="w-1/2">
+  <div class="w-full max-w-screen-xl m-auto md:px-6 mt-16 md:mt-0">
+    <div class="flex flex-wrap items-start">
+      <div class="w-full lg:w-1/2 px-2 md:px-2">
         <mtl-h-1 class="mb-4">Formulaire de contact</mtl-h-1>
         <form
           name="company-project"
@@ -16,7 +16,7 @@
               Don’t fill this out if you’re human: <input name="bot-field" />
             </label>
           </p>
-          <div class="flex mb-4 w-2/3">
+          <div class="flex mb-4 w-full md:w-2/3">
             <mtl-text-input
               v-model="form.email"
               required
@@ -25,7 +25,7 @@
               type="email"
             />
           </div>
-          <div class="flex mb-4 w-2/3">
+          <div class="flex mb-4 w-full md:w-2/3">
             <mtl-text-input
               v-model="form.name"
               required
@@ -34,7 +34,7 @@
               type="email"
             />
           </div>
-          <div class="flex mb-4 w-2/3">
+          <div class="flex mb-4 w-full md:w-2/3">
             <textarea
               v-model="form.description"
               required
@@ -51,7 +51,7 @@
           </mtl-button>
         </form>
       </div>
-      <div class="w-1/2">
+      <div class="w-full lg:w-1/2">
         <div class="side-right">asda</div>
       </div>
     </div>

@@ -1,6 +1,6 @@
 <template>
-  <div class="w-full max-w-screen-xl m-auto md:px-6">
-    <mtl-h-2 class="mt-3"> Events </mtl-h-2>
+  <div class="w-full max-w-screen-xl m-auto md:px-6 mt-16 md:mt-0">
+    <mtl-h-2 class="mt-3 px-2 md:px-0"> Events </mtl-h-2>
     <div class="flex flex-wrap -mx-1 mt-1">
       <div
         v-for="event in events"

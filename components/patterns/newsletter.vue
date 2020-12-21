@@ -1,9 +1,11 @@
 <template>
-  <div class="bg-mtl-black-400 flex flex-col items-center py-8 text-mtl-white">
-    <mtl-h-2 class="mb-4 text-2xl px-2 md:px-0">
+  <div
+    class="bg-mtl-black-400 flex flex-col items-center py-8 text-mtl-white md:px-0"
+  >
+    <mtl-h-2 class="mb-4 text-2xl">
       {{ $t('newsletter.subscribe_text') }}
     </mtl-h-2>
-    <div class="mb-4 text-center px-2 md:px-0">
+    <div class="mb-4 text-center">
       {{ $t('newsletter.subscribe_subtext') }}
     </div>
     <form

@@ -1,5 +1,5 @@
 <template>
-  <div class="w-full max-w-screen-xl m-auto md:px-6">
+  <div class="w-full max-w-screen-xl m-auto md:px-6 mt-10 md:mt-0">
     <a
       href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
       target="_blank"
