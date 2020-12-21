@@ -1,16 +1,25 @@
 <template>
   <div class="w-full max-w-screen-xl m-auto md:px-6 mt-10 md:mt-0">
-    <a
-      href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
-      target="_blank"
-      rel="noopener noreferrer"
+    <section
+      id="heading"
+      class="bg-mtl-black-500 flex-wrap flex cursor-pointer mb-4 items-end py-8 justify-center"
+      :style="`background-image: url('${image.filename}');`"
     >
-      <section
-        id="heading"
-        class="bg-mtl-black-500 flex-wrap flex cursor-pointer mb-4"
-        :style="`background-image: url('${image.filename}');`"
-      ></section>
-    </a>
+      <div
+        class="text-mtl-white w-full md:w-1/2 flex flex-col items-center justify-center px-2"
+      >
+        <mtl-text-info class="mb-4 text-center">
+          {{ description }}
+        </mtl-text-info>
+        <a
+          href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <mtl-button>Join us on slack</mtl-button>
+        </a>
+      </div>
+    </section>
 
     <section id="next-events" class="px-4 md:px-0">
       <div class="flex justify-between items-center">
