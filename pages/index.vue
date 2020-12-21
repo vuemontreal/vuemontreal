@@ -6,11 +6,11 @@
       :style="`background-image: url('${image.filename}');`"
     >
       <div
-        class="text-mtl-white w-full md:w-1/2 flex flex-col items-center justify-center px-2"
+        class="text-mtl-white w-full lg:w-1/2 flex flex-col items-center justify-center px-2"
       >
-        <mtl-text-info class="mb-4 text-center">
+        <mtl-h1 class="mb-4 text-center">
           {{ description }}
-        </mtl-text-info>
+        </mtl-h1>
         <a
           href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
           target="_blank"
