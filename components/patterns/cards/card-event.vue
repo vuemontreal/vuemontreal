@@ -47,12 +47,15 @@
           {{ event.sort_by_date }}
         </mtl-text-info>
       </div>
-      <mtl-button
+      <a
         v-if="event.content.inscription && event.content.inscription.url.length"
-        @click.native="navigate"
+        class="rounded px-6 py-3 text-sm font-semibold uppercase bg-mtl-green-500 text-mtl-white"
+        :href="event.content.inscription.url"
+        target="_blank"
+        rel="noopener noreferrer"
       >
         {{ $t('more') }}
-      </mtl-button>
+      </a>
     </footer>
   </div>
 </template>
@@ -63,11 +66,6 @@ export default {
     event: {
       type: Object,
       required: true,
-    },
-  },
-  methods: {
-    navigate() {
-      window.location.href = this.event.content.inscription.url
     },
   },
 }
