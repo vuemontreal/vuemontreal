@@ -1,7 +1,11 @@
 export default function () {
+  const seo = this.$nuxtI18nSeo()
   return {
+    htmlAttrs: seo.htmlAttrs,
     title: this.title || '',
+    link: seo.link,
     meta: [
+      ...seo.meta,
       {
         property: 'og:title',
         content: this.title || '',

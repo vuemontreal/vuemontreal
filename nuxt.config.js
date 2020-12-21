@@ -94,7 +94,16 @@ export default {
     },
   },
   i18n: {
-    locales: ['en', 'fr'],
+    locales: [
+      {
+        code: 'fr',
+        iso: 'fr-FR',
+      },
+      {
+        code: 'en',
+        iso: 'en-US',
+      },
+    ],
     defaultLocale: 'fr',
     strategy: 'prefix_and_default',
     vueI18n: {
