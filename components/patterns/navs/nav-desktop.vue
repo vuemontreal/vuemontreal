@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-wrap">
     <div
-      class="bg-mtl-black-200 text-mtl-black-400 flex justify-end items-center w-full lg:px-20 py-4"
+      class="border-b border-mtl-black-200 text-mtl-black-400 flex justify-end items-center w-full lg:px-20 py-4"
     >
       <a
         href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
