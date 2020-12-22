@@ -1,27 +1,22 @@
 import axios from 'axios'
 
 const generateStoryblokEventRoutes = async () => {
-  const storyblokUrl = 'https://api.storyblok.com/v1/cdn/stories'
+  const storyblokUrl = 'https://api.storyblok.com/v1/cdn/links'
   const token = process.env.STORYBLOK_TOKEN
   const version = process.env.STORYBLOK_VERSION || 'draft'
   const endUrl = `?token=${token}&version=${version}&cv=${new Date().getTime()}`
 
-  const langs = ['fr', 'en']
-
-  const storyblokEventsRoutes = []
-
-  langs.forEach((lang) => {
-    storyblokEventsRoutes.push(
-      axios.get(`${storyblokUrl}${endUrl}&starts_with=${lang}/events/`)
-    )
-  })
-
   try {
     const ret = []
-    const response = await Promise.all(storyblokEventsRoutes)
-    response.map((res) => {
-      res.data.stories.map((story) => ret.push(story.full_slug))
-    })
+
+    const { data } = await axios.get(
+      `${storyblokUrl}${endUrl}&starts_with=events/`
+    )
+    for (const link in data.links) {
+      const slug = data.links[link].slug
+      ret.push(slug)
+      ret.push('en/' + slug)
+    }
 
     return ret
   } catch (e) {
