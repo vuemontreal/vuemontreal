@@ -36,7 +36,7 @@
       </div>
     </header>
     <main class="card-body flex-1 mb-2">
-      <mtl-h-4 class="text-mtl-black-400">{{ event.content.title }}</mtl-h-4>
+      <mtl-h-3 class="text-mtl-black-400">{{ event.content.title }}</mtl-h-3>
       <mtl-paragraph class="text-mtl-black-400">
         <mtl-sb-text :text="event.content.description" />
       </mtl-paragraph>

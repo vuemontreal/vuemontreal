@@ -8,9 +8,9 @@
       <div
         class="text-mtl-white w-full lg:w-1/2 flex flex-col items-center justify-center px-2"
       >
-        <mtl-h1 class="mb-4 text-center">
+        <mtl-h-1 smaller class="mb-4 text-center text-lg">
           {{ description }}
-        </mtl-h1>
+        </mtl-h-1>
         <a
           href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
           target="_blank"

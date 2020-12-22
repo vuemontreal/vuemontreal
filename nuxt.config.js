@@ -131,7 +131,7 @@ export default {
           back: 'Back',
           who: 'Who is using Vuejs in Quebec?',
           netlify:
-            'Thanks to <a href="https://www.netlify.com/open-source/" target="_blank" class="cursor-pointer underline">Netlify Open Source program</a> <br/> Copyright © 2020 Vue Montreal',
+            'Thanks to <a rel="noreferrer" href="https://www.netlify.com/open-source/" target="_blank" class="cursor-pointer underline">Netlify Open Source program</a> <br/> Copyright © 2020 Vue Montreal',
         },
         fr: {
           events: 'Évènements',
@@ -157,7 +157,7 @@ export default {
               '✋️ On vous promet de respecter votre boîte mail.',
           },
           netlify:
-            'Merci <a href="https://www.netlify.com/open-source/" target="_blank" class="cursor-pointer underline">Netlify pour le programme open source</a> <br/> Copyright © 2020 Vue Montreal',
+            'Merci <a rel="noreferrer" href="https://www.netlify.com/open-source/" target="_blank" class="cursor-pointer underline">Netlify pour le programme open source</a> <br/> Copyright © 2020 Vue Montreal',
         },
       },
     },

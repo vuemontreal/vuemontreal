@@ -3,6 +3,7 @@
     <img
       class="max-w-full rounded-full h-24 w-24"
       :src="speaker.picture.filename"
+      :alt="speaker.picture.alt"
     />
     <mtl-h4 class="mb-2 text-mtl-green-500 pt-4">{{ speaker.name }}</mtl-h4>
     <div>{{ speaker.job }}</div>
