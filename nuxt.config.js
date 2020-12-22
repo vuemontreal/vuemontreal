@@ -61,7 +61,7 @@ export default {
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-analytics',
   ],
-  plugins: ['~/plugins/popover.client.js'],
+  plugins: ['~/plugins/popover.client.js', '~/plugins/ellipsis.client.js'],
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
