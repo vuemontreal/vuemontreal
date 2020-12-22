@@ -3,7 +3,10 @@
     <section
       id="heading"
       class="bg-mtl-black-500 flex-wrap flex mb-4 items-end py-8 justify-center"
-      :style="`background-image: url('${image.filename}');`"
+      :style="`background-image: url('${image.filename.replace(
+        '//a.storyblok.com',
+        '//img2.storyblok.com'
+      )}');`"
     >
       <div
         class="text-mtl-white w-full lg:w-1/2 flex flex-col items-center justify-center px-2"
