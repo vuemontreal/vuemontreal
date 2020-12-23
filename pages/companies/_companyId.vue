@@ -16,9 +16,18 @@
             }"
           ></div>
         </li>
-        <li class="mr-4">Profile</li>
-        <li>Projects</li>
-        <!-- <li>Jobs</li> -->
+        <li class="mr-4">
+          <nuxt-link :to="localePath(`/companies/${$route.params.companyId}`)">
+            Profil
+          </nuxt-link>
+        </li>
+        <li>
+          <nuxt-link
+            :to="localePath(`/companies/${$route.params.companyId}/projects`)"
+          >
+            Projets
+          </nuxt-link>
+        </li>
       </ul>
     </div>
     <nuxt-child></nuxt-child>
@@ -33,6 +42,12 @@ export default {
     imgUrl,
     loleUrl,
   }),
+  mounted() {
+    // eslint-disable-next-line no-console
+    console.log(this.$route)
+    // eslint-disable-next-line no-console
+    console.log(this.$router)
+  },
 }
 </script>
 
