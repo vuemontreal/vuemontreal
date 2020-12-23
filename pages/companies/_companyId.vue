@@ -7,8 +7,8 @@
       }"
     ></header>
     <div class="h-12 bg-mtl-black-200">
-      <ul class="max-w-screen-xl m-auto md:px-6 flex h-12 items-end">
-        <li class="mr-4 relative">
+      <ul class="max-w-screen-xl m-auto md:px-6 flex h-12 items-center">
+        <li class="mr-4 relative self-end">
           <div
             class="h-48 w-48 lole"
             :style="{
@@ -42,16 +42,14 @@ export default {
     imgUrl,
     loleUrl,
   }),
-  mounted() {
-    // eslint-disable-next-line no-console
-    console.log(this.$route)
-    // eslint-disable-next-line no-console
-    console.log(this.$router)
-  },
 }
 </script>
 
-<style lang="postcss">
+<style lang="postcss" scoped>
+.nuxt-link-exact-active {
+  @apply border-b-2 border-mtl-green-500 py-2;
+}
+
 .imgDefine {
   height: 400px;
   background-size: cover;
