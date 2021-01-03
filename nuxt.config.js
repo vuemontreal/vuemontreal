@@ -74,9 +74,9 @@ export default {
     fallback: true,
   },
   // not delete because of netlify cli dev to resolve cors issue
-  server: {
-    port: 8888,
-  },
+  // server: {
+  //   port: 8888,
+  // },
   sitemap: {
     hostname: 'https://vuemontreal.org',
     routes: generateStoryblokEventRoutes,

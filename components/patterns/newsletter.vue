@@ -11,15 +11,33 @@
     <form
       name="newsletter"
       method="post"
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
       class="flex flex-col justify-center items-center"
-      @submit.prevent=""
+      @submit.prevent="subscribe"
     >
-      <input type="hidden" name="form-name" value="ask-question" />
+      <input v-model="hidden" type="hidden" />
       <div class="flex mb-4 flex-wrap justify-center">
-        <mtl-text-input required label="email" class="mr-4 mb-4" type="email" />
-        <mtl-button>{{ $t('newsletter.subscribe') }}</mtl-button>
+        <mtl-text-input
+          v-model="email"
+          required
+          label="email"
+          class="mr-4 mb-4"
+          type="email"
+        />
+        <div class="flex flex-col">
+          <span
+            v-if="error"
+            class="border-2 border-mtl-red-500 rounded-lg mb-4 p-2"
+          >
+            Error Subscribe
+          </span>
+          <span
+            v-if="success"
+            class="border-2 border-mtl-green-500 rounded-lg mb-4 p-2"
+          >
+            Success Subscribe
+          </span>
+          <mtl-button>{{ $t('newsletter.subscribe') }}</mtl-button>
+        </div>
       </div>
       <div class="text-xs text-right">
         {{ $t('newsletter.subscribe_promise') }}
@@ -29,5 +47,30 @@
 </template>
 
 <script>
-export default {}
+export default {
+  data: () => ({
+    email: '',
+    hidden: 'ask-question',
+    error: false,
+    success: false,
+  }),
+  methods: {
+    async subscribe() {
+      this.error = false
+      this.success = false
+      try {
+        await this.$axios.post(
+          'http://localhost:8888/.netlify/functions/subscribe',
+          {
+            email: this.email,
+            hidden: this.hidden,
+          }
+        )
+        this.success = true
+      } catch (e) {
+        this.error = true
+      }
+    },
+  },
+}
 </script>

@@ -44,16 +44,14 @@
           </div>
         </template>
         <nuxt-link v-else :to="localePath('/events')" class="w-full">
-          <mtl-card-event class="mt-4 relative">
-            <template #card-body>
-              <div class="flex justify-center items-center flex-wrap flex-col">
-                <mtl-text-button>{{ no_events }}</mtl-text-button>
-                <mtl-button class="mt-4">
-                  {{ show_old_events }}
-                </mtl-button>
-              </div>
-            </template>
-          </mtl-card-event>
+          <div class="mt-4 relative">
+            <div class="flex justify-center items-center flex-wrap flex-col">
+              <mtl-text-button>{{ no_events }}</mtl-text-button>
+              <mtl-button class="mt-4">
+                {{ show_old_events }}
+              </mtl-button>
+            </div>
+          </div>
         </nuxt-link>
       </div>
     </section>
@@ -75,12 +73,12 @@ export default {
       sort_by: 'sort_by_date:desc',
       resolve_relations: 'speakers',
     })
-    const content = await app.$storyapi.get(`cdn/stories/${lang}home`, {
+    const { data } = await app.$storyapi.get(`cdn/stories/${lang}home`, {
       version,
     })
 
     return {
-      ...content.data.story.content,
+      ...data.story.content,
       events: events.data.stories,
     }
   },

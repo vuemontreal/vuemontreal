@@ -3,7 +3,11 @@
     <label class="text-mtl-black-400 hidden">
       {{ label }}
     </label>
-    <input v-bind="$attrs" class="w-full" :placeholder="label" />
+    <input
+      class="w-full"
+      :placeholder="label"
+      @input="updateValue($event.target.value)"
+    />
   </div>
 </template>
 
@@ -11,9 +15,26 @@
 export default {
   inheritAttrs: false,
   props: {
-    label: {
+    id: {
       type: String,
       default: '',
+    },
+    label: {
+      type: String,
+      required: true,
+    },
+    value: {
+      type: String,
+      default: '',
+    },
+    required: {
+      type: Boolean,
+      default: false,
+    },
+  },
+  methods: {
+    updateValue(value) {
+      this.$emit('input', value)
     },
   },
 }
