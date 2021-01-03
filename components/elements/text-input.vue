@@ -6,6 +6,7 @@
     <input
       class="w-full"
       :placeholder="label"
+      v-bind="$attrs"
       @input="updateValue($event.target.value)"
     />
   </div>

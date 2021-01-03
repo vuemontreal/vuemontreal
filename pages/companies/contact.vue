@@ -9,7 +9,7 @@
           data-netlify="true"
           data-netlify-honeypot="bot-field"
           class="flex flex-col items-end"
-          @submit.prevent="handleSubmit"
+          action="/success"
         >
           <p class="hidden">
             <label>
@@ -18,26 +18,26 @@
           </p>
           <div class="flex mb-4 w-full md:w-2/3">
             <mtl-text-input
-              v-model="form.email"
               required
               label="email"
               class="mr-4 mb-4 lg:mb-0"
               type="email"
+              name="email"
             />
           </div>
           <div class="flex mb-4 w-full md:w-2/3">
             <mtl-text-input
-              v-model="form.name"
               required
               label="Company Name"
               class="mr-4 mb-4 lg:mb-0"
-              type="email"
+              type="text"
+              name="name"
             />
           </div>
           <div class="flex mb-4 w-full md:w-2/3">
             <textarea
-              v-model="form.description"
               required
+              name="description"
               rows="6"
               placeholder="Project description"
               label="email"
@@ -101,50 +101,8 @@ export default {
       console.error(e)
     }
   },
-  data() {
-    return {
-      form: {
-        email: '',
-        description: '',
-        name: '',
-      },
-      error: '',
-      success: '',
-    }
-  },
   mounted() {
     this.$store.commit('closeNavMobile')
-  },
-  methods: {
-    encode(data) {
-      return Object.keys(data)
-        .map(
-          (key) => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
-        )
-        .join('&')
-    },
-    handleSubmit() {
-      const axiosConfig = {
-        header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      }
-      this.$axios
-        .post(
-          '/',
-          this.encode({
-            'form-name': 'company-project',
-            ...this.form,
-          }),
-          axiosConfig
-        )
-        .then((result) => {
-          // eslint-disable-next-line no-console
-          console.log('all good', result)
-        })
-        .catch((err) => {
-          // eslint-disable-next-line no-console
-          console.log('error', err)
-        })
-    },
   },
   head,
 }
