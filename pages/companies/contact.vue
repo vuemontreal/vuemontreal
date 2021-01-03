@@ -7,15 +7,10 @@
           name="company-project"
           method="post"
           data-netlify="true"
-          data-netlify-honeypot="bot-field"
           class="flex flex-col items-end"
           action="/success"
         >
-          <p class="hidden">
-            <label>
-              Don’t fill this out if you’re human: <input name="bot-field" />
-            </label>
-          </p>
+          <input type="hidden" name="form-name" value="company-project" />
           <div class="flex mb-4 w-full md:w-2/3">
             <mtl-text-input
               required
