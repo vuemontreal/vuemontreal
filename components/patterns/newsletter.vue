@@ -58,6 +58,7 @@ export default {
     async subscribe() {
       this.error = false
       this.success = false
+      if (!this.email) return (this.error = true)
       try {
         await this.$axios.post(
           (process.env.NODE_ENV !== 'production'
