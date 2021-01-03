@@ -60,7 +60,9 @@ export default {
       this.success = false
       try {
         await this.$axios.post(
-          'http://localhost:8888/.netlify/functions/subscribe',
+          (process.env.NODE_ENV !== 'production'
+            ? 'http://localhost:8888'
+            : '') + '/.netlify/functions/subscribe',
           {
             email: this.email,
             hidden: this.hidden,
