@@ -6,6 +6,16 @@ exports.handler = async function (event, context) {
   const body = JSON.parse(event.body)
   const { hidden, email } = body
 
+  if (event.httpMethod !== 'POST') {
+    return {
+      statusCode: 405,
+      body: 'Method Not Allowed',
+      headers: {
+        Allow: 'Get',
+      },
+    }
+  }
+
   if (!hidden || hidden !== 'ask-question')
     return {
       statusCode: 500,

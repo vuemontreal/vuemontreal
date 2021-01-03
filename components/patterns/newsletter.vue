@@ -60,15 +60,10 @@ export default {
       this.success = false
       if (!this.email) return (this.error = true)
       try {
-        await this.$axios.post(
-          (process.env.NODE_ENV !== 'production'
-            ? 'http://localhost:8888'
-            : '') + '/.netlify/functions/subscribe',
-          {
-            email: this.email,
-            hidden: this.hidden,
-          }
-        )
+        await this.$axios.$post('/.netlify/functions/subscribe', {
+          email: this.email,
+          hidden: this.hidden,
+        })
         this.success = true
       } catch (e) {
         this.error = true
