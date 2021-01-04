@@ -118,6 +118,8 @@ export default {
             subscribe_subtext: 'Get the best of our listings into your inbox.',
             subscribe: 'Subscribe',
             subscribe_promise: '✋️ We promise to respect your inbox.',
+            success: 'Subscription success',
+            failure: 'Subscription failed',
           },
           back: 'Back',
           who: 'Who is using Vuejs in Quebec?',
@@ -146,6 +148,8 @@ export default {
             subscribe: 'Souscrire',
             subscribe_promise:
               '✋️ On vous promet de respecter votre boîte mail.',
+            success: 'Inscription réussie',
+            failure: "Échec de l'inscription",
           },
           netlify:
             'Merci <a rel="noreferrer" href="https://www.netlify.com/open-source/" target="_blank" class="cursor-pointer underline">Netlify pour le programme open source</a> <br/> Copyright © 2020 Vue Montreal',

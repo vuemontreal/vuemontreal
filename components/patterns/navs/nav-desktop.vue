@@ -31,11 +31,11 @@
             <span class="pb-1">{{ $t('events') }}</span>
           </nuxt-link>
         </mtl-text-button>
-        <mtl-text-button class="p-2">
+        <!-- <mtl-text-button class="p-2">
           <nuxt-link :to="localePath('/companies/contact')">
             <span class="pb-1">{{ $t('who') }}</span>
           </nuxt-link>
-        </mtl-text-button>
+        </mtl-text-button> -->
       </div>
       <div class="w-1/3 text-mtl-black flex items-center justify-end">
         <a

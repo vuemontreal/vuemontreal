@@ -28,13 +28,13 @@
             v-if="error"
             class="border-2 border-mtl-red-500 rounded-lg mb-4 p-2"
           >
-            Error Subscribe
+            {{ $t('newsletter.failure') }}
           </span>
           <span
             v-if="success"
             class="border-2 border-mtl-green-500 rounded-lg mb-4 p-2"
           >
-            Success Subscribe
+            {{ $t('newsletter.success') }}
           </span>
           <mtl-button>{{ $t('newsletter.subscribe') }}</mtl-button>
         </div>

@@ -19,11 +19,11 @@
           <span class="pb-1">{{ $t('events') }}</span>
         </nuxt-link>
       </mtl-text-button>
-      <mtl-text-button class="p-2">
+      <!-- <mtl-text-button class="p-2">
         <nuxt-link :to="localePath('/companies/contact')">
           <span class="pb-1">{{ $t('who') }}</span>
         </nuxt-link>
-      </mtl-text-button>
+      </mtl-text-button> -->
       <hr class="my-4" />
       <mtl-h-4 class="mb-4 text-mtl-green-400">
         {{ $t('lang') }}
