@@ -49,11 +49,6 @@ export default {
   position: relative;
 }
 
-.icon svg {
-  height: 1.5rem !important;
-  width: 1.5rem !important;
-}
-
 .plus-icon {
   @apply absolute;
 
