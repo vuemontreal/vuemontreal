@@ -34,5 +34,4 @@ jobs:
       env:
         CYPRESS_INSTALL_BINARY: 0
     - run: npx eslint --ext .js,.vue
-    - run: npm run stylelint
 
