@@ -35,6 +35,10 @@ export default {
     title: 'Vue montreal',
     meta: [
       { charset: 'utf-8' },
+      {
+        name: 'google-site-verification',
+        content: '4pw9b71c9bCUbtQ-grRAr4yjfBlNuI9G7702BvInXNQ',
+      },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       {
         hid: 'description',
