@@ -1,0 +1,1 @@
+sitemap: https://www.vuemontreal.org/sitemap.xml

@@ -1,129 +1,117 @@
 <template>
-  <section class="flex flex-col">
-    <div v-if="$fetchState.pending">
-      <eventPreviewSkeleton v-for="Skel in 4" :key="Skel" />
-    </div>
-    <p v-else-if="$fetchState.error">
-      Error while fetching event
-    </p>
-    <div v-else>
-      <template v-if="upcomingEvents.length">
-        <h2 class="mb-4 font-bold uppercase border-b border-black pb-2">
-          {{ $t('upcomingEvents') }}
-        </h2>
-        <event-preview
-          v-for="event in upcomingEvents"
-          :key="event.uuid"
-          :event="event"
-          is-incoming
-        />
-      </template>
+  <div class="w-full max-w-screen-xl m-auto md:px-6 mt-10 md:mt-0">
+    <section
+      id="heading"
+      class="bg-mtl-black-500 flex-wrap flex mb-4 items-end py-8 justify-center"
+      :style="`background-image: url('${image.filename.replace(
+        '//a.storyblok.com',
+        '//img2.storyblok.com'
+      )}');`"
+    >
+      <div
+        class="text-mtl-white w-full lg:w-1/2 flex flex-col items-center justify-center px-2"
+      >
+        <mtl-h-1 smaller class="mb-4 text-center text-lg">
+          {{ description }}
+        </mtl-h-1>
+        <a
+          href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <mtl-button>{{ join_slack }}</mtl-button>
+        </a>
+      </div>
+    </section>
 
-      <h2 class="mb-4 font-bold uppercase border-b border-black pb-2">
-        {{ $t('pastEvents') }}
-      </h2>
-      <event-preview
-        v-for="event in pastEvents"
-        :key="event.uuid"
-        :event="event"
-      />
-    </div>
-  </section>
+    <section id="next-events" class="px-4 md:px-0">
+      <div class="flex justify-between items-center">
+        <mtl-h-2 class="uppercase"> {{ next_title }} </mtl-h-2>
+        <nuxt-link :to="localePath('/events')">
+          <mtl-text-info class="text-mtl-green-500">
+            {{ see_all }}
+          </mtl-text-info>
+        </nuxt-link>
+      </div>
+      <div class="flex flex-wrap -mx-1 mt-1">
+        <template v-if="nextEvents.length">
+          <div
+            v-for="event in nextEvents"
+            :key="event.id"
+            class="w-full lg:w-1/2 px-1"
+          >
+            <mtl-card-event :event="event" class="mt-4" />
+          </div>
+        </template>
+        <nuxt-link v-else :to="localePath('/events')" class="w-full">
+          <div class="mt-4 relative">
+            <div class="flex justify-center items-center flex-wrap flex-col">
+              <mtl-text-button>{{ no_events }}</mtl-text-button>
+              <mtl-button class="mt-4">
+                {{ show_old_events }}
+              </mtl-button>
+            </div>
+          </div>
+        </nuxt-link>
+      </div>
+    </section>
+  </div>
 </template>
 
 <script>
-import eventPreview from '@/components/event-preview/event-preview'
-import eventPreviewSkeleton from '@/components/event-preview/event-preview-skeleton'
+import head from '~/utils/head'
+
 export default {
   name: 'HomePage',
-  components: {
-    eventPreview,
-    eventPreviewSkeleton
-  },
-  head() {
-    const seo = this.seo
-    if (!seo) return {}
+  async asyncData({ app, store, env }) {
+    const lang = app.i18n.locale === 'fr' ? '' : 'en/'
+    const { version } = env
+
+    const events = await app.$storyapi.get('cdn/stories/', {
+      version,
+      starts_with: lang + 'events/',
+      sort_by: 'sort_by_date:desc',
+      resolve_relations: 'speakers',
+    })
+    const { data } = await app.$storyapi.get(`cdn/stories/${lang}home`, {
+      version,
+    })
+
     return {
-      title: seo.title || '',
-      meta: [
-        {
-          property: 'og:title',
-          content: seo.og_title || ''
-        },
-        {
-          hid: `description`,
-          name: 'description',
-          content: seo.description
-        },
-        {
-          property: 'og:title',
-          content: seo.og_title || ''
-        },
-        {
-          property: 'og:description',
-          content: seo.og_description || ''
-        },
-        {
-          property: 'og:image',
-          content: seo.og_image || ''
-        },
-        {
-          property: 'twitter:title',
-          content: seo.twitter_title || ''
-        },
-        {
-          property: 'twitter:description',
-          content: seo.twitter_description || ''
-        },
-        {
-          property: 'twitter:image',
-          content: seo.twitter_image || ''
-        }
-      ]
+      ...data.story.content,
+      events: events.data.stories,
     }
   },
   data: () => ({
     events: [],
-    seo: null
   }),
-
   computed: {
-    upcomingEvents: (vm) =>
-      vm.events.filter(
-        (event) =>
-          new Date(event.sort_by_date + ' 00:00:00').setHours(24) > Date.now()
-      ),
-    pastEvents: (vm) =>
-      vm.events.filter(
-        (event) =>
-          new Date(event.sort_by_date + ' 00:00:00').setHours(24) < Date.now()
-      )
+    nextEvents() {
+      return this.events
+        .filter(
+          (event) => new Date(event.sort_by_date).setHours(24) > Date.now()
+        )
+        .slice(0, 2)
+    },
   },
-
-  async fetch() {
-    const lang = this.$store.state.i18n.locale
-    const { version } = this.$nuxt.context.env
-
-    const events = await this.$storyapi.get('cdn/stories/', {
-      version,
-      starts_with: lang + '/events/',
-      sort_by: 'sort_by_date:desc'
-    })
-    const home = await this.$storyapi.get(
-      `cdn/stories/${this.$i18n.locale}/home`,
-      {
-        version
-      }
-    )
-    this.seo = home.data.story.content.seo
-    this.events = events.data.stories
+  mounted() {
+    this.$store.commit('closeNavMobile')
   },
-  activated() {
-    // cache
-    // Call fetch again if last fetch more than 30 sec ago
-    if (this.$fetchState.timestamp <= Date.now() - 2000) {
-      this.$fetch()
-    }
-  }
+  head,
 }
 </script>
+
+<style lang="postcss">
+.centered {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#heading {
+  height: 500px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-x: center;
+}
+</style>

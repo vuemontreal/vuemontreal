@@ -2,29 +2,27 @@ module.exports = {
   root: true,
   env: {
     browser: true,
-    node: true
+    node: true,
   },
   parserOptions: {
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
   },
   extends: [
     '@nuxtjs',
     'prettier',
     'prettier/vue',
     'plugin:prettier/recommended',
-    'plugin:nuxt/recommended'
+    'plugin:nuxt/recommended',
   ],
-  "overrides": [
+  overrides: [
     {
-      "files": ["bin/*.js", "lib/*.js"],
-      "excludedFiles": "*.css",
-    }
+      files: ['bin/*.js', 'lib/*.js'],
+      excludedFiles: '*.css',
+    },
   ],
-  plugins: [
-    'prettier'
-  ],
+  plugins: ['prettier'],
   rules: {
-    'no-console': ['error', { 'allow': ['warn', 'error'] }],
+    'no-console': ['error', { allow: ['warn', 'error'] }],
     'prettier/prettier': ['error'],
-  }
+  },
 }

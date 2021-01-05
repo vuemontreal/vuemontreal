@@ -1,89 +1,45 @@
 <template>
-  <nav class="mb-5 flex justify-between">
+  <nav class="mb-5 flex justify-between z-30">
     <div class="flex items-center icons">
-      <button @click="openNav" class="lg:hidden p-2 icon">
-        <font-awesome-icon
-          :icon="['fas', 'bars']"
-          class="fill-current text-mtl-primary w-4 h-4"
-        />
+      <button class="lg:hidden p-2 icon" @click="openNav">
+        <mtl-burger-menu class="w-4 h-4" />
       </button>
-      <div class="hidden lg:block">
-        <social-links />
-      </div>
-    </div>
-    <form @submit.prevent="submitSearch" class="flex items-center relative">
-      <input
-        v-model="search"
-        type="text"
-        class="border border-black border-solid pl-8"
-        placeholder="search"
-      />
-      <button
-        v-show="search"
-        @click="clearSearch"
-        type="button"
-        class="close-icon"
+      <a
+        class="p-2 icon hidden lg:block"
+        href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
+        target="_blank"
+        rel="noopener noreferrer"
       >
-        <font-awesome-icon
-          :icon="['fa', 'window-close']"
-          class="fill-current text-mtl-primary w-4 h-4 cursor-pointer"
-        />
-      </button>
-      <button @click="submitSearch" type="button" class="plus-icon">
-        <font-awesome-icon
-          :icon="['fa', 'search']"
-          class="fill-current text-mtl-primary w-4 h-4 cursor-pointer"
-        />
-      </button>
-    </form>
+        <mtl-logo-slack class="w-4 h-4" />
+      </a>
+      <a
+        class="p-2 icon hidden lg:block"
+        href="https://www.linkedin.com/groups/12289604/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <mtl-logo-linkedin class="w-4 h-4" />
+      </a>
+      <a
+        class="p-2 icon hidden lg:block"
+        href="https://github.com/vuemontreal/vuemontreal"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <mtl-logo-github class="w-4 h-4" />
+      </a>
+    </div>
   </nav>
 </template>
 
 <script>
-import SocialLinks from '~/components/social-links'
-
 export default {
   name: 'NavBarTop',
-  components: { SocialLinks },
-  data() {
-    return {
-      search: ''
-    }
-  },
-
-  created() {
-    this.search = this.$route.query.searchTerm
-  },
-
   methods: {
-    clearSearch() {
-      this.search = ''
-      const query = Object.assign({}, this.$route.query)
-      if (!query.searchTerm) return
-
-      delete query.searchTerm
-      this.$router.push({ query })
-    },
-
-    submitSearch() {
-      const { withTag } = this.$route.query
-      const lang = this.$store.state.i18n.locale
-
-      const query = {
-        searchTerm: this.search
-      }
-      if (withTag) query.withTag = withTag
-
-      this.$router.push({
-        path: '/' + lang + '/search',
-        query
-      })
-    },
-
     openNav() {
       this.$store.commit('openNavMobile')
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -95,11 +51,13 @@ export default {
 
 .plus-icon {
   @apply absolute;
+
   right: 5px;
 }
 
 .close-icon {
   @apply absolute;
+
   left: 5px;
 }
 </style>
