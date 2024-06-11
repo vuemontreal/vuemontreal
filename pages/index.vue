@@ -15,7 +15,7 @@
           {{ description }}
         </mtl-h-1>
         <a
-          href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
+          href="https://discord.gg/vAtmvFH4PC"
           target="_blank"
           rel="noopener noreferrer"
         >
