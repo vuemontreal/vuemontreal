@@ -42,7 +42,7 @@
           target="_blank"
           rel="noopener noreferrer"
         >
-          <mtl-logo-slack class="w-6 h-6" />
+          <mtl-logo-discord class="w-6 h-6" />
         </a>
         <a
           class="p-2"

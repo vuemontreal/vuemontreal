@@ -10,7 +10,7 @@
         target="_blank"
         rel="noopener noreferrer"
       >
-        <mtl-logo-slack class="w-4 h-4" />
+        <mtl-logo-discord class="w-4 h-4" />
       </a>
       <a
         class="p-2 icon hidden lg:block"
