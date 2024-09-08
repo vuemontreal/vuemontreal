@@ -38,7 +38,7 @@
       >
         <a
           class="p-2"
-          href="https://discord.gg/vAtmvFH4PC"
+          href="https://discord.gg/PxAeZaphnA"
           target="_blank"
           rel="noopener noreferrer"
         >

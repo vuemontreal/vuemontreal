@@ -6,7 +6,7 @@
       </button>
       <a
         class="p-2 icon hidden lg:block"
-        href="https://discord.gg/vAtmvFH4PC"
+        href="https://discord.gg/PxAeZaphnA"
         target="_blank"
         rel="noopener noreferrer"
       >

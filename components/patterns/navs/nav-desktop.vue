@@ -4,7 +4,7 @@
       class="border-b border-mtl-black-200 text-mtl-black-400 flex justify-end items-center w-full lg:px-20 py-4"
     >
       <a
-        href="https://discord.gg/vAtmvFH4PC"
+        href="https://discord.gg/PxAeZaphnA"
         target="_blank"
         rel="noopener noreferrer"
       >
@@ -40,7 +40,7 @@
       <div class="w-1/3 text-mtl-black flex items-center justify-end">
         <a
           class="p-2"
-          href="https://discord.gg/vAtmvFH4PC"
+          href="https://discord.gg/PxAeZaphnA"
           target="_blank"
           rel="noopener noreferrer"
         >

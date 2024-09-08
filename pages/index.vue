@@ -15,7 +15,7 @@
           {{ description }}
         </mtl-h-1>
         <a
-          href="https://discord.gg/vAtmvFH4PC"
+          href="https://discord.gg/PxAeZaphnA"
           target="_blank"
           rel="noopener noreferrer"
         >
