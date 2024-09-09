@@ -88,11 +88,11 @@ export default {}
 
 <style>
 .gmap {
-  width: 100%;
-  height: 300px;
   background-color: rgb(140, 140, 140);
   background-image: url(https://cdn-images.welcometothejungle.com/1OEHzpR8MiifZ4aUb9eIRJfk2zZr7k-UNNK3CRogzxw/rs:auto:640::/q:85/czM6Ly93dHRqLXByb2R1Y3Rpb24vdXBsb2Fkcy9vZmZpY2UvaW1hZ2VfbWFwLzcyOTQvMTUyNzA4L3N0YXRpY21hcC5wbmc);
   background-position: center center;
   background-size: cover;
+  height: 300px;
+  width: 100%;
 }
 </style>

@@ -103,15 +103,15 @@ export default {
 
 <style lang="postcss">
 .centered {
-  top: 50%;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
 }
 
 #heading {
-  height: 500px;
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 500px;
 }
 </style>
