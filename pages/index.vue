@@ -5,7 +5,7 @@
       class="bg-mtl-black-500 flex-wrap flex mb-4 items-end py-8 justify-center"
       :style="`background-image: url('${image.filename.replace(
         '//a.storyblok.com',
-        '//img2.storyblok.com'
+        '//img2.storyblok.com',
       )}');`"
     >
       <div
@@ -85,11 +85,12 @@ export default {
   data: () => ({
     events: [],
   }),
+  head,
   computed: {
     nextEvents() {
       return this.events
         .filter(
-          (event) => new Date(event.sort_by_date).setHours(24) > Date.now()
+          (event) => new Date(event.sort_by_date).setHours(24) > Date.now(),
         )
         .slice(0, 2)
     },
@@ -97,7 +98,6 @@ export default {
   mounted() {
     this.$store.commit('closeNavMobile')
   },
-  head,
 }
 </script>
 

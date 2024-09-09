@@ -38,9 +38,9 @@ export default {
   data: () => ({
     events: [],
   }),
+  head,
   mounted() {
     this.$store.commit('closeNavMobile')
   },
-  head,
 }
 </script>

@@ -10,7 +10,7 @@ const generateStoryblokEventRoutes = async () => {
     const ret = []
 
     const { data } = await axios.get(
-      `${storyblokUrl}${endUrl}&starts_with=events/`
+      `${storyblokUrl}${endUrl}&starts_with=events/`,
     )
     for (const link in data.links) {
       const slug = data.links[link].slug
@@ -49,8 +49,7 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
-        href:
-          'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap',
+        href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap',
         rel: 'stylesheet',
       },
     ],

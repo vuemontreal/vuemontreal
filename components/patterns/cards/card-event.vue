@@ -32,7 +32,7 @@
             :src="
               speaker.content.picture.filename.replace(
                 '//a.storyblok.com',
-                '//img2.storyblok.com'
+                '//img2.storyblok.com',
               )
             "
             :alt="speaker.content.picture.alt"
