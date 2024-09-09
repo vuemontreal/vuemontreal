@@ -1,5 +1,5 @@
 module.exports = {
-  ignoreFiles: ['**/*.js'],
+  ignoreFiles: ['**/*.js'], // required for lint-staged not to mess with js files
   extends: [
     'stylelint-config-recommended-vue',
     'stylelint-config-tailwindcss',
