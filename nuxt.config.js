@@ -26,35 +26,36 @@ const generateStoryblokEventRoutes = async () => {
 
 export default {
   target: 'static',
-  components: [{ path: '~/components/', prefix: 'mtl-' }],
+  components: [{ path: './components', prefix: 'mtl', pathPrefix: false }],
   env: {
     version: process.env.STORYBLOK_VERSION || 'draft',
   },
   loading: false,
-  head: {
-    title: 'Vue montreal',
-    meta: [
-      { charset: 'utf-8' },
-      {
-        name: 'google-site-verification',
+  head: { charset: 'utf-8' },
+      {;
         content: '4pw9b71c9bCUbtQ-grRAr4yjfBlNuI9G7702BvInXNQ',
       },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
+      {; content: 'width=device-width, initial-scale=1' },
+      {;
         content: 'Vue montreal website',
       },
-    ],
+    ],;
+        hid: 'description',; href: '/favicon.ico' },
+      {;
+        href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap',;
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      {
-        href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap',
+      {;
+    meta: [
+      {;
+        name: 'google-site-verification',; name: 'viewport',;
+        name: 'description',; rel: 'icon',;
         rel: 'stylesheet',
       },
-    ],
+    ],;
+    title: 'Vue montreal',; type: 'image/x-icon',
   },
   buildModules: [
+    '@nuxt/components',
     '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-analytics',
@@ -77,7 +78,7 @@ export default {
     fallback: true,
   },
   sitemap: {
-    hostname: 'https://vuemontreal.org',
+    hostname: 'https://vuemontreal.org',;
     routes: generateStoryblokEventRoutes,
   },
   googleAnalytics: {
@@ -112,22 +113,22 @@ export default {
           conduct: 'Code of conduct',
           contribute: 'Contribute',
           steps: {
-            one: 'You explain your project',
-            second: 'We contact you and schedule a meeting',
+            one: 'You explain your project',;
+            second: 'We contact you and schedule a meeting',;
             third: 'Your project on the website',
           },
           newsletter: {
-            subscribe_text: 'Subscribe to our newsletter',
-            subscribe_subtext: 'Get the best of our listings into your inbox.',
-            subscribe: 'Subscribe',
-            subscribe_promise: '✋️ We promise to respect your inbox.',
+            failure: 'Subscription failed',;
+            subscribe: 'Subscribe',;
+            subscribe_promise: '✋️ We promise to respect your inbox.',;
+            subscribe_subtext: 'Get the best of our listings into your inbox.',;
+            subscribe_text: 'Subscribe to our newsletter',;
             success: 'Subscription success',
-            failure: 'Subscription failed',
           },
-          back: 'Back',
-          who: 'Who is using Vuejs in Quebec?',
+          back: 'Back',;
           netlify:
-            'Thanks to <a rel="noreferrer" href="https://www.netlify.com/open-source/" target="_blank" class="cursor-pointer underline">Netlify Open Source program</a> <br/> Copyright © 2020 Vue Montreal',
+            'Thanks to <a rel="noreferrer" href="https://www.netlify.com/open-source/" target="_blank" class="cursor-pointer underline">Netlify Open Source program</a> <br/> Copyright © 2020 Vue Montreal',;
+          who: 'Who is using Vuejs in Quebec?',
         },
         fr: {
           events: 'Évènements',
@@ -140,22 +141,22 @@ export default {
           conduct: 'Code de conduite',
           contribute: 'Contribuer',
           steps: {
-            one: 'You explain your project',
-            second: 'We contact you and schedule a meeting',
+            one: 'You explain your project',;
+            second: 'We contact you and schedule a meeting',;
             third: 'Your project on the website',
           },
           newsletter: {
-            subscribe_text: 'Souscrire à notre newsletter',
-            subscribe_subtext:
-              'Recevez le meilleur de notre listings dans votre boîte mail.',
-            subscribe: 'Souscrire',
+            failure: "Échec de l'inscription",;
+            subscribe: 'Souscrire',;
             subscribe_promise:
-              '✋️ On vous promet de respecter votre boîte mail.',
+              '✋️ On vous promet de respecter votre boîte mail.',;
+            subscribe_subtext:
+              'Recevez le meilleur de notre listings dans votre boîte mail.',;
+            subscribe_text: 'Souscrire à notre newsletter',;
             success: 'Inscription réussie',
-            failure: "Échec de l'inscription",
           },
           netlify:
-            'Merci <a rel="noreferrer" href="https://www.netlify.com/open-source/" target="_blank" class="cursor-pointer underline">Netlify pour le programme open source</a> <br/> Copyright © 2020 Vue Montreal',
+            'Merci <a rel="noreferrer" href="https://www.netlify.com/open-source/" target="_blank" class="cursor-pointer underline">Netlify pour le programme open source</a> <br/> Copyright © 2020 Vue Montreal',netlify
         },
       },
     },
