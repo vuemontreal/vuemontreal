@@ -5,11 +5,11 @@
     <p class="flex">
       <a
         class="p-2 icon"
-        href="https://join.slack.com/t/vuemontreal/shared_invite/zt-6cmiy7iv-izbVijXeeDNcQOREPo8tWA"
+        href="https://discord.gg/PxAeZaphnA"
         target="_blank"
         rel="noopener noreferrer"
       >
-        <mtl-logo-slack class="w-4 h-4" />
+        <mtl-logo-discord class="w-4 h-4" />
       </a>
       <a
         class="p-2 icon"
