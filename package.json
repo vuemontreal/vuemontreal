@@ -14,7 +14,8 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate",
-    "lint": "eslint . --ext .js,.vue",
+    "lint:js": "eslint . --ext .js,.vue",
+    "lint:css": "stylelint '**/*.{vue,css}'",
     "test": "jest"
   },
   "husky": {
@@ -24,7 +25,8 @@
   },
   "lint-staged": {
     "*.{js,vue}": [
-      "npm run lint -- --fix",
+      "npm run lint:js -- --fix",
+      "npm run lint:css -- --fix",
       "git add"
     ]
   },
@@ -46,6 +48,7 @@
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/sitemap": "^2.0.1",
     "@nuxtjs/tailwindcss": "^3.3.4",
+    "@vue/runtime-dom": "^3.5.3",
     "@vue/test-utils": "^1.0.0-beta.27",
     "babel-jest": "^26.3.0",
     "babel-preset-vue": "^2.0.2",
@@ -57,7 +60,10 @@
     "jest": "^26.4.2",
     "lint-staged": "^10.4.0",
     "prettier": "^3.3.3",
-    "stylelint-config-standard": "^20.0.0",
+    "stylelint-config-recommended-vue": "^1.5.0",
+    "stylelint-config-standard": "^36.0.1",
+    "stylelint-config-tailwindcss": "^0.0.7",
+    "stylelint-order": "^6.0.4",
     "vue-jest": "^4.0.0-rc.0",
     "vue-js-popover": "^1.2.1"
   }
