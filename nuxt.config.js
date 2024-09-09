@@ -26,7 +26,7 @@ const generateStoryblokEventRoutes = async () => {
 
 export default {
   target: 'static',
-  components: [{ path: './components', prefix: 'mtl', pathPrefix: false }],
+  components: [{ path: '~/components', prefix: 'mtl', pathPrefix: false }],
   env: {
     version: process.env.STORYBLOK_VERSION || 'draft',
   },
