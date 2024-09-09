@@ -7,6 +7,7 @@ module.exports = {
       '21/9': [21, 9],
     },
     colors: {
+      current: 'currentColor',
       'mtl-white': '#FFFFFF',
       'mtl-black': {
         200: '#CED0D0',
