@@ -9,6 +9,16 @@
 
 ## Developing
 
+### Storyblok preview
+
+Create an `.env` file at the root folder, with the following:
+
+```bash
+STORYBLOK_TOKEN=JOIX7SzMmWD0nQlQdOa8lAtt
+```
+
+Run the app with:
+
 ```bash
 npm install
 npm run dev # dev server at http://localhost:3000
