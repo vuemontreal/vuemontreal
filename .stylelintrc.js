@@ -1,4 +1,5 @@
 module.exports = {
+  ignoreFiles: ['**/*.js'],
   extends: [
     'stylelint-config-recommended-vue',
     'stylelint-config-tailwindcss',
