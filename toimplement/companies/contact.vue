@@ -96,10 +96,10 @@ export default {
       console.error(e)
     }
   },
+  head,
   mounted() {
     this.$store.commit('closeNavMobile')
   },
-  head,
 }
 </script>
 

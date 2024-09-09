@@ -51,15 +51,15 @@ export default {
 }
 
 .imgDefine {
-  height: 400px;
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
 }
 
 .lole {
-  background-size: cover;
-  background-repeat: no-repeat;
   background-position-x: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 </style>
