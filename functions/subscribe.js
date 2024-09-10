@@ -31,10 +31,12 @@ exports.handler = async function (event, context) {
       },
     })
 
+    const { statusCode, status, email_address: emailAdress } = result
     return {
-      statusCode: 200,
+      statusCode,
       body: JSON.stringify({
-        message: result,
+        status,
+        emailAdress,
       }),
     }
   } catch (e) {
