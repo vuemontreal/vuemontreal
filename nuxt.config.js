@@ -55,22 +55,17 @@ export default {
     ],
   },
   buildModules: [
+    ['@storyblok/nuxt-2/module', { accessToken: process.env.STORYBLOK_TOKEN }],
     '@nuxt/components',
     '@nuxtjs/eslint-module',
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-analytics',
   ],
   plugins: ['~/plugins/popover.client.js', '~/plugins/ellipsis.client.js'],
+  // eslint-disable-next-line prettier/prettier
   modules: [
     '@nuxtjs/axios',
     '@nuxtjs/pwa',
-    [
-      'storyblok-nuxt',
-      {
-        accessToken: process.env.STORYBLOK_TOKEN,
-        cacheProvider: 'memory',
-      },
-    ],
     'nuxt-i18n',
     '@nuxtjs/sitemap',
   ],

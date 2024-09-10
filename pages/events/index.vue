@@ -19,17 +19,31 @@ import head from '~/utils/head'
 export default {
   name: 'EventsPage',
   async asyncData({ app, store, env }) {
-    const lang = app.i18n.locale === 'fr' ? '' : 'en/'
+    const language = app.i18n.locale
     const { version } = env
     try {
-      const events = await app.$storyapi.get('cdn/stories/', {
+      const stories = await app.$storyapi.get('cdn/stories/', {
         version,
-        starts_with: lang + 'events/',
+        language,
+        starts_with: 'events/',
         sort_by: 'sort_by_date:desc',
         resolve_relations: 'speakers',
       })
+
+      const speakers = stories.data.rels.reduce((acc, speaker) => {
+        acc[speaker.uuid] = speaker
+        return acc
+      }, {})
+
+      const events = stories.data.stories.map((event) => {
+        event.content.speakers = event.content.speakers.map(
+          (uuid) => speakers[uuid],
+        )
+        return event
+      })
+
       return {
-        events: [...events.data.stories],
+        events,
       }
     } catch (e) {
       console.error(e)
