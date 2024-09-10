@@ -22,26 +22,26 @@ exports.handler = async function (event, context) {
     }
 
   try {
-    await mailchimp.request({
+    const result = await mailchimp.request({
       method: 'post',
       path: `/lists/${mailchimpAudienceId}/members`,
       body: {
         email_address: email,
-        status: 'subscribed',
+        status: 'pending',
       },
     })
 
     return {
       statusCode: 200,
       body: JSON.stringify({
-        message: 'Hello World ',
+        message: result,
       }),
     }
   } catch (e) {
     return {
       statusCode: 500,
       body: JSON.stringify({
-        message: 'error subscribe' + e,
+        message: 'Error: ' + e,
       }),
     }
   }
