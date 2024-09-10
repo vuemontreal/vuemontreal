@@ -21,8 +21,7 @@
   "lint-staged": {
     "*.{css,js,vue}": [
       "npm run lint:js -- --fix",
-      "npm run lint:css -- --fix",
-      "git add"
+      "npm run lint:css -- --fix"
     ]
   },
   "dependencies": {
@@ -53,7 +52,7 @@
     "eslint-plugin-prettier": "^5.2.1",
     "husky": "^9.1.5",
     "jest": "^26.4.2",
-    "lint-staged": "^10.4.0",
+    "lint-staged": "^15.2.10",
     "postcss": "^8.4.45",
     "prettier": "^3.3.3",
     "stylelint-config-recommended-vue": "^1.5.0",
