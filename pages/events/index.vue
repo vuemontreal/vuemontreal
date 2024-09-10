@@ -19,12 +19,13 @@ import head from '~/utils/head'
 export default {
   name: 'EventsPage',
   async asyncData({ app, store, env }) {
-    const lang = app.i18n.locale === 'fr' ? '' : 'en/'
+    const language = app.i18n.locale
     const { version } = env
     try {
       const stories = await app.$storyapi.get('cdn/stories/', {
         version,
-        starts_with: lang + 'events/',
+        language,
+        starts_with: 'events/',
         sort_by: 'sort_by_date:desc',
         resolve_relations: 'speakers',
       })
