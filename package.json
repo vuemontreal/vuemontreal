@@ -19,7 +19,7 @@
     "test": "jest"
   },
   "lint-staged": {
-    "*.{js,vue}": [
+    "*.{css,js,vue}": [
       "npm run lint:js -- --fix",
       "npm run lint:css -- --fix",
       "git add"
