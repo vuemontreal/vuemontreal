@@ -13,7 +13,7 @@
       </a>
       <a
         class="p-2 icon"
-        href="https://www.linkedin.com/groups/12289604/"
+        href="https://www.linkedin.com/company/vue-montreal/"
         target="_blank"
         rel="noopener noreferrer"
       >
